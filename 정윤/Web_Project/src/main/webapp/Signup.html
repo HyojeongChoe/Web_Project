@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SignUp</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+	crossorigin="anonymous">
+<style>
+</style>
+</head>
+<body>
+
+	<form method="post" action="Add" class="row g-3" >
+
+		<!--  이름 -->
+		<label for="Name">이름</label> <input type="text" class="form-control"
+			id="InputName" placeholder="이름을 입력하세요" style="width: 10%";/> <br>
+
+		<!--  아이디 -->
+		<label for="Id" class="form-label">아이디</label> <input type="text"
+			class="form-control" id="InputId" placeholder="아이디를 입력하세요"
+			style="width: 10%";>
+
+		<!--  비밀번호 -->
+		<div class="pure-form">
+			<fieldset>	<!--  <fieldset> 태그는 <form> 요소에서 연관된 요소들을 하나의 그룹으로 묶을 때 사용 -->
+				<label for = "pw" class = "form-label">비밀번호</label> <br>
+				<input type="password" placeholder="비밀번호 입력하세요." id="password" required>
+				<input type="password" placeholder="비밀번호 재입력하세요."
+					id="confirm_password" required>
+				<input type="submit" class="pure-button pure-button-primary">비밀번호 확인</input>
+			</fieldset>
+		</div>
+
+
+		<!--  이메일  -->
+		<label for="Email">이메일</label> <br> <br> <input type="email"
+			id="inputEmail" style="width: 10%";> 
+			<select id="inputEmail2">
+			<option type="email" selected id="Email" style="width: 10%";>선택하세요...</option>
+			<option>@naver.com</option>
+			<option>@kakao.com</option>
+			<option>@google.com</option>
+		</select> <br> <br>
+
+
+		<!--  주소  -->
+		<div class="Inputaddress">
+			<label for="Addr">주소</label> <br> <br> <input
+				id="member_post" type="text" placeholder="우편번호" readonly
+				onclick="findAddr()" style="width: 5%";> <input
+				id="member_addr" type="text" placeholder="주소" readonly> <input
+				type="text" placeholder="상세 주소">
+		</div>
+		<br> <br>
+
+		<!--  생일 -->
+		<div class="birthday">
+			<label for="Birth">생일 </label> <br> <br> <input type="date"
+				id="inputDate" />
+		</div>
+		<br> <br>
+
+		<!--  견종  -->
+		<div class="Pet">
+			<label for="PetName">견종 </label> <br> <br> <input
+				type="radio" name="InputPet" id="Dog" name="Dog" value="Dog" />
+			개(강아지) <input type="radio" name="InputPet" id="Cat" name="Cat"
+				value="Cat" /> 고양이
+		</div>
+		<br> <br>
+
+		<!--  회원가입 버튼 -->
+		<div class="col-12">
+			<button type="submit" class="btn btn-primary" value = "회원가입" 
+				onclick = "submitForm()">회원가입</button>
+		</div>
+	</form>
+	</div>
+	
+	
+	<!-- 반드시 link와 script가 있는 코드를 사용해야 함 -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+
+</body>
+<script>
+	
+function submitForm() {
+    // 첫 번째 폼 제출 로직 추가
+    // 예: 첫 번째 폼이 서버에 제출되었다고 가정
+    alert('첫 번째 폼이 제출되었습니다.');
+
+    // 여기에 페이지 전환 로직을 추가할 수 있습니다.
+    // 예: window.location.href = '다음 페이지 URL';
+	
+    // 폼을 직접 제출
+    document.getElementById('signupForm').submit();
+  }
+  
+	var password = document.getElementById("password"), confirm_password = document
+			.getElementById("confirm_password");
+
+	function validatePassword() {
+		if (password.value != confirm_password.value) { // 만일 두 인풋 필드값이 같지 않을 경우
+			// setCustomValidity의 값을 지정해 무조건 경고 표시가 나게 하고
+			confirm_password.setCustomValidity('');
+			confirm_password.setCustomValidity("비밀번호가 일치하지 않습니다.");
+		} else { // 만일 두 인풋 필드값이 같을 경우
+			// 오류가 없으면 메시지를 빈 문자열로 설정해야한다. 오류 메시지가 비어 있지 않은 한 양식은 유효성 검사를 통과하지 않고 제출되지 않는다.
+			// 따라서 빈값을 주어 submit 처리되게 한다
+			confirm_password.setCustomValidity('비밀번호가 일치합니다.');
+		}
+	}
+
+	password.onchange = validatePassword;
+	confirm_password.onkeyup = validatePassword;
+
+	function findAddr() {
+		new daum.Postcode({
+			oncomplete : function(data) {
+
+				console.log(data);
+
+				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+				// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+				// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+				var roadAddr = data.roadAddress; // 도로명 주소 변수
+				var jibunAddr = data.jibunAddress; // 지번 주소 변수
+				// 우편번호와 주소 정보를 해당 필드에 넣는다.
+				document.getElementById('member_post').value = data.zonecode;
+				if (roadAddr !== '') {
+					document.getElementById("member_addr").value = roadAddr;
+				} else if (jibunAddr !== '') {
+					document.getElementById("member_addr").value = jibunAddr;
+				}
+			}
+		}).open();
+	}
+</script>
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</html>
