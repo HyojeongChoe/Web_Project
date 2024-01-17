@@ -41,14 +41,14 @@ public class AddUser extends HttpServlet {
 		String pw = request.getParameter("pw");
 		String email = request.getParameter("email");
 		String addr = request.getParameter("addr");
-		int birth = Integer.parseInt(request.getParameter("birth"));
+		String birth = request.getParameter("birth");
 		String pet = request.getParameter("pet");
 		
 		// DB 연결 -> DAO 객체 필요
 		UserDAO dao = new UserDAO();	// 생성자 드라이버 로드
 		dao.insertUser(name, id, pw, email, addr, birth, pet);	// INSERT 구문 수행
 		
-		response.sendRedirect("JoinForm.html");	// JoinForm.html에서 실행
+		//response.sendRedirect();	// JoinForm.html에서 실행
 		
 	}
 

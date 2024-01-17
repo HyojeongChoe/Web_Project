@@ -32,7 +32,7 @@ public class UserDAO {
 		}
 	}
 	
-	public void insertUser(String name, String id, String pw, String email, String addr, int birth, String pet) {
+	public void insertUser(String name, String id, String pw, String email, String addr, String birth, String pet) {
 		conn = null;	// 다른 메소드와 겹치지 않게끔 null값으로 설정 후 충돌 방지
 		ps = null;
 		try {
@@ -40,7 +40,7 @@ public class UserDAO {
 			// (서버에 있는 리소스로 즉시 접속 시도)
 			conn = ds.getConnection();
 			
-			String query = "INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?)"; // user라는 테이블에 5개의 값 삽입
+			String query = "INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?)"; // user라는 테이블에 7개의 값 삽입
 			ps = conn.prepareStatement(query);  // ps 객체 초기화해서 쿼리문 작성
 			// INSERT 구문에서 칼럼 순서를 명시하지 않으면 
 			// 테이블 생성 시 칼럼 선언한 순서대로 삽입
@@ -49,7 +49,7 @@ public class UserDAO {
 			ps.setString(3, pw);
 			ps.setString(4, email);
 			ps.setString(5, addr);
-			ps.setInt(6, birth);
+			ps.setString(6, birth);
 			ps.setString(7, pet);
 			ps.executeUpdate(); // INSERT이기 때문에 executeQuery가 아닌 executeUpdate 사용
 			
