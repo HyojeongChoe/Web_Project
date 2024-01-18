@@ -293,7 +293,6 @@ p {
 }
 .fh5co-main-nav .fh5co-menu-1,
 .fh5co-main-nav .fh5co-menu-2,
-.fh5co-main-nav .fh5co-menu-3,
 .fh5co-main-nav .fh5co-logo {
   vertical-align: middle;
   float: left;
@@ -301,14 +300,12 @@ p {
 }
 .fh5co-main-nav .fh5co-menu-1 a,
 .fh5co-main-nav .fh5co-menu-2 a,
-.fh5co-main-nav .fh5co-menu-3 a,
 .fh5co-main-nav .fh5co-logo a {
   padding: 35px 10px;
   color: #130d08;
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  display: inline;
 }
 .fh5co-main-nav .fh5co-menu-1 a:hover, .fh5co-main-nav .fh5co-menu-1 a:focus, .fh5co-main-nav .fh5co-menu-1 a:active,
 .fh5co-main-nav .fh5co-menu-2 a:hover,
@@ -320,11 +317,13 @@ p {
   outline: none;
   text-decoration: none;
 }
+
 .fh5co-main-nav .fh5co-menu-1 a.active,
 .fh5co-main-nav .fh5co-menu-2 a.active,
 .fh5co-main-nav .fh5co-logo a.active {
   color: #fb6e14;
 }
+
 .fh5co-main-nav .fh5co-menu-1 {
   text-align: right;
   width: 40.33%;
@@ -349,14 +348,10 @@ p {
   text-align: left;
   width: 20.33%;
 }
-.fh5co-main-nav .fh5co-menu-3 {
+#login{
   font-size: 15px;
-  text-align: right;
+  float: right;
   width: 20%;
-}
-.fh5co-main-nav .fh5co-menu-3 a {
-  padding-right: 10%;
-  vertical-align:middle
 }
 
 .fh5co-heading .heading {
@@ -1202,7 +1197,6 @@ p {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  display: inline;
   width: 30px;
   height: 2px;
   color: #fff;
