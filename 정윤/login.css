@@ -1,0 +1,240 @@
+/* Login  */
+
+
+position: absolute;
+width: 860px;
+height: 861px;
+left: 543px;
+top: 75px;
+
+background: #FFFFFF;
+
+
+
+/* free-icon-dog-3843277 1 */
+
+position: absolute;
+width: 100px;
+height: 100px;
+left: 389px;
+top: 117px;
+
+background: url(free-icon-dog-3843277.png);
+
+
+/* Form input */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 570px;
+height: 414px;
+left: 154px;
+top: 248px;
+
+border: 1px dashed #9747FF;
+border-radius: 5px;
+
+
+/* Property 1=Default */
+
+position: absolute;
+width: 530px;
+height: 70px;
+left: 20px;
+top: 20px;
+
+
+
+/* Rectangle 1 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #F4F5F7;
+border-radius: 5px;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.34%;
+right: 90.94%;
+top: 31.43%;
+bottom: 32.86%;
+
+background: #000000;
+opacity: 0.4;
+
+
+/* 아이디를 입력하세요. */
+
+position: absolute;
+left: 14.15%;
+right: 11.89%;
+top: 24.29%;
+bottom: 18.57%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+
+opacity: 0.2;
+
+
+/* 아이디 찾기 */
+
+position: absolute;
+width: 130px;
+height: 30px;
+left: 371px;
+top: 574px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+
+opacity: 0.5;
+
+
+/* 회원가입 */
+
+position: absolute;
+width: 130px;
+height: 30px;
+left: 222px;
+top: 574px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+
+opacity: 0.5;
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 530px;
+height: 70px;
+left: 174px;
+top: 470px;
+
+background: #F0E9E9;
+
+
+/* Frame 1 */
+
+position: absolute;
+width: 530px;
+height: 70px;
+left: 174px;
+top: 359px;
+
+background: #F4F5F7;
+border-radius: 5px;
+
+
+/* Vector */
+
+position: absolute;
+left: 3.96%;
+right: 91.32%;
+top: 32.86%;
+bottom: 31.43%;
+
+background: #000000;
+opacity: 0.4;
+
+
+/* 비밀번호를 입력하세요. */
+
+position: absolute;
+left: 13.21%;
+right: 14.15%;
+top: 22.86%;
+bottom: 17.14%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+
+opacity: 0.2;
+
+
+/* LOGIN */
+
+position: absolute;
+width: 530px;
+height: 70px;
+left: 174px;
+top: 470px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+
+border: 1px solid #000000;
+
+
+/* Line 1 */
+
+position: absolute;
+width: 20px;
+height: 0px;
+left: 335.5px;
+top: 579px;
+
+border: 1px solid #000000;
+transform: rotate(90deg);
+
+
+/* Line 2 */
+
+position: absolute;
+width: 20px;
+height: 0px;
+left: 507px;
+top: 579px;
+
+border: 1px solid #000000;
+transform: rotate(90deg);
