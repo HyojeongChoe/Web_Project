@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="Add" method="post">
+		<div class="form-typeWrite">
+			<ul>
+				<li class="mun-list">
+					<div class="mun-title">
+						아이디 <img src="/web/upload/mundane/grey_dot.png" alt="필수">
+					</div>
+					<div class="mun-desc" title="(영문소문자/숫자, 4~16자)">
+						<input id="member_id" name="member_id"
+							fw-filter="isFill&amp;isFill&amp;isMin[4]&amp;isMax[16]&amp;isIdentity"
+							fw-label="아이디" fw-msg="" class="inputTypeText" placeholder=""
+							value="" type="text"> <span id="idMsg" class="error">아이디를
+							입력해 주세요.</span>
+					</div>
+				</li>
+				<li class="mun-list">
+					<div class="mun-title">
+						비밀번호 <img src="/web/upload/mundane/grey_dot.png" alt="필수">
+					</div>
+					<div class="mun-desc">
+						<div class="eTooltip ePlaceholder"
+							title="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)">
+							<input id="passwd" name="passwd"
+								fw-filter="isFill&amp;isMin[4]&amp;isMax[16]" fw-label="비밀번호"
+								fw-msg="" autocomplete="off" maxlength="16"
+								0="disabled" value="" type="password"
+								placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)">
+							<div class="ec-base-tooltip typeUpper" style="display: none;">
+								<div class="content">
+									<strong class="txtWarn">※ 비밀번호 입력 조건</strong>
+									<ul class="ec-base-help typeDash gBlank10 txtWarn">
+										- 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자
+										<br>- 입력 가능 특수문자
+										<br>&nbsp;&nbsp;&nbsp; ~ ` ! @ # $ % ^ ( ) * _ - = { } [
+										] | ; : &lt; &gt; , . ? /
+										<br>- 공백 입력 불가능
+										<br>- 연속된 문자, 숫자 사용 불가능
+										<br>- 동일한 문자, 숫자를 반복해서 사용 불가능
+										<br>- 아이디 포함 불가능
+									</ul>
+								</div>
+								<a href="#none" class="btnClose" tabindex="-1"><img
+									src="//img.echosting.cafe24.com/skin/base/common/btn_close_tip.gif"
+									alt="닫기"></a> <span class="edge"></span>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mun-list">
+					<div class="mun-title">
+						비밀번호 확인 <img src="/web/upload/mundane/grey_dot.png" alt="필수">
+					</div>
+					<div class="mun-desc">
+						<input id="user_passwd_confirm" name="user_passwd_confirm"
+							fw-filter="isFill&amp;isMatch[passwd]" fw-label="비밀번호 확인"
+							fw-msg="비밀번호가 일치하지 않습니다." autocomplete="off" maxlength="16"
+							0="disabled" value="" type="password"> <span
+							id="pwConfirmMsg"></span>
+					</div>
+				</li>
+				<li class="mun-list displaynone">
+					<div class="mun-title">
+						이름(영문) <img src="/web/upload/mundane/grey_dot.png"
+							class="displaynone" alt="필수">
+					</div>
+					<div class="mun-desc ePlaceholder" title="(이름 - 성 형식으로 입력해 주세요.)">
+						<input id="name_en" name="name_en"
+							fw-filter="isMax[30]&amp;isAlphaSpace" fw-label="이름(영문)"
+							fw-msg="" class="ec-member-name"
+							placeholder="(이름 - 성 형식으로 입력해 주세요.)" maxlength="30" value=""
+							type="text">
+					</div>
+				</li>
+				<li class="mun-list ">
+					<div class="mun-title">
+						주소 <img src="/web/upload/mundane/grey_dot.png" class="displaynone"
+							alt="필수">
+					</div>
+					<div class="mun-desc">
+						<span class="mun-formS"><input id="postcode1"
+							name="postcode1" fw-filter="isLengthRange[1][14]"
+							fw-label="우편번호1" fw-msg="" class="inputTypeText" placeholder=""
+							readonly="readonly" maxlength="14" value="" type="text"></span>
+						<a href="#none" class="btnNormal mun-underline" onclick=""
+							id="postBtn">우편번호검색</a>
+						<div class="ePlaceholder" title="기본주소">
+							<input id="addr1" name="addr1" fw-filter="" fw-label="주소"
+								fw-msg="" class="inputTypeText" placeholder="기본주소"
+								readonly="readonly" value="" type="text">
+						</div>
+						<div class="ePlaceholder" title="나머지주소 (선택입력가능)">
+							<input id="addr2" name="addr2" fw-filter="" fw-label="주소"
+								fw-msg="" class="inputTypeText" placeholder="나머지주소 (선택입력가능)"
+								value="" type="text">
+						</div>
+					</div>
+				</li>
+				<li class="mun-list ">
+					<div class="mun-title">
+						일반전화 <img src="/web/upload/mundane/grey_dot.png"
+							class="displaynone" alt="필수">
+					</div>
+					<div class="mun-desc">
+						<span class="mun-formSP"><select id="phone1" name="phone[]"
+							fw-filter="isNumber&amp;isNumber" fw-label="일반전화" fw-alone="N"
+							fw-msg="">
+								<option value="02">02</option>
+								<option value="031">031</option>
+								<option value="032">032</option>
+								<option value="033">033</option>
+								<option value="041">041</option>
+								<option value="042">042</option>
+								<option value="043">043</option>
+								<option value="044">044</option>
+								<option value="051">051</option>
+								<option value="052">052</option>
+								<option value="053">053</option>
+								<option value="054">054</option>
+								<option value="055">055</option>
+								<option value="061">061</option>
+								<option value="062">062</option>
+								<option value="063">063</option>
+								<option value="064">064</option>
+								<option value="0502">0502</option>
+								<option value="0503">0503</option>
+								<option value="0504">0504</option>
+								<option value="0505">0505</option>
+								<option value="0506">0506</option>
+								<option value="0507">0507</option>
+								<option value="070">070</option>
+								<option value="010">010</option>
+								<option value="011">011</option>
+								<option value="016">016</option>
+								<option value="017">017</option>
+								<option value="018">018</option>
+								<option value="019">019</option>
+								<option value="0508">0508</option>
+						</select><span class="mun-formText">-</span><input id="phone2"
+							name="phone[]" maxlength="4" fw-filter="isNumber&amp;isNumber"
+							fw-label="일반전화" fw-alone="N" fw-msg="" value="" type="text"><span
+							class="mun-formText">-</span><input id="phone3" name="phone[]"
+							maxlength="4" fw-filter="isNumber&amp;isNumber" fw-label="일반전화"
+							fw-alone="N" fw-msg="" value="" type="text"></span>
+					</div>
+				</li>
+				<li class="mun-list ">
+					<div class="mun-title">
+						휴대전화 <img src="/web/upload/mundane/grey_dot.png" class="" alt="필수">
+						&nbsp;<a href="#;" id="btn_action_verify_mobile"
+							class="mun-underline displaynone"
+							onclick="memberVerifyMobile.joinSendVerificationNumber(); return false;">인증번호받기</a>
+					</div>
+					<div class="mun-desc">
+						<span class="mun-formSP"><select id="mobile1"
+							name="mobile[]" fw-filter="isNumber&amp;isFill" fw-label="휴대전화"
+							fw-alone="N" fw-msg="">
+								<option value="010">010</option>
+								<option value="011">011</option>
+								<option value="016">016</option>
+								<option value="017">017</option>
+								<option value="018">018</option>
+								<option value="019">019</option>
+						</select><span class="mun-formText">-</span><input id="mobile2"
+							name="mobile[]" maxlength="4" fw-filter="isNumber&amp;isFill"
+							fw-label="휴대전화" fw-alone="N" fw-msg="" placeholder="" value=""
+							type="text"><span class="mun-formText">-</span><input
+							id="mobile3" name="mobile[]" maxlength="4"
+							fw-filter="isNumber&amp;isFill" fw-label="휴대전화" fw-alone="N"
+							fw-msg="" placeholder="" value="" type="text"><span
+							class="mun-formText"> </span>
+							<p class="txtWarn gBlank5 displaynone"
+								id="result_send_verify_mobile_fail"></p> <span
+							class="mun-formText"> </span> </span>
+					</div>
+				</li>
+				<li class="mun-list">
+					<div class="mun-title">
+						이메일 <img src="/web/upload/mundane/grey_dot.png" alt="필수">
+					</div>
+					<div class="mun-desc">
+						<span class="mun-formSE"><input id="email1" name="email1"
+							fw-filter="isFill&amp;isEmail" fw-label="이메일" fw-alone="N"
+							fw-msg="" placeholder="" value="" type="text"></span>
+					</div>
+				</li>
+				<li class="mun-list ">
+					<div class="mun-title">
+						생년월일 <img src="/web/upload/mundane/grey_dot.png"
+							class="displaynone" alt="필수"><span class="gIndent20 "><input
+							id="is_solar_calendar0" name="is_solar_calendar" fw-filter=""
+							fw-label="생년월일" fw-msg="" value="T" type="radio"
+							checked="checked" autocomplete="off"><label
+							for="is_solar_calendar0">양력</label> <input
+							id="is_solar_calendar1" name="is_solar_calendar" fw-filter=""
+							fw-label="생년월일" fw-msg="" value="F" type="radio"
+							autocomplete="off"><label for="is_solar_calendar1">음력</label></span>
+					</div>
+					<div class="mun-desc">
+						<span class="mun-formcalendar"><span class="ePlaceholder"
+							title="년"><input id="birth_year" name="birth_year"
+								fw-filter="" fw-label="생년월일" fw-msg="" class="inputTypeText"
+								placeholder="년" maxlength="4" value="" type="text"></span><span
+							class="mun-formText">-</span><span class="ePlaceholder" title="월"><input
+								id="birth_month" name="birth_month" fw-filter="" fw-label="생년월일"
+								fw-msg="" class="inputTypeText" placeholder="월" maxlength="2"
+								value="" type="text"></span><span class="mun-formText">-</span><span
+							class="ePlaceholder" title="일"><input id="birth_day"
+								name="birth_day" fw-filter="" fw-label="생년월일" fw-msg=""
+								class="inputTypeText" placeholder="일" maxlength="2" value=""
+								type="text"></span></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="mun-button-Area">
+			<a href="#none" class="mun-btn mun-right confirm"
+				onclick="memberJoinAction()">join</a>
+		</div>
+	</form>
+</body>
+</html>
