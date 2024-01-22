@@ -52,13 +52,18 @@ public class userDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				conn.close();
-				ps.close();
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
-		}
-	}
-
+            try {
+                // PreparedStatement를 먼저 닫음
+                if (ps != null) {
+                    ps.close();
+                }
+                // Connection을 닫음
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+    }
 }

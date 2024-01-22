@@ -2,61 +2,61 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
-	<style>
-		body {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-			margin: 0;
-		}
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
 
-		.form-join {
-			width: 400px;
-			/* 폼의 너비를 조절하세요 */
-		}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
 
-		.join-list {
-			margin-bottom: 20px;
-			list-style: none;
-			/* 리스트 항목의 점 표시 제거 */
-			/* 각 항목 사이의 간격을 조절하세요 */
-		}
+.form-join {
+	width: 500px;
+	/* 폼의 너비를 조절하세요 */
+}
 
-		.error-message {
-			color: red;
-			font-size: 12px;
-			margin-top: 5px;
-		}
-	</style>
+.join-list {
+	margin-bottom: 10px;
+	list-style: none;
+	/* 리스트 항목의 점 표시 제거 */
+}
+
+.error-message {
+	color: red;
+	font-size: 12px;
+	margin-top: 5px;
+	height: 13px;
+	}
+</style>
 </head>
-
 <body>
 	<form action="signup.do" onsubmit="return validateForm()">
 		<div class="form-join">
 			<ul>
 				<!--  아이디 -->
 				<li class="join-list">
-					<div class="join-title"> <!--입력 타이틀 클래스-->
+					<div class="join-title">
+						<!--입력 타이틀 클래스-->
 						아이디
-					</div>
-					<!--title속성: 마우스 커서 올리면 사용자에게 추가정보 알려줌 -->
+					</div> <!--title속성: 마우스 커서 올리면 사용자에게 추가정보 알려줌 -->
 					<div class="join-write" title="(영문소문자와 숫자, 4~16자)">
-						<input type="text" id="id" name="id" placeholder="" minlength="4" maxlength="16"
-							onchange="checkId()" />
+						<input type="text" id="id" name="id" placeholder="" minlength="4"
+							maxlength="16" oninput="checkId()" />
 						<div id="idError" class="error-message"></div>
 					</div>
 				</li>
 
 				<!--  비밀번호 -->
 				<li class="join-list">
-					<div class="join-title">
-						비밀번호
-					</div>
-					<div class="join-write" title="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)">
-						<input type="password" id="pw" name="pw" placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)"
+					<div class="join-title">비밀번호</div>
+					<div class="join-write"
+						title="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)">
+						<input type="password" id="pw" name="pw"
+							placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)"
 							maxlength="16" oninput="checkPassword()">
 						<div id="pwError" class="error-message"></div>
 					</div>
@@ -64,23 +64,23 @@
 
 				<!-- 비밀번호 확인-->
 				<li class="join-list">
-					<div class="join-title">
-						비밀번호 확인
-					</div>
+					<div class="join-title">비밀번호 확인</div>
 					<div class="join-write">
-						<input type="password" id="pw_confirm" name="pw_confirm" maxlength="16"
-							oninput="checkPassword()">
+						<input type="password" id="pw_confirm" name="pw_confirm"
+							maxlength="16" oninput="checkPassword()">
 						<div id="pwConfirmError" class="error-message"></div>
 					</div>
 				</li>
 
 				<!--  이름 -->
 				<li class="join-list">
-					<div class="join-title"> <!-- 입력 타이틀 클래스-->
+					<div class="join-title">
+						<!-- 입력 타이틀 클래스-->
 						이름
 					</div>
 					<div class="join-write" title="">
-						<input type="text" id="name" name="name" placeholder="" maxlength="30" />
+						<input type="text" id="name" name="name" placeholder=""
+							maxlength="30" />
 						<div id="nameError" class="error-message"></div>
 					</div>
 				</li>
@@ -88,43 +88,37 @@
 				<!-- 주소  -->
 				<li class="join-list">
 					<!-- Add address error message div here -->
-					<div class="join-title">
-						주소
-					</div>
+					<div class="join-title">주소</div>
 					<div class="join write">
-						<input type="text" id="sample6_postcode" name="addr1" placeholder="우편번호">
-						<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-						<input type="text" id="sample6_address" name="addr2" placeholder="기본주소"><br>
-						<input type="text" id="sample6_detailAddress" name="addr3" placeholder="상세주소"
-							oninput="checkAddress()">
-						<input type="text" id="sample6_extraAddress" name="addr4" placeholder="참고항목">
+						<input type="text" id="sample6_postcode" name="addr1"
+							placeholder="우편번호"> <input type="button"
+							onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+						<input type="text" id="sample6_address" name="addr2"
+							placeholder="기본주소"><br> <input type="text"
+							id="sample6_detailAddress" name="addr3" placeholder="상세주소"
+							onchange="checkAddress()"> <input type="text"
+							id="sample6_extraAddress" name="addr4" placeholder="참고항목">
 						<div id="addressError" class="error-message"></div>
 					</div>
 				</li>
 
 				<!--전화-->
 				<li class="join-list ">
-					<div class="join-title">
-						휴대전화
-					</div>
+					<div class="join-title">휴대전화</div>
 					<div class="join-write">
-						<span class="join-mobile">
-							<select id="mobile1" name="mobile1">
+						<span class="join-mobile"> <select id="mobile1"
+							name="mobile1">
 								<option value="010">010</option>
 								<option value="011">011</option>
 								<option value="016">016</option>
 								<option value="017">017</option>
 								<option value="018">018</option>
 								<option value="019">019</option>
-							</select>
-							<span class="mobile-formText">
-								-
-							</span>
-							<input id="mobile2" name="mobile2" maxlength="4" type="text" style="width: 50px;" />
-							<span class="mobile-formText">
-								-
-							</span>
-							<input id="mobile3" name="mobile3" maxlength="4" type="text" style="width: 50px;" />
+						</select> <span class="mobile-formText"> - </span> <input id="mobile2"
+							name="mobile2" maxlength="4" type="text" style="width: 50px;"
+							oninput="checkMobile()" /> <span class="mobile-formText">
+								- </span> <input id="mobile3" name="mobile3" maxlength="4" type="text"
+							style="width: 50px;" oninput="checkMobile()" />
 						</span>
 						<div id="mobileError" class="error-message"></div>
 					</div>
@@ -132,22 +126,18 @@
 
 				<!--  이메일 -->
 				<li class=" join-list">
-					<div class="join-title">
-						이메일
-					</div>
+					<div class="join-title">이메일</div>
 					<div class="join-write">
-						<span>
-							<input type="text" id="email1" name="email1" placeholder="이메일 입력하세요" oninput="checkEmail()">
-							@
-							<input type="text" id="email2" name="email2" placeholder="naver.com"
-								oninput="checkEmail()" />
-
-							<select id="domainSelect" name="email2" onchange="updateEmail2()">
+						<span> <input type="text" id="email1" name="email1"
+							placeholder="이메일 입력하세요" oninput="checkEmail()"> @ <input
+							type="text" id="email2" name="email2" placeholder="naver.com"
+							oninput="checkEmail()" /> <select id="domainSelect"
+							name="email2">
 								<option>직접입력</option>
 								<option value="naver.com">naver.com</option>
 								<option value="kakao.com">kakao.com</option>
 								<option value="google.com">google.com</option>
-							</select>
+						</select>
 						</span>
 						<div id="emailError" class="error-message"></div>
 					</div>
@@ -155,201 +145,21 @@
 
 				<!-- 생일 -->
 				<li class="join-list">
-					<div class="join-title">
-						생년월일
-					</div>
-					<input type="date" id="birth" name="birth" />
+					<div class="join-title">생년월일</div> <input type="date" id="birth"
+					name="birth" onblur="checkBirth()">
+					<div id="birthError" class="error-message"></div>
 				</li>
 
 				<!-- 반려동물  -->
-				<li class="join-list">
-					<label>반려동물</label>
-					<input type="radio" name="pet" id="dog" value="dog" />
-					<label for="dog">개(강아지)</label>
-					<input type="radio" name="pet" id="cat" value="cat" />
-					<label for="cat">고양이</label>
-				</li>
+				<!-- 				<li class="join-list"><label>반려동물</label> <input type="radio" -->
+				<!-- 					name="pet" id="dog" value="dog" /> <label for="dog">개(강아지)</label> -->
+				<!-- 					<input type="radio" name="pet" id="cat" value="cat" /> <label -->
+				<!-- 					for="cat">고양이</label></li> -->
 
 				<input type="submit" value="회원가입" />
 			</ul>
 		</div>
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+		<script src="js/signup.js" ></script>
 </body>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-	function sample6_execDaumPostcode() {
-		new daum.Postcode({
-			oncomplete: function (data) {
-				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-				// 각 주소의 노출 규칙에 따라 주소를 조합한다.
-				// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-				let addr = ''; // 주소 변수
-				let extraAddr = ''; // 참고항목 변수
-
-				//사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-				if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-					addr = data.roadAddress;
-				} else { // 사용자가 지번 주소를 선택했을 경우(J)
-					addr = data.jibunAddress;
-				}
-
-				// 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-				if (data.userSelectedType === 'R') {
-					// 법정동명이 있을 경우 추가한다. (법정리는 제외)
-					// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-					if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
-						extraAddr += data.bname;
-					}
-					// 건물명이 있고, 공동주택일 경우 추가한다.
-					if (data.buildingName !== '' && data.apartment === 'Y') {
-						extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-					}
-					// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-					if (extraAddr !== '') {
-						extraAddr = ' (' + extraAddr + ')';
-					}
-					// 조합된 참고항목을 해당 필드에 넣는다.
-					document.getElementById("sample6_extraAddress").value = extraAddr;
-
-				} else {
-					document.getElementById("sample6_extraAddress").value = '';
-				}
-
-				// 우편번호와 주소 정보를 해당 필드에 넣는다.
-				document.getElementById('sample6_postcode').value = data.zonecode;
-				document.getElementById("sample6_address").value = addr;
-				// 커서를 상세주소 필드로 이동한다.
-				document.getElementById("sample6_detailAddress").focus();
-			}
-		}).open();
-	}
-
-	// select 요소의 값이 변경될 때 호출되는 함수
-	function updateEmail2() {
-		let email2Input = document.getElementById("email2");
-		let domainSelect = document.getElementById("domainSelect");
-
-		// 선택된 값이 "직접입력"인 경우에만 텍스트 입력을 활성화하고, 아니면 값을 설정
-		if (domainSelect.value === "직접입력") {
-			email2Input.value = "";
-			email2Input.disabled = false; // 텍스트 입력 활성화
-		} else {
-			email2Input.value = domainSelect.value;
-			email2Input.disabled = true; // 텍스트 입력 비활성화
-		}
-	}
-	// select 요소의 변경 이벤트에 updateEmail2 함수를 연결
-	document.getElementById("domainSelect").addEventListener("change", updateEmail2);
-</script>
-<!-- 각 필드에 빈 값 있을 시 함수 호출-->
-<script>
-	function validateForm() {
-		let id = document.getElementById("id");
-		let pw = document.getElementById("pw");
-		let pwConfirm = document.getElementById("pw_confirm");
-		let name = document.getElementById("name");
-		let postcode = document.getElementById("sample6_postcode");
-		let address = document.getElementById("sample6_address");
-		let detailAddress = document.getElementById("sample6_detailAddress");
-		let mobile2 = document.getElementById("mobile2");
-		let mobile3 = document.getElementById("mobile3");
-		let email1 = document.getElementById("email1");
-		let email2 = document.getElementById("email2");
-
-		// 필드를 배열로 모음
-		let fields = [id, pw, pwConfirm, name, postcode, address, detailAddress, mobile2, mobile3, email1, email2];
-
-		// 어떤 필드라도 비어 있는지 확인
-		for (let i = 0; i < fields.length; i++) {
-			if (!fields[i].value.trim()) {
-				alert("정보를 입력하세요.");
-				fields[i].focus(); // 빈 필드로 포커스 이동
-				return false;
-			}
-		}
-
-		return true;
-	}
-	//id 유효성 검사 함수
-	function checkId() {
-		let idInput = document.getElementById("id");
-		let idError = document.getElementById("idError");
-
-		// 아이디가 비어있는지 검사
-		if (!idInput.value.trim()) {
-			idError.innerText = "아이디를 입력하세요.";
-			return;
-		}
-
-		// 아이디 형식 검사 (영문 소문자와 숫자, 4글자 이상)
-		let regex = /^(?=.*[a-z])(?=.*\d)[a-z\d]{4,16}$/;
-
-		if (!regex.test(idInput.value)) {
-			idError.innerText = "아이디는 영문 소문자와 숫자를 조합하여 4글자 이상이어야 합니다.";
-		} else {
-			idError.innerText = "";
-		}
-	}
-	// 비밀번호 유효성 검사 함수
-	function checkPassword() {
-		let pw = document.getElementById("pw").value;
-		let pwConfirm = document.getElementById("pw_confirm").value;
-		let pwError = document.getElementById("pwError");
-		let pwConfirmError = document.getElementById("pwConfirmError");
-
-		// 비밀번호가 조건을 만족하는지 검사
-		let regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/;
-
-		if (!regex.test(pw)) {
-			pwError.innerText = "비밀번호는 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합, 8자~16자여야 합니다.";
-		} else {
-			pwError.innerText = "";
-		}
-
-		// 비밀번호 확인 일치 여부 검사
-		if (pw !== pwConfirm) {
-			pwConfirmError.innerText = "비밀번호가 일치하지 않습니다.";
-		} else {
-			pwConfirmError.innerText = "";
-		}
-	}
-	//주소 유효성 검사 함수
-	function checkAddress() {
-		let postcodeInput = document.getElementById("sample6_postcode");
-		let addressInput = document.getElementById("sample6_address");
-		let detailAddressInput = document.getElementById("sample6_detailAddress");
-		let addressError = document.getElementById("addressError");
-
-		// 필수 항목이 비어있는지 확인
-		if (!postcodeInput.value.trim() || !addressInput.value.trim() || !detailAddressInput.value.trim()) {
-			addressError.innerText = "주소를 모두 입력하세요.";
-			return;
-		}
-		// 모든 검사를 통과했을 경우 오류 메시지 초기화
-		addressError.innerText = "";
-	}
-	// 이메일 유효성 검사 함수
-	function checkEmail() {
-		let email1 = document.getElementById("email1").value;
-		let email2 = document.getElementById("email2").value;
-		let atSign = "@";
-		let emailError = document.getElementById("emailError");
-
-		// 이메일이 비어있지 않은지 검사
-		if (!email1 || !email2) {
-			emailError.innerText = "이메일을 입력하세요.";
-			return;
-		}
-
-		// 이메일 형식 검사
-		let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-		if (!regex.test(email1 + atSign + email2)) {
-			emailError.innerText = "이메일 형식이 올바르지 않습니다.";
-		} else {
-			emailError.innerText = "";
-		}
-	}
-</script>
-
 </html>
