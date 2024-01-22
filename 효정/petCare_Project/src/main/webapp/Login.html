@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" href="css/loginForm.css">
+<title>로그인</title>
 </head>
 <body>
-	<form>
-		아이디: <input type="text"  name="id"/><br>
-		비밀번호: <input type="password"" name="pw" /><br>
-		
-		<input type="submit" value="로그인" />
-	</form>
-	
-		<a href="SignUp.html">회원가입</a>
+	<div id="desktop">
+		<div id="memberLogin" class="contents">
+			<img src="images\free-icon-dog-3843277.png"
+				name="image" id="image" />
+			<form id="member_form" method="post">
+				<!-- 아이디 -->
+				<div id="normalLogin_id">
+					<div class="inputBox" id="input_id">
+						<img src="free-icon-user-747376.png" id="user" /> <input
+							id="member_id" name="member_id" class="inputTypeText"
+							placeholder="아이디를 입력하세요.">
+					</div>
+				</div>
+				<!-- 비밀번호 -->
+				<div class="inputBox_passwd" style="display: block;">
+					<div class="chk_passwd" style="display: block;"></div>
+					<input id="member_passwd" name="member_passwd" value="password"
+						type="password" class="password" placeholder="패스워드">
+				</div>
+				<button class="btn loginBtn" id="login"
+					onclick="index.html">LOGIN</button>
+				<div class="utilMenu" style="display: block">
+					<a action="/member/join.html" class="right" id="Signup">회원가입</a> 
+					<a href="" >아이디 찾기</a> 
+					<a href="">비밀번호 찾기</a>
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
+</html>
+
 </html>
