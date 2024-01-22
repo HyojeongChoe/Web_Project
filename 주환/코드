@@ -5,7 +5,8 @@
 <style>태그 css 적용태그
 <select>태그 여러 목록 중 선택 태그
 <option>태그를 사용하여 목록중 선택가능
-
+font-size:글자크기
+font-family:글자종류
 <script> 자바스크립트 적용 태그
 <body>태그 본문태그
 
