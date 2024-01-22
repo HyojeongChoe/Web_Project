@@ -5,10 +5,11 @@ public class userDTO {
 	private String id;		//아이디
 	private String pw;		//비밀번호
 	private String email;	//이메일
-	private String tel;		//연락처
+	private String mobile;		//연락처
 	private String addr;	//주소
 	private String birth;	//생일
 	private String pet;		//반려동물
+	
 	
 	//getter,setter
 	public String getName() {
@@ -35,11 +36,11 @@ public class userDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getTel() {
-		return tel;
+	public String getMobile() {
+		return mobile;
 	}
-	public void setTel(String tel) {
-		this.tel = tel;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 	public String getAddr() {
 		return addr;

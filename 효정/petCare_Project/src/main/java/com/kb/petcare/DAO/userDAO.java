@@ -29,15 +29,15 @@ public class userDAO {
 	}
 	
 	//회원가입기능
-	public void userInsert(String name, String id, String pw, String email1, String email2, String addr, String birth, String pet) {
+	public void userInsert(String name, String id, String pw, String email, String addr, String birth, String pet, 
+			String mobile) {
 		conn = null;
 		ps = null;
 		// ds는 초기화하면 DB접속에 문제가 생김
 		try {
 			conn = ds.getConnection();// DB접속
-			
-			String email = email1 + email2; //입력받은 email1과 select한 email2 더해서 db에 연동하기 위해
-			String query = "INSERT INTO user VALUES(?,?,?,?,?,?,?)"; // 물음표가 있기 때문에 ps사용
+		
+			String query = "INSERT INTO user VALUES(?,?,?,?,?,?,?,?)"; // 물음표가 있기 때문에 ps사용
 			ps = conn.prepareStatement(query);
 			ps.setString(1, name);
 			ps.setString(2, id);
@@ -46,18 +46,24 @@ public class userDAO {
 			ps.setString(5, addr);
 			ps.setString(6, birth);
 			ps.setString(7, pet);
+			ps.setString(8, mobile);
 			ps.executeUpdate();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				conn.close();
-				ps.close();
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
-		}
-	}
-
+            try {
+                // PreparedStatement를 먼저 닫음
+                if (ps != null) {
+                    ps.close();
+                }
+                // Connection을 닫음
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+    }
 }
