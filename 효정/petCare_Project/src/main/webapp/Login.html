@@ -2,41 +2,54 @@
 <html>
 
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="css/loginForm.css">
-<title>로그인</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/loginForm.css">
+	<title>로그인</title>
 </head>
+
 <body>
 	<div id="desktop">
 		<div id="memberLogin" class="contents">
-			<img src="images\free-icon-dog-3843277.png"
-				name="image" id="image" />
-			<form id="member_form" method="post">
-				<!-- 아이디 -->
+			<img src="images/free-icon-dog-3843277.png" name="image" id="image" />
+			<form id="member_form">
 				<div id="normalLogin_id">
 					<div class="inputBox" id="input_id">
-						<img src="free-icon-user-747376.png" id="user" /> <input
-							id="member_id" name="member_id" class="inputTypeText"
-							placeholder="아이디를 입력하세요.">
+						<img src="images/free-icon-user-747376.png" id="user">
+						<input id="member_id" name="member_id" class="inputTypeText" placeholder="아이디를 입력하세요.">
 					</div>
 				</div>
-				<!-- 비밀번호 -->
-				<div class="inputBox_passwd" style="display: block;">
-					<div class="chk_passwd" style="display: block;"></div>
-					<input id="member_passwd" name="member_passwd" value="password"
-						type="password" class="password" placeholder="패스워드">
+				<div class="inputBox" id="input_pw">
+					<img src="images/free-icon-lock-6421881.png" id="lock">
+					<input type="password" id="member_pw" name="member_pw" class="inputTypeText"
+						placeholder="비밀번호를 입력하세요.">
 				</div>
-				<button class="btn loginBtn" id="login"
-					onclick="index.html">LOGIN</button>
-				<div class="utilMenu" style="display: block">
-					<a action="/member/join.html" class="right" id="Signup">회원가입</a> 
-					<a href="" >아이디 찾기</a> 
-					<a href="">비밀번호 찾기</a>
+				<div class="inputBox" id="normalLogin_login">
+					<input type="submit" action="index.html" id="member_login" name="login" value="LOGIN">
 				</div>
-			</form>
+				<a target="_blank" href="SignUp.html" id="signup">회원가입</a>
+				<label id="line1"></label>
+				<a target="_blank" href="" id="find_id">아이디 찾기</a>
+				<label id="line2"></label>
+				<a target="_blank" href="" id="find_pw">비밀번호 찾기</a>
 		</div>
+		</form>
+	</div>
 	</div>
 </body>
-</html>
 
 </html>
+
+
+<!-- 이거는 원본 코드 
+	<div class="inputBox_passwd" style="display: block;">
+							<div class="chk_passwd" style="display: block;"></div><input id="member_passwd"
+								name="member_passwd" value="password" type="password" class="password" placeholder="패스워드">
+						</div>
+					</div>
+					<button class="btn loginBtn" id = "login"
+						onclick="MemberAction.login('member_form_0434157565'); return false;">LOGIN</button>
+					<div class="utilMenu" style="display:block">
+						<a action="/member/join.html" class="right" id = "Signup">회원가입</a>
+						<a href="/member/id/find_id.html" id = "">아이디 찾기</a>
+						<a href="/member/passwd/find_passwd_info.html">비밀번호 찾기</a>			
+					</div> -->

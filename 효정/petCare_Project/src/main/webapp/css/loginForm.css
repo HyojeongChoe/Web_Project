@@ -1,0 +1,296 @@
+@charset "UTF-8";
+
+/* DeskTop */
+
+#desktop{
+position: relative;
+width: 1920px;
+height: 1080px;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+/* Login  */
+#memberLogin{
+box-sizing: border-box;
+
+position: absolute;
+width: 860px;
+height: 860px;
+left: 540px;
+top: 75px;
+
+background-color: #FFFFFF;
+}
+
+
+/* free-icon-dog-3843277 1 */
+
+#image{
+position: absolute;
+width: 100px;
+height: 100px;
+left: 390px;
+top: 120px;
+
+background: url(free-icon-dog-3843277.png);
+}
+
+/* Form input */
+#member_form{
+box-sizing: border-box;
+
+position: absolute;
+width: 570px;
+height: 410px;
+left: 155px;
+top: 245px;
+
+border: 3px solid #82CAF3;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border-radius: 0px;
+}
+
+
+/* Property 1=Default */
+#normalLogin_id{
+position: absolute;
+width: 530px;
+height: 70px;
+right: 110px;
+top: 20px;
+} 
+
+
+/* Rectangle 1 */
+#input_id{
+position: absolute;
+/* left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;  */
+width: 320px;
+height: 40px;
+right: 10px;
+top: 20px; 
+
+background: #F4F5F7;
+/* font-color : black; */
+border-radius: 5px;
+}
+
+/* Vector */
+#user{
+position: absolute;
+left: 4.35%;
+right: 90.95%;
+top: 31.45%;
+bottom: 32.85%;
+width : 15px;
+height : 15px;
+opacity: 0.4;
+}
+
+/* 아이디를 입력하세요. */
+#member_id{
+position: absolute;
+left: 14.15%;
+right: 11.90%;
+top: 24.30%;
+bottom: 18.55%;
+width : 250px;
+height : 20px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 25px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+border: none; 
+background: transparent;
+
+color : black;
+opacity: 0.5;
+}
+
+/* 아이디 찾기 */
+
+#find_id{
+position: absolute;
+width: 130px;
+height: 30px;
+left: 360px;
+top: 300px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 20px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+
+opacity: 0.5;
+}
+
+/* 회원가입 */
+#signup{
+position: absolute;
+width: 130px;
+height: 30px;
+left: 135px;
+top: 300px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 20px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+
+opacity: 0.5;
+}
+
+/* Rectangle 2 */
+/* #normalLogin_login{
+position: absolute;
+width: 530px;
+height: 70px;
+left: 174px;
+top: 470px;
+
+background: #F0E9E9;
+} */
+
+/* Frame 1 */
+#input_pw{
+position: absolute;
+width: 320px;
+height: 40px;
+left: 125px;
+top: 120px;
+
+background: #F4F5F7;
+border-radius: 5px;
+}
+
+/* Vector */
+#lock{
+position: absolute;
+left: 3.95%;
+right: 91.30%;
+top: 32.85%;
+bottom: 31.45%;
+width : 20px;
+height : 20px;
+
+opacity: 0.4;
+}
+
+/* 비밀번호를 입력하세요. */
+#member_pw{
+position: absolute;
+left: 13.20%;
+right: 14.30%;
+top: 22.85%;
+bottom: 17.15%;
+width : 250px;
+height : 20px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 25px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+border: none; 
+color: black;
+
+background: transparent;
+opacity: 0.5;
+}
+
+
+/* LOGIN */
+
+#member_login{
+position: absolute;
+width: 325px;
+height: 60px;
+left: 22%;
+top: 200PX;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+justify-content: center;  /* 수평 가로 정렬 */
+text-align: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+border: none;
+}
+
+/* Line 1 */
+#line1{
+position: absolute;
+width: 15px;
+height: 0px;
+left: 200px;
+top: 315px;
+
+border: 1px solid gray;
+transform: rotate(90deg);
+}
+
+/* Line 2 */
+#line2{
+position: absolute;
+width: 15px;
+height: 0px;
+left: 330px;
+top: 315px;
+
+border: 1px solid gray;
+transform: rotate(90deg);
+}
+
+/* 비밀번호 찾기 */
+#find_pw{
+position: absolute;
+width: 130px;
+height: 30px;
+left: 230px;
+top: 300px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 24px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+
+opacity: 0.5;
+}

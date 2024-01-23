@@ -112,7 +112,7 @@ function checkId() {
 	}
 
 	// 아이디 형식 검사 (영문 소문자와 숫자, 4글자 이상)
-	let regex = /^(?=.*[a-z])(?=.*\d)[a-z\d]{4, 16}$/;
+	let regex = /^(?=.*[a-z])(?=.*\d)[a-z\d]{4,}$/;
 
 	if (!regex.test(idInput.value)) {
 		idError.innerText = "아이디는 영문 소문자와 숫자를 조합하여 4글자 이상이어야 합니다.";
