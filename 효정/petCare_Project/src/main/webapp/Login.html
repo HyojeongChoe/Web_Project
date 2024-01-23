@@ -9,33 +9,38 @@
 
 <body>
 	<div id="desktop">
-		<div id="memberLogin" class="contents">
-			<img src="images/free-icon-dog-3843277.png" name="image" id="image" />
-			<form id="member_form">
-				<div id="normalLogin_id">
+		<div id="userLogin" class="contents">
+			<img src="images/free-icon-dog-3843277.png" name="image" id="login_icon" />
+			<form action="login.do" id="user_form">
+				<div id="login_id">
 					<div class="inputBox" id="input_id">
-						<img src="images/free-icon-user-747376.png" id="user">
-						<input id="member_id" name="member_id" class="inputTypeText" placeholder="아이디를 입력하세요.">
+						<img src="images/free-icon-user-747376.png" id="input_id_icon">
+						<input type="text" id="user_id" name="id" class="inputTypeText" placeholder="아이디를 입력하세요.">
 					</div>
 				</div>
 				<div class="inputBox" id="input_pw">
-					<img src="images/free-icon-lock-6421881.png" id="lock">
-					<input type="password" id="member_pw" name="member_pw" class="inputTypeText"
+					<img src="images/free-icon-lock-6421881.png" id="input_pw_icon">
+					<input type="password" id="user_pw" name="pw" class="inputTypeText"
 						placeholder="비밀번호를 입력하세요.">
 				</div>
 				<div class="inputBox" id="normalLogin_login">
-					<input type="submit" action="index.html" id="member_login" name="login" value="LOGIN">
+					<input type="submit" id="login_button" name="login_button" value="LOGIN">
 				</div>
-				<a target="_blank" href="SignUp.html" id="signup">회원가입</a>
+				<a target="_blank" href="#" id="signup" onclick="openSignUpPage()">회원가입</a>
 				<label id="line1"></label>
 				<a target="_blank" href="" id="find_id">아이디 찾기</a>
 				<label id="line2"></label>
 				<a target="_blank" href="" id="find_pw">비밀번호 찾기</a>
+			</form>
 		</div>
-		</form>
-	</div>
 	</div>
 </body>
+<script>
+	function openSignUpPage() {
+		// 현재 창에서 SignUp.html로 이동
+		window.location.href = 'SignUp.html';
+	}
+</script>
 
 </html>
 

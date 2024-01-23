@@ -14,7 +14,6 @@ public class userDAO {
 	private Statement st = null;
 	private ResultSet rs = null;
 	private PreparedStatement ps = null;
-
 	private DataSource ds = null;
 
 	//생성자
@@ -66,4 +65,40 @@ public class userDAO {
             }
         }
     }
+	//로그인
+	public boolean userLogin(String id, String pw) {
+		conn = null;
+		ps = null;
+		rs = null;
+		
+		try {
+			conn = ds.getConnection();
+			
+			String query = "SELECT * FROM user WHERE id = ? AND pw = ?";
+			ps=conn.prepareStatement(query);
+			ps.setString(1, id);
+			ps.setString(2, pw);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				return true;
+			}else {
+				return false;
+			}
+			
+		} catch (Exception e) {
+			System.out.println("Login 테스트 실패");
+			e.printStackTrace();
+			return false;
+		} finally {
+			try {
+				conn.close();
+				ps.close();
+				rs.close();
+			} catch (Exception e2) {
+				System.out.println("객체 닫기 실패");
+				e2.printStackTrace();
+			}
+		}
+	}
 }
