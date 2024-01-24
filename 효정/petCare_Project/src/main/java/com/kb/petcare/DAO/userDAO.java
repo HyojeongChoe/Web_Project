@@ -101,4 +101,40 @@ public class userDAO {
 			}
 		}
 	}
+	
+	// 아이디 중복확인
+	public boolean checkDuplicateId(String id) {
+        conn = null;
+        ps = null;
+        rs = null;
+
+        try {
+            conn = ds.getConnection();
+
+            String query = "SELECT id FROM user WHERE id = ?";
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+
+            if(rs.next()) {
+				return true;	// 결과가 있으면 중복
+			} else {
+				return false;
+			}
+        } catch (Exception e) {
+        	System.out.println("아이디 중복확인 실패");
+            e.printStackTrace();
+            return false;
+        } finally {
+			try {
+				conn.close();
+				ps.close();
+				rs.close();
+			} catch (Exception e2) {
+				System.out.println("객체 닫기 실패");
+				e2.printStackTrace();
+			}
+		}
+    }
+	
 }

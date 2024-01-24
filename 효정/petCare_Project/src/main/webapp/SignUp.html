@@ -45,7 +45,8 @@ body {
 					</div> <!--title속성: 마우스 커서 올리면 사용자에게 추가정보 알려줌 -->
 					<div class="join-write" title="(영문소문자와 숫자, 4~16자)">
 						<input type="text" id="id" name="id" placeholder="" minlength="4"
-							maxlength="16" oninput="checkId()" />
+							maxlength="16" oninput="checkId()" /> 
+						<input type="button" onclick="checkDuplicateId()" value="중복확인"><br>
 						<div id="idError" class="error-message"></div>
 					</div>
 				</li>

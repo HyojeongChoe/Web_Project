@@ -11,7 +11,6 @@ import com.kb.petcare.DTO.userDTO;
 
 public class userServiceLogin implements userService {
 
-	@Override
 	public ArrayList<userDTO> execute(HttpServletRequest request, HttpServletResponse response) {
 		ArrayList<userDTO> dto = null;
 
@@ -27,6 +26,7 @@ public class userServiceLogin implements userService {
 				// 사용자 ID를 세션에 저장합니다.
 				HttpSession session = request.getSession();
 				session.setAttribute("loggedInUserId", id);
+
 				response.sendRedirect("index.html");
 			} catch (Exception e) {
 				e.printStackTrace();

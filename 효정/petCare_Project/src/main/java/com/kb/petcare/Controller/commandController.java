@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.kb.petcare.Command.userService;
+import com.kb.petcare.Command.userServiceCheckDuplicateId;
 import com.kb.petcare.Command.userServiceLogin;
 import com.kb.petcare.Command.userServiceSignUp;
 import com.kb.petcare.DTO.userDTO;
@@ -56,6 +57,7 @@ public class commandController extends HttpServlet {
 		String command = uri.substring(conPath.length()); // insert.do, delete.do ... 형식으로 command에 저장
 
 		userService uService = null; // 객체생성
+		
 		if (command.equals("/signup.do")) {
 			System.out.println("<회원가입>을 수행합니다.");
 			uService = new userServiceSignUp();
@@ -66,8 +68,6 @@ public class commandController extends HttpServlet {
 			System.out.println("<로그인 테스트> 수행");
 			uService = new userServiceLogin();
 			uService.execute(request, response);
-			
-
 
 	        // 로그인 후 세션에 저장된 사용자 ID 확인
 	        HttpSession session = request.getSession();
@@ -76,9 +76,15 @@ public class commandController extends HttpServlet {
 	            System.out.println("로그인한 사용자 ID: " + loggedInUserId);
 	        } else {
 	            System.out.println("로그인한 사용자 ID가 세션에 없습니다.");
-	        }
-			
+	        }			
 		}
+		else if (command.equals("/checkDuplicateId.do")) {
+			System.out.println("<아이디 중복확인> 수행");
+			uService = new userServiceCheckDuplicateId();
+			uService.execute(request, response);
+		}
+		
+		
 		// ArrayList<userDTO> result = uService.execute(request, response);
 	}
 
