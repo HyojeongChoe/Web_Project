@@ -107,6 +107,7 @@ function checkId() {
 
 	// 아이디가 비어있는지 검사
 	if (!idInput.value.trim()) {
+		idError.style.color = "red";
 		idError.innerText = "아이디를 입력하세요.";
 		return;
 	}
@@ -115,6 +116,7 @@ function checkId() {
 	let regex = /^(?=.*[a-z])(?=.*\d)[a-z\d]{4,}$/;
 
 	if (!regex.test(idInput.value)) {
+		idError.style.color = "red";
 		idError.innerText = "아이디는 영문 소문자와 숫자를 조합하여 4글자 이상이어야 합니다.";
 	} else {
 		idError.innerText = "";
@@ -128,6 +130,7 @@ function checkDuplicateId() {
 
     // 아이디가 비어있는지 확인
     if (!idInput.value.trim()) {
+		idError.style.color = "red";
         idError.innerText = "아이디를 입력하세요.";
         return;
     }
@@ -146,6 +149,7 @@ function checkDuplicateId() {
         })
         .catch(error => {
             console.error("Error checking duplicate id:", error);
+            idError.style.color = "red";
             idError.innerText = "아이디 중복 확인 중 오류가 발생했습니다.";
         });
 }
