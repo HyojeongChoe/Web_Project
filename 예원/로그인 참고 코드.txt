@@ -1,0 +1,139 @@
+========== ========== 고보문고 로그인 전 ========== ==========
+<div class="customer_service_box">
+		<ul class="customer_service_list">
+			<li class="customer_service_item" style=""><a href="https://mmbr.kyobobook.co.kr/join" class="util_link"
+					onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '회원가입', '');">회원가입</a></li>
+			<li class="customer_service_item" style=""><a class="util_link"
+					onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '로그인', '');" href="#" data-role="login">로그인</a>
+			</li>
+			<li class="customer_service_item member_benefit"> <button type="button" class="btn_member_benefit"
+					onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '회원혜택', '');"><span
+						class="text">회원혜택</span></button>
+				<ul class="member_benefit_list">
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '교보북클럽', '');">교보북클럽</a></li>
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit/grade"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '등급별혜택', '');">등급별 혜택</a></li>
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit/new"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '신규회원혜택', '');">신규회원 혜택</a></li>
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit/discount"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '제휴포인트/상품권', '');">제휴포인트/상품권</a></li>
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit/service"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '참좋은교보문고', '');">참좋은교보문고</a></li>
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit/prestige"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', 'PrestigeLounge', '');">Prestige Lounge</a>
+					</li>
+				</ul>
+			</li>
+			<li class="customer_service_item"><a href="https://www.kyobobook.co.kr/cscenter" class="util_link"
+					onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '고객센터', '');">고객센터</a></li>
+		</ul>
+	</div>
+
+========== ========== 고보문고 로그인 후 ========== ==========
+<div class="customer_service_box">
+		<ul class="customer_service_list">
+
+			<li class="customer_service_item" style=""><a class="util_link"
+					onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '로그인', '');" href="#" data-role="logout">로그아웃</a>
+			</li>
+			<li class="customer_service_item member_benefit"> <button type="button" class="btn_member_benefit"
+					onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '회원혜택', '');"><span
+						class="text">회원혜택</span></button>
+				<ul class="member_benefit_list">
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '교보북클럽', '');">교보북클럽</a></li>
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit/grade"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '등급별혜택', '');">등급별 혜택</a></li>
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit/new"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '신규회원혜택', '');">신규회원 혜택</a></li>
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit/discount"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '제휴포인트/상품권', '');">제휴포인트/상품권</a></li>
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit/service"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '참좋은교보문고', '');">참좋은교보문고</a></li>
+					<li class="member_benefit_item"><a class="member_benefit_link"
+							href="https://mmbr.kyobobook.co.kr/benefit/prestige"
+							onclick="ga360.GA_Event('click_공통_PC', '헤더', '', 'PrestigeLounge', '');">Prestige Lounge</a>
+					</li>
+				</ul>
+			</li>
+			<li class="customer_service_item"><a href="https://www.kyobobook.co.kr/cscenter" class="util_link"
+					onclick="ga360.GA_Event('click_공통_PC', '헤더', '', '고객센터', '');">고객센터</a></li>
+		</ul>
+	</div>
+
+========== ========== 올리브영 로그인 전 ========== ==========
+<div class="top_util">
+		<ul class="menu_list" id="menu_list_header">
+			<li class="join"><a
+					href="javascript:common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: '회원가입'});common.link.moveJoinMember();"
+					data-attr="공통^헤더^회원가입">회원가입</a></li>
+			<li class="login"><a
+					href="javascript:common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: '로그인'});common.link.moveLoginPage();"
+					data-attr="공통^헤더^로그인">로그인</a></li>
+			<li class="cart"><a
+					href="javascript:common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: '장바구니'});common.link.moveCartPage('t_page=홈&amp;t_click=상단헤더&amp;t_header_type=장바구니');"
+					data-attr="공통^헤더^장바구니">장바구니<span id="cartToCnt"></span></a></li>
+
+			<li class="order"><a
+					onclick="common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: '주문배송'})"
+					href="https://www.oliveyoung.co.kr/store/mypage/getOrderList.do?&amp;t_page=홈&amp;t_click=상단헤더&amp;t_header_type=주문배송"
+					data-attr="공통^헤더^주문배송">주문배송</a></li>
+			<li class="customer"><a
+					onclick="common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: '고객센터'})"
+					href="https://www.oliveyoung.co.kr/store/counsel/getFaqList.do?faqLrclCd=99&amp;t_page=홈&amp;t_click=상단헤더&amp;t_header_type=고객센터"
+					data-attr="공통^헤더^고객센터">고객센터</a></li>
+			<li class="store"><a
+					onclick="common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: '매장안내'});sessionStorage.removeItem('storePageIdx');"
+					href="https://www.oliveyoung.co.kr/store/store/getStoreMain.do?t_page=홈&amp;t_click=상단헤더&amp;t_header_type=매장안내"
+					data-attr="공통^헤더^매장안내">매장안내</a></li>
+			<li class="global"><a
+					onclick="common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: 'Global'});"
+					href="http://global.oliveyoung.com" target="_blank" title="올리브영 글로벌 새창으로 열기"
+					data-attr="공통^헤더^Global">Global</a></li>
+		</ul>
+	</div>
+
+========== ========== 올리브영 로그인 후 ========== ==========
+<div class="top_util">
+		<ul class="menu_list" id="menu_list_header">
+			<li class="logout"><strong>BABY OLIVE 신예원</strong> <a href="javascript:common.link.moveLogoutPage('헤더');"
+					data-attr="공통^헤더^로그아웃">로그아웃</a></li>
+			<li class="mypage"><a
+					onclick="common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: '마이페이지'});"
+					href="https://www.oliveyoung.co.kr/store/mypage/myPageMain.do?t_page=홈&amp;t_click=상단헤더&amp;t_header_type=마이페이지"
+					data-attr="공통^헤더^마이페이지">마이페이지</a></li>
+			<li class="cart"><a
+					href="javascript:common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: '장바구니'});common.link.moveCartPage('t_page=홈&amp;t_click=상단헤더&amp;t_header_type=장바구니');"
+					data-attr="공통^헤더^장바구니">장바구니<span id="cartToCnt">(4)</span></a></li>
+
+			<li class="order"><a
+					onclick="common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: '주문배송'})"
+					href="https://www.oliveyoung.co.kr/store/mypage/getOrderList.do?&amp;t_page=홈&amp;t_click=상단헤더&amp;t_header_type=주문배송"
+					data-attr="공통^헤더^주문배송">주문배송</a></li>
+			<li class="customer"><a
+					onclick="common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: '고객센터'})"
+					href="https://www.oliveyoung.co.kr/store/counsel/getFaqList.do?faqLrclCd=99&amp;t_page=홈&amp;t_click=상단헤더&amp;t_header_type=고객센터"
+					data-attr="공통^헤더^고객센터">고객센터</a></li>
+			<li class="store"><a
+					onclick="common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: '매장안내'});sessionStorage.removeItem('storePageIdx');"
+					href="https://www.oliveyoung.co.kr/store/store/getStoreMain.do?t_page=홈&amp;t_click=상단헤더&amp;t_header_type=매장안내"
+					data-attr="공통^헤더^매장안내">매장안내</a></li>
+			<li class="global"><a
+					onclick="common.reqAmplitude('상단헤더 클릭', {entry_source: '홈', click_source: '상단헤더', top_header_type: 'Global'});"
+					href="http://global.oliveyoung.com" target="_blank" title="올리브영 글로벌 새창으로 열기"
+					data-attr="공통^헤더^Global">Global</a></li>
+		</ul>
+	</div>
+
