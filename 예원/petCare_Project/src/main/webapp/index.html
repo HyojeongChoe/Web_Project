@@ -114,7 +114,8 @@
 					</div>
 					<form id=login action="Login.html">
 						<div calss="fh5co-menu-3">
-							<input type="submit" style="background-color: white; border: 0 ;" value="login" />
+							<input type="submit" id="loginButton" style="background-color: white; border: 0 ;"
+								value="login" />
 						</div>
 					</form>
 				</div>
@@ -438,7 +439,23 @@
 			</script>
 			<!-- Main JS -->
 			<script src="js/main.js"></script>
+			
+			<!--<script>
+    // JavaScript 함수 정의
+    function updateLoginButton() {
+        // 세션에 저장된 id 값을 가져옴 (세션에 저장된 값이 있다고 가정)
+        var loggedInUserId = "<%= request.getSession().getAttribute('loggedInUserId') %>";
 
+        // id가 존재하면(로그인이 성공한 경우)
+        if (loggedInUserId) {
+            // 로그인 버튼의 value를 "Logout"으로 변경
+            document.getElementById("loginButton").value = "Logout";
+        }
+    }
+    // 페이지 로드 시 updateLoginButton 함수 호출
+    window.onload = updateLoginButton;
+    
+</script>-->
 </body>
 
 </html>

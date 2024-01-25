@@ -14,7 +14,6 @@ public class userDAO {
 	private Statement st = null;
 	private ResultSet rs = null;
 	private PreparedStatement ps = null;
-
 	private DataSource ds = null;
 
 	//생성자
@@ -66,4 +65,115 @@ public class userDAO {
             }
         }
     }
+	//로그인
+	public boolean userLogin(String id, String pw) {
+		conn = null;
+		ps = null;
+		rs = null;
+		
+		try {
+			conn = ds.getConnection();
+			
+			String query = "SELECT * FROM user WHERE id = ? AND pw = ?";
+			ps=conn.prepareStatement(query);
+			ps.setString(1, id);
+			ps.setString(2, pw);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				return true;
+			}else {
+				return false;
+			}
+			
+		} catch (Exception e) {
+			System.out.println("Login 테스트 실패");
+			e.printStackTrace();
+			return false;
+		} finally {
+			try {
+				conn.close();
+				ps.close();
+				rs.close();
+			} catch (Exception e2) {
+				System.out.println("객체 닫기 실패");
+				e2.printStackTrace();
+			}
+		}
+	}
+	
+	// 아이디 중복확인
+	public boolean checkDuplicateId(String id) {
+        conn = null;
+        ps = null;
+        rs = null;
+
+        try {
+            conn = ds.getConnection();
+
+            String query = "SELECT id FROM user WHERE id = ?";
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+
+            if(rs.next()) {
+				return true;	// 결과가 있으면 중복
+			} else {
+				return false;
+			}
+        } catch (Exception e) {
+        	System.out.println("아이디 중복확인 실패");
+            e.printStackTrace();
+            return false;
+        } finally {
+			try {
+				conn.close();
+				ps.close();
+				rs.close();
+			} catch (Exception e2) {
+				System.out.println("객체 닫기 실패");
+				e2.printStackTrace();
+			}
+		}
+    }
+	
+	// 아이디 찾기
+	public String findId(String name, String birth, String mobile) {
+	    conn = null;
+	    ps = null;
+	    rs = null;
+
+	    try {
+	        conn = ds.getConnection();
+
+	        String query = "SELECT id FROM user WHERE name = ? AND birth = ? AND mobile = ?";
+	        ps = conn.prepareStatement(query);
+	        ps.setString(1, name);
+	        ps.setString(2, birth);
+	        ps.setString(3, mobile);
+	        rs = ps.executeQuery();
+
+	        if (rs.next()) {
+	            return rs.getString("id"); // 일치하는 아이디 반환
+	        } else {
+	            return null; // 일치하는 데이터 없을 경우
+	        }
+	    } catch (Exception e) {
+	        System.out.println("아이디 찾기 실패");
+	        e.printStackTrace();
+	        return null;
+	    } finally {
+	        // try-with-resources를 사용하면 자동으로 close() 호출을 처리할 수 있습니다.
+	        try {
+	            if (conn != null) conn.close();
+	            if (ps != null) ps.close();
+	            if (rs != null) rs.close();
+	        } catch (Exception e2) {
+	            System.out.println("객체 닫기 실패");
+	            e2.printStackTrace();
+	        }
+	    }
+	}
+	
+	
 }

@@ -160,9 +160,11 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      
+      <Context docBase="240117_RE" path="/240117_RE" reloadable="true" source="org.eclipse.jst.jee.server:240117_RE">
+		<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" name="jdbc/mysql" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/apidb" username="root"/>
+	  </Context>
       <Context docBase="petCare_Project" path="/petCare_Project" reloadable="true" source="org.eclipse.jst.jee.server:petCare_Project">
-      <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" name="jdbc/mysql" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/apidb" username="root"/>
+      <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" name="jdbc/mysql" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/apidb" username="root"/>
       </Context>
       </Host>
     </Engine>
