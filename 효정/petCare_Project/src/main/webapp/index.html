@@ -112,11 +112,10 @@
 						<a href="#" data-nav-section="features">Features</a>
 						<a href="#" data-nav-section="reservation">Reservation</a>
 					</div>
-					<div class ="fh5co-menu-3">
+					<div class="fh5co-menu-3">
 						<!-- 로그인 버튼 -->
-						<a href="javascript:void(0);" id="loginButton" onclick="handleLoginButtonClick()">
-							<span id="loginText">Login</span>
-						</a>
+						<a href="#" id="loginButton" style="background-color: white; border: 0;"
+							onclick="openLoginPage()">Login</a>
 					</div>
 					<!--<form id="login" action="Login.html">
 						<div calss="fh5co-menu-3">
@@ -418,13 +417,18 @@
 		</div>
 	</div>
 
+	<script>
+		function openLoginPage() {
+			window.location.href = "Login.html";
+		}
+	</script>
 
 
 
 
 
 	<!-- jQuery -->
-	<script src="js/login.js" ></script>
+	<script src="js/login.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>

@@ -20,26 +20,33 @@
 				</div>
 				<div class="inputBox" id="input_pw">
 					<img src="images/free-icon-lock-6421881.png" id="input_pw_icon">
-					<input type="password" id="user_pw" name="pw" class="inputTypeText"
-						placeholder="비밀번호를 입력하세요.">
+					<input type="password" id="user_pw" name="pw" class="inputTypeText" placeholder="비밀번호를 입력하세요.">
 				</div>
 				<div class="inputBox" id="normalLogin_login">
 					<input type="submit" id="login_button" name="login_button" value="LOGIN">
 				</div>
-				<a target="_blank" href="#" id="signup" onclick="openSignUpPage()">회원가입</a>
+				<a href="#" id="signup" onclick="openPage('SignUp.html')">회원가입</a>
 				<label id="line1"></label>
-				<a target="_blank" href="" id="find_id">아이디 찾기</a>
+				<!-- 아이디/비밀번호 찾기 새페이지로 이동, 페이지url 바꿔야함-->
+				<a href="#" id="find_id" onclick="openPage('FindId.html',true)">아이디 찾기</a>
 				<label id="line2"></label>
-				<a target="_blank" href="" id="find_pw">비밀번호 찾기</a>
+				<a href="#" id="find_pw" onclick="openPage('FindPassword.html', true)">비밀번호 찾기</a>
 			</form>
 		</div>
 	</div>
-<script>
-	function openSignUpPage(){
-		//현재 창에서 SignUp.html로 이동
-		window.location.href="SignUp.html"
-	}
-</script>
+	<script>
+		function openPage(pageUrl, newTab) {
+			if (pageUrl) {
+				if (newTab) {
+					// 새 창에서 열기
+					window.open(pageUrl, '_blank');
+				} else {
+					// 현재 창에서 이동
+					window.location.href = pageUrl;
+				}
+			}
+		}
+	</script>
 </body>
 
 </html>
