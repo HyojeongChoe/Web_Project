@@ -5,22 +5,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 public class sessionManager {
+    public static void setLoggedInUserId(HttpServletRequest request, String userId) {
+        HttpSession session = request.getSession();
+        System.out.println("Setting loggedInUserId: " + userId);
+        session.setAttribute("loggedInUserId", userId);
+    }
 
-	// 세션에 속성 추가
-	public static void setSessionAttribute(HttpServletRequest request, String attributeName, Object attributeValue) {
-		HttpSession session = request.getSession();
-		session.setAttribute(attributeName, attributeValue);
-	}
+    public static String getLoggedInUserId(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String userId = (String) session.getAttribute("loggedInUserId");
+        System.out.println("Getting loggedInUserId: " + userId);
+        return userId;
+    }
 
-	// 세션에서 속성 가져오기
-	public static Object getSessionAttribute(HttpServletRequest request, String attributeName) {
-		HttpSession session = request.getSession();
-		return session.getAttribute(attributeName);
-	}
-
-	// 세션에서 속성 삭제
-	public static void removeSessionAttribute(HttpServletRequest request, String attributeName) {
-		HttpSession session = request.getSession();
-		session.removeAttribute(attributeName);
-	}
+    public static void invalidateSession(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        System.out.println("Invalidating session");
+        session.invalidate();
+    }
 }

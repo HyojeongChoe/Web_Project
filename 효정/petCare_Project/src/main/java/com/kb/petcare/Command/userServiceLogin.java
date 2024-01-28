@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import com.kb.petcare.DAO.userDAO;
 import com.kb.petcare.DTO.userDTO;
+import com.kb.petcare.Session.sessionManager;
 
 public class userServiceLogin implements userService {
 
@@ -20,13 +21,14 @@ public class userServiceLogin implements userService {
 		boolean tf = dao.userLogin(id, pw);
 
 		System.out.println("로그인 테스트 결과: ");
-		if (tf == true) {
+		if (tf) { // tf==true
 			try {
 				System.out.println("성공");
 				// 사용자 ID를 세션에 저장합니다.
-				HttpSession session = request.getSession();
-				session.setAttribute("loggedInUserId", id);
-
+				sessionManager.setLoggedInUserId(request, id);
+				// 디버깅용으로 세션에 저장된 사용자 ID를 콘솔에 출력
+				System.out.println("로그인한 사용자 ID: " + id);
+				// 세션 조작 코드를 실행한 후에 리다이렉트를 수행합니다.
 				response.sendRedirect("index.html");
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -35,6 +37,7 @@ public class userServiceLogin implements userService {
 			System.out.println("실패");
 			System.out.println("로그인 세션 저장 실패");
 			try {
+				// 실패 시 리다이렉트
 				response.sendRedirect("Login.html");
 			} catch (Exception e) {
 				e.printStackTrace();
