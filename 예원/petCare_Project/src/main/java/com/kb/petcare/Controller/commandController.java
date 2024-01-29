@@ -3,6 +3,7 @@ package com.kb.petcare.Controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.kb.petcare.Command.userService;
 import com.kb.petcare.Command.userServiceCheckDuplicateId;
 import com.kb.petcare.Command.userServiceFindId;
+import com.kb.petcare.Command.userServiceFindPw;
 import com.kb.petcare.Command.userServiceLogin;
 import com.kb.petcare.Command.userServiceSignUp;
 import com.kb.petcare.DTO.userDTO;
@@ -88,7 +90,16 @@ public class commandController extends HttpServlet {
 		    System.out.println("<아이디 찾기> 수행");
 		    uService = new userServiceFindId();
 		    uService.execute(request, response);
-		    
+		    		    
+		    RequestDispatcher rd = request.getRequestDispatcher("/FindGetId.jsp");
+		    rd.forward(request, response);
+		}
+		else if (command.equals("/findPw.do")) {
+		    System.out.println("<비밀번호 찾기> 수행");
+		    uService = new userServiceFindPw();
+		    uService.execute(request, response);
+		    RequestDispatcher rd = request.getRequestDispatcher("/FindGetPw.jsp");
+		    rd.forward(request, response);
 		}
 		
 		

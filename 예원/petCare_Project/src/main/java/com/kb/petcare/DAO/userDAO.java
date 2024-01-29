@@ -7,6 +7,8 @@ import java.sql.Statement;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 public class userDAO {
@@ -138,7 +140,7 @@ public class userDAO {
     }
 	
 	// 아이디 찾기
-	public String findId(String name, String birth, String mobile) {
+	public String findId(String name, String birth, String mobile, HttpServletRequest request, HttpServletResponse response) {
 	    conn = null;
 	    ps = null;
 	    rs = null;
@@ -154,7 +156,10 @@ public class userDAO {
 	        rs = ps.executeQuery();
 
 	        if (rs.next()) {
-	            return rs.getString("id"); // 일치하는 아이디 반환
+	        	String foundId = rs.getString("id");
+	            request.setAttribute("foundId", foundId); // 찾은 아이디를 request 속성에 저장
+	            //response.sendRedirect("FindGetId.jsp");
+	            return foundId; // 일치하는 아이디 반환
 	        } else {
 	            return null; // 일치하는 데이터 없을 경우
 	        }
@@ -163,11 +168,50 @@ public class userDAO {
 	        e.printStackTrace();
 	        return null;
 	    } finally {
-	        // try-with-resources를 사용하면 자동으로 close() 호출을 처리할 수 있습니다.
 	        try {
-	            if (conn != null) conn.close();
-	            if (ps != null) ps.close();
-	            if (rs != null) rs.close();
+	            conn.close();
+	            ps.close();
+	            rs.close();
+	        } catch (Exception e2) {
+	            System.out.println("객체 닫기 실패");
+	            e2.printStackTrace();
+	        }
+	    }
+	}
+	
+	// 비밀번호 찾기
+	public boolean findPw(String id, String name, String birth, String mobile, HttpServletRequest request, HttpServletResponse response) {
+	    conn = null;
+	    ps = null;
+	    rs = null;
+
+	    try {
+	        conn = ds.getConnection();
+
+	        String query = "SELECT pw FROM user WHERE id = ? AND name = ? AND birth = ? AND mobile = ?";
+	        ps = conn.prepareStatement(query);
+	        ps.setString(1, id);
+	        ps.setString(2, name);
+	        ps.setString(3, birth);
+	        ps.setString(4, mobile);
+	        rs = ps.executeQuery();
+
+	        if(rs.next()) {
+	        	String foundPw = rs.getString("pw");
+	            request.setAttribute("foundPw", foundPw);
+				return true;	// 결과가 있으면 비밀번호 찾기 성공
+			} else {
+				return false;
+			}
+	    } catch (Exception e) {
+	        System.out.println("비밀번호 찾기 실패");
+	        e.printStackTrace();
+	        return false;
+	    } finally {
+	        try {
+	            conn.close();
+	            ps.close();
+	            rs.close();
 	        } catch (Exception e2) {
 	            System.out.println("객체 닫기 실패");
 	            e2.printStackTrace();
