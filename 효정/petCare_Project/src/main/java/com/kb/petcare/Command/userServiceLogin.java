@@ -2,6 +2,7 @@ package com.kb.petcare.Command;
 
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,10 +27,10 @@ public class userServiceLogin implements userService {
 				System.out.println("성공");
 				// 사용자 ID를 세션에 저장합니다.
 				sessionManager.setLoggedInUserId(request, id);
-				// 디버깅용으로 세션에 저장된 사용자 ID를 콘솔에 출력
-				System.out.println("로그인한 사용자 ID: " + id);
 				// 세션 조작 코드를 실행한 후에 리다이렉트를 수행합니다.
-				response.sendRedirect("index.html");
+				response.sendRedirect("index.jsp");
+//				RequestDispatcher dispatcher = request.getRequestDispatcher("index.html");
+//				dispatcher.forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -38,7 +39,9 @@ public class userServiceLogin implements userService {
 			System.out.println("로그인 세션 저장 실패");
 			try {
 				// 실패 시 리다이렉트
-				response.sendRedirect("Login.html");
+				response.sendRedirect("Login.jsp");
+//				RequestDispatcher dispatcher = request.getRequestDispatcher("Login.html");
+//				dispatcher.forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.kb.petcare.Command.userService;
 import com.kb.petcare.Command.userServiceCheckDuplicateId;
 import com.kb.petcare.Command.userServiceLogin;
+import com.kb.petcare.Command.userServiceLogout;
 import com.kb.petcare.Command.userServiceSignUp;
 import com.kb.petcare.DTO.userDTO;
 
@@ -61,12 +62,15 @@ public class commandController extends HttpServlet {
 		if (command.equals("/signup.do")) {
 			System.out.println("<회원가입>을 수행합니다.");
 			uService = new userServiceSignUp();
-			response.sendRedirect("Login.html"); // 회원가입 성공하면 로그인 페이지로 가기
+			response.sendRedirect("Login.jsp"); // 회원가입 성공하면 로그인 페이지로 가기
 
 		} else if (command.equals("/login.do")) {
 			System.out.println("<로그인 테스트> 수행");
 			uService = new userServiceLogin();
-		} else if (command.equals("/checkDuplicateId.do")) {
+		} else if (command.equals("/logout.do")) {
+			System.out.println("<로그아웃 테스트> 수행");
+			uService = new userServiceLogout();
+		}else if (command.equals("/checkDuplicateId.do")) {
 			System.out.println("<아이디 중복확인> 수행");
 			uService = new userServiceCheckDuplicateId();
 		}

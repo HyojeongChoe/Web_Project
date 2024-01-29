@@ -2,12 +2,12 @@
 
 body {
 	margin: 0px;
-	height: 140vh;
+	height: 160vh;
 }
 
 .form_join {
 	display: flex;
-	height: 130vh;
+	height: 160vh;
 	/* 추가된 부분 */
 	justify-content: center;
 	align-items: center;
