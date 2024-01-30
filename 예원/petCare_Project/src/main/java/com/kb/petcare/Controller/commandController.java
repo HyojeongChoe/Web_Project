@@ -16,6 +16,7 @@ import com.kb.petcare.Command.userServiceCheckDuplicateId;
 import com.kb.petcare.Command.userServiceFindId;
 import com.kb.petcare.Command.userServiceFindPw;
 import com.kb.petcare.Command.userServiceLogin;
+import com.kb.petcare.Command.userServiceLogout;
 import com.kb.petcare.Command.userServiceSignUp;
 import com.kb.petcare.DTO.userDTO;
 
@@ -60,49 +61,33 @@ public class commandController extends HttpServlet {
 		String command = uri.substring(conPath.length()); // insert.do, delete.do ... 형식으로 command에 저장
 
 		userService uService = null; // 객체생성
-		
+
 		if (command.equals("/signup.do")) {
 			System.out.println("<회원가입>을 수행합니다.");
 			uService = new userServiceSignUp();
-			uService.execute(request, response);
-			response.sendRedirect("Login.html"); // 회원가입 성공하면 로그인 페이지로 가기
-			
+			response.sendRedirect("Login.jsp"); // 회원가입 성공하면 로그인 페이지로 가기
+
 		} else if (command.equals("/login.do")) {
 			System.out.println("<로그인 테스트> 수행");
 			uService = new userServiceLogin();
-			uService.execute(request, response);
-
-	        // 로그인 후 세션에 저장된 사용자 ID 확인
-	        HttpSession session = request.getSession();
-	        String loggedInUserId = (String) session.getAttribute("loggedInUserId");
-	        if (loggedInUserId != null) {
-	            System.out.println("로그인한 사용자 ID: " + loggedInUserId);
-	        } else {
-	            System.out.println("로그인한 사용자 ID가 세션에 없습니다.");
-	        }			
-		}
-		else if (command.equals("/checkDuplicateId.do")) {
+		} else if (command.equals("/logout.do")) {
+			System.out.println("<로그아웃 테스트> 수행");
+			uService = new userServiceLogout();
+		}else if (command.equals("/checkDuplicateId.do")) {
 			System.out.println("<아이디 중복확인> 수행");
 			uService = new userServiceCheckDuplicateId();
-			uService.execute(request, response);
 		}
 		else if (command.equals("/findId.do")) {
 		    System.out.println("<아이디 찾기> 수행");
 		    uService = new userServiceFindId();
-		    uService.execute(request, response);
-		    		    
-		    RequestDispatcher rd = request.getRequestDispatcher("/FindGetId.jsp");
-		    rd.forward(request, response);
 		}
 		else if (command.equals("/findPw.do")) {
 		    System.out.println("<비밀번호 찾기> 수행");
-		    uService = new userServiceFindPw();
-		    uService.execute(request, response);
-		    RequestDispatcher rd = request.getRequestDispatcher("/FindGetPw.jsp");
-		    rd.forward(request, response);
+		    uService = new userServiceFindPw();  
 		}
 		
-		
+		uService.execute(request, response);
+
 		// ArrayList<userDTO> result = uService.execute(request, response);
 	}
 

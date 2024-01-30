@@ -1,3 +1,7 @@
+function goToIndex() {
+	window.location.href = "index.jsp";
+}
+
 function sample6_execDaumPostcode() {
 	new daum.Postcode(
 		{
@@ -125,33 +129,34 @@ function checkId() {
 
 // id 중복 확인 검사
 function checkDuplicateId() {
-    let idInput = document.getElementById("id");
-    let idError = document.getElementById("idError");
+	let idInput = document.getElementById("id");
+	let idError = document.getElementById("idError");
+	
 
-    // 아이디가 비어있는지 확인
-    if (!idInput.value.trim()) {
+	// 아이디가 비어있는지 확인
+	if (!idInput.value.trim()) {
 		idError.style.color = "red";
-        idError.innerText = "아이디를 입력하세요.";
-        return;
-    }
+		idError.innerText = "아이디를 입력하세요.";
+		return;
+	}
 
-    // 서버로 중복 확인 요청
-    fetch("checkDuplicateId.do?id=" + idInput.value)
-        .then(response => response.json())
-        .then(data => {
-            if (data.duplicate) {
+	// 서버로 중복 확인 요청
+	fetch("checkDuplicateId.do?id=" + idInput.value)
+		.then(response => response.json())
+		.then(data => {
+			if (data.duplicate) {
 				idError.style.color = "red";
-                idError.innerText = "이미 사용 중인 아이디입니다.";
-            } else {
+				idError.innerText = "이미 사용 중인 아이디입니다.";
+			} else {
 				idError.style.color = "blue";
-                idError.innerText = "사용 가능한 아이디입니다.";
-            }
-        })
-        .catch(error => {
-            console.error("Error checking duplicate id:", error);
-            idError.style.color = "red";
-            idError.innerText = "아이디 중복 확인 중 오류가 발생했습니다.";
-        });
+				idError.innerText = "사용 가능한 아이디입니다.";
+			}
+		})
+		.catch(error => {
+			console.error("Error checking duplicate id:", error);
+			idError.style.color = "red";
+			idError.innerText = "아이디 중복 확인 중 오류가 발생했습니다.";
+		});
 }
 
 // 비밀번호 유효성 검사 함수
