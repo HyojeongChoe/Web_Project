@@ -1,0 +1,103 @@
+/* Desktop - 1 */
+
+#myupdate{
+position: relative;
+width: 1420px;
+height: 800px;
+
+background: #FFFFFF;
+}
+
+
+/* free-icon-dog-3843277 */
+
+#image{
+position: absolute;
+width: 90px;
+height: 90px;
+left: 905px;
+top: 80px;
+
+background: url(free-icon-dog-3843277.png);
+}
+
+/* 회원가입폼 라인 */
+
+#line{
+position: absolute;
+width: 800px;
+height: 0px;
+left: 559.5px;
+top: 202px;
+
+border: 1px solid #000000;
+}
+
+/* Frame 1 */
+
+#input_pw{
+box-sizing: border-box;
+
+position: absolute;
+width: 340px;
+height: 50px;
+left: 800px;
+top: 300px;
+
+font-size: 15px;
+background: #F4F5F7;
+border: 3px solid #000000;
+border-radius: 5px;
+} 
+
+#input_pw::placeholder{
+    font-size: 15px;
+}
+/* Vector */
+
+#lock{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 800px;
+    top : 310px;
+
+    background: #000000;
+    opacity: 0.4;
+
+    background: url(free-icon-lock-6421881.png);
+    }
+
+/* 회원가입 박스 */
+
+#submit{
+box-sizing: border-box;
+
+position: absolute;
+width: 120px;
+height: 40px;
+left: 820px;
+top: 400px;
+
+background: #D9D9D9;
+border: 3px solid #000000;
+border-radius: 5px;
+}
+
+/* 취소 버튼 */
+
+#cancel{
+box-sizing: border-box;
+
+position: absolute;
+width: 120px;
+height: 40px;
+left: 1000px;
+top: 400px;
+
+background: #D9D9D9;
+border: 3px solid #000000;
+border-radius: 5px;
+
+color: #000000;
+}
