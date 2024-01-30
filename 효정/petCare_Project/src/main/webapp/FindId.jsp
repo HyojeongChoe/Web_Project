@@ -48,9 +48,7 @@
 			<div class="inputBox" id="findIdButton">
 				<input type="submit" id = "submit" value="확인">
 			</div>
-						
 		</form>
 	</div>
-
 </body>
 </html>
