@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.kb.petcare.Command.userService;
 import com.kb.petcare.Command.userServiceCheckDuplicateId;
 import com.kb.petcare.Command.userServiceFindId;
+import com.kb.petcare.Command.userServiceFindPw;
 import com.kb.petcare.Command.userServiceLogin;
 import com.kb.petcare.Command.userServiceLogout;
 import com.kb.petcare.Command.userServiceSignUp;
@@ -79,10 +80,10 @@ public class commandController extends HttpServlet {
 		else if (command.equals("/findId.do")) {
 		    System.out.println("<아이디 찾기> 수행");
 		    uService = new userServiceFindId();
-		    uService.execute(request, response);
-		    		    
-		    RequestDispatcher rd = request.getRequestDispatcher("/FindGetId.jsp");
-		    rd.forward(request, response);
+		}
+		else if (command.equals("/findPw.do")) {
+		    System.out.println("<비밀번호 찾기> 수행");
+		    uService = new userServiceFindPw();  
 		}
 		uService.execute(request, response);
 

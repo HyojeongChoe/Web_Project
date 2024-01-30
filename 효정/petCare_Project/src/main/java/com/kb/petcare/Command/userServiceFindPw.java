@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 import com.kb.petcare.DAO.userDAO;
 import com.kb.petcare.DTO.userDTO;
 
-public class userServiceFindId implements userService {
+public class userServiceFindPw implements userService {
 	@Override
     public ArrayList<userDTO> execute(HttpServletRequest request, HttpServletResponse response) {
         ArrayList<userDTO> dto = new ArrayList<>();
 
         // 입력 값 받아오기
+        String id = request.getParameter("id");
         String name = request.getParameter("name");
         String birth = request.getParameter("birth");        
         String mobile1 = request.getParameter("mobile1");
@@ -22,16 +23,15 @@ public class userServiceFindId implements userService {
 		String mobile3 = request.getParameter("mobile3");
 		String mobile = mobile1 + mobile2 + mobile3;	
 
-		// DAO에 있는 findId 메소드를 사용하여 아이디 찾기
+		// DAO에 있는 findPw 메소드를 사용하여 비밀번호 찾기
         userDAO dao = new userDAO();
-        String foundId = dao.findId(name, birth, mobile, request, response);
+        String foundPw = dao.findPw(id, name, birth, mobile, request, response);
         
         try {
         	response.setContentType("text/html;charset=UTF-8");
-            PrintWriter out = response.getWriter();
-            //out.println("<script>alert('회원님의 아이디는 " + foundId + "입니다.');</script>");
+            PrintWriter out = response.getWriter();            
             out.println("<script>");
-            out.println("alert('회원님의 아이디는 " + foundId + "입니다.');");
+            out.println("alert('회원님의 비밀번호는 " + foundPw + "입니다.');");
             out.println("window.close();");
             out.println("</script>");
         
@@ -40,10 +40,10 @@ public class userServiceFindId implements userService {
         }        
         
         // 디버깅
-        System.out.println("아이디 찾기 결과: ");
-        if (foundId != null) {
+        System.out.println("비밀번호 찾기 결과: ");
+        if (foundPw != null) {
             try {
-                System.out.println("성공: " + foundId);
+                System.out.println("성공: " + foundPw);
             } catch (Exception e) {
                 e.printStackTrace();
             }

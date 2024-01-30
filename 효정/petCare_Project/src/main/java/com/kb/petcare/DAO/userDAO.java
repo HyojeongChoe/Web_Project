@@ -188,4 +188,45 @@ public class userDAO {
 		}
 	}
 
+	// 비밀번호 찾기
+	public String findPw(String id, String name, String birth, String mobile, HttpServletRequest request,
+			HttpServletResponse response) {
+		conn = null;
+		ps = null;
+		rs = null;
+
+		try {
+			conn = ds.getConnection();
+
+			String query = "SELECT pw FROM user WHERE id = ? AND name = ? AND birth = ? AND mobile = ?";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, id);
+			ps.setString(2, name);
+			ps.setString(3, birth);
+			ps.setString(4, mobile);
+			rs = ps.executeQuery();
+
+			if (rs.next()) {
+				String foundPw = rs.getString("pw");
+				request.setAttribute("foundPw", foundPw); // 찾은 아이디를 request 속성에 저장
+				return foundPw; // 일치하는 비밀번호 반환
+			} else {
+				return null; // 일치하는 데이터 없을 경우
+			}
+		} catch (Exception e) {
+			System.out.println("비밀번호 찾기 실패");
+			e.printStackTrace();
+			return null;
+		} finally {
+			try {
+				conn.close();
+				ps.close();
+				rs.close();
+			} catch (Exception e2) {
+				System.out.println("객체 닫기 실패");
+				e2.printStackTrace();
+			}
+		}
+	}
+
 }

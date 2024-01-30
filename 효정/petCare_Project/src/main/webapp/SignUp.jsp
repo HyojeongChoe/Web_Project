@@ -8,7 +8,7 @@
 <title>회원가입</title>
 
 <link rel="stylesheet" href="css/signup.css">
- <link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 <link
 	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
 	rel='stylesheet' type='text/css'>
@@ -27,35 +27,37 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/index.css">
 <!-- Modernizr JS -->
-<script src="js/modernizr-2.6.2.min.js"></script> 
+<script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body>
-	<div class="js-sticky">
-		<div class="fh5co-main-nav">
-			<div id="header">
-				<div class="top_util">
-					<ul class="menu_list" id="menu_list_header">
-						<li class="join"><a href="#" id="loginButton"
-							style="background-color: white; border: 0;"
-							onclick="openSignUpPage()">SignUp</a></li>
-						<li class="login"><a href="#" id="loginButton"
-							style="background-color: white; border: 0;"
-							onclick="openLoginPage()">Login</a></li>
-					</ul>
+	<div id="fh5co-header">
+		<div class="js-sticky">
+			<div class="fh5co-main-nav">
+				<div id="header">
+					<div class="top_util">
+						<ul class="menu_list" id="menu_list_header">
+							<li class="join"><a href="#" id="loginButton"
+								style="background-color: white; border: 0;"
+								onclick="openSignUpPage()">SignUp</a></li>
+							<li class="login"><a href="#" id="loginButton"
+								style="background-color: white; border: 0;"
+								onclick="openLoginPage()">Login</a></li>
+						</ul>
+					</div>
 				</div>
-			</div>
-			<div class="container-fluid">
-				<div class="fh5co-menu-1">
-					<a href="#" data-nav-section="home">Home</a> <a href="#"
-						data-nav-section="about">About</a>
-				</div>
-				<div class="fh5co-logo">
-					<a href="index.html">foodee</a>
-				</div>
-				<div class="fh5co-menu-2">
-					<a href="#" data-nav-section="features">Features</a> <a href="#"
-						data-nav-section="reservation">Reservation</a>
+				<div class="container-fluid">
+					<div class="fh5co-menu-1">
+						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
+							onclick="goToAbout()">About</a>
+					</div>
+					<div class="fh5co-logo">
+						<a href="#" onclick="goToIndex()">foodee</a>
+					</div>
+					<div class="fh5co-menu-2">
+						<a href="#" onclick="goToFeatures()">Features</a> <a href="#"
+							onclick="goToReservation()">Reservation</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -87,7 +89,7 @@
 						<div class="join_write"
 							title="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)">
 							<input type="password" id="pw" name="pw"
-								placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)" 
+								placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)"
 								maxlength="16" oninput="checkPassword()">
 							<div id="pwError" class="error-message"></div>
 						</div>
@@ -196,11 +198,7 @@
 			</div>
 		</div>
 	</form>
-	<script>
-		function goToIndex() {
-			window.location.href = "index.jsp";
-		}
-	</script>
+
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="js/signup.js"></script>

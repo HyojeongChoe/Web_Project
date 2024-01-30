@@ -33,35 +33,38 @@
 </head>
 
 <body>
-	<div class="js-sticky">
-		<div class="fh5co-main-nav">
-			<div id="header">
-				<div class="top_util">
-					<ul class="menu_list" id="menu_list_header">
-						<li class="join"><a href="#" id="loginButton"
-							style="background-color: white; border: 0;"
-							onclick="openSignUpPage()">SignUp</a></li>
-						<li class="login"><a href="#" id="loginButton"
-							style="background-color: white; border: 0;"
-							onclick="openLoginPage()">Login</a></li>
-					</ul>
+	<div id="fh5co-header">
+		<div class="js-sticky">
+			<div class="fh5co-main-nav">
+				<div id="header">
+					<div class="top_util">
+						<ul class="menu_list" id="menu_list_header">
+							<li class="join"><a href="#" id="loginButton"
+								style="background-color: white; border: 0;"
+								onclick="openSignUpPage()">SignUp</a></li>
+							<li class="login"><a href="#" id="loginButton"
+								style="background-color: white; border: 0;"
+								onclick="openLoginPage()">Login</a></li>
+						</ul>
+					</div>
 				</div>
-			</div>
-			<div class="container-fluid">
-				<div class="fh5co-menu-1">
-					<a href="#" data-nav-section="home">Home</a> <a href="#"
-						data-nav-section="about">About</a>
-				</div>
-				<div class="fh5co-logo">
-					<a href="index.html">foodee</a>
-				</div>
-				<div class="fh5co-menu-2">
-					<a href="#" data-nav-section="features">Features</a> <a href="#"
-						data-nav-section="reservation">Reservation</a>
+				<div class="container-fluid">
+					<div class="fh5co-menu-1">
+						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
+							onclick="goToAbout()">About</a>
+					</div>
+					<div class="fh5co-logo">
+						<a href="#" onclick="goToIndex()">foodee</a>
+					</div>
+					<div class="fh5co-menu-2">
+						<a href="#" onclick="goToFeatures()">Features</a> <a href="#"
+							onclick="goToReservation()">Reservation</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	
 	<div id="desktop-login">
 		<div id="userLogin" class="contents">
 			<img src="images/free-icon-dog-3843277.png" name="image"
@@ -86,10 +89,9 @@
 				<a href="#" id="signup" onclick="openSignUpPage()">회원가입</a> <label
 					id="line1"></label>
 				<!-- 아이디/비밀번호 찾기 새페이지로 이동, 페이지url 바꿔야함-->
-				<a href="#" id="find_id" onclick="openFindIdPage()" target="_blank">아이디 찾기</a> <label
-					id="line2"></label> <a href="#" id="find_pw"
-					onclick="openFindPwPage()" target="_blank">비밀번호
-					찾기</a>
+				<a href="#" id="find_id" onclick="openFindIdPage()" target="_blank">아이디
+					찾기</a> <label id="line2"></label> <a href="#" id="find_pw"
+					onclick="openFindPwPage()" target="_blank">비밀번호 찾기</a>
 			</form>
 		</div>
 	</div>
@@ -118,7 +120,6 @@
 	</script>
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
-
 </body>
 
 </html>
