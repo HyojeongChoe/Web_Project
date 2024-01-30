@@ -17,8 +17,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Foodee &mdash; 100% Free Fully Responsive HTML5 Template
-	by FREEHTML5.co</title>
+<title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 <meta name="keywords"
@@ -68,10 +67,9 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/bootstrap.css">
-
-<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
 
 
 <!-- Modernizr JS -->
@@ -135,7 +133,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 								style="background-color: white; border: 0;"
 								onclick="performLogout()">Logout</a></li>
 							<li class="mypage"><a href="#" id="mypageButton"
-								style="background-color: white; border: 0;">MyPage</a></li>
+								style="background-color: white; border: 0;"
+								onclick="openMyPage1()">MyPage</a></li>
 							<%
 							}
 							%>
@@ -151,7 +150,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						<a href="#" onclick="goToIndex()">foodee</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" onclick="goToFeatures()">Features</a> <a href="#"
+						<a href="#" onclick="goToService()">Service</a> <a href="#"
 							onclick="goToCommunity()">Community</a>
 					</div>
 				</div>

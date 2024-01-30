@@ -25,21 +25,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 <meta name="author" content="FREEHTML5.CO" />
 
-<!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-<!-- Facebook and Twitter integration -->
 <meta property="og:title" content="" />
 <meta property="og:image" content="" />
 <meta property="og:url" content="" />
@@ -68,11 +53,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/bootstrap.css">
-
-<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/index.css">
-
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/service.css">
 
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
@@ -109,7 +93,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 								style="background-color: white; border: 0;"
 								onclick="performLogout()">Logout</a></li>
 							<li class="mypage"><a href="#" id="mypageButton"
-								style="background-color: white; border: 0;">MyPage</a></li>
+								style="background-color: white; border: 0;"
+								onclick="openMyPage1()">MyPage</a></li>
 							<%
 							}
 							%>
@@ -125,17 +110,94 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						<a href="#" onclick="goToIndex()">foodee</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" onclick="goToFeatures()">Features</a> <a href="#"
-							onclick="goToCommunity()">Community</a>
+						<a href="#" onclick="goToService()">Service</a> <a href="#"
+							onclick="goToReservation()">Community</a>
+						<!-- 수정필요. -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 	<div id="fh5co-container">
-		<div id="fh5co-featured" data-section="features">
-			<div class="container">
-				<div class="row text-center fh5co-heading row-padded">
+		<div class="section">
+			<main>
+				<div class="inside">
+					<div class="empty space"></div>
+					<div class="service_menu">
+						<a href="/Reservation.jsp"> <span class="plain_name"
+							data-hover="">케어서비스</span>
+						</a>
+					</div>
+					<div class="empty space"></div>
+
+					<div class="doz_row">
+						<div class="shop_grid">
+							<div class="shop_item"
+								style="padding: 0px 15px; height: auto; width: 341px;">
+								<div class="item_wrap" style="position: relative;">
+									<a href="#" onclick="goToCare()" class="care_service"> <img
+										src="https://cdn.imweb.me/thumbnail/20221027/efaefbde1f633.jpg"
+										style="display: inline;">
+										<div class="item_overlay">
+											<div class="item_pay">
+												<div class="service_detail">
+													<h2>돌봄</h2>
+													<p class="pay inline-blocked" style="">26,000원</p>
+													<div class="ns-icon clearfix">
+														<!--<span class="new bg-brand">NEW</span>-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="shop_item"
+								style="padding: 0px 15px; height: auto; width: 341px;">
+								<div class="item_wrap" style="position: relative;">
+									<a href="#" onclick="goToWalk()" class="work_service"> <img
+										src="https://cdn.imweb.me/thumbnail/20221027/3f1e6e9249fa2.jpg"
+										style="display: inline;">
+										<div class="item_overlay">
+											<div class="item_pay">
+												<div class="service_detail">
+													<h2>산책</h2>
+													<p class="pay inline-blocked" style="">45,000원</p>
+													<div class="ns-icon clearfix">
+														<!--<span class="new bg-brand">NEW</span>-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="shop_item"
+								style="padding: 0px 15px; height: auto; width: 341px;">
+								<div class="item_wrap" style="position: relative;">
+									<a href="#" onclick="goToGrooming()"class="beauty_service"> <img
+										src="https://cdn.imweb.me/thumbnail/20211206/30b255561ebf9.jpg"
+										style="display: inline;">
+										<div class="item_overlay">
+											<div class="item_pay">
+												<div class="service_detail">
+													<h2>미용</h2>
+													<p class="pay inline-blocked" style="">52,000원</p>
+													<div class="ns-icon clearfix"></div>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+	<!-- <div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
 						<h2 class="heading to-animate">Featured Dishes</h2>
 						<p class="sub-heading to-animate">Far far away, behind the
@@ -145,7 +207,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</div>
 				<div class="row">
 					<div class="fh5co-grid">
-						<!--<div class="fh5co-v-half to-animate-2">
+						<div class="fh5co-v-half to-animate-2">
 							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_1.jpg)">
 							</div>
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
@@ -154,7 +216,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 								<p>Far far away, behind the word mountains, far from the countries Vokalia and
 									Consonantia, there live the blind texts.</p>
 							</div>
-						</div>-->
+						</div>
 						<div class="fh5co-v-half">
 							<div class="fh5co-h-row-2 to-animate-2">
 								<div class="fh5co-v-col-2 fh5co-bg-img"
@@ -240,10 +302,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+				</div> -->
 
 	<div id="fh5co-footer">
 		<div class="container">
