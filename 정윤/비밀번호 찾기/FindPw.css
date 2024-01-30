@@ -1,0 +1,311 @@
+@charset "UTF-8";
+
+/* FindPw */
+
+#findPw{
+position: relative;
+width: 620px;
+height: 600px;
+
+background: #FFFFFF;
+}
+
+/* 비밀번호 찾기 */
+
+h3{
+position: absolute;
+width: 200px;
+height: 63px;
+left: 160px;
+margin-top: 15px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 36px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+
+}
+
+
+/* 비밀번호 찾기 라인 */
+
+#line{
+position: absolute;
+width: 400px;
+height: 0px;
+left: 45px;
+top: 75px;
+
+border: 1px solid #000000;
+}
+
+	/* 아이디 */
+	
+#pid{
+	
+position: absolute;
+width: 91px;
+height: 48px;
+left: 40px;
+top: 15px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+}
+
+	/* 아이디 입력창 */
+	
+#id{
+box-sizing: border-box;
+
+position: absolute;
+width: 150px;
+height: 30px;
+left: 55px;
+top: 80px;
+
+padding : 25px;
+font-size : 15px;
+background: #F4F5F7;
+border: 2px solid #000000;
+border-radius: 5px; 
+}
+
+/* 이름 */
+
+#pname{
+position: absolute;
+width: 91px;
+height: 48px;
+left: 40px;
+top: 120px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+}
+
+
+/* 이름 입력창 */
+
+#name{
+box-sizing: border-box;
+
+position: absolute;
+width: 150px;
+height: 30px;
+left: 55px;
+top: 185px;
+
+padding : 25px;
+font-size : 15px;
+background: #F4F5F7;
+border: 2px solid #000000;
+border-radius: 5px; 
+}
+
+/* 생년월일 */
+
+#pbirth{
+position: absolute;
+width: 250px;
+height: 48px;
+margin-left: 40px;
+top: 220px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+
+color: #000000; 
+}
+
+#birth {
+	box-sizing: border-box;
+	width: 140px;
+	height: 40px;
+	margin-left : 50px;
+	margin-top : 265px;
+	
+	font-family: 'Inter';
+	font-style: normal;
+	font-size: 20px;
+	text-align: center;
+	background: #F5F5F5;
+	border: 2px solid #000000;
+	border-radius: 7px;
+}
+
+
+/* 휴대폰 번호 */
+
+#pmobile{
+position: absolute;
+width: 150px;
+height: 48px;
+margin-left: 40px;
+top: 310px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+}
+
+
+/* 휴대폰 번호1 */
+
+#mobile1{
+	
+box-sizing: border-box;
+
+position: absolute;
+width: 65px;
+height: 50px;
+left: 50px;
+top: 380px;
+
+font-size : 15px;
+text-align : center;
+background: #F4F5F7;
+border: 2px solid #000000;
+border-radius: 5px;
+}
+
+
+/* - */
+
+#min1{
+position: absolute;
+width: 45px;
+height: 15px;
+left: 130px;
+top: 390px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 44px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+}
+
+
+/* 휴대폰 번호2 */
+
+#mobile2{
+box-sizing: border-box;
+position: absolute;
+
+width : 80px;
+height: 50px;
+left: 160px;
+top: 380px;
+
+font-size : 15px;
+text-align : center;
+background: #F4F5F7;
+border: 2px solid #000000;
+border-radius: 5px;
+}
+
+/* - */
+
+#min2{
+position: absolute;
+width: 45px;
+height: 15px;
+left: 255px;
+top: 390px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 44px;
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+
+color: #000000;
+}
+
+
+/* 휴대폰 번호3 */
+
+#mobile3{
+box-sizing: border-box;
+
+position: absolute;
+width: 80px;
+height: 50px;
+left: 280px;
+top: 380px;
+
+font-size : 15px;
+text-align : center;
+background: #F4F5F7;
+border: 2px solid #000000;
+border-radius: 5px;
+}
+
+
+/* 확인 버튼 */
+
+#submit{
+box-sizing: border-box;
+
+position: absolute;
+width: 120px;
+height: 40px;
+left: 140px;
+top: 455px;
+
+background: #D9D9D9;
+border: 3px solid #000000;
+border-radius: 5px; 
+}
+
+
+
+
+
+
+
+
+
