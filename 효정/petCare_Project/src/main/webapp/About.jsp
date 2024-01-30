@@ -126,7 +126,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToFeatures()">Features</a> <a href="#"
-							onclick="goToComunity()">Comunity</a>
+							onclick="goToCommunity()">Community</a>
 					</div>
 				</div>
 			</div>
@@ -156,50 +156,46 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</p>
 			</div>
 		</div>
-		<div id="fh5co-sayings">
+
+		<div id="fh5co-type"
+			style="background-image: url(images/slide_3.jpg);"
+			data-stellar-background-ratio="0.5">
+			<div class="fh5co-overlay"></div>
 			<div class="container">
-				<div class="row to-animate">
-
-					<div class="flexslider">
-						<ul class="slides">
-
-							<li>
-								<blockquote>
-									<p>&ldquo;Cooking is an art, but all art requires knowing
-										something about the techniques and materials&rdquo;</p>
-									<p class="quote-author">&mdash; Nathan Myhrvold</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Give a man food, and he can eat for a day. Give a
-										man a job, and he can only eat for 30 minutes on break.&rdquo;</p>
-									<p class="quote-author">&mdash; Lev L. Spiro</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Find something you’re passionate about and keep
-										tremendously interested in it.&rdquo;</p>
-									<p class="quote-author">&mdash; Julia Child</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Never work before breakfast; if you have to work
-										before breakfast, eat your breakfast first.&rdquo;</p>
-									<p class="quote-author">&mdash; Josh Billings</p>
-								</blockquote>
-							</li>
-
-
-						</ul>
+				<div class="row">
+					<div class="col-md-3 to-animate">
+						<div class="fh5co-type">
+							<h3 class="with-icon icon-1">Fruits</h3>
+							<p>Far far away, behind the word mountains, far from the
+								countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
 					</div>
-
+					<div class="col-md-3 to-animate">
+						<div class="fh5co-type">
+							<h3 class="with-icon icon-2">Sea food</h3>
+							<p>Far far away, behind the word mountains, far from the
+								countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+					</div>
+					<div class="col-md-3 to-animate">
+						<div class="fh5co-type">
+							<h3 class="with-icon icon-3">Vegetables</h3>
+							<p>Far far away, behind the word mountains, far from the
+								countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+					</div>
+					<div class="col-md-3 to-animate">
+						<div class="fh5co-type">
+							<h3 class="with-icon icon-4">Meat</h3>
+							<p>Far far away, behind the word mountains, far from the
+								countries Vokalia and Consonantia, there live the blind texts.</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<div id="fh5co-footer">
 		<div class="container">

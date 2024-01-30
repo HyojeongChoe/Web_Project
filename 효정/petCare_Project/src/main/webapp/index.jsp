@@ -86,16 +86,15 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <body>
 	<div id="fh5co-container">
 		<!-- home -->
-		<div id="fh5co-home" class="js-fullheight" data-section="home">
+		<!-- <div id="fh5co-home" class="js-fullheight" data-section="home">
 			<div class="flexslider">
-
 				<div class="fh5co-overlay"></div>
 				<div class="fh5co-text">
 					<div class="container">
 						<div class="row">
-							<h1 class="to-animate">foodee</h1>
+							<h1 class="to-animate">Pet care</h1>
 							<h2 class="to-animate">
-								Lovely Designed <span>by</span> <a href="http://freehtml5.co/"
+								premium service <span>by</span> <a href="http://freehtml5.co/"
 									target="_blank">freehtml5.co</a>
 							</h2>
 						</div>
@@ -110,7 +109,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						data-stellar-background-ratio="0.5"></li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="js-sticky">
 			<div class="fh5co-main-nav">
@@ -152,8 +151,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						<a href="#" onclick="goToIndex()">foodee</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" onclick="goToFeatures()">Features</a> 
-						<a href="#"	onclick="goToComunity()">Comunity</a>
+						<a href="#" onclick="goToFeatures()">Features</a> <a href="#"
+							onclick="goToCommunity()">Community</a>
 					</div>
 				</div>
 			</div>
@@ -335,159 +334,57 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</div>
 		</div>
 
-
-		<div id="fh5co-type"
-			style="background-image: url(images/slide_3.jpg);"
-			data-stellar-background-ratio="0.5">
-			<div class="fh5co-overlay"></div>
+		<div id="fh5co-footer">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-1">Fruits</h3>
-							<p>Far far away, behind the word mountains, far from the
-								countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-2">Sea food</h3>
-							<p>Far far away, behind the word mountains, far from the
-								countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-3">Vegetables</h3>
-							<p>Far far away, behind the word mountains, far from the
-								countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-					<div class="col-md-3 to-animate">
-						<div class="fh5co-type">
-							<h3 class="with-icon icon-4">Meat</h3>
-							<p>Far far away, behind the word mountains, far from the
-								countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="fh5co-contact" data-section="reservation">
-			<div class="container">
-				<div class="row text-center fh5co-heading row-padded">
-					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate">Reserve a Table</h2>
-						<p class="sub-heading to-animate">Far far away, behind the
-							word mountains, far from the countries Vokalia and Consonantia,
-							there live the blind texts.</p>
+				<div class="row row-padded">
+					<div class="col-md-12 text-center">
+						Shared by <i class="fa fa-love"></i><a
+							href="https://bootstrapthemes.co">BootstrapThemes</a>
+						<p class="text-center to-animate">
+							<a href="#" class="js-gotop">Go To Top</a>
+						</p>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6 to-animate-2">
-						<h3>Contact Info</h3>
-						<ul class="fh5co-contact-info">
-							<li class="fh5co-contact-address "><i class="icon-home"></i>
-								5555 Love Paradise 56 New Clity 5655, <br>Excel Tower
-								United Kingdom</li>
-							<li><i class="icon-phone"></i> (123) 465-6789</li>
-							<li><i class="icon-envelope"></i>info@freehtml5.co</li>
-							<li><i class="icon-globe"></i> <a
-								href="http://freehtml5.co/" target="_blank">freehtml5.co</a></li>
+					<div class="col-md-12 text-center">
+						<ul class="fh5co-social">
+							<li class="to-animate-2"><a href="#"><i
+									class="icon-facebook"></i></a></li>
+							<li class="to-animate-2"><a href="#"><i
+									class="icon-twitter"></i></a></li>
+							<li class="to-animate-2"><a href="#"><i
+									class="icon-instagram"></i></a></li>
 						</ul>
 					</div>
-					<div class="col-md-6 to-animate-2">
-						<h3>Reservation Form</h3>
-						<div class="form-group ">
-							<label for="name" class="sr-only">Name</label> <input id="name"
-								class="form-control" placeholder="Name" type="text">
-						</div>
-						<div class="form-group ">
-							<label for="email" class="sr-only">Email</label> <input
-								id="email" class="form-control" placeholder="Email" type="email">
-						</div>
-						<div class="form-group">
-							<label for="occation" class="sr-only">Occation</label> <select
-								class="form-control" id="occation">
-								<option>Select an Occation</option>
-								<option>Wedding Ceremony</option>
-								<option>Birthday</option>
-								<option>Others</option>
-							</select>
-						</div>
-						<div class="form-group ">
-							<label for="date" class="sr-only">Date</label> <input id="date"
-								class="form-control" placeholder="Date &amp; Time" type="text">
-						</div>
-
-
-
-						<div class="form-group ">
-							<label for="message" class="sr-only">Message</label>
-							<textarea name="" id="message" cols="30" rows="5"
-								class="form-control" placeholder="Message"></textarea>
-						</div>
-						<div class="form-group ">
-							<input class="btn btn-primary" value="Send Message" type="submit">
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div id="fh5co-footer">
-		<div class="container">
-			<div class="row row-padded">
-				<div class="col-md-12 text-center">
-					Shared by <i class="fa fa-love"></i><a
-						href="https://bootstrapthemes.co">BootstrapThemes</a>
-					<p class="text-center to-animate">
-						<a href="#" class="js-gotop">Go To Top</a>
-					</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<ul class="fh5co-social">
-						<li class="to-animate-2"><a href="#"><i
-								class="icon-facebook"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i
-								class="icon-twitter"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i
-								class="icon-instagram"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+		<!-- jQuery -->
+		<script src="js/index.js"></script>
+		<script src="js/login.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<!-- jQuery Easing -->
+		<script src="js/jquery.easing.1.3.js"></script>
+		<!-- Bootstrap -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Bootstrap DateTimePicker -->
+		<script src="js/moment.js"></script>
+		<script src="js/bootstrap-datetimepicker.min.js"></script>
+		<!-- Waypoints -->
+		<script src="js/jquery.waypoints.min.js"></script>
+		<!-- Stellar Parallax -->
+		<script src="js/jquery.stellar.min.js"></script>
 
-	<!-- jQuery -->
-	<script src="js/index.js"></script>
-	<script src="js/login.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Bootstrap DateTimePicker -->
-	<script src="js/moment.js"></script>
-	<script src="js/bootstrap-datetimepicker.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Stellar Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
-
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<script>
-		$(function() {
-			$('#date').datetimepicker();
-		});
-	</script>
-	<!-- Main JS -->
-	<script src="js/main.js"></script>
-
+		<!-- Flexslider -->
+		<script src="js/jquery.flexslider-min.js"></script>
+		<script>
+			$(function() {
+				$('#date').datetimepicker();
+			});
+		</script>
+		<!-- Main JS -->
+		<script src="js/main.js"></script>
 </body>
 
 </html>

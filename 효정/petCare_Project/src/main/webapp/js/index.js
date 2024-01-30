@@ -11,8 +11,8 @@ function goToFeatures() {
 	window.location.href = "Features.jsp";
 }
 //Comunity.jsp로
-function goToComunity() {
-	window.location.href = "Comunity.jsp";
+function goToCommunity() {
+	window.location.href = "Community.jsp";
 }
 //Reservation.jsp로
 function goToReservation() {

@@ -181,8 +181,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 								class="form-control" placeholder="Date &amp; Time" type="text">
 						</div>
 
-
-
 						<div class="form-group ">
 							<label for="message" class="sr-only">Message</label>
 							<textarea name="" id="message" cols="30" rows="5"
