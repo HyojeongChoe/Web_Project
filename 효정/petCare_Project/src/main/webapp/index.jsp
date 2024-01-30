@@ -144,8 +144,9 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</div>
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" data-nav-section="home">Home</a> <a href="#"
-							data-nav-section="about">About</a>
+						<a href="#" data-nav-section="home">Home</a> 
+						<a href="#" data-nav-section="about">About</a>
+							
 					</div>
 					<div class="fh5co-logo">
 						<a href="index.jsp">foodee</a>

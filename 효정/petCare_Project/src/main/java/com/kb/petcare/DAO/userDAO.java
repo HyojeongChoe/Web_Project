@@ -7,6 +7,8 @@ import java.sql.Statement;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 public class userDAO {
@@ -133,6 +135,47 @@ public class userDAO {
 			System.out.println("아이디 중복확인 실패");
 			e.printStackTrace();
 			return false;
+		} finally {
+			try {
+				conn.close();
+				ps.close();
+				rs.close();
+			} catch (Exception e2) {
+				System.out.println("객체 닫기 실패");
+				e2.printStackTrace();
+			}
+		}
+	}
+
+	// 아이디 찾기
+	public String findId(String name, String birth, String mobile, HttpServletRequest request,
+			HttpServletResponse response) {
+		conn = null;
+		ps = null;
+		rs = null;
+
+		try {
+			conn = ds.getConnection();
+
+			String query = "SELECT id FROM user WHERE name = ? AND birth = ? AND mobile = ?";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, name);
+			ps.setString(2, birth);
+			ps.setString(3, mobile);
+			rs = ps.executeQuery();
+
+			if (rs.next()) {
+				String foundId = rs.getString("id");
+				request.setAttribute("foundId", foundId); // 찾은 아이디를 request 속성에 저장
+				// response.sendRedirect("FindGetId.jsp");
+				return foundId; // 일치하는 아이디 반환
+			} else {
+				return null; // 일치하는 데이터 없을 경우
+			}
+		} catch (Exception e) {
+			System.out.println("아이디 찾기 실패");
+			e.printStackTrace();
+			return null;
 		} finally {
 			try {
 				conn.close();

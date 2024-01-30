@@ -7,7 +7,7 @@
 }
 
 body {
-	font-family: "Merriweather", serif;
+	font-family: "Inter";
 	font-size: 18px;
 	font-weight: 300;
 	line-height: 2;
@@ -37,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Playfair Display", serif;
+	font-family: "Inter";
 	color: #000;
 }
 
@@ -48,7 +48,7 @@ p {
 .btn {
 	margin-right: 4px;
 	margin-bottom: 4px;
-	font-family: "Playfair Display", serif;
+	font-family: "Inter";
 	font-size: 12px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
@@ -267,7 +267,7 @@ p {
 #fh5co-home .flexslider .fh5co-text h1 {
 	margin: 0;
 	padding: 0;
-	font-family: "Playfair Display", serif;
+	font-family: "Inter";
 	font-size: 300px;
 	font-weight: 700;
 	font-style: italic;
@@ -286,7 +286,7 @@ p {
 #fh5co-home .flexslider .fh5co-text h2 {
 	margin: 0;
 	padding: 0;
-	font-family: "Merriweather", serif;
+	font-family: "Inter";
 	font-weight: 300;
 	font-size: 40px;
 	letter-spacing: 2px;
@@ -303,7 +303,7 @@ p {
 }
 
 #fh5co-home .flexslider .fh5co-text h2 span {
-	font-family: "Playfair Display", serif;
+	font-family: "Inter";
 	font-style: italic;
 	text-transform: none;
 }
@@ -413,7 +413,7 @@ p {
 	text-align: center;
 	width: 19.33%;
 	font-size: 40px;
-	font-family: "Playfair Display", serif;
+	font-family: "Inter";
 	font-weight: 700;
 	font-style: italic;
 }
@@ -543,7 +543,7 @@ p {
 	top: -20px;
 	position: relative;
 	color: #fff;
-	font-family: "Playfair Display", serif;
+	font-family: "Inter";
 }
 
 #fh5co-about .fh5co-bg {

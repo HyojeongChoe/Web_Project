@@ -6,14 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+
 <link rel="stylesheet" href="css/signup.css">
-<link rel="shortcut icon" href="favicon.ico">
+ <link rel="shortcut icon" href="favicon.ico">
 <link
 	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
 	rel='stylesheet' type='text/css'>
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css">
-<!-- Icomoon Icon Fonts-->
+<!-- Icomoon Icon Fonts -->
 <link rel="stylesheet" href="css/icomoon.css">
 <!-- Simple Line Icons -->
 <link rel="stylesheet" href="css/simple-line-icons.css">
@@ -26,7 +27,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/index.css">
 <!-- Modernizr JS -->
-<script src="js/modernizr-2.6.2.min.js"></script>
+<script src="js/modernizr-2.6.2.min.js"></script> 
 </head>
 
 <body>

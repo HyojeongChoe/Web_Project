@@ -3,6 +3,7 @@ package com.kb.petcare.Controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.kb.petcare.Command.userService;
 import com.kb.petcare.Command.userServiceCheckDuplicateId;
+import com.kb.petcare.Command.userServiceFindId;
 import com.kb.petcare.Command.userServiceLogin;
 import com.kb.petcare.Command.userServiceLogout;
 import com.kb.petcare.Command.userServiceSignUp;
@@ -73,6 +75,14 @@ public class commandController extends HttpServlet {
 		}else if (command.equals("/checkDuplicateId.do")) {
 			System.out.println("<아이디 중복확인> 수행");
 			uService = new userServiceCheckDuplicateId();
+		}
+		else if (command.equals("/findId.do")) {
+		    System.out.println("<아이디 찾기> 수행");
+		    uService = new userServiceFindId();
+		    uService.execute(request, response);
+		    		    
+		    RequestDispatcher rd = request.getRequestDispatcher("/FindGetId.jsp");
+		    rd.forward(request, response);
 		}
 		uService.execute(request, response);
 

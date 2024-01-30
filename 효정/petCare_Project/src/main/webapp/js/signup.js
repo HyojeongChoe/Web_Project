@@ -131,6 +131,7 @@ function checkId() {
 function checkDuplicateId() {
 	let idInput = document.getElementById("id");
 	let idError = document.getElementById("idError");
+	
 
 	// 아이디가 비어있는지 확인
 	if (!idInput.value.trim()) {
