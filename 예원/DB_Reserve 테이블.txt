@@ -1,0 +1,17 @@
+use apidb;
+
+CREATE TABLE Reserve(
+	id varchar(50) PRIMARY KEY,
+	mobile varchar(50),
+    date varchar(50),
+	pet varchar(50),
+	service varchar(200),
+	birth varchar(50),
+    time varchar(50),
+    extra_time varchar(50),
+    total_time varchar(50),
+    cost varchar(50)		
+);
+
+SELECT * FROM Reserve;
+TRUNCATE Reserve;
