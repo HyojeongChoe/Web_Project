@@ -1,7 +1,7 @@
 use apidb;
 
 CREATE TABLE Reserve(
-	id varchar(50) PRIMARY KEY,	-- 아이디
+	id varchar(50),				-- 아이디
     service varchar(50),		-- 서비스 종류(돌봄,산책,미용)
     time varchar(50),			-- 돌봄/산책 시간(60분,120분,180분)
     grooming varchar(50),		-- 미용(전체/위생)

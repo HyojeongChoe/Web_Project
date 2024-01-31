@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@ page import="com.kb.petcare.Session.sessionManager"%>
+
+<%
+String loggedInUserId = sessionManager.getLoggedInUserId(request);
+%>
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +15,7 @@
 <title>회원가입</title>
 
 <link rel="stylesheet" href="css/signup.css">
- <link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 <link
 	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
 	rel='stylesheet' type='text/css'>
@@ -23,39 +30,60 @@
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
+<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/index.css">
 <!-- Modernizr JS -->
-<script src="js/modernizr-2.6.2.min.js"></script> 
+<script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body>
-	<div class="js-sticky">
-		<div class="fh5co-main-nav">
-			<div id="header">
-				<div class="top_util">
-					<ul class="menu_list" id="menu_list_header">
-						<li class="join"><a href="#" id="loginButton"
-							style="background-color: white; border: 0;"
-							onclick="openSignUpPage()">SignUp</a></li>
-						<li class="login"><a href="#" id="loginButton"
-							style="background-color: white; border: 0;"
-							onclick="openLoginPage()">Login</a></li>
-					</ul>
+	<div id="fh5co-header">
+		<div class="js-sticky">
+			<div class="fh5co-main-nav">
+				<div id="header">
+					<div class="top_util">
+						<ul class="menu_list" id="menu_list_header">
+							<!-- 세션에 로그인된 사용자 ID가 있는지 확인하고 동적으로 로그인 또는 로그아웃 표시 -->
+							<%
+							if (loggedInUserId == null || loggedInUserId.equals("")) {
+							%>
+							<!-- 로그인 상태가 아닌 경우 -->
+							<li class="join"><a href="#" id="loginButton"
+								style="background-color: white; border: 0;"
+								onclick="openSignUpPage()">SignUp</a></li>
+							<li class="login"><a href="#" id="loginButton"
+								style="background-color: white; border: 0;"
+								onclick="openLoginPage()">Login</a></li>
+							<%
+							} else {
+							%>
+							<!-- 로그인 상태인 경우 -->
+							<li class="logout"><a href="#" id="logoutButton"
+								style="background-color: white; border: 0;"
+								onclick="performLogout()">Logout</a></li>
+							<li class="mypage"><a href="#" id="mypageButton"
+								style="background-color: white; border: 0;"
+								onclick="openMyPage1()">MyPage</a></li>
+							<%
+							}
+							%>
+						</ul>
+					</div>
 				</div>
-			</div>
-			<div class="container-fluid">
-				<div class="fh5co-menu-1">
-					<a href="#" data-nav-section="home">Home</a> <a href="#"
-						data-nav-section="about">About</a>
-				</div>
-				<div class="fh5co-logo">
-					<a href="index.html">foodee</a>
-				</div>
-				<div class="fh5co-menu-2">
-					<a href="#" data-nav-section="features">Features</a> <a href="#"
-						data-nav-section="reservation">Reservation</a>
+				<div class="container-fluid">
+					<div class="fh5co-menu-1">
+						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
+							onclick="goToAbout()">About</a>
+					</div>
+					<div class="fh5co-logo">
+						<a href="#" onclick="goToIndex()">foodee</a>
+					</div>
+					<div class="fh5co-menu-2">
+						<a href="#" onclick="goToService()">Service</a> <a href="#"
+							onclick="goToReservation()">Community</a>
+						<!-- 수정필요. -->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -87,7 +115,7 @@
 						<div class="join_write"
 							title="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)">
 							<input type="password" id="pw" name="pw"
-								placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)" 
+								placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)"
 								maxlength="16" oninput="checkPassword()">
 							<div id="pwError" class="error-message"></div>
 						</div>
@@ -196,11 +224,7 @@
 			</div>
 		</div>
 	</form>
-	<script>
-		function goToIndex() {
-			window.location.href = "index.jsp";
-		}
-	</script>
+
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="js/signup.js"></script>

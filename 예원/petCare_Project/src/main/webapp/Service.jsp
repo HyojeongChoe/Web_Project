@@ -17,28 +17,14 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Home</title>
+<title>Foodee &mdash; 100% Free Fully Responsive HTML5 Template
+	by FREEHTML5.co</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 <meta name="keywords"
 	content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 <meta name="author" content="FREEHTML5.CO" />
 
-<!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-<!-- Facebook and Twitter integration -->
 <meta property="og:title" content="" />
 <meta property="og:image" content="" />
 <meta property="og:url" content="" />
@@ -70,7 +56,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
-
+<link rel="stylesheet" href="css/service.css">
 
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
@@ -82,33 +68,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 </head>
 
 <body>
-	<div id="fh5co-container">
-		<!-- home -->
-		<!-- <div id="fh5co-home" class="js-fullheight" data-section="home">
-			<div class="flexslider">
-				<div class="fh5co-overlay"></div>
-				<div class="fh5co-text">
-					<div class="container">
-						<div class="row">
-							<h1 class="to-animate">Pet care</h1>
-							<h2 class="to-animate">
-								premium service <span>by</span> <a href="http://freehtml5.co/"
-									target="_blank">freehtml5.co</a>
-							</h2>
-						</div>
-					</div>
-				</div>
-				<ul class="slides">
-					<li style="background-image: url(images/slide_1.jpg);"
-						data-stellar-background-ratio="0.5"></li>
-					<li style="background-image: url(images/slide_2.jpg);"
-						data-stellar-background-ratio="0.5"></li>
-					<li style="background-image: url(images/slide_3.jpg);"
-						data-stellar-background-ratio="0.5"></li>
-				</ul>
-			</div>
-		</div> -->
-
+	<div id="fh5co-header">
 		<div class="js-sticky">
 			<div class="fh5co-main-nav">
 				<div id="header">
@@ -151,81 +111,93 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToCommunity()">Community</a>
+							onclick="goToReservation()">Community</a>
+						<!-- 수정필요. -->
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<div id="fh5co-about" data-section="about">
-			<div class="fh5co-2col fh5co-bg to-animate-2"
-				style="background-image: url(images/res_img_1.jpg)"></div>
-			<div class="fh5co-2col fh5co-text">
-				<h2 class="heading to-animate">About Us</h2>
-				<p class="to-animate">
-					<span class="firstcharacter">F</span>ar far away, behind the word
-					mountains, far from the countries Vokalia and Consonantia, there
-					live the blind texts. Separated they live in Bookmarksgrove right
-					at the coast of the Semantics, a large language ocean. Far far
-					away, behind the word mountains, far from the countries Vokalia and
-					Consonantia, there live the blind texts. A small river named Duden
-					flows by their place and supplies it with the necessary regelialia.
-					It is a paradisematic country, in which roasted parts of sentences
-					fly into your mouth. Even the all-powerful Pointing has no control
-					about the blind texts it is an almost unorthographic life.
-				</p>
-				<p class="text-center to-animate">
-					<a href="#" class="btn btn-primary btn-outline">Get in touch</a>
-				</p>
-			</div>
-		</div>
-
-		<div id="fh5co-sayings">
-			<div class="container">
-				<div class="row to-animate">
-
-					<div class="flexslider">
-						<ul class="slides">
-							<li>
-								<blockquote>
-									<p>&ldquo;Cooking is an art, but all art requires knowing
-										something about the techniques and materials&rdquo;</p>
-									<p class="quote-author">&mdash; Nathan Myhrvold</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Give a man food, and he can eat for a day. Give a
-										man a job, and he can only eat for 30 minutes on break.&rdquo;</p>
-									<p class="quote-author">&mdash; Lev L. Spiro</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Find something you’re passionate about and keep
-										tremendously interested in it.&rdquo;</p>
-									<p class="quote-author">&mdash; Julia Child</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Never work before breakfast; if you have to work
-										before breakfast, eat your breakfast first.&rdquo;</p>
-									<p class="quote-author">&mdash; Josh Billings</p>
-								</blockquote>
-							</li>
-
-
-						</ul>
+	<div id="fh5co-container">
+		<div class="section">
+			<main>
+				<div class="inside">
+					<div class="empty space"></div>
+					<div class="service_menu">
+						<a href="/Reservation.jsp"> <span class="plain_name"
+							data-hover="">케어서비스</span>
+						</a>
 					</div>
+					<div class="empty space"></div>
 
+					<div class="doz_row">
+						<div class="shop_grid">
+							<div class="shop_item"
+								style="padding: 0px 15px; height: auto; width: 341px;">
+								<div class="item_wrap" style="position: relative;">
+									<a href="#" onclick="goToCare()" class="care_service"> <img
+										src="https://cdn.imweb.me/thumbnail/20221027/efaefbde1f633.jpg"
+										style="display: inline;">
+										<div class="item_overlay">
+											<div class="item_pay">
+												<div class="service_detail">
+													<h2>돌봄</h2>
+													<p class="pay inline-blocked" style="">26,000원</p>
+													<div class="ns-icon clearfix">
+														<!--<span class="new bg-brand">NEW</span>-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="shop_item"
+								style="padding: 0px 15px; height: auto; width: 341px;">
+								<div class="item_wrap" style="position: relative;">
+									<a href="#" onclick="goToWalk()" class="work_service"> <img
+										src="https://cdn.imweb.me/thumbnail/20221027/3f1e6e9249fa2.jpg"
+										style="display: inline;">
+										<div class="item_overlay">
+											<div class="item_pay">
+												<div class="service_detail">
+													<h2>산책</h2>
+													<p class="pay inline-blocked" style="">45,000원</p>
+													<div class="ns-icon clearfix">
+														<!--<span class="new bg-brand">NEW</span>-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="shop_item"
+								style="padding: 0px 15px; height: auto; width: 341px;">
+								<div class="item_wrap" style="position: relative;">
+									<a href="#" onclick="goToGrooming()"class="beauty_service"> <img
+										src="https://cdn.imweb.me/thumbnail/20211206/30b255561ebf9.jpg"
+										style="display: inline;">
+										<div class="item_overlay">
+											<div class="item_pay">
+												<div class="service_detail">
+													<h2>미용</h2>
+													<p class="pay inline-blocked" style="">52,000원</p>
+													<div class="ns-icon clearfix"></div>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
+			</main>
 		</div>
-
-		<div id="fh5co-featured" data-section="features">
-			<div class="container">
-				<div class="row text-center fh5co-heading row-padded">
+	</div>
+	<!-- <div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
 						<h2 class="heading to-animate">Featured Dishes</h2>
 						<p class="sub-heading to-animate">Far far away, behind the
@@ -235,7 +207,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</div>
 				<div class="row">
 					<div class="fh5co-grid">
-						<!--<div class="fh5co-v-half to-animate-2">
+						<div class="fh5co-v-half to-animate-2">
 							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_1.jpg)">
 							</div>
 							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
@@ -244,7 +216,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 								<p>Far far away, behind the word mountains, far from the countries Vokalia and
 									Consonantia, there live the blind texts.</p>
 							</div>
-						</div>-->
+						</div>
 						<div class="fh5co-v-half">
 							<div class="fh5co-h-row-2 to-animate-2">
 								<div class="fh5co-v-col-2 fh5co-bg-img"
@@ -265,6 +237,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 								</div>
 							</div>
 						</div>
+
 
 						<div class="fh5co-v-half">
 							<div class="fh5co-h-row-2 to-animate-2">
@@ -329,61 +302,59 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</div>
 						</div>
 					</div>
+				</div> -->
+
+	<div id="fh5co-footer">
+		<div class="container">
+			<div class="row row-padded">
+				<div class="col-md-12 text-center">
+					Shared by <i class="fa fa-love"></i><a
+						href="https://bootstrapthemes.co">BootstrapThemes</a>
+					<p class="text-center to-animate">
+						<a href="#" class="js-gotop">Go To Top</a>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<ul class="fh5co-social">
+						<li class="to-animate-2"><a href="#"><i
+								class="icon-facebook"></i></a></li>
+						<li class="to-animate-2"><a href="#"><i
+								class="icon-twitter"></i></a></li>
+						<li class="to-animate-2"><a href="#"><i
+								class="icon-instagram"></i></a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<div id="fh5co-footer">
-			<div class="container">
-				<div class="row row-padded">
-					<div class="col-md-12 text-center">
-						Shared by <i class="fa fa-love"></i><a
-							href="https://bootstrapthemes.co">BootstrapThemes</a>
-						<p class="text-center to-animate">
-							<a href="#" class="js-gotop">Go To Top</a>
-						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<ul class="fh5co-social">
-							<li class="to-animate-2"><a href="#"><i
-									class="icon-facebook"></i></a></li>
-							<li class="to-animate-2"><a href="#"><i
-									class="icon-twitter"></i></a></li>
-							<li class="to-animate-2"><a href="#"><i
-									class="icon-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+	<!-- jQuery -->
+	<script src="js/index.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Bootstrap DateTimePicker -->
+	<script src="js/moment.js"></script>
+	<script src="js/bootstrap-datetimepicker.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
 
-		<!-- jQuery -->
-		<script src="js/index.js"></script>
-		<script src="js/login.js"></script>
-		<script src="js/jquery.min.js"></script>
-		<!-- jQuery Easing -->
-		<script src="js/jquery.easing.1.3.js"></script>
-		<!-- Bootstrap -->
-		<script src="js/bootstrap.min.js"></script>
-		<!-- Bootstrap DateTimePicker -->
-		<script src="js/moment.js"></script>
-		<script src="js/bootstrap-datetimepicker.min.js"></script>
-		<!-- Waypoints -->
-		<script src="js/jquery.waypoints.min.js"></script>
-		<!-- Stellar Parallax -->
-		<script src="js/jquery.stellar.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<script>
+		$(function() {
+			$('#date').datetimepicker();
+		});
+	</script>
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
 
-		<!-- Flexslider -->
-		<script src="js/jquery.flexslider-min.js"></script>
-		<script>
-			$(function() {
-				$('#date').datetimepicker();
-			});
-		</script>
-		<!-- Main JS -->
-		<script src="js/main.js"></script>
 </body>
 
 </html>

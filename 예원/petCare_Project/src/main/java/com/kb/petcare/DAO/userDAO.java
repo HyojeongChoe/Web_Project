@@ -4,12 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
+
+import com.kb.petcare.DTO.userDTO;
 
 public class userDAO {
 	private Connection conn = null;
@@ -187,7 +190,7 @@ public class userDAO {
 			}
 		}
 	}
-	
+
 	// 비밀번호 찾기
 	public String findPw(String id, String name, String birth, String mobile, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -208,7 +211,7 @@ public class userDAO {
 
 			if (rs.next()) {
 				String foundPw = rs.getString("pw");
-				request.setAttribute("foundPw", foundPw); // 찾은 아이디를 request 속성에 저장				
+				request.setAttribute("foundPw", foundPw); // 찾은 아이디를 request 속성에 저장
 				return foundPw; // 일치하는 비밀번호 반환
 			} else {
 				return null; // 일치하는 데이터 없을 경우
@@ -228,6 +231,75 @@ public class userDAO {
 			}
 		}
 	}
-	
+
+	// 예약하기 : 돌봄/산책
+	public void reserveTime(String id, String service, String time, String pet, String date, String message) {
+		conn = null;
+		ps = null;
+		rs = null;
+
+		try {
+			conn = ds.getConnection();
+
+			String query = "INSERT INTO reserve VALUES(?,?,?,?,?,?)";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, id);
+			ps.setString(2, service);
+			ps.setString(3, time);
+			ps.setString(4, pet);
+			ps.setString(5, date);
+			ps.setString(6, message);
+			ps.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("예약하기(돌봄/산책) 실패");
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				ps.close();
+				rs.close();
+			} catch (Exception e2) {
+				System.out.println("객체 닫기 실패");
+				e2.printStackTrace();
+			}
+		}
+	}
+
+	// 예약하기 : 미용
+	public void reserveGro(String id, String service, String grooming, String pet, String date, String message) {
+		conn = null;
+		ps = null;
+		rs = null;
+
+		try {
+			conn = ds.getConnection();
+
+			String query = "INSERT INTO reserve VALUES(?,?,?,?,?,?,?,?)";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, id);
+			ps.setString(2, service);
+			ps.setString(3, "0");
+			ps.setString(4, grooming);
+			ps.setString(5, pet);
+			ps.setString(6, date);
+			ps.setString(7, message);
+			ps.setString(8, "0");
+			ps.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("예약하기(미용) 실패");
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				ps.close();
+				rs.close();
+			} catch (Exception e2) {
+				System.out.println("객체 닫기 실패");
+				e2.printStackTrace();
+			}
+		}
+	}
 
 }
