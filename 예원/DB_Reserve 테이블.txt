@@ -1,17 +1,14 @@
 use apidb;
 
 CREATE TABLE Reserve(
-	id varchar(50) PRIMARY KEY,
-	mobile varchar(50),
-    date varchar(50),
-	pet varchar(50),
-	service varchar(200),
-	birth varchar(50),
-    time varchar(50),
-    extra_time varchar(50),
-    total_time varchar(50),
-    cost varchar(50)		
+	id varchar(50) PRIMARY KEY,	-- 아이디
+    service varchar(50),		-- 서비스 종류(돌봄,산책,미용)
+    pet varchar(50),			-- 반려동물 종류(소/중형,대형,고양이)
+    date varchar(50),			-- 예약날짜
+    message varchar(200),		-- 문의사항
+    cost varchar(50)			-- 총비용
 );
 
 SELECT * FROM Reserve;
 TRUNCATE Reserve;
+DROP TABLE Reserve;
