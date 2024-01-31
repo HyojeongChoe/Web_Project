@@ -229,6 +229,41 @@ public class userDAO {
 		}
 	}
 
+	// 예약하기 : 돌봄/산책 통일
+		public void reserveCare(String id, String service, String time, String pet, String date, String message, String cost) {
+			conn = null;
+			ps = null;
+			rs = null;
+
+			try {
+				conn = ds.getConnection();
+
+				String query = "INSERT INTO reserve VALUES(?,?,?,?,?,?,?,?)";
+				ps = conn.prepareStatement(query);
+				ps.setString(1, id);
+				ps.setString(2, service);
+				ps.setString(3, time);
+				ps.setString(4, "");
+				ps.setString(5, pet);
+				ps.setString(6, date);
+				ps.setString(7, message);
+				ps.setString(8, cost);
+				ps.executeUpdate();
+
+			} catch (Exception e) {
+				System.out.println("예약하기(돌봄/산책) 실패");
+				e.printStackTrace();
+			} finally {
+				try {
+					conn.close();
+					ps.close();
+				} catch (Exception e2) {
+					System.out.println("객체 닫기 실패");
+					e2.printStackTrace();
+				}
+			}
+		}
+	
 	// 예약하기 : 미용
 	public void reserveGro(String id, String service, String grooming, String pet, String date, String message, String cost) {
 		conn = null;
@@ -242,7 +277,7 @@ public class userDAO {
 			ps = conn.prepareStatement(query);
 			ps.setString(1, id);
 			ps.setString(2, service);
-			ps.setString(3, "0");
+			ps.setString(3, "");
 			ps.setString(4, grooming);
 			ps.setString(5, pet);
 			ps.setString(6, date);
@@ -257,7 +292,6 @@ public class userDAO {
 			try {
 				conn.close();
 				ps.close();
-				rs.close();
 			} catch (Exception e2) {
 				System.out.println("객체 닫기 실패");
 				e2.printStackTrace();

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import com.kb.petcare.DAO.userDAO;
 import com.kb.petcare.DTO.userDTO;
 
-public class userServiceReserve implements userService {
+public class userServiceReserve1 implements userService {
 	@Override
     public ArrayList<userDTO> execute(HttpServletRequest request, HttpServletResponse response) {
         ArrayList<userDTO> dto = new ArrayList<>();
@@ -20,14 +20,14 @@ public class userServiceReserve implements userService {
         HttpSession session = request.getSession();        
         String userId = (String) session.getAttribute("loggedInUserId"); 
         String service = request.getParameter("service"); 
-        String grooming = request.getParameter("grooming");        
+        String time = request.getParameter("time");        
         String pet = request.getParameter("pet");
 		String date = request.getParameter("date");
 		String message = request.getParameter("message");
 		String cost = request.getParameter("selectedPrice");
 		
         userDAO dao = new userDAO();        
-        dao.reserveGro(userId, service, grooming, pet, date, message, cost);    
+        dao.reserveCare(userId, service, time, pet, date, message, cost);    
         
         // 예약 완료 안내문 출력
         try {        	
@@ -45,4 +45,5 @@ public class userServiceReserve implements userService {
         return dto;
     }
 }
+
 

@@ -119,7 +119,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
 							onclick="goToReservation()">Community</a>
-						<!-- 수정필요. -->>
+						<!-- 수정필요. -->
+						>
 					</div>
 				</div>
 			</div>
@@ -147,49 +148,55 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</div>
 						</ul>
 					</div>
-					<div class="col-md-6 to-animate-2">
-						<h3>예약</h3>
-						<div class="form-group ">
-							<label for="service_type" class="sr-only">서비스</label> <input
-								name="service" id="service_type" class="form-control"
-								type="text" value="산책" disabled>
-						</div>
-						<div class="form-group">
-							<label for="pet_type" class="sr-only">견종</label> <select
-								class="form-control" name="pet" id="pet_type">
-								<option selected disabled hidden>반려동물을 선택해주세요</option>
-								<option>소/중형견</option>
-								<option>대형견</option>
-								<option>고양이</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="time" class="sr-only">시간</label> <select
-								class="form-control" name="time" id="option">
-								<option selected disabled hidden>시간</option>
-								<option value="60분">60분</option>
-								<option value="120분">120분</option>
-								<option value="180분">180분</option>
-							</select>
-						</div>
-						<div>
-							<label for="date" class="sr-only">예약날짜</label> <input name="date"
-								id="date" class="form-control" placeholder="예약날짜" type="date">
-						</div>
 
-						<div class="form-group ">
-							<label for="message" class="sr-only">기타 문의사항</label> <input
-								name="message" id="message" class="form-control"
-								placeholder="기타 문의사항"></input>
-						</div>
+					<form action="reserve1.do">
+						<div class="col-md-6 to-animate-2">
+							<h3>예약</h3>
+							<div class="form-group ">
+								<label for="service_type" class="sr-only">서비스</label> <input
+									name="service" id="service_type" class="form-control"
+									type="text" value="산책" readonly>
+							</div>
+							<div class="form-group">
+								<label for="pet_type" class="sr-only">견종</label> <select
+									class="form-control" name="pet" id="pet_type">
+									<option selected disabled hidden>반려동물을 선택해주세요</option>
+									<option>소/중형견</option>
+									<option>대형견</option>
+									<option>고양이</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="time" class="sr-only">시간</label> <select
+									class="form-control" name="time" id="option">
+									<option selected disabled hidden>시간</option>
+									<option value="60분">60분</option>
+									<option value="120분">120분</option>
+									<option value="180분">180분</option>
+								</select>
+							</div>
+							<div>
+								<label for="date" class="sr-only">예약날짜</label> <input
+									name="date" id="date" class="form-control" placeholder="예약날짜"
+									type="date">
+							</div>
 
-						<!-- 메세지 아래에 가격을 표시할 div 추가 -->
-						<div>총 이용금액</div>
-						<div id="priceDisplay" name="cost" class="form-group"></div>
-						<div class="form-group ">
-							<input class="btn btn-primary" value="예약하기" type="submit">
+							<div class="form-group ">
+								<label for="message" class="sr-only">기타 문의사항</label> <input
+									name="message" id="message" class="form-control"
+									placeholder="기타 문의사항"></input>
+							</div>
+
+							<!-- 메세지 아래에 가격을 표시할 div 추가 -->
+							<div>총 이용금액</div>
+							<div id="priceDisplay" name="cost" class="form-group"></div>
+							<input type="hidden" id="selectedPrice" name="selectedPrice"
+								value="">
+							<div class="form-group ">
+								<input class="btn btn-primary" value="예약하기" type="submit">
+							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -223,9 +230,9 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 
 	<!-- jQuery -->
 	<script src="js/index.js"></script>
-    <!-- reservation.js -->
+	<!-- reservation.js -->
 	<script src="js/reservation.js"></script>
-	
+
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>

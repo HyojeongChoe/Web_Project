@@ -142,7 +142,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</div>
 						</ul>
 					</div>
-					<form action="reserve.do">
+					<form action="reserve2.do">
 						<div class="col-md-6 to-animate-2">
 							<h3>예약</h3>
 							<div class="form-group ">
@@ -172,17 +172,15 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 									name="date" id="date" class="form-control" placeholder="예약날짜"
 									type="date">
 							</div>
-
 							<div class="form-group ">
 								<label for="message" class="sr-only">기타 문의사항</label> <input
 									name="message" id="message" class="form-control"
 									placeholder="기타 문의사항"></input>
 							</div>
 							<div>총 이용금액</div>
-							<div id="priceDisplay" name="cost" class="form-group">
-								<input type="hidden" id="selectedPrice" name="selectedPrice"
-									value="">
-							</div>
+							<div id="priceDisplay" name="cost" class="form-group"></div>
+							<input type="hidden" id="selectedPrice" name="selectedPrice"
+								value="">
 							<div class="form-group ">
 								<input class="btn btn-primary" value="예약하기" type="submit">
 							</div>
@@ -238,7 +236,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
-	
+
 	<script src="js/index.js"></script>
 	<!-- reservation.js -->
 	<script src="js/reservation.js"></script>

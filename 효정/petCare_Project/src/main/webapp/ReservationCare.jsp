@@ -126,27 +126,28 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 		</div>
 	</div>
 
-		<div id="fh5co-container">
-			<div id="fh5co-contact" data-section="reservation">
-				<div class="container">
-					<div class="row text-center fh5co-heading row-padded">
-						<div class="col-md-8 col-md-offset-2">
-							<h2 class="heading to-animate"></h2>
-							<p class="sub-heading to-animate">ㅇ상세내역적음적음적음</p>
-						</div>
+	<div id="fh5co-container">
+		<div id="fh5co-contact" data-section="reservation">
+			<div class="container">
+				<div class="row text-center fh5co-heading row-padded">
+					<div class="col-md-8 col-md-offset-2">
+						<h2 class="heading to-animate"></h2>
+						<p class="sub-heading to-animate">ㅇ상세내역적음적음적음</p>
 					</div>
-					<div class="row">
-						<div class="col-md-6 to-animate-2">
-							<h3></h3>
-							<ul class="fh5co-contact-info">
-								<div class="item _item">
-									<img
-										style="width: 100%; max-width: 555px; height: auto; display: block; margin: 0 auto; image-rendering: -moz-crisp-edges; image-rendering: -o-crisp-edges; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"
-										src="https://cdn.imweb.me/thumbnail/20221027/aec92576af3b0.jpg"
-										alt="">
-								</div>
-							</ul>
-						</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 to-animate-2">
+						<h3></h3>
+						<ul class="fh5co-contact-info">
+							<div class="item _item">
+								<img
+									style="width: 100%; max-width: 555px; height: auto; display: block; margin: 0 auto; image-rendering: -moz-crisp-edges; image-rendering: -o-crisp-edges; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"
+									src="https://cdn.imweb.me/thumbnail/20221027/aec92576af3b0.jpg"
+									alt="">
+							</div>
+						</ul>
+					</div>
+					<form action="reserve1.do">
 						<div class="col-md-6 to-animate-2">
 							<h3>예약</h3>
 							<div class="form-group ">
@@ -185,14 +186,17 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</div>
 							<div>총 이용금액</div>
 							<div id="priceDisplay" name="cost" class="form-group"></div>
+							<input type="hidden" id="selectedPrice" name="selectedPrice"
+								value="">
 							<div class="form-group ">
 								<input class="btn btn-primary" value="예약하기" type="submit">
 							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
+	</div>
 
 	<div id="fh5co-footer">
 		<div class="container">

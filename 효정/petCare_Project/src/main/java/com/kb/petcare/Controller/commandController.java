@@ -17,7 +17,8 @@ import com.kb.petcare.Command.userServiceFindId;
 import com.kb.petcare.Command.userServiceFindPw;
 import com.kb.petcare.Command.userServiceLogin;
 import com.kb.petcare.Command.userServiceLogout;
-import com.kb.petcare.Command.userServiceReserve;
+import com.kb.petcare.Command.userServiceReserve1;
+import com.kb.petcare.Command.userServiceReserve2;
 import com.kb.petcare.Command.userServiceSignUp;
 import com.kb.petcare.DTO.userDTO;
 
@@ -83,9 +84,12 @@ public class commandController extends HttpServlet {
 		} else if (command.equals("/findPw.do")) {
 			System.out.println("<비밀번호 찾기> 수행");
 			uService = new userServiceFindPw();
-		} else if (command.equals("/reserve.do")) {
+		} else if (command.equals("/reserve1.do")) {
 			System.out.println("<예약하기> 수행");
-			uService = new userServiceReserve();
+			uService = new userServiceReserve1();
+		} else if (command.equals("/reserve2.do")) {
+			System.out.println("<예약하기> 수행");
+			uService = new userServiceReserve2();
 		}
 		uService.execute(request, response);
 
