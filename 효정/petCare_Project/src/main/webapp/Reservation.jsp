@@ -64,6 +64,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+
 </head>
 
 <body>

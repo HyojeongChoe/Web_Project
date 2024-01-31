@@ -17,6 +17,7 @@ import com.kb.petcare.Command.userServiceFindId;
 import com.kb.petcare.Command.userServiceFindPw;
 import com.kb.petcare.Command.userServiceLogin;
 import com.kb.petcare.Command.userServiceLogout;
+import com.kb.petcare.Command.userServiceReserve;
 import com.kb.petcare.Command.userServiceSignUp;
 import com.kb.petcare.DTO.userDTO;
 
@@ -73,17 +74,18 @@ public class commandController extends HttpServlet {
 		} else if (command.equals("/logout.do")) {
 			System.out.println("<로그아웃 테스트> 수행");
 			uService = new userServiceLogout();
-		}else if (command.equals("/checkDuplicateId.do")) {
+		} else if (command.equals("/checkDuplicateId.do")) {
 			System.out.println("<아이디 중복확인> 수행");
 			uService = new userServiceCheckDuplicateId();
-		}
-		else if (command.equals("/findId.do")) {
-		    System.out.println("<아이디 찾기> 수행");
-		    uService = new userServiceFindId();
-		}
-		else if (command.equals("/findPw.do")) {
-		    System.out.println("<비밀번호 찾기> 수행");
-		    uService = new userServiceFindPw();  
+		} else if (command.equals("/findId.do")) {
+			System.out.println("<아이디 찾기> 수행");
+			uService = new userServiceFindId();
+		} else if (command.equals("/findPw.do")) {
+			System.out.println("<비밀번호 찾기> 수행");
+			uService = new userServiceFindPw();
+		} else if (command.equals("/reserve.do")) {
+			System.out.println("<예약하기> 수행");
+			uService = new userServiceReserve();
 		}
 		uService.execute(request, response);
 
