@@ -1,14 +1,25 @@
 package com.kb.petcare.DTO;
 
 public class userDTO {
-	private String name;	//이름
-	private String id;		//아이디
-	private String pw;		//비밀번호
-	private String email;	//이메일
-	private String mobile;		//연락처
-	private String addr;	//주소
-	private String birth;	//생일
-	private String pet;		//반려동물
+	// User 테이블 칼럼
+	private String name;	// 이름
+	private String id;		// 아이디
+	private String pw;		// 비밀번호
+	private String email;	// 이메일
+	private String mobile;	// 연락처
+	private String addr;	// 주소
+	private String birth;	// 생년월일
+	private String pet;		// 반려동물 종류(소/중형, 대형, 고앵이)
+	
+	// Reserve 테이블 칼럼
+	//private String id;		// ※User 테이블과 겹침
+	private String service;		// 서비스 종류(돌봄, 산책, 미용)	
+	private String time;		// 돌봄/산책 시간(60분, 120분, 180분)
+	private String grooming;	// 미용(전체, 위생)
+	//private String pet;		// ※User 테이블과 겹침
+	private String date;		// 예약날짜
+	private String message;		// 문의사항
+	private String cost;		// 총비용
 	
 	
 	//getter,setter
@@ -59,5 +70,41 @@ public class userDTO {
 	}
 	public void setPet(String pet) {
 		this.pet = pet;
+	}
+	public String getService() {
+		return service;
+	}
+	public void setService(String service) {
+		this.service = service;
+	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
+	}
+	public String getGrooming() {
+		return grooming;
+	}
+	public void setGrooming(String grooming) {
+		this.grooming = grooming;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public String getCost() {
+		return cost;
+	}
+	public void setCost(String cost) {
+		this.cost = cost;
 	}
 }

@@ -38,13 +38,19 @@ function openSignUpPage() {
 function openLoginPage() {
 	window.location.href = "Login.jsp";
 }
-//마이페이지 1로
-function openMyPage1() {
-	window.location.href = "MyPage1.jsp";
+
+//마이페이지 예약내역
+function openMyPageReserve() {
+	window.location.href = "select.do";
 }
-//마이페이지 2로
-function openMyPage2() {
-	window.location.href = "MyPage2.jsp";
+
+//마이페이지 비밀번호입력
+function openMyPagePw() {
+	window.location.href = "MyPagePw.jsp";
+}
+//마이페이지 개인정보 수정
+function openMyPageEdit() {
+	window.location.href = "MyPageEdit.jsp";
 }
 function performLogout() {
 	// 여기에 로그아웃 처리 로직을 추가할 수 있습니다.
