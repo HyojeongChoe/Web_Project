@@ -40,7 +40,7 @@ function openLoginPage() {
 }
 //마이페이지 예약내역
 function openMyPageReserve() {
-	window.location.href = "MyPageReserve.jsp";
+	window.location.href = "select.do";
 }
 //마이페이지 비밀번호입력
 function openMyPagePw() {
