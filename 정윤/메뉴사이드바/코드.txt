@@ -1,0 +1,136 @@
+<div class="menu_bar">
+				<h3>마이페이지</h3>
+				<ul class="my_reserve">마이 예약
+				</ul>
+				<li class="my_reserve_check">예약내역확인</li>
+				<ul class="my_inform">마이 정보
+				</ul>
+				<li id="my_edit">개인정보 수정</li>
+				<li id="user_out">회원 탈퇴</li>
+			</div>
+
+
+
+
+======================================================================
+
+
+
+/* Rectangle 1 */
+
+.menu_bar{
+position: absolute;
+width: 290px;
+height: 1260px;
+left: 172px;
+top: 201px;
+
+background: #F5F5F5;
+}
+
+/* 마이페이지 */
+
+h3{
+position: absolute;
+width: 228px;
+height: 78px;
+left: 20px;
+top: 20px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 48px;
+
+color: #000000;
+}
+
+
+/* 마이 예약 */
+
+.my_reserve{
+position: absolute;
+width: 228px;
+height: 78px;
+left: -10px;
+top: 170px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #000000;
+}
+
+/* 예약내역확인 */
+
+.my_reserve_check{
+position: absolute;
+width: 228px;
+height: 78px;
+left: 30px;
+top: 240px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #000000;
+}
+
+/* 마이 정보 */
+.my_inform{
+position: absolute;
+width: 228px;
+height: 78px;
+left: -10px;
+top: 360px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+
+color: #000000;
+}
+
+
+/* 개인정보 수정 */
+#my_edit{
+position: absolute;
+width: 228px;
+height: 78px;
+left: 30px;
+top: 430px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #000000;
+}
+
+/* 회원탈퇴 */
+#user_out{
+position: absolute;
+width: 228px;
+height: 78px;
+left: 30px;
+top: 480px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #000000;
+}
