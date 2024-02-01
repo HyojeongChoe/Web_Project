@@ -24,11 +24,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
-<link rel="stylesheet" href="css/mypage1.css">
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
-<title>마이페이지 비밀번호 입력창</title>
+<title>마이페이지 예약내역 확인</title>
 </head>
 <body>
 	<div id="fh5co-header">
@@ -57,7 +56,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 								onclick="performLogout()">Logout</a></li>
 							<li class="mypage"><a href="#" id="mypageButton"
 								style="background-color: white; border: 0;"
-								onclick="openMyPage1()">MyPage</a></li>
+								onclick="openMyPageReserve()">MyPage</a></li>
 							<%
 							}
 							%>
@@ -80,21 +79,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="mypage_pw_insert">
-		<form action="" onsubmit="">
-			<div class="form-myupdate_pw" id="myupdate">
-				<img src="images/free-icon-dog-3843277.png" id="image" /> <a
-					id="line"></a>
-				<div class="form_input_pw">
-					<img src="free-icon-lock-6421881.png" id="lock" /> <input
-						type="password" id="input_pw" name="input_pw"
-						placeholder="비밀번호를 입력해주세요." />
-				</div>
-				<br> <input type="submit" action="" id="submit" value="확인" />
-				<input type="button" id="cancel" value="취소" />
-			</div>
-		</form>
 	</div>
 	<script src="js/index.js"></script>
 </body>

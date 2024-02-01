@@ -8,10 +8,23 @@
 String loggedInUserId = sessionManager.getLoggedInUserId(request);
 %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/mypage2.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/animate.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="css/icomoon.css">
+<!-- Simple Line Icons -->
+<link rel="stylesheet" href="css/simple-line-icons.css">
+<!-- Datetimepicker -->
+<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+<!-- Flexslider -->
+<link rel="stylesheet" href="css/flexslider.css">
+<link rel="stylesheet" href="css/mypageedit.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
 <title>개인정보 수정</title>
 </head>
 <body>
@@ -41,7 +54,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 								onclick="performLogout()">Logout</a></li>
 							<li class="mypage"><a href="#" id="mypageButton"
 								style="background-color: white; border: 0;"
-								onclick="openMyPage1()">MyPage</a></li>
+								onclick="openMyPageReserve()">MyPage</a></li>
 							<%
 							}
 							%>
@@ -182,12 +195,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				<input type="date" id="up_birth" name="up_birth"
 					onblur="checkBirth()" />
 
-				<!-- 반려동물  -->
-				<!-- 				<li class="join-list"><label>반려동물</label> <input type="radio" -->
-				<!-- 					name="pet" id="dog" value="dog" /> <label for="dog">개(강아지)</label> -->
-				<!-- 					<input type="radio" name="pet" id="cat" value="cat" /> <label -->
-				<!-- 					for="cat">고양이</label></li> -->
-
 				<input type="submit" value="정보 수정" id="updatebtn" />
 				<input type="button" value="취소" id="cancel" action="index.html" />
 			</ul>
@@ -195,5 +202,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 		<script
 			src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 		<script src="js/signup.js"></script>
+		<script src="js/index.js"></script>
 </body>
 </html>

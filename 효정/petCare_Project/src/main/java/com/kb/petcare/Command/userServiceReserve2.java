@@ -36,7 +36,7 @@ public class userServiceReserve2 implements userService {
             //out.println("<script>alert('회원님의 아이디는 " + foundId + "입니다.');</script>");
             out.println("<script>");
             out.println("alert('예약이 완료되었습니다.');");
-            out.println("location.href='ReservationGrooming.jsp';"); // 예약 페이지로 이동
+            out.println("location.href='Service.jsp';"); // 예약 페이지로 이동
             out.println("</script>");        
         } catch (Exception e) {
         	e.printStackTrace();

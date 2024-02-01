@@ -101,7 +101,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 								onclick="performLogout()">Logout</a></li>
 							<li class="mypage"><a href="#" id="mypageButton"
 								style="background-color: white; border: 0;"
-								onclick="openMyPage1()">MyPage</a></li>
+								onclick="openMyPageReserve()">MyPage</a></li>
 							<%
 							}
 							%>
