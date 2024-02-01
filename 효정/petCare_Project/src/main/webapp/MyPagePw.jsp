@@ -98,7 +98,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	</div>
 	
 	<div class="mypage_pw_insert">
-		<form action="" onsubmit="">
+		<form action="privacy.do" >
 			<div class="form-myupdate_pw" id="myupdate">
 				<img src="images/free-icon-dog-3843277.png" id="image" /> <a
 					id="line"></a>

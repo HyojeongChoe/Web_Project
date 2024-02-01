@@ -349,4 +349,50 @@ public class userDAO {
 
 		return result;
 	}
+
+	// 회원정보 출력
+	public ArrayList<userDTO> userSelectPrivacy(String userId) {
+		// 결과값 담을 배열
+		ArrayList<userDTO> result = new ArrayList<userDTO>();
+
+		conn = null;
+		st = null;
+		rs = null;
+
+		try {
+			conn = ds.getConnection();
+
+			String query = "SELECT * FROM user WHERE id = ?";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, userId);
+			rs = ps.executeQuery();
+
+			while (rs.next()) { // rs.next() :: 결과값 하나씩 확인하며 돈다
+				userDTO element = new userDTO();
+
+				element.setName(rs.getString("name"));
+				element.setId(rs.getString("id"));
+	            element.setPw(rs.getString("pw"));
+	            element.setEmail(rs.getString("email"));
+	            element.setAddr(rs.getString("addr"));
+	            element.setBirth(rs.getString("birth")); 
+	            element.setMobile(rs.getString("mobile"));
+				// element 객체에 데이터 한 묶음씩 저장
+				result.add(element);
+			}
+		} catch (Exception e) {
+			System.out.println("SELECT 쿼리 수행 실패");
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				rs.close();
+			} catch (Exception e) {
+				System.out.println("객체 닫기 실패");
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+	}
 }

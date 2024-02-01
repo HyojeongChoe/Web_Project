@@ -1,8 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<%@ page import="java.util.*"%>
 <%@ page import="com.kb.petcare.Session.sessionManager"%>
+<%@ page import="com.kb.petcare.DTO.userDTO"%>
+
+<%!ArrayList<userDTO> listPrivacy;%>
+<% listPrivacy = (ArrayList<userDTO>) request.getAttribute("listPrivacy"); %>
 
 <%
 String loggedInUserId = sessionManager.getLoggedInUserId(request);
@@ -104,6 +110,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</ul>
 		</div>
 		<div class="desktop_edit">
+			<% for (userDTO user : listPrivacy) { %>
 			<img src="images/free-icon-dog-3843277.png" id="edit_logo" />
 			<div class="edit_line"></div>
 			<div class="edit_div">
@@ -149,7 +156,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						</div>
 						<div class="edit_write" title="">
 							<input type="text" id="name" name="name" placeholder=""
-								maxlength="30" />
+								maxlength="30" value="<%= user.getName() %>" />
 							<div id="nameError" class="error-message"></div>
 						</div>
 					</li>
@@ -220,6 +227,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					</li>
 
 				</ul>
+				<% } %>
 				<div class="form_submit">
 					<input type="submit" value="수정" id="editbtn" />
 				</div>

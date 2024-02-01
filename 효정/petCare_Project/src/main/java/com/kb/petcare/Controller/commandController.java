@@ -106,6 +106,20 @@ public class commandController extends HttpServlet {
 
 			uService.execute(request, response);
 			return;
+		} else if (command.equals("/privacy.do")) {
+			System.out.println("<회원정보>를 출력합니다.");
+			uService = new userServiceSelect();
+
+			// select.do(예약내역 출력)가 실행될 때는, result로 실질적인 값이 반환될 것
+			ArrayList<userDTO> result = uService.execute(request, response);
+
+			if (result != null) { // 결과값이 null이 아닐 경우
+				// View 역할(RequestDispatcher 사용) :: MyPasgeReserve.jsp에서 결과값 처리
+				RequestDispatcher dis = request.getRequestDispatcher("/MyPageEdit.jsp");
+				dis.forward(request, response);
+			}
+			uService.execute(request, response);
+			return;
 		}
 
 		uService.execute(request, response);
