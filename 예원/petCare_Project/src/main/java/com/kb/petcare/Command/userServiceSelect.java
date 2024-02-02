@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.kb.petcare.DAO.userDAO;
 import com.kb.petcare.DTO.userDTO;
 
-public class userServiceSelect implements userService {
+public class userServiceSelect implements userService, paginationService {
 	
 	@Override
 	public ArrayList<userDTO> execute(HttpServletRequest request, HttpServletResponse response) {
@@ -20,7 +20,20 @@ public class userServiceSelect implements userService {
 		
 		request.setAttribute("list", result);	// "list"라는 이름으로 결과값 삽입
 		
-		return result;		
+		return result;
 	}
+	
+	// 추가: 페이징을 위한 메서드
+    @Override
+    public ArrayList<userDTO> executePaging(HttpServletRequest request, HttpServletResponse response, int offset, int itemsPerPage) {
+        userDAO dao = new userDAO();
+        return dao.userSelectPaging(offset, itemsPerPage);
+    }
 
+    // 추가: 전체 항목 수를 반환하는 메서드
+    @Override
+    public int getTotalItems() {
+        userDAO dao = new userDAO();
+        return dao.getTotalItems();
+    }
 }

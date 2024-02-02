@@ -395,4 +395,85 @@ public class userDAO {
 
 		return result;
 	}
+	
+	// 추가: 페이징을 위한 메서드
+	public ArrayList<userDTO> userSelectPaging(int offset, int itemsPerPage) {
+	    ArrayList<userDTO> result = new ArrayList<userDTO>();
+
+	    conn = null;
+	    st = null;
+	    rs = null;
+
+	    try {
+	        conn = ds.getConnection();
+
+	        // OFFSET과 LIMIT을 사용하여 페이징 처리
+	        String query = "SELECT * FROM reserve ORDER BY date DESC LIMIT ?, ?";
+	        ps = conn.prepareStatement(query);
+	        ps.setInt(1, offset);
+	        ps.setInt(2, itemsPerPage);
+	        rs = ps.executeQuery();
+
+	        while (rs.next()) {
+	            userDTO element = new userDTO();
+
+	            element.setDate(rs.getString("date"));
+	            element.setService(rs.getString("service"));
+	            element.setTime(rs.getString("time"));
+	            element.setGrooming(rs.getString("grooming"));
+	            element.setPet(rs.getString("pet"));
+	            element.setCost(rs.getString("cost"));
+
+	            result.add(element);
+	        }
+	    } catch (Exception e) {
+	        System.out.println("SELECT(페이징) 쿼리 수행 실패");
+	        e.printStackTrace();
+	    } finally {
+			try {
+				conn.close();
+				rs.close();
+			} catch (Exception e) {
+				System.out.println("객체 닫기 실패");
+				e.printStackTrace();
+			}
+		}
+
+	    return result;
+	}
+
+	// 추가: 전체 항목 수를 반환하는 메서드
+	public int getTotalItems() {
+	    int totalItems = 0;
+
+	    conn = null;
+	    st = null;
+	    rs = null;
+
+	    try {
+	        conn = ds.getConnection();
+
+	        String query = "SELECT COUNT(*) FROM reserve";
+	        st = conn.createStatement();
+	        rs = st.executeQuery(query);
+
+	        if (rs.next()) {
+	            totalItems = rs.getInt(1);
+	        }
+	    } catch (Exception e) {
+	        System.out.println("COUNT 쿼리 수행 실패");
+	        e.printStackTrace();
+	    } finally {
+			try {
+				conn.close();
+				rs.close();
+			} catch (Exception e) {
+				System.out.println("객체 닫기 실패");
+				e.printStackTrace();
+			}
+		}
+
+	    return totalItems;
+	}
+	
 }

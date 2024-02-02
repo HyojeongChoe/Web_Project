@@ -128,7 +128,7 @@ table.reservation_table tr.odd {
 	</div>
 
 	<!-- 예약내역 출력 공간 -->
-	<div calss="reservaiton">
+	<div class="reservaiton">
 		<h2>예약 내역</h2>
 		<hr>
 		<table class="reservation_table" border="1">
@@ -156,8 +156,15 @@ table.reservation_table tr.odd {
 						<td>${value.cost}</td>
 					</tr>
 				</c:forEach>
-			<tbody>
+			</tbody>
 		</table>
+
+		<!-- 페이징 처리 -->
+		<div class="paging">
+			<c:forEach begin="1" end="${totalPages}" var="i">
+				<a href="${pageContext.request.contextPath}/select.do?page=${i}">${i}</a>
+			</c:forEach>
+		</div>
 	</div>
 
 	<script src="js/index.js"></script>
