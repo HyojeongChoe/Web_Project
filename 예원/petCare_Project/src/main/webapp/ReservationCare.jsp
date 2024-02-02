@@ -139,7 +139,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					<div class="col-md-6 to-animate-2">
 						<h3></h3>
 						<ul class="fh5co-contact-info">
-							<div class="item_item">
+							<div class="item _item">
 								<img
 									style="width: 100%; max-width: 555px; height: auto; display: block; margin: 0 auto; image-rendering: -moz-crisp-edges; image-rendering: -o-crisp-edges; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"
 									src="https://cdn.imweb.me/thumbnail/20221027/aec92576af3b0.jpg"
@@ -156,8 +156,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 									type="text" value="돌봄" readonly>
 							</div>
 							<div class="form-group">
-								<label for="pet_type" class="sr-only">견종</label> 
-								<select class="form-control" name="pet" id="pet_type">
+								<label for="pet_type" class="sr-only">견종</label> <select
+									class="form-control" name="pet" id="pet_type">
 									<option selected disabled hidden>반려동물을 선택해주세요</option>
 									<option value="소/중형견">소/중형견</option>
 									<option value="대형견">대형견</option>
@@ -185,7 +185,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 									placeholder="기타 문의사항"></input>
 							</div>
 							<div>총 이용금액</div>
-							<div id="priceDisplay" name="cost" class="form-group"></div>
+							<div id="priceDisplay" class="form-group"></div>
 							<input type="hidden" id="selectedPrice" name="selectedPrice"
 								value="">
 							<div class="form-group ">
@@ -228,6 +228,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	<script src="js/index.js"></script>
 	<!-- reservation.js -->
 	<script src="js/reservation.js"></script>
+	<script>
+		// loggedInUserId를 JavaScript 변수에 할당
+		const loggedInUserId = "<%= loggedInUserId %>";
+	</script>
 
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->

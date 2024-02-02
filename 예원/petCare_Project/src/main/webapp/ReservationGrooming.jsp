@@ -142,7 +142,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</div>
 						</ul>
 					</div>
-					<form action="reserve2.do">
+					<form id="reserveForm" action="reserve2.do">
 						<div class="col-md-6 to-animate-2">
 							<h3>예약</h3>
 							<div class="form-group ">
@@ -219,6 +219,13 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
+	<!-- reservation.js -->
+	<script src="js/reservation.js"></script>
+	<script>
+		// loggedInUserId를 JavaScript 변수에 할당
+		const loggedInUserId = "<%= loggedInUserId %>";
+	</script>
+	
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->

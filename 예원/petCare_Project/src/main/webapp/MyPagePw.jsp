@@ -15,6 +15,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="css/animate.css">
 <!-- Icomoon Icon Fonts-->
 <link rel="stylesheet" href="css/icomoon.css">
@@ -81,8 +82,23 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</div>
 		</div>
 	</div>
+	<div class="menu_bar">
+		<div class="mypage">
+			<h3>마이페이지</h3>
+		</div>
+		<div class="mypage_title">마이 예약</div>
+		<ul class="my_reserve">
+			<li class="mypage_menu">예약내역확인</li>
+		</ul>
+		<div class="mypage_title">마이 정보</div>
+		<ul class="my_inform">
+			<li class="mypage_menu">개인정보 수정</li>
+			<li class="mypage_menu">회원 탈퇴</li>
+		</ul>
+	</div>
+	
 	<div class="mypage_pw_insert">
-		<form action="" onsubmit="">
+		<form action="privacy.do" >
 			<div class="form-myupdate_pw" id="myupdate">
 				<img src="images/free-icon-dog-3843277.png" id="image" /> <a
 					id="line"></a>

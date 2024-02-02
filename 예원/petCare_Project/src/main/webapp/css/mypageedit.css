@@ -1,634 +1,408 @@
 @charset "UTF-8";
 
-/* Desktop - 1 */
-
-.form-update{
-position: relative;
-width: 1920px;
-height: 1660px;
-
-background: #FFFFFF;
+body {
+	margin: 0px;
+	height: 160vh;
 }
 
-/* 마이페이지 
-
-#mphtml{
-position: absolute;
-width: 130px;
-height: 30px;
-left: 1487px;
-top: 24px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 24px;
-display: flex;
-align-items: center;
-letter-spacing: 0.1em;
-
-color: #000000;
-
-opacity: 0.5;
+.form_edit {
+	display: flex;
+	height: 160vh;
+	/* 추가된 부분 */
+	justify-content: center;
+	align-items: center;
+	margin: 0;
 }
 
-Line 1 
-
-#line1 {
-position: absolute;
-width: 20px;
-height: 0px;
-left: 1605.5px;
-top: 29px;
-
-border: 1px solid #000000;
-transform: rotate(90deg);
+.desktop_edit {
+	height: 130vh;
+	top: 150px;
+	position: absolute;
+	background: #FFFFFF;
 }
 
-로그아웃 
-
-#mplogout{
-position: absolute;
-width: 80px;
-height: 24px;
-left: 1627px;
-top: 27px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 24px;
-display: flex;
-align-items: center;
-letter-spacing: 0.1em;
-
-color: #000000;
-
-opacity: 0.5;
+.edit_div {
+	height: 120vh;
+	position: relative;
+	top: 250px;
+	margin-top: 20px;
 }
 
- Line 2 
-
-#line2{
-position: absolute;
-width: 20px;
-height: 0px;
-left: 1724px;
-top: 29px;
-
-border: 1px solid #000000;
-transform: rotate(90deg);
+.edit_list {
+	list-style: none;
+	margin-bottom: 10px;
 }
 
-
- 장바구니 
-
-#mpshop{
-position: absolute;
-width: 130px;
-height: 30px;
-left: 1744px;
-top: 24px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 24px;
-display: flex;
-align-items: center;
-letter-spacing: 0.1em;
-
-color: #000000;
-
-opacity: 0.5;
+::placeholder {
+	color: black;
+	font-size: 11.8px;
+	font-weight: 400;
+	opacity: 1;
 }
- */
+
+.error-message {
+	font-family: 'Inter';
+	color: red;
+	font-size: 12px;
+	margin-top: 5px;
+	height: 13px;
+}
 
 /* free-icon-dog-3843277 */
-
-#image{
-position: absolute;
-width: 100px;
-height: 100px;
-left: 905px;
-top: 65px;
-
+#edit_logo {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100px;
+	height: 100px;
 }
 
 /* 회원가입폼 라인 */
-
-#line{
-position: absolute;
-width: 800px;
-height: 0px;
-left: 559.5px;
-top: 202px;
-
-border: 1px solid #000000;
+.edit_line {
+	position: absolute;
+	width: 750px;
+	left: 50%;
+	top: 20%;
+	/* 이미지 아래에 위치하도록 조정 */
+	transform: translateX(-50%);
+	border: 1px solid #000000;
 }
-
 
 /* 아이디 */
+#title_id {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 29px;
+	/* identical to box height */
 
-#div_id {
-position: absolute;
-width: 67px;
-height: 29px;
-left: 674px;
-top: 224px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 29px;
-
-/* identical to box height*/
-
-color: #000000;
+	color: #000000;
 }
 
-
- /* 아이디 입력창 */
-
-#up_id {
-box-sizing: border-box;
-
-position: absolute;
-width: 370px;
-height: 50px;
-left: 682px;
-top: 254px;
-
-padding-left : 15px;
-font-size : 15px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
-
+/* 아이디 입력창 */
+#id {
+	box-sizing: border-box;
+	width: 330px;
+	height: 40px;
+	font-size: 25px;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
 }
 
- /* 수정 할 비밀번호 */
- 
-#div_pw {
-position: absolute;
-width: 169px;
-height: 29px;
-left: 674px;
-top: 353px;
+/* 비밀번호 */
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 29px;
-/* identical to box height */
+#title_pw {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 29px;
+	/* identical to box height */
 
-color: #000000;
+	color: #000000;
 }
-
 
 /* 비밀번호 입력창 */
 
-#up_pw{
-box-sizing: border-box;
-
-position: absolute;
-width: 370px;
-height: 50px;
-left: 682px;
-top: 384px;
-
-padding-left : 15px;
-font-size : 15px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
+#pw {
+	box-sizing: border-box;
+	width: 330px;
+	height: 40px;
+	font-size: 25px;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
 }
 
-#up_pw::placeholder{
-	font-size : 12px;
-}
 /* 비밀번호 확인 */
 
-#div_confirmpw{
-position: absolute;
-width: 140px;
-height: 29px;
-left: 674px;
-top: 487px;
+#title_confirmpw {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 29px;
+	/* identical to box height */
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 29px;
-/* identical to box height */
-
-color: #000000;
+	color: #000000;
 }
-
 
 /* 비밀번호 확인 입력창 */
 
-#up_pw_confirm{
-box-sizing: border-box;
-
-position: absolute;
-width: 370px;
-height: 50px;
-left: 682px;
-top: 517px;
-
-padding-left : 15px;
-font-size : 15px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
+#pw_confirm {
+	box-sizing: border-box;
+	width: 330px;
+	height: 40px;
+	font-size: 25px;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
 }
-
-/* 비밀번호 수정 버튼 */
-
-#up_pw_btn{
-box-sizing: border-box;
-
-position: absolute;
-width: 160px;
-height: 40px;
-left: 1064px;
-top: 526px;
-
-background: #D9D9D9;
-border: 2px solid #000000;
-border-radius: 5px;
-}
-
 
 /* 이름 */
+#title_name {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 29px;
+	/* identical to box height*/
 
-#div_name {
-position: absolute;
-width: 45px;
-height: 29px;
-left: 674px;
-top: 609px;
-
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 29px;
-/* identical to box height */
-
-color: #000000;
+	color: #000000;
 }
-
 
 /* 이름 입력창 */
-
-#name{
-box-sizing: border-box;
-
-position: absolute;
-width: 370px;
-height: 50px;
-left: 682px;
-top: 639px;
-
-padding-left : 15px;
-font-size : 15px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
+#name {
+	box-sizing: border-box;
+	width: 330px;
+	height: 40px;
+	font-size: 25px;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
 }
 
-/* 수정 할 주소 */
+/* 주소 */
 
-#div_addr{
-position: absolute;
-width: 124px;
-height: 29px;
-left: 674px;
-top: 723px;
+#title_addr {
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 29px;
-/* identical to box height */
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 29px;
+	/* identical to box height */
 
-color: #000000;
+	color: #000000;
 }
 
 
 /* 우편번호 */
-
-#up_sample6_postcode{
-box-sizing: border-box;
-
-position: absolute;
-width: 200px;
-height: 50px;
-left: 682px;
-top: 753px;
-
-padding-left : 10px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
+#sample6_postcode {
+	box-sizing: border-box;
+	width: 200px;
+	height: 40px;
+	font-size: 25px;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
+	margin-bottom: 3px;
 }
 
-#up_sample6_postcode::placeholder {
-	font-size: 15px;
+#sample6_postcode::placeholder {
+	font-size: 20px;
 }
 
 /* 우편번호 찾기 버튼 */
 
-#up_search_postcode{
-box-sizing: border-box;
+#search_postcode {
+	box-sizing: border-box;
+	width: 130px;
+	height: 40px;
+	background: #D9D9D9;
+	border: 2px solid #000000;
+	border-radius: 5px;
+	margin-left: 15px;
+	margin-bottom: 3px;
+}
 
-position: absolute;
-width: 160px;
-height: 40px;
-left: 892px;
-top: 760px;
-
-background: #D9D9D9;
-border: 2px solid #000000;
-border-radius: 5px;
+#sample6_address::placeholder {
+	font-size: 20px;
 }
 
 /* 기본주소 */
 
-#up_sample6_address{
-box-sizing: border-box;
-
-position: absolute;
-width: 370px;
-height: 50px;
-left: 682px;
-top: 810px;
-
-padding-left : 10px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
-}
-
-#up_sample6_address::placeholder{
-	font-size : 15px;
+#sample6_address {
+	box-sizing: border-box;
+	width: 350px;
+	height: 40px;
+	font-size: 25px;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
+	margin-bottom: 3px;
 }
 
 /* 상세주소 */
-#up_sample6_detailAddress{
-	
-box-sizing: border-box;
 
-position: absolute;
-width: 370px;
-height: 50px;
-left: 682px;
-top: 867px;
-
-padding-left : 10px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
+#sample6_detailAddress {
+	box-sizing: border-box;
+	width: 350px;
+	height: 40px;
+	font-size: 25px;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
+	margin-bottom: 3px;
 }
 
-#up_sample6_detailAddress::placeholder{
-	font-size : 15px;
+#sample6_detailAddress::placeholder {
+	font-size: 20px;
 }
 
 /* 참고항목 */
 
-#up_sample6_extraAddress{
-box-sizing: border-box;
-
-position: absolute;
-width: 370px;
-height: 50px;
-left: 1059px;
-top: 867px;
-
-padding-left : 10px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
+#sample6_extraAddress {
+	box-sizing: border-box;
+	width: 350px;
+	height: 40px;
+	font-size: 25px;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
+	margin-bottom: 3px;
 }
 
-#up_sample6_extraAddress::placeholder{
-	font-size : 15px;
+#sample6_extraAddress::placeholder {
+	font-size: 20px;
 }
 
-/* 수정할 연락처 */
+/* 휴대전화 */
 
-#div_mobile{
-position: absolute;
-width: 146px;
-height: 29px;
-left: 674px;
-top: 962px;
+#title_mobile {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 29px;
+	/* identical to box height */
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 22px;
-line-height: 29px;
-/* identical to box height */
-
-color: #000000;
+	color: #000000;
 }
 
-/* 휴대번호1 */
-
-#up_mobile1{
-box-sizing: border-box;
-
-position: absolute;
-width: 100px;
-height: 50px;
-left: 682px;
-top: 998px;
-
-
-text-align : center;
-font-size : 15px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
+#mobile1 {
+	width: 100px;
+	height: 40px;
+	outline: 0;
+	color: black;
+	text-align: center;
+	font-size: 20px;
+	background-color: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 9px;
 }
 
 
 /* - */
-#min1{
-position: absolute;
-width: 24px;
-height: 39px;
-left: 1006px;
-top: 1004px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 39px;
-/* identical to box height */
+#min1 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 39px;
+	/* identical to box height */
 
-color: #000000;
+	color: #000000;
 }
-
 
 /* 휴대번호2 */
 
-#up_mobile2{
-box-sizing: border-box;
-
-position: absolute;
-width: 150px;
-height: 50px;
-left: 835px;
-top: 998px;
-
-text-align : center;
-font-size : 15px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
+#mobile2 {
+	box-sizing: border-box;
+	width: 120px;
+	height: 40px;
+	font-size: 20px;
+	text-align: center;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
 }
 
 /* - */
+#min2 {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 39px;
+	/* identical to box height */
 
-#min2{
-position: absolute;
-width: 24px;
-height: 39px;
-left: 797px;
-top: 1003px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 39px;
-/* identical to box height */
-
-color: #000000;
+	color: #000000;
 }
-
 
 /* 휴대번호3 */
 
-#up_mobile3{
-box-sizing: border-box;
+#mobile3 {
+	box-sizing: border-box;
+	width: 120px;
+	height: 40px;
+	font-size: 20px;
+	text-align: center;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
 
-position: absolute;
-width: 150px;
-height: 50px;
-left: 1040px;
-top: 998px;
-
-text-align : center;
-font-size : 15px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
 }
 
+/* 이메일 */
 
-/* 수정할 이메일 */
+#title_email {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 29px;
+	/* identical to box height */
 
-#div_email{
-position: absolute;
-width: 146px;
-height: 29px;
-left: 674px;
-top: 1102px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 29px;
-/* identical to box height */
-
-color: #000000;
-}
-
-#up_email::placeholder{
-	font-size : 15px;
+	color: #000000;
 }
 
 /* 이메일 입력창1 */
 
-#up_email1{
-box-sizing: border-box;
+#email1 {
+	box-sizing: border-box;
+	width: 200px;
+	height: 40px;
 
-position: absolute;
-width: 250px;
-height: 50px;
-left: 682px;
-top: 1132px;
-
-padding-left : 15px;
-font-size : 15px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
+	font-size: 20px;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
 }
 
+#email1::placeholder {
+	font-size: 15px;
+}
 
 /* @ */
 
-#and{
-position: absolute;
-width: 23px;
-height: 29px;
-left: 943px;
-top: 1144px;
+#and {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 29px;
+	/* identical to box height */
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
-
-color: #000000;
+	color: #000000;
 }
 
 
 /* 이메일 입력창2 */
 
-#up_email2{
-box-sizing: border-box;
-
-position: absolute;
-width: 250px;
-height: 50px;
-left: 974px;
-top: 1132px;
-
-padding-left : 10px;
-font-size : 15px;
-background: #F5F5F5;
-border: 1px solid #000000;
-border-radius: 7px;
+#email2 {
+	box-sizing: border-box;
+	width: 250px;
+	height: 40px;
+	font-size: 20px;
+	background: #F5F5F5;
+	border: 1px solid #000000;
+	border-radius: 7px;
 }
 
-#up_domainSelect {
+#email2::placeholder {
+	font-size: 20px;
+}
+
+#domainSelect {
 	width: 130px;
 	height: 40px;
-	margin-left : 1190px;
-	margin-top:1095px;
 	outline: 0;
 	color: black;
-
 	text-align: center;
 	font-size: 20px;
 	background-color: #F5F5F5;
@@ -638,30 +412,22 @@ border-radius: 7px;
 
 /* 생년월일 */
 
-#div_birth{
-position: absolute;
-width: 89px;
-height: 29px;
-left: 682px;
-top: 1258px;
+#title_birth {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 29px;
+	/* identical to box height */
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 29px;
-/* identical to box height */
-
-color: #000000;
+	color: #000000;
 }
 
-#up_birth {
+#birth {
 	box-sizing: border-box;
 	width: 140px;
 	height: 40px;
-	margin-left : 643px;
-	margin-top : 110px;
-	
+
 	font-family: 'Inter';
 	font-style: normal;
 	font-size: 20px;
@@ -671,39 +437,62 @@ color: #000000;
 	border-radius: 7px;
 }
 
-/* 정보 수정 박스  */
+.form_submit {
+	text-align: right;
+	margin-top: 50px;
+}
 
-#updatebtn{
-box-sizing: border-box;
-
-position: absolute;
-width: 120px;
-height: 40px;
-left: 790px;
-top: 1421px;
-
-background: #D9D9D9;
-border: 3px solid #000000;
-border-radius: 5px;
+#editbtn {
+	box-sizing: border-box;
+	width: 130px;
+	height: 40px;
+	color: white;
+	/*	background: #D9D9D9;*/
+	background-color: #000000;
+	border: 2px solid #000000;
+	border-radius: 5px;
 }
 
 
-/* 취소 버튼  */
+/* 사이드바 */
 
-#cancel{
-box-sizing: border-box;
+/* Rectangle 1 */
 
-position: absolute;
-width: 120px;
-height: 40px;
-left: 1021px;
-top: 1421px;
+.menu_bar {
 
-background: #D9D9D9;
-border: 3px solid #000000;
-border-radius: 5px;
+	position: absolute;
+	width: 290px;
+	height: 1100px;
+	left: 172px;
+ 	top: 397px;
+	align-items: left;
+	background: #F5F5F5;
 }
 
-li{
-	list-style:none;
+/* 마이페이지 */
+
+.mypage h3 {
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 48px;
+	margin-left: 10px;
+	color: #000000;
 }
+
+.mypage_title {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 350;
+	font-size: 25px;
+	line-height: 48px;
+	padding-top: 50px;
+	margin-left: 15px;
+	color: #000000;
+}
+.mypage_menu{
+	list-style: none;
+}
+

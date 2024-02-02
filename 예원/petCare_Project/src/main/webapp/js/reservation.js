@@ -23,26 +23,23 @@ document.getElementById('option').addEventListener('change', function() {
 });
 
 // 비로그인 시 예약하기 불가능
-document.addEventListener('DOMContentLoaded', function() {
-	const reserveForm = document.getElementById('reserveForm');
-	const loggedInUserId = "<%= loggedInUserId %>";
+document.addEventListener('DOMContentLoaded', function () {
+    const reserveForm = document.getElementById('reserveForm');
+    console.log("예약막기(세션id값) :: " + loggedInUserId);
 
-	reserveForm.addEventListener('submit', function(event) {
-		if (!isLoggedIn(loggedInUserId)) {
-			// 로그인되지 않은 경우 알림 표시
-			alert('로그인이 필요한 서비스입니다.');
-			// 이벤트 중단 (폼 전송 취소)
-			event.preventDefault();
+    reserveForm.addEventListener('submit', function (event) {
+        if (!isLoggedIn(loggedInUserId)) {
+            // 로그인되지 않은 경우 알림 표시
+            alert('로그인이 필요한 서비스입니다.');
+            // 이벤트 중단 (폼 전송 취소)
+            event.preventDefault();
+        }
+    });
 
-			// 로그인 페이지로 이동
-			window.location.href = 'Login.jsp'; // 로그인 페이지 경로에 맞게 수정
-		}
-	});
-
-	// 로그인 상태 확인 함수
-	function isLoggedIn(userId) {
-		// 여기에 로그인 상태 확인하는 코드를 추가할 수 있습니다.
-		// 예를 들어, 세션에 로그인 정보가 있는지 등을 확인합니다.
-		return userId != null && userId !== "";
-	}
+    // 로그인 상태 확인 함수
+    function isLoggedIn(userId) {
+        // 여기에 로그인 상태 확인하는 코드를 추가할 수 있습니다.
+        // 예를 들어, 세션에 로그인 정보가 있는지 등을 확인합니다.
+        return userId != null && userId !== "" && userId !== "null";
+    }
 });

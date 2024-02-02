@@ -38,12 +38,10 @@ function openSignUpPage() {
 function openLoginPage() {
 	window.location.href = "Login.jsp";
 }
-
 //마이페이지 예약내역
 function openMyPageReserve() {
 	window.location.href = "select.do";
 }
-
 //마이페이지 비밀번호입력
 function openMyPagePw() {
 	window.location.href = "MyPagePw.jsp";

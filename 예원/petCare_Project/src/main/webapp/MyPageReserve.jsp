@@ -29,6 +29,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
 <title>마이페이지 예약내역 확인</title>
+
 </head>
 <body>
 	<div id="fh5co-header">
@@ -64,52 +65,62 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						</ul>
 					</div>
 				</div>
-				
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" onclick="goToIndex()">Home</a> 
-						<a href="#" onclick="goToAbout()">About</a>
+						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
+							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="#" onclick="goToIndex()">foodee</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" onclick="goToService()">Service</a> 
-						<a href="#" onclick="goToReservation()">Community</a>
+						<a href="#" onclick="goToService()">Service</a> <a href="#"
+							onclick="goToReservation()">Community</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+	<div class="menu_bar">
+		<div class="mypage">
+			<h3>마이페이지</h3>
+		</div>
+		<div class="mypage_title">마이 예약</div>
+		<ul class="my_reserve">
+			<li class="mypage_menu">예약내역확인</li>
+		</ul>
+		<div class="mypage_title">마이 정보</div>
+		<ul class="my_inform">
+			<li class="mypage_menu">개인정보 수정</li>
+			<li class="mypage_menu">회원 탈퇴</li>
+		</ul>
+	</div>
+
 	<!-- 예약내역 출력 공간 -->
-	<table border="1">
-		<tr>
-			<th>예약날짜</th>
-			<th>서비스 종류</th>
-			<th>이용시간</th>
-			<th>미용 종류</th>
-			<th>반려동물</th>
-			<th>비용</th>			
-		</tr>
-		
-		<!-- items :: 실질적인 값을 들고 옴 -->
-		<c:forEach items="${list}" var="value">
-			<!-- list :: DTO의 멤버 이름으로 값을 불러와야 한다-->
+		<table border="1">
 			<tr>
-				<td>${value.date}</td>
-				<td>${value.service}</td>
-				<td>${value.time}</td>
-				<td>${value.grooming}</td>
-				<td>${value.pet}</td>
-				<td>${value.cost}</td>
+				<th>예약날짜</th>
+				<th>서비스 종류</th>
+				<th>이용시간</th>
+				<th>미용 종류</th>
+				<th>반려동물</th>
+				<th>비용</th>
 			</tr>
-		</c:forEach>		
-	</table>
-	
-	
-	
+
+			<!-- items :: 실질적인 값을 들고 옴 -->
+			<c:forEach items="${list}" var="value">
+				<!-- list :: DTO의 멤버 이름으로 값을 불러와야 한다-->
+				<tr>
+					<td>${value.date}</td>
+					<td>${value.service}</td>
+					<td>${value.time}</td>
+					<td>${value.grooming}</td>
+					<td>${value.pet}</td>
+					<td>${value.cost}</td>
+				</tr>
+			</c:forEach>
+		</table>
 	<script src="js/index.js"></script>
 </body>
 </html>
