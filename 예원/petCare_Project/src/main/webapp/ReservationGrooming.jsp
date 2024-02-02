@@ -161,7 +161,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</div>
 							<div class="form-group">
 								<label for="grooming" class="sr-only">미용</label> <select
-									class="form-control" id="option" name="grooming">
+									class="form-control" name="grooming" id="option">
 									<option selected disabled hidden>옵션</option>
 									<option value="전체미용">전체미용</option>
 									<option value="위생미용">위생미용</option>

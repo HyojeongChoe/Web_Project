@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- JSTL 사용시 필수 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -9,7 +8,6 @@
 <%
 String loggedInUserId = sessionManager.getLoggedInUserId(request);
 %>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,8 +26,48 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
-<title>마이페이지 예약내역 확인</title>
 
+<style>
+.reservaiton {
+	display: inline-block;
+}
+
+table.reservation_table {
+	border-collapse: collapse;
+	/* 표의 테두리 겹침 속성: collapse(겹침), separate(간격둠) */
+	border-spacing: 0; /* 셀 간의 간격을 지정: 0(간격 없음) */
+	vertical-align: top;
+	line-height: 1.5;
+	margin: 20px 10px;
+}
+
+table.reservation_table th {
+	width: 155px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top; /* 수직 정렬 */
+	color: black;
+	background: lavender;
+}
+
+table.reservation_table td {
+	width: 155px;
+	padding: 10px;
+	vertical-align: top;
+	border-bottom: 2px solid #ccc; /* 아래쪽 테두리를 지정하여 행 간의 경계를 만듦 */
+	border: none; /* 모든 테두리를 없앰 */
+}
+
+table.reservation_table tr.even {
+	background-color: #ffffff; /* 짝수 행 배경색 지정 */
+}
+
+table.reservation_table tr.odd {
+	background-color: #f2f2f2; /* 홀수 행 배경색 지정 */
+}
+</style>
+
+<title>마이페이지 예약내역 확인</title>
 </head>
 <body>
 	<div id="fh5co-header">
@@ -43,22 +81,14 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="loginButton"
-								style="background-color: white; border: 0;"
-								onclick="openSignUpPage()">SignUp</a></li>
-							<li class="login"><a href="#" id="loginButton"
-								style="background-color: white; border: 0;"
-								onclick="openLoginPage()">Login</a></li>
+							<li class="join"><a href="#" id="loginButton" style="background-color: white; border: 0;" onclick="openSignUpPage()">SignUp</a></li>
+							<li class="login"><a href="#" id="loginButton" style="background-color: white; border: 0;" onclick="openLoginPage()">Login</a></li>
 							<%
 							} else {
 							%>
 							<!-- 로그인 상태인 경우 -->
-							<li class="logout"><a href="#" id="logoutButton"
-								style="background-color: white; border: 0;"
-								onclick="performLogout()">Logout</a></li>
-							<li class="mypage"><a href="#" id="mypageButton"
-								style="background-color: white; border: 0;"
-								onclick="openMyPageReserve()">MyPage</a></li>
+							<li class="logout"><a href="#" id="logoutButton" style="background-color: white; border: 0;" onclick="performLogout()">Logout</a></li>
+							<li class="mypage"><a href="#" id="mypageButton" style="background-color: white; border: 0;" onclick="openMyPageReserve()">MyPage</a></li>
 							<%
 							}
 							%>
@@ -67,15 +97,15 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</div>
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
-							onclick="goToAbout()">About</a>
+						<a href="#" onclick="goToIndex()">Home</a>
+						<a href="#" onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="#" onclick="goToIndex()">foodee</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+						<a href="#" onclick="goToService()">Service</a>
+						<a href="#" onclick="goToReservation()">Community</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -98,29 +128,38 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	</div>
 
 	<!-- 예약내역 출력 공간 -->
-		<table border="1">
-			<tr>
-				<th>예약날짜</th>
-				<th>서비스 종류</th>
-				<th>이용시간</th>
-				<th>미용 종류</th>
-				<th>반려동물</th>
-				<th>비용</th>
-			</tr>
-
-			<!-- items :: 실질적인 값을 들고 옴 -->
-			<c:forEach items="${list}" var="value">
-				<!-- list :: DTO의 멤버 이름으로 값을 불러와야 한다-->
+	<div calss="reservaiton">
+		<h2>예약 내역</h2>
+		<hr>
+		<table class="reservation_table" border="1">
+			<thead>
 				<tr>
-					<td>${value.date}</td>
-					<td>${value.service}</td>
-					<td>${value.time}</td>
-					<td>${value.grooming}</td>
-					<td>${value.pet}</td>
-					<td>${value.cost}</td>
+					<th scope="col">예약날짜</th>
+					<th scope="col">서비스 종류</th>
+					<th scope="col">이용시간</th>
+					<th scope="col">미용 종류</th>
+					<th scope="col">반려동물</th>
+					<th scope="col">비용</th>
 				</tr>
-			</c:forEach>
+			</thead>
+
+			<tbody>
+				<!-- items :: 실질적인 값을 들고 옴 -->
+				<c:forEach items="${list}" var="value" varStatus="loop">
+					<!-- list :: DTO의 멤버 이름으로 값을 불러와야 한다-->
+					<tr class="${loop.index % 2 == 0 ? 'even' : 'odd'}">
+						<td>${value.date}</td>
+						<td>${value.service}</td>
+						<td>${value.time}</td>
+						<td>${value.grooming}</td>
+						<td>${value.pet}</td>
+						<td>${value.cost}</td>
+					</tr>
+				</c:forEach>
+			<tbody>
 		</table>
+	</div>
+
 	<script src="js/index.js"></script>
 </body>
 </html>

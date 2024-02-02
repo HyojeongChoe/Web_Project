@@ -167,16 +167,15 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<div class="form-group">
 								<label for="time" class="sr-only">시간</label> <select
 									class="form-control" name="time" id="option">
-									<option selected disabled hidden>시간</option>
+									<option selected disabled hidden>옵션</option>
 									<option value="60분">60분</option>
 									<option value="120분">120분</option>
 									<option value="180분">180분</option>
 								</select>
 							</div>
 							<div>
-								<label for="date" class="sr-only">예약날짜</label> <input
-									name="date" id="date" class="form-control" placeholder="예약날짜"
-									type="date">
+								<label for="date" class="sr-only">예약날짜</label>
+								<input name="date" id="date" class="form-control" placeholder="예약날짜" type="date">
 							</div>
 
 							<div class="form-group ">
