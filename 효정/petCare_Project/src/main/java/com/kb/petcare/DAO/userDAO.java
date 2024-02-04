@@ -3,6 +3,7 @@ package com.kb.petcare.DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -350,42 +351,31 @@ public class userDAO {
 		return result;
 	}
 
-	// 회원정보 출력
-	public ArrayList<userDTO> userSelectPrivacy(String userId) {
-		// 결과값 담을 배열
-		ArrayList<userDTO> result = new ArrayList<userDTO>();
-
+	// 비밀번호 가져오기
+	public String getPasswordForUser(String id) {
 		conn = null;
-		st = null;
+		ps = null;
 		rs = null;
+		String password = null;
 
 		try {
 			conn = ds.getConnection();
 
-			String query = "SELECT * FROM user WHERE id = ?";
+			String query = "SELECT pw FROM user WHERE id = ?";
 			ps = conn.prepareStatement(query);
-			ps.setString(1, userId);
+			ps.setString(1, id);
 			rs = ps.executeQuery();
 
-			while (rs.next()) { // rs.next() :: 결과값 하나씩 확인하며 돈다
-				userDTO element = new userDTO();
-
-				element.setName(rs.getString("name"));
-				element.setId(rs.getString("id"));
-	            element.setPw(rs.getString("pw"));
-	            element.setEmail(rs.getString("email"));
-	            element.setAddr(rs.getString("addr"));
-	            element.setBirth(rs.getString("birth")); 
-	            element.setMobile(rs.getString("mobile"));
-				// element 객체에 데이터 한 묶음씩 저장
-				result.add(element);
+			if (rs.next()) {
+				password = rs.getString("pw");
 			}
 		} catch (Exception e) {
-			System.out.println("SELECT 쿼리 수행 실패");
+			System.out.println("비밀번호 가져오기 실패");
 			e.printStackTrace();
 		} finally {
 			try {
 				conn.close();
+				ps.close();
 				rs.close();
 			} catch (Exception e) {
 				System.out.println("객체 닫기 실패");
@@ -393,6 +383,117 @@ public class userDAO {
 			}
 		}
 
-		return result;
+		return password;
+	}
+
+	// 회원정보 출력
+	public ArrayList<userDTO> selectUserInfo(String userId) {
+	    // 결과값 담을 배열
+	    ArrayList<userDTO> result = new ArrayList<userDTO>();
+	    ps = null;
+	    conn = null;
+	    rs = null;
+
+	    try {
+	        conn = ds.getConnection();
+
+	        String query = "SELECT * FROM user WHERE id = ?";
+	        ps = conn.prepareStatement(query);
+	        ps.setString(1, userId);
+	        rs = ps.executeQuery();
+
+	        while (rs.next()) { // rs.next() :: 결과값 하나씩 확인하며 돈다
+	            userDTO element = new userDTO();
+
+	            element.setName(rs.getString("name"));
+	            element.setId(rs.getString("id"));
+	            element.setPw(rs.getString("pw"));
+	            // email 값을 분리
+	            String email = rs.getString("email");
+	            String[] emailArray = email.split("@");
+	            element.setEmail1(emailArray[0]);
+	            element.setEmail2(emailArray[1]);
+	            // addr 값을 분리
+	            String addr = rs.getString("addr");
+	            String[] addrArray = addr.split("/");
+	            element.setAddr1(addrArray[0]);
+	            element.setAddr2(addrArray[1]);
+	            element.setAddr3(addrArray[2]);
+	            element.setAddr4(addrArray[3]);
+	            element.setBirth(rs.getString("birth"));
+	            // mobile 값을 분리
+	            String mobile = rs.getString("mobile");
+	            String[] mobileArray = mobile.split("-");
+	            element.setMobile1(mobileArray[0]);
+	            element.setMobile2(mobileArray[1]);
+	            element.setMobile3(mobileArray[2]);
+	            // element 객체에 데이터 한 묶음씩 저장
+	            result.add(element);
+	        }
+	    } catch (Exception e) {
+	        System.out.println("SELECT 쿼리 수행 실패");
+	        e.printStackTrace();
+	    } finally {
+	        try {
+	            if (rs != null) {
+	                rs.close();
+	            }
+	            if (ps != null) {
+	                ps.close();
+	            }
+	            if (conn != null) {
+	                conn.close();
+	            }
+	        } catch (SQLException e) {
+	            System.out.println("객체 닫기 실패");
+	            e.printStackTrace();
+	        }
+	    }
+	    return result;
+	}
+
+	// 사용자 정보 업데이트 메서드
+	public void updateUserInfo(String name, String userid, String pw, String email, String addr, String birth, String pet, String mobile) {
+	    conn = null;
+	    ps = null;
+
+	    try {
+	        conn = ds.getConnection();
+
+	        // 사용자 정보 업데이트 SQL 쿼리
+	        String query = "UPDATE user SET name=?, pw=?, "
+	                + "email=?, addr=?, birth=?, pet=?, mobile=? WHERE id=?";
+
+
+	        ps = conn.prepareStatement(query);
+	        ps.setString(1, name);
+	        ps.setString(2, pw);
+	        ps.setString(3, email);
+	        ps.setString(4, addr);
+	        ps.setString(5, birth);
+	        ps.setString(6, pet);
+	        ps.setString(7, mobile);
+	        ps.setString(8, userid);
+	        ps.executeUpdate();
+	        
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        // 리소스 해제
+	        if (ps != null) {
+	            try {
+	                ps.close();
+	            } catch (SQLException e) {
+	                e.printStackTrace();
+	            }
+	        }
+	        if (conn != null) {
+	            try {
+	                conn.close();
+	            } catch (SQLException e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    }
 	}
 }

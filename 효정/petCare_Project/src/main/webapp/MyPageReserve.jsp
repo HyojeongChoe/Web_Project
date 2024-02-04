@@ -92,7 +92,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 		</ul>
 		<div class="mypage_title">마이 정보</div>
 		<ul class="my_inform">
-			<li class="mypage_menu">개인정보 수정</li>
+			<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보 수정</a></li>
 			<li class="mypage_menu">회원 탈퇴</li>
 		</ul>
 	</div>

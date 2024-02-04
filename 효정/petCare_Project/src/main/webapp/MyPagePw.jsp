@@ -96,9 +96,9 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			<li class="mypage_menu">회원 탈퇴</li>
 		</ul>
 	</div>
-	
+
 	<div class="mypage_pw_insert">
-		<form action="privacy.do" >
+		<form action="mypagecheckpw.do">
 			<div class="form-myupdate_pw" id="myupdate">
 				<img src="images/free-icon-dog-3843277.png" id="image" /> <a
 					id="line"></a>
@@ -107,8 +107,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						type="password" id="input_pw" name="input_pw"
 						placeholder="비밀번호를 입력해주세요." />
 				</div>
-				<br> <input type="submit" action="" id="submit" value="확인" />
-				<input type="button" id="cancel" value="취소" />
+				<br> <input type="submit" id="submit" value="확인" /> <input
+					type="button" id="cancel" value="취소" />
 			</div>
 		</form>
 	</div>
