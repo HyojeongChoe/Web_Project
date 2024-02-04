@@ -1,8 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!-- JSTL 사용시 필수 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<%@ page import="java.util.*"%>
 <%@ page import="com.kb.petcare.Session.sessionManager"%>
 
 <%
@@ -12,10 +14,14 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/mypageedit.css">
+<link rel="shortcut icon" href="favicon.ico">
+<link
+	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
+	rel='stylesheet' type='text/css'>
+<!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css">
-<!-- Icomoon Icon Fonts-->
+<!-- Icomoon Icon Fonts -->
 <link rel="stylesheet" href="css/icomoon.css">
 <!-- Simple Line Icons -->
 <link rel="stylesheet" href="css/simple-line-icons.css">
@@ -23,9 +29,12 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
+<!-- Bootstrap  -->
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
+<!-- Modernizr JS -->
+<script src="js/modernizr-2.6.2.min.js"></script>
 
 <style>
 .reservaiton {
@@ -81,14 +90,22 @@ table.reservation_table tr.odd {
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="loginButton" style="background-color: white; border: 0;" onclick="openSignUpPage()">SignUp</a></li>
-							<li class="login"><a href="#" id="loginButton" style="background-color: white; border: 0;" onclick="openLoginPage()">Login</a></li>
+							<li class="join"><a href="#" id="loginButton"
+								style="background-color: white; border: 0;"
+								onclick="openSignUpPage()">SignUp</a></li>
+							<li class="login"><a href="#" id="loginButton"
+								style="background-color: white; border: 0;"
+								onclick="openLoginPage()">Login</a></li>
 							<%
 							} else {
 							%>
 							<!-- 로그인 상태인 경우 -->
-							<li class="logout"><a href="#" id="logoutButton" style="background-color: white; border: 0;" onclick="performLogout()">Logout</a></li>
-							<li class="mypage"><a href="#" id="mypageButton" style="background-color: white; border: 0;" onclick="openMyPageReserve()">MyPage</a></li>
+							<li class="logout"><a href="#" id="logoutButton"
+								style="background-color: white; border: 0;"
+								onclick="performLogout()">Logout</a></li>
+							<li class="mypage"><a href="#" id="mypageButton"
+								style="background-color: white; border: 0;"
+								onclick="openMyPageReserve()">MyPage</a></li>
 							<%
 							}
 							%>
@@ -97,21 +114,23 @@ table.reservation_table tr.odd {
 				</div>
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" onclick="goToIndex()">Home</a>
-						<a href="#" onclick="goToAbout()">About</a>
+						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
+							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="#" onclick="goToIndex()">foodee</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" onclick="goToService()">Service</a>
-						<a href="#" onclick="goToReservation()">Community</a>
+						<a href="#" onclick="goToService()">Service</a> <a href="#"
+							onclick="goToReservation()">Community</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<!-- 사이드 메뉴바 -->
 	<div class="menu_bar">
 		<div class="mypage">
 			<h3>마이페이지</h3>
@@ -127,43 +146,51 @@ table.reservation_table tr.odd {
 		</ul>
 	</div>
 
-	<!-- 예약내역 출력 공간 -->
-	<div class="reservaiton">
-		<h2>예약 내역</h2>
-		<hr>
-		<table class="reservation_table" border="1">
-			<thead>
-				<tr>
-					<th scope="col">예약날짜</th>
-					<th scope="col">서비스 종류</th>
-					<th scope="col">이용시간</th>
-					<th scope="col">미용 종류</th>
-					<th scope="col">반려동물</th>
-					<th scope="col">비용</th>
-				</tr>
-			</thead>
+	<!-- 예약내역 페이지 상단 -->
+	<div class="desktop_edit">
+		<img src="images/free-icon-dog-3843277.png" id="edit_logo" />
+		<div class="edit_line"></div>
+		<div class="edit_div">
+		
+			<!-- 예약내역 출력 공간 -->
+			<div class="reservaiton">
+				<h2>예약 내역</h2>
+				<hr>
+				<table class="reservation_table" border="1">
+					<thead>
+						<tr>
+							<th scope="col">예약날짜</th>
+							<th scope="col">서비스 종류</th>
+							<th scope="col">이용시간</th>
+							<th scope="col">미용 종류</th>
+							<th scope="col">반려동물</th>
+							<th scope="col">비용</th>
+						</tr>
+					</thead>
 
-			<tbody>
-				<!-- items :: 실질적인 값을 들고 옴 -->
-				<c:forEach items="${list}" var="value" varStatus="loop">
-					<!-- list :: DTO의 멤버 이름으로 값을 불러와야 한다-->
-					<tr class="${loop.index % 2 == 0 ? 'even' : 'odd'}">
-						<td>${value.date}</td>
-						<td>${value.service}</td>
-						<td>${value.time}</td>
-						<td>${value.grooming}</td>
-						<td>${value.pet}</td>
-						<td>${value.cost}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+					<tbody>
+						<!-- items :: 실질적인 값을 들고 옴 -->
+						<c:forEach items="${list}" var="value" varStatus="loop">
+							<!-- list :: DTO의 멤버 이름으로 값을 불러와야 한다-->
+							<tr class="${loop.index % 2 == 0 ? 'even' : 'odd'}">
+								<td>${value.date}</td>
+								<td>${value.service}</td>
+								<td>${value.time}</td>
+								<td>${value.grooming}</td>
+								<td>${value.pet}</td>
+								<td>${value.cost}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 
-		<!-- 페이징 처리 -->
-		<div class="paging">
-			<c:forEach begin="1" end="${totalPages}" var="i">
-				<a href="${pageContext.request.contextPath}/select.do?page=${i}">${i}</a>
-			</c:forEach>
+				<!-- 페이징 처리 -->
+				<div class="paging">
+					<c:forEach begin="1" end="${totalPages}" var="i">
+						<a href="${pageContext.request.contextPath}/select.do?page=${i}">${i}</a>
+					</c:forEach>
+				</div>
+			</div>
 		</div>
 	</div>
 

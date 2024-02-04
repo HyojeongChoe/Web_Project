@@ -305,20 +305,22 @@ public class userDAO {
 	}
 
 	// 예약내역 출력
-	public ArrayList<userDTO> userSelect() {
+	public ArrayList<userDTO> userSelect(String id) {
 		// 결과값 담을 배열
 		ArrayList<userDTO> result = new ArrayList<userDTO>();
 
 		conn = null;
-		st = null;
+		ps = null;
 		rs = null;
 
 		try {
 			conn = ds.getConnection();
 
-			String query = "SELECT * FROM reserve";
-			st = conn.createStatement();
-			rs = st.executeQuery(query);
+			// 세션에서 받아온 userId를 사용하여 해당 사용자의 예약내역만 조회
+	        String query = "SELECT * FROM reserve WHERE userId = ?";
+	        ps = conn.prepareStatement(query);
+	        ps.setString(1, id);
+	        rs = ps.executeQuery();
 
 			while (rs.next()) { // rs.next() :: 결과값 하나씩 확인하며 돈다
 				userDTO element = new userDTO();
@@ -339,7 +341,7 @@ public class userDAO {
 		} finally {
 			try {
 				conn.close();
-				st.close();
+				ps.close();
 				rs.close();
 			} catch (Exception e) {
 				System.out.println("객체 닫기 실패");
@@ -356,7 +358,7 @@ public class userDAO {
 		ArrayList<userDTO> result = new ArrayList<userDTO>();
 
 		conn = null;
-		st = null;
+		ps = null;
 		rs = null;
 
 		try {
@@ -386,6 +388,7 @@ public class userDAO {
 		} finally {
 			try {
 				conn.close();
+				ps.close();
 				rs.close();
 			} catch (Exception e) {
 				System.out.println("객체 닫기 실패");
@@ -432,6 +435,7 @@ public class userDAO {
 	    } finally {
 			try {
 				conn.close();
+				ps.close();
 				rs.close();
 			} catch (Exception e) {
 				System.out.println("객체 닫기 실패");
@@ -466,6 +470,7 @@ public class userDAO {
 	    } finally {
 			try {
 				conn.close();
+				st.close();
 				rs.close();
 			} catch (Exception e) {
 				System.out.println("객체 닫기 실패");
