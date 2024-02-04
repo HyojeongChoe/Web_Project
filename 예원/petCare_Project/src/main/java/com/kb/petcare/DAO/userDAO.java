@@ -41,7 +41,7 @@ public class userDAO {
 		try {
 			conn = ds.getConnection();// DB접속
 
-			String query = "INSERT INTO user VALUES(?,?,?,?,?,?,?,?)"; // 물음표가 있기 때문에 ps사용
+			String query = "INSERT INTO user VALUES(?,?,?,?,?,?,?)"; // 물음표가 있기 때문에 ps사용
 			ps = conn.prepareStatement(query);
 			ps.setString(1, name);
 			ps.setString(2, id);
@@ -49,8 +49,7 @@ public class userDAO {
 			ps.setString(4, email);
 			ps.setString(5, addr);
 			ps.setString(6, birth);
-			ps.setString(7, pet);
-			ps.setString(8, mobile);
+			ps.setString(7, mobile);
 			ps.executeUpdate();
 
 		} catch (Exception e) {

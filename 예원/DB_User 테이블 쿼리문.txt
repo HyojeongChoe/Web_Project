@@ -1,0 +1,47 @@
+use apidb;
+
+CREATE TABLE User(
+	name varchar(50),	-- 이름
+    id varchar(50),		-- 아이디
+    pw varchar(50),		-- 비밀번호
+    email varchar(50),	-- 이메일
+    addr varchar(50),	-- 주소
+    birth varchar(50),	-- 생년월일
+    mobile varchar(200)	-- 전화번호
+);
+
+SELECT * FROM User;
+TRUNCATE User;
+DROP TABLE User;
+
+DELETE FROM user WHERE name = '최효정';
+
+CALL ADD_USER('최효정', 'chj1', 'password1!', 'choe@naver.com', 
+              '대구 동구 동부로 121, 123동 111호 (신천동)41228', '2024-02-01', '01012341111');
+CALL ADD_USER('홍주환', 'hjh1', 'password1!', 'hong@kakao.com', 
+              '대구 동구 동부로 121, 123동 222호 (신천동)41228', '2024-02-01', '01012342222');
+CALL ADD_USER('백정윤', 'bjy1', 'password1!', 'baek@google.com', 
+              '대구 동구 동부로 121, 123동 333호 (신천동)41228', '2024-02-01', '01012343333');
+CALL ADD_USER('신예원', 'syw1', 'password1!', 'shin@naver.com', 
+              '대구 동구 동부로 121, 123동 444호 (신천동)41228', '2024-02-01', '01012345555');
+
+
+-- 프로시저 구현
+DELIMITER $$
+CREATE PROCEDURE ADD_USER
+(
+    IN _name VARCHAR(50),
+    IN _id VARCHAR(50),
+    IN _pw VARCHAR(50),
+    IN _email VARCHAR(50),
+    IN _addr VARCHAR(200),
+    IN _birth VARCHAR(50),
+    IN _mobile VARCHAR(50)
+)
+BEGIN
+    INSERT INTO User VALUES(_name, _id, _pw, _email, _addr, _birth, _mobile);
+END $$
+DELIMITER ;
+
+-- 프로시저 삭제
+DROP PROCEDURE ADD_USER;
