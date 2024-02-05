@@ -25,14 +25,13 @@ public class userServiceUpdateUserInfo implements userService {
 				request.getParameter("addr4"),
 				request.getParameter("addr1"));
 		String upBirth = request.getParameter("birth");
-		String upPet = request.getParameter("pet");
 		String upMobile = String.format("%s-%s-%s", 
 				request.getParameter("mobile1"),
 				request.getParameter("mobile2"),
 				request.getParameter("mobile3"));
 
 		 // 사용자 정보 업데이트
-	    dao.updateUserInfo(upName, Id, upPw, upEmail, upAddr, upBirth, upPet, upMobile);
+	    dao.updateUserInfo(upName, Id, upPw, upEmail, upAddr, upBirth, upMobile);
 
 	    // 업데이트된 정보를 다시 가져와서 반환
 	    ArrayList<userDTO> updatedUserInfo = dao.selectUserInfo(Id);

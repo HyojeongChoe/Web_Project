@@ -59,7 +59,7 @@ if (loggedInUserId != null) {
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="loginButton"
+							<li class="join"><a href="#" id="JoinButton"
 								style="background-color: white; border: 0;"
 								onclick="openSignUpPage()">SignUp</a></li>
 							<li class="login"><a href="#" id="loginButton"
@@ -105,11 +105,11 @@ if (loggedInUserId != null) {
 			</div>
 			<div class="mypage_title">마이 예약</div>
 			<ul class="my_reserve">
-				<li class="mypage_menu">예약내역확인</li>
+				<li class="mypage_menu"><a href="#" onclick="openMyPageReserve()">예약내역확인</a></li>
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu">개인정보 수정</li>
+				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보 수정</a></li>
 				<li class="mypage_menu">회원 탈퇴</li>
 			</ul>
 		</div>

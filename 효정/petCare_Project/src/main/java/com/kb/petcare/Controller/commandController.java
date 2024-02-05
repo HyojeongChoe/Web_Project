@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.kb.petcare.Command.paginationService;
 import com.kb.petcare.Command.userService;
 import com.kb.petcare.Command.userServiceCheckDuplicateId;
 import com.kb.petcare.Command.userServiceFindId;
@@ -67,6 +68,7 @@ public class commandController extends HttpServlet {
 		String command = uri.substring(conPath.length()); // insert.do, delete.do ... 형식으로 command에 저장
 
 		userService uService = null; // 객체생성
+		paginationService pService = null;
 
 		if (command.equals("/signup.do")) {
 			System.out.println("<회원가입>을 수행합니다.");
@@ -118,16 +120,33 @@ public class commandController extends HttpServlet {
 			System.out.println("<예약내역 출력>을 수행합니다.");
 			uService = new userServiceSelect();
 
-			// select.do(예약내역 출력)가 실행될 때는, result로 실질적인 값이 반환될 것
-			ArrayList<userDTO> result = uService.execute(request, response);
+			// 페이지 번호를 가져오기
+			String pageStr = request.getParameter("page");
+			int page = (pageStr != null) ? Integer.parseInt(pageStr) : 1;
+
+			// 페이지당 항목 수와 전체 항목 수를 설정
+			int itemsPerPage = 10; // 페이지당 보여줄 항목 수
+
+			// 페이징 처리를 위한 데이터를 가져오기
+			pService = (paginationService) uService;
+			int totalItems = pService.getTotalItems(); // 전체 항목 수
+
+			// 페이징 처리를 위해 필요한 데이터를 설정
+			int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage);
+			int offset = (page - 1) * itemsPerPage;
+
+			// 예약내역 가져오기 :: select.do(예약내역 출력)가 실행될 때는, result로 실질적인 값이 반환될 것
+			ArrayList<userDTO> result = pService.executePaging(request, response, offset, itemsPerPage);
 
 			if (result != null) { // 결과값이 null이 아닐 경우
-				// View 역할(RequestDispatcher 사용) :: MyPasgeReserve.jsp에서 결과값 처리
+				request.setAttribute("list", result);
+				request.setAttribute("currentPage", page);
+				request.setAttribute("totalPages", totalPages);
+
+				// View 역할(RequestDispatcher 사용) :: MyPageReserve.jsp에서 결과값 처리
 				RequestDispatcher dis = request.getRequestDispatcher("/MyPageReserve.jsp");
 				dis.forward(request, response);
 			}
-			// 중복호출..
-			uService.execute(request, response);
 			return;
 		}
 		uService.execute(request, response);

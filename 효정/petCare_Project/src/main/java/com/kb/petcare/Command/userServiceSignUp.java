@@ -28,13 +28,12 @@ public class userServiceSignUp implements userService {
 				request.getParameter("addr4"),
 				request.getParameter("addr1"));
 		String birth = request.getParameter("birth");
-		String pet = request.getParameter("pet");
 		String mobile = String.format("%s-%s-%s", 
 				request.getParameter("mobile1"),
 				request.getParameter("mobile2"),
 				request.getParameter("mobile3"));
 
-		dao.userInsert(name, id, pw, email, addr, birth, pet, mobile);
+		dao.userInsert(name, id, pw, email, addr, birth, mobile);
 
 		return dto;
 	}

@@ -43,7 +43,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="loginButton"
+							<li class="join"><a href="#" id="JoinButton"
 								style="background-color: white; border: 0;"
 								onclick="openSignUpPage()">SignUp</a></li>
 							<li class="login"><a href="#" id="loginButton"
@@ -82,35 +82,37 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</div>
 		</div>
 	</div>
-	<div class="menu_bar">
-		<div class="mypage">
-			<h3>마이페이지</h3>
-		</div>
-		<div class="mypage_title">마이 예약</div>
-		<ul class="my_reserve">
-			<li class="mypage_menu">예약내역확인</li>
-		</ul>
-		<div class="mypage_title">마이 정보</div>
-		<ul class="my_inform">
-			<li class="mypage_menu">개인정보 수정</li>
-			<li class="mypage_menu">회원 탈퇴</li>
-		</ul>
-	</div>
-
-	<div class="mypage_pw_insert">
-		<form action="mypagecheckpw.do">
-			<div class="form-myupdate_pw" id="myupdate">
-				<img src="images/free-icon-dog-3843277.png" id="image" /> <a
-					id="line"></a>
-				<div class="form_input_pw">
-					<img src="free-icon-lock-6421881.png" id="lock" /> <input
-						type="password" id="input_pw" name="input_pw"
-						placeholder="비밀번호를 입력해주세요." />
-				</div>
-				<br> <input type="submit" id="submit" value="확인" /> <input
-					type="button" id="cancel" value="취소" />
+	
+	<div class="form_edit">
+		<div class="menu_bar">
+			<div class="mypage">
+				<h3>마이페이지</h3>
 			</div>
-		</form>
+			<div class="mypage_title">마이 예약</div>
+			<ul class="my_reserve">
+				<li class="mypage_menu"><a href="#" onclick="openMyPageReserve()">예약내역확인</a></li>
+			</ul>
+			<div class="mypage_title">마이 정보</div>
+			<ul class="my_inform">
+				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보 수정</a></li>
+				<li class="mypage_menu">회원 탈퇴</li>
+			</ul>
+		</div>
+		<div class="mypage_pw_insert">
+			<form action="mypagecheckpw.do">
+				<div class="form-myupdate_pw" id="myupdate">
+					<img src="images/free-icon-dog-3843277.png" id="image" /> <a
+						id="line"></a>
+					<div class="form_input_pw">
+						<img src="free-icon-lock-6421881.png" id="lock" /> <input
+							type="password" id="input_pw" name="input_pw"
+							placeholder="비밀번호를 입력해주세요." />
+					</div>
+					<br> <input type="submit" id="submit" value="확인" /> <input
+						type="button" id="cancel" value="취소" />
+				</div>
+			</form>
+		</div>
 	</div>
 	<script src="js/index.js"></script>
 </body>
