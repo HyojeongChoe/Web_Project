@@ -6,14 +6,18 @@
 <%@ page import="java.util.*"%>
 <%@ page import="com.kb.petcare.Session.sessionManager"%>
 <%@ page import="com.kb.petcare.DTO.userDTO"%>
-
-<%!ArrayList<userDTO> listPrivacy;%>
-<% listPrivacy = (ArrayList<userDTO>) request.getAttribute("listPrivacy"); %>
+<%@ page import="com.kb.petcare.DAO.userDAO"%>
 
 <%
 String loggedInUserId = sessionManager.getLoggedInUserId(request);
+if (loggedInUserId != null) {
+	userDAO dao = new userDAO();
+	ArrayList<userDTO> listUserInfo = dao.selectUserInfo(loggedInUserId);
+
+	if (listUserInfo != null && !listUserInfo.isEmpty()) {
+		userDTO userInfo = listUserInfo.get(0);
 %>
-<!DOCTYPE html>
+
 <html>
 
 <head>
@@ -55,7 +59,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="loginButton"
+							<li class="join"><a href="#" id="JoinButton"
 								style="background-color: white; border: 0;"
 								onclick="openSignUpPage()">SignUp</a></li>
 							<li class="login"><a href="#" id="loginButton"
@@ -67,7 +71,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<!-- 로그인 상태인 경우 -->
 							<li class="logout"><a href="#" id="logoutButton"
 								style="background-color: white; border: 0;"
-								onclick="performLogout()">Logout</a></li>
+								onclick="performLogout()"> Logout</a></li>
 							<li class="mypage"><a href="#" id="mypageButton"
 								style="background-color: white; border: 0;"
 								onclick="openMyPageReserve()">MyPage</a></li>
@@ -94,147 +98,168 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</div>
 		</div>
 	</div>
-	<form class="form_edit">
+	<div class="form_edit">
 		<div class="menu_bar">
 			<div class="mypage">
 				<h3>마이페이지</h3>
 			</div>
 			<div class="mypage_title">마이 예약</div>
 			<ul class="my_reserve">
-				<li class="mypage_menu">예약내역확인</li>
+				<li class="mypage_menu"><a href="#" onclick="openMyPageReserve()">예약내역확인</a></li>
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu">개인정보 수정</li>
+				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보 수정</a></li>
 				<li class="mypage_menu">회원 탈퇴</li>
 			</ul>
 		</div>
-		<div class="desktop_edit">
-			<% for (userDTO user : listPrivacy) { %>
-			<img src="images/free-icon-dog-3843277.png" id="edit_logo" />
-			<div class="edit_line"></div>
-			<div class="edit_div">
-				<ul>
-					<!--  아이디 -->
-					<li class="edit_list">
-						<div class="edit_title" id="title_id">
-							<!--입력 타이틀 클래스-->
-							아이디
-						</div> <!--title속성: 마우스 커서 올리면 사용자에게 추가정보 알려줌 -->
-						<div class="edit_write" title="(영문소문자와 숫자, 4~16자)">
-							<input type="text" id="id" name="id" placeholder="" minlength="4"
-								maxlength="16" oninput="checkId()" />
-						</div>
-					</li>
-					<!--  비밀번호 -->
-					<li class="edit_list">
-						<div class="edit_title" id="title_pw">비밀번호</div>
-						<div class="edit_write"
-							title="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)">
-							<input type="password" id="pw" name="pw"
-								placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)"
-								maxlength="16" oninput="checkPassword()">
-							<div id="pwError" class="error-message"></div>
-						</div>
-					</li>
+		<form action="updateuserinfo.do">
+			<div class="desktop_edit">
+				<img src="images/free-icon-dog-3843277.png" id="edit_logo" />
+				<div class="edit_line"></div>
+				<div class="edit_div">
+					<ul>
+						<!-- listUserInfo에서 가져온 개인정보를 출력하는 부분 -->
+						<!--  아이디 -->
+						<li class="edit_list">
+							<div class="edit_title" id="title_id">
+								<!--입력 타이틀 클래스-->
+								아이디
+							</div> <!--title속성: 마우스 커서 올리면 사용자에게 추가정보 알려줌 -->
+							<div class="edit_write" title="(영문소문자와 숫자, 4~16자)">
+								<input type="text" id="id" name="id" placeholder=""
+									minlength="4" maxlength="16" oninput="checkId()"
+									value="<%=userInfo.getId()%>" readonly />
+							</div>
+						</li>
+						<!--  비밀번호 -->
+						<li class="edit_list">
+							<div class="edit_title" id="title_pw">비밀번호</div>
+							<div class="edit_write"
+								title="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)">
+								<input type="password" id="pw" name="pw"
+									placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)"
+									maxlength="16" oninput="checkPassword()"
+									value="<%=userInfo.getPw()%>">
+								<div id="pwError" class="error-message"></div>
+							</div>
+						</li>
 
-					<!-- 비밀번호 확인-->
-					<li class="edit_list">
-						<div class="edit_title" id="title_confirmpw">비밀번호 확인</div>
-						<div class="edit_write">
-							<input type="password" id="pw_confirm" name="pw_confirm"
-								maxlength="16" oninput="checkPassword()">
-							<div id="pwConfirmError" class="error-message"></div>
-						</div>
-					</li>
+						<!-- 비밀번호 확인-->
+						<li class="edit_list">
+							<div class="edit_title" id="title_confirmpw">비밀번호 확인</div>
+							<div class="edit_write">
+								<input type="password" id="pw_confirm" name="pw_confirm"
+									maxlength="16" oninput="checkPassword()"
+									value="<%=userInfo.getPw()%>">
+								<div id="pwConfirmError" class="error-message"></div>
+							</div>
+						</li>
 
-					<!--  이름 -->
-					<li class="edit_list">
-						<div class="edit_title" id="title_name">
-							<!-- 입력 타이틀 클래스-->
-							이름
-						</div>
-						<div class="edit_write" title="">
-							<input type="text" id="name" name="name" placeholder=""
-								maxlength="30" value="<%= user.getName() %>" />
-							<div id="nameError" class="error-message"></div>
-						</div>
-					</li>
+						<!--  이름 -->
+						<li class="edit_list">
+							<div class="edit_title" id="title_name">
+								<!-- 입력 타이틀 클래스-->
+								이름
+							</div>
+							<div class="edit_write" title="">
+								<input type="text" id="name" name="name" placeholder=""
+									maxlength="30" value="<%=userInfo.getName()%>" readonly />
+								<div id="nameError" class="error-message"></div>
+							</div>
+						</li>
 
-					<!-- 주소  -->
-					<li class="edit_list">
+						<!-- 주소  -->
+						<li class="edit_list">
 
-						<div class="edit_title" id="title_addr">주소</div>
-						<div class="edit write">
-							<input type="text" id="sample6_postcode" name="addr1"
-								placeholder="우편번호"> <input type="button"
-								id="search_postcode" onclick="sample6_execDaumPostcode()"
-								value="우편번호 찾기"><br> <input type="text"
-								id="sample6_address" name="addr2" placeholder="기본주소"><br>
-							<input type="text" id="sample6_detailAddress" name="addr3"
-								placeholder="상세주소" onchange="checkAddress()"> <input
-								type="text" id="sample6_extraAddress" name="addr4"
-								placeholder="참고항목">
-							<div id="addressError" class="error-message"></div>
-						</div>
-					</li>
+							<div class="edit_title" id="title_addr">주소</div>
+							<div class="edit write">
+								<input type="text" id="sample6_postcode" name="addr1"
+									placeholder="우편번호" value="<%=userInfo.getAddr4()%>"> <input
+									type="button" id="search_postcode"
+									onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+								<input type="text" id="sample6_address" name="addr2"
+									placeholder="기본주소" value="<%=userInfo.getAddr1()%>"><br>
+								<input type="text" id="sample6_detailAddress" name="addr3"
+									placeholder="상세주소" onchange="checkAddress()"
+									value="<%=userInfo.getAddr2()%>"> <input type="text"
+									id="sample6_extraAddress" name="addr4" placeholder="참고항목"
+									value="<%=userInfo.getAddr3()%>">
+								<div id="addressError" class="error-message"></div>
+							</div>
+						</li>
 
-					<!--전화-->
-					<li class="edit_list ">
-						<div class="edit_title" id="title_mobile">휴대전화</div>
-						<div class="edit_write">
-							<span class="edit-mobile"> <select id="mobile1"
-								name="mobile1">
-									<option value="010">010</option>
-									<option value="011">011</option>
-									<option value="016">016</option>
-									<option value="017">017</option>
-									<option value="018">018</option>
-									<option value="019">019</option>
-							</select> <span class="mobile-formText" id="min1"> - </span> <input
-								id="mobile2" name="mobile2" maxlength="4" type="text"
-								oninput="checkMobile()" /> <span class="mobile-formText"
-								id="min2"> - </span> <input id="mobile3" name="mobile3"
-								maxlength="4" type="text" oninput="checkMobile()" />
-							</span>
-							<div id="mobileError" class="error-message"></div>
-						</div>
-					</li>
+						<!--전화-->
+						<li class="edit_list ">
+							<div class="edit_title" id="title_mobile">휴대전화</div>
+							<div class="edit_write">
+								<span class="edit-mobile"> <select id="mobile1"
+									name="mobile1">
+										<option value="010"
+											${userInfo.getMobile1() == '010' ? 'selected' : ''}>010</option>
+										<option value="011"
+											${userInfo.getMobile1() == '011' ? 'selected' : ''}>011</option>
+										<option value="016"
+											${userInfo.getMobile1() == '016' ? 'selected' : ''}>016</option>
+										<option value="017"
+											${userInfo.getMobile1() == '017' ? 'selected' : ''}>017</option>
+										<option value="018"
+											${userInfo.getMobile1() == '018' ? 'selected' : ''}>018</option>
+										<option value="019"
+											${userInfo.getMobile1() == '019' ? 'selected' : ''}>019</option>
+								</select> <span class="mobile-formText" id="min1"> - </span> <input
+									id="mobile2" name="mobile2" maxlength="4" type="text"
+									oninput="checkMobile()" value="<%=userInfo.getMobile2()%>" />
+									<span class="mobile-formText" id="min2"> - </span> <input
+									id="mobile3" name="mobile3" maxlength="4" type="text"
+									oninput="checkMobile()" value="<%=userInfo.getMobile3()%>" />
+								</span>
+								<div id="mobileError" class="error-message"></div>
+							</div>
+						</li>
 
-					<!--  이메일 -->
-					<li class=" edit_list">
-						<div class="edit_title" id="title_email">이메일</div>
-						<div class="edit_write">
-							<span> <input type="text" id="email1" name="email1"
-								placeholder="이메일 입력하세요" oninput="checkEmail()"> <a
-								id="and">@ </a> <input type="text" id="email2" name="email2"
-								placeholder="naver.com" oninput="checkEmail()" /> <select
-								id="domainSelect" name="email2">
-									<option>직접입력</option>
-									<option value="naver.com">naver.com</option>
-									<option value="kakao.com">kakao.com</option>
-									<option value="google.com">google.com</option>
-							</select>
-							</span>
-							<div id="emailError" class="error-message"></div>
-						</div>
-					</li>
+						<!--  이메일 -->
+						<li class=" edit_list">
+							<div class="edit_title" id="title_email">이메일</div>
+							<div class="edit_write">
+								<span> <input type="text" id="email1" name="email1"
+									placeholder="이메일 입력하세요" oninput="checkEmail()"
+									value="<%=userInfo.getEmail1()%>"> <a id="and">@ </a> <input
+									type="text" id="email2" name="email2" placeholder="naver.com"
+									oninput="checkEmail()" value="<%=userInfo.getEmail2()%>" /> <select
+									id="domainSelect" name="email2">
+										<option>직접입력</option>
+										<option value="naver.com"
+											${userInfo.getEmail2() == 'naver.com' ? 'selected' : ''}>naver.com</option>
+										<option value="kakao.com"
+											${userInfo.getEmail2() == 'kakao.com' ? 'selected' : ''}>kakao.com</option>
+										<option value="google.com"
+											${userInfo.getEmail2() == 'google.com' ? 'selected' : ''}>google.com</option>
+								</select>
+								</span>
+								<div id="emailError" class="error-message"></div>
+							</div>
+						</li>
 
-					<!-- 생일 -->
-					<li class="edit_list">
-						<div class="edit_title" id="title_birth">생년월일</div> <input
-						type="date" id="birth" name="birth" onblur="checkBirth()">
-					</li>
+						<!-- 생일 -->
+						<li class="edit_list">
+							<div class="edit_title" id="title_birth">생년월일</div> <input
+							type="date" id="birth" name="birth" onblur="checkBirth()"
+							value="<%=userInfo.getBirth()%>" readonly>
+						</li>
+					</ul>
 
-				</ul>
-				<% } %>
-				<div class="form_submit">
-					<input type="submit" value="수정" id="editbtn" />
+					<div class="form_submit">
+						<input type="submit" value="수정" id="editbtn" />
+					</div>
 				</div>
 			</div>
-		</div>
-	</form>
-
+		</form>
+	</div>
+	<%
+	}
+	}
+	%>
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="js/signup.js"></script>

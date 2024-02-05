@@ -86,7 +86,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="loginButton"
+							<li class="join"><a href="#" id="JoinButton"
 								style="background-color: white; border: 0;"
 								onclick="openSignUpPage()">SignUp</a></li>
 							<li class="login"><a href="#" id="loginButton"
@@ -147,7 +147,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</div>
 						</ul>
 					</div>
-					<form id="reserveForm" action="reserve1.do">
+					<form action="reserve1.do">
 						<div class="col-md-6 to-animate-2">
 							<h3>예약</h3>
 							<div class="form-group ">
@@ -167,15 +167,16 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<div class="form-group">
 								<label for="time" class="sr-only">시간</label> <select
 									class="form-control" name="time" id="option">
-									<option selected disabled hidden>옵션</option>
+									<option selected disabled hidden>시간</option>
 									<option value="60분">60분</option>
 									<option value="120분">120분</option>
 									<option value="180분">180분</option>
 								</select>
 							</div>
 							<div>
-								<label for="date" class="sr-only">예약날짜</label>
-								<input name="date" id="date" class="form-control" placeholder="예약날짜" type="date">
+								<label for="date" class="sr-only">예약날짜</label> <input
+									name="date" id="date" class="form-control" placeholder="예약날짜"
+									type="date">
 							</div>
 
 							<div class="form-group ">
@@ -184,11 +185,11 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 									placeholder="기타 문의사항"></input>
 							</div>
 							<div>총 이용금액</div>
-							<div id="priceDisplay" class="form-group"></div>
+							<div id="priceDisplay" name="cost" class="form-group"></div>
 							<input type="hidden" id="selectedPrice" name="selectedPrice"
 								value="">
 							<div class="form-group ">
-								<input type="submit" class="btn btn-primary" value="예약하기">
+								<input class="btn btn-primary" value="예약하기" type="submit">
 							</div>
 						</div>
 					</form>
@@ -227,10 +228,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	<script src="js/index.js"></script>
 	<!-- reservation.js -->
 	<script src="js/reservation.js"></script>
-	<script>
-		// loggedInUserId를 JavaScript 변수에 할당
-		const loggedInUserId = "<%= loggedInUserId %>";
-	</script>
 
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->

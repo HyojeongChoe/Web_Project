@@ -86,7 +86,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="loginButton"
+							<li class="join"><a href="#" id="JoinButton"
 								style="background-color: white; border: 0;"
 								onclick="openSignUpPage()">SignUp</a></li>
 							<li class="login"><a href="#" id="loginButton"
@@ -149,7 +149,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						</ul>
 					</div>
 
-					<form id="reserveForm" action="reserve1.do">
+					<form action="reserve1.do">
 						<div class="col-md-6 to-animate-2">
 							<h3>예약</h3>
 							<div class="form-group ">
@@ -169,7 +169,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<div class="form-group">
 								<label for="time" class="sr-only">시간</label> <select
 									class="form-control" name="time" id="option">
-									<option selected disabled hidden>옵션</option>
+									<option selected disabled hidden>시간</option>
 									<option value="60분">60분</option>
 									<option value="120분">120분</option>
 									<option value="180분">180분</option>
@@ -232,10 +232,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	<script src="js/index.js"></script>
 	<!-- reservation.js -->
 	<script src="js/reservation.js"></script>
-	<script>
-		// loggedInUserId를 JavaScript 변수에 할당
-		const loggedInUserId = "<%= loggedInUserId %>";
-	</script>
 
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->

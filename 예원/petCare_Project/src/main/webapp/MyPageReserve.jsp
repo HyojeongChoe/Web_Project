@@ -1,14 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- JSTL 사용시 필수 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@ page import="java.util.*"%>
 <%@ page import="com.kb.petcare.Session.sessionManager"%>
+<%@ page import="com.kb.petcare.Command.userServiceSelect"%>
+<%@ page import="com.kb.petcare.Command.paginationService"%>
+<%@ page import="com.kb.petcare.DTO.userDTO"%>
 
 <%
 String loggedInUserId = sessionManager.getLoggedInUserId(request);
+%>
+
+<%
+// 페이지 번호를 가져오기
+String pageStr = request.getParameter("page");
+int currentPage = (pageStr != null) ? Integer.parseInt(pageStr) : 1;
+
+// 페이지당 보여줄 항목 수 설정
+int itemsPerPage = 10;
+
+// 페이징 처리를 위한 데이터를 가져오기
+userServiceSelect userServiceSelect = new userServiceSelect();
+paginationService paginationService = userServiceSelect;
+
+int totalItems = paginationService.getTotalItems((String) session.getAttribute("loggedInUserId"));
+int totalPages = paginationService.getTotalPages(totalItems, itemsPerPage);
+int offset = (currentPage - 1) * itemsPerPage;
+
+// 예약내역 가져오기
+ArrayList<userDTO> result = paginationService.executePaging(request, response, offset, itemsPerPage);
 %>
 
 <!DOCTYPE html>
@@ -16,9 +38,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <head>
 <link rel="stylesheet" href="css/mypageedit.css">
 <link rel="shortcut icon" href="favicon.ico">
-<link
-	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
-	rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css">
 <!-- Icomoon Icon Fonts -->
@@ -37,6 +57,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <script src="js/modernizr-2.6.2.min.js"></script>
 
 <style>
+/* 예약내역 차트 관련 */
 .reservaiton {
 	display: inline-block;
 }
@@ -74,6 +95,29 @@ table.reservation_table tr.even {
 table.reservation_table tr.odd {
 	background-color: #f2f2f2; /* 홀수 행 배경색 지정 */
 }
+
+/* 페이징 버튼 관련 */
+.paging-btn {
+	display: inline-block;
+	padding: 1px 10px;
+	margin: 0 5px;
+	border: 1px solid #ccc;
+	text-decoration: none;
+	color: #333;			/* a태그 주황색이라 깜둥이로 지정 */
+	background-color: #fff;
+	border-radius: 5px;		/* 테두리 둥근 정도 */
+}
+
+.paging-btn:hover {
+	background-color: #f0f0f0;
+}
+
+.paging-btnI {
+	padding: 5px 10px;
+	color: #333;
+	font-weight: bold;
+	border-radius: 3px;
+}
 </style>
 
 <title>마이페이지 예약내역 확인</title>
@@ -90,22 +134,14 @@ table.reservation_table tr.odd {
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="loginButton"
-								style="background-color: white; border: 0;"
-								onclick="openSignUpPage()">SignUp</a></li>
-							<li class="login"><a href="#" id="loginButton"
-								style="background-color: white; border: 0;"
-								onclick="openLoginPage()">Login</a></li>
+							<li class="join"><a href="#" id="JoinButton" style="background-color: white; border: 0;" onclick="openSignUpPage()">SignUp</a></li>
+							<li class="login"><a href="#" id="loginButton" style="background-color: white; border: 0;" onclick="openLoginPage()">Login</a></li>
 							<%
 							} else {
 							%>
 							<!-- 로그인 상태인 경우 -->
-							<li class="logout"><a href="#" id="logoutButton"
-								style="background-color: white; border: 0;"
-								onclick="performLogout()">Logout</a></li>
-							<li class="mypage"><a href="#" id="mypageButton"
-								style="background-color: white; border: 0;"
-								onclick="openMyPageReserve()">MyPage</a></li>
+							<li class="logout"><a href="#" id="logoutButton" style="background-color: white; border: 0;" onclick="performLogout()">Logout</a></li>
+							<li class="mypage"><a href="#" id="mypageButton" style="background-color: white; border: 0;" onclick="openMyPageReserve()">MyPage</a></li>
 							<%
 							}
 							%>
@@ -114,15 +150,15 @@ table.reservation_table tr.odd {
 				</div>
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
-							onclick="goToAbout()">About</a>
+						<a href="#" onclick="goToIndex()">Home</a>
+						<a href="#" onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="#" onclick="goToIndex()">foodee</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+						<a href="#" onclick="goToService()">Service</a>
+						<a href="#" onclick="goToReservation()">Community</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -130,70 +166,106 @@ table.reservation_table tr.odd {
 		</div>
 	</div>
 
-	<!-- 사이드 메뉴바 -->
-	<div class="menu_bar">
-		<div class="mypage">
-			<h3>마이페이지</h3>
+	<div class="form_edit">
+		<!-- 사이드 메뉴바 -->
+		<div class="menu_bar">
+			<div class="mypage">
+				<h3>마이페이지</h3>
+			</div>
+			<div class="mypage_title">마이 예약</div>
+			<ul class="my_reserve">
+				<li class="mypage_menu"><a href="#" onclick="openMyPageReserve()">예약내역확인</a></li>
+			</ul>
+			<div class="mypage_title">마이 정보</div>
+			<ul class="my_inform">
+				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보 수정</a></li>
+				<li class="mypage_menu">회원 탈퇴</li>
+			</ul>
 		</div>
-		<div class="mypage_title">마이 예약</div>
-		<ul class="my_reserve">
-			<li class="mypage_menu">예약내역확인</li>
-		</ul>
-		<div class="mypage_title">마이 정보</div>
-		<ul class="my_inform">
-			<li class="mypage_menu">개인정보 수정</li>
-			<li class="mypage_menu">회원 탈퇴</li>
-		</ul>
-	</div>
+		<!-- 예약내역 페이지 상단 -->
+		<div class="desktop_edit">
+			<img src="images/free-icon-dog-3843277.png" id="edit_logo" />
+			<div class="edit_line"></div>
+			<div class="edit_div">
 
-	<!-- 예약내역 페이지 상단 -->
-	<div class="desktop_edit">
-		<img src="images/free-icon-dog-3843277.png" id="edit_logo" />
-		<div class="edit_line"></div>
-		<div class="edit_div">
-		
-			<!-- 예약내역 출력 공간 -->
-			<div class="reservaiton">
-				<h2>예약 내역</h2>
-				<hr>
-				<table class="reservation_table" border="1">
-					<thead>
-						<tr>
-							<th scope="col">예약날짜</th>
-							<th scope="col">서비스 종류</th>
-							<th scope="col">이용시간</th>
-							<th scope="col">미용 종류</th>
-							<th scope="col">반려동물</th>
-							<th scope="col">비용</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<!-- items :: 실질적인 값을 들고 옴 -->
-						<c:forEach items="${list}" var="value" varStatus="loop">
-							<!-- list :: DTO의 멤버 이름으로 값을 불러와야 한다-->
-							<tr class="${loop.index % 2 == 0 ? 'even' : 'odd'}">
-								<td>${value.date}</td>
-								<td>${value.service}</td>
-								<td>${value.time}</td>
-								<td>${value.grooming}</td>
-								<td>${value.pet}</td>
-								<td>${value.cost}</td>
+				<!-- 예약내역 출력 공간 -->
+				<div class="reservaiton">
+					<h2>예약 내역</h2>
+					<hr>
+					<table class="reservation_table" border="1">
+						<thead>
+							<tr>
+								<th scope="col">예약날짜</th>
+								<th scope="col">서비스 종류</th>
+								<th scope="col">이용시간</th>
+								<th scope="col">미용 종류</th>
+								<th scope="col">반려동물</th>
+								<th scope="col">비용</th>
 							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+						</thead>
 
-				<!-- 페이징 처리 -->
-				<div class="paging">
-					<c:forEach begin="1" end="${totalPages}" var="i">
-						<a href="${pageContext.request.contextPath}/select.do?page=${i}">${i}</a>
-					</c:forEach>
+						<tbody>
+							<!-- items :: 실질적인 값을 들고 옴 -->
+							<c:forEach items="${list}" var="value" varStatus="loop">
+								<!-- list :: DTO의 멤버 이름으로 값을 불러와야 한다-->
+								<tr class="${loop.index % 2 == 0 ? 'even' : 'odd'}">
+									<td>${value.date}</td>
+									<td>${value.service}</td>
+									<td>${value.time}</td>
+									<td>${value.grooming}</td>
+									<td>${value.pet}</td>
+									<td>${value.cost}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+
+					<!-- 페이징 처리 -->
+					<div class="paging">
+						<%
+						int pageRange = 7;
+						int startPage = Math.max(1, currentPage - pageRange / 2);
+						int endPage = Math.min(totalPages, startPage + pageRange - 1);
+
+						int firstPage = 1;
+						int lastPage = totalPages;
+
+						// 처음으로 가기 버튼
+						out.println("<a href='MyPageReserve.jsp?page=" + firstPage + "' class='paging-btn'>&lt;&lt;</a>");
+
+						// 이전 페이지로 가기 버튼
+						if (currentPage > 1) {
+							out.println("<a href='MyPageReserve.jsp?page=" + (currentPage - 1) + "' class='paging-btn'>&lt;</a>");
+						}
+
+						// 페이지 번호 표시
+						for (int i = firstPage; i <= lastPage; i++) {
+							if (i == currentPage) {
+								out.println("<span class='paging-btnI'>" + i + "</span> ");
+							} else if (i >= startPage && i <= endPage) {
+								out.println("<a href='MyPageReserve.jsp?page=" + i + "' class='paging-btn'>" + i + "</a> ");
+							} else if (i == lastPage - 1) {
+								// ... 부분과 "lastPage" 사이에 공백 추가
+								out.println(" ... ");
+								// 마지막 페이지로 가기 버튼
+								out.println("<a href='MyPageReserve.jsp?page=" + lastPage + "' class='paging-btn'>" + lastPage + "</a>");
+							}
+						}
+
+						// 다음 페이지로 가기 버튼
+						if (currentPage < totalPages) {
+							out.println("<a href='MyPageReserve.jsp?page=" + (currentPage + 1) + "' class='paging-btn'>&gt;</a>");
+						}
+
+						// 마지막으로 가기 버튼
+						out.println("<a href='MyPageReserve.jsp?page=" + lastPage + "' class='paging-btn'>&gt;&gt;</a>");
+						%>
+					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<script src="js/index.js"></script>
 </body>
 </html>

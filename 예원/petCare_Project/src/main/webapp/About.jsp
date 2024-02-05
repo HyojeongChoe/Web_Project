@@ -79,7 +79,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="loginButton"
+							<li class="join"><a href="#" id="JoinButton"
 								style="background-color: white; border: 0;"
 								onclick="openSignUpPage()">SignUp</a></li>
 							<li class="login"><a href="#" id="loginButton"
@@ -91,7 +91,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<!-- 로그인 상태인 경우 -->
 							<li class="logout"><a href="#" id="logoutButton"
 								style="background-color: white; border: 0;"
-								onclick="performLogout()">Logout</a></li>
+								onclick="performLogout()"> Logout</a></li>
 							<li class="mypage"><a href="#" id="mypageButton"
 								style="background-color: white; border: 0;"
 								onclick="openMyPageReserve()">MyPage</a></li>

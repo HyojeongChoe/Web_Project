@@ -20,6 +20,18 @@ public class userDTO {
 	private String message; // 문의사항
 	private String cost; // 총비용
 
+	//mobile, addr, email 분리한 값들 담기위한 변수
+	private String mobile1;
+	private String mobile2;
+	private String mobile3;
+	private String email1;
+	private String email2;
+	private String addr1;
+	private String addr2;
+	private String addr3;
+	private String addr4;
+	
+	
 	// getter,setter
 	public String getName() {
 		return name;
@@ -132,4 +144,77 @@ public class userDTO {
 	public void setCost(String cost) {
 		this.cost = cost;
 	}
+
+	public String getMobile1() {
+		return mobile1;
+	}
+
+	public void setMobile1(String mobile1) {
+		this.mobile1 = mobile1;
+	}
+
+	public String getMobile2() {
+		return mobile2;
+	}
+
+	public void setMobile2(String mobile2) {
+		this.mobile2 = mobile2;
+	}
+
+	public String getMobile3() {
+		return mobile3;
+	}
+
+	public void setMobile3(String mobile3) {
+		this.mobile3 = mobile3;
+	}
+
+	public String getEmail1() {
+		return email1;
+	}
+
+	public void setEmail1(String email1) {
+		this.email1 = email1;
+	}
+
+	public String getEmail2() {
+		return email2;
+	}
+
+	public void setEmail2(String email2) {
+		this.email2 = email2;
+	}
+
+	public String getAddr1() {
+		return addr1;
+	}
+
+	public void setAddr1(String addr1) {
+		this.addr1 = addr1;
+	}
+
+	public String getAddr2() {
+		return addr2;
+	}
+
+	public void setAddr2(String addr2) {
+		this.addr2 = addr2;
+	}
+
+	public String getAddr3() {
+		return addr3;
+	}
+
+	public void setAddr3(String addr3) {
+		this.addr3 = addr3;
+	}
+
+	public String getAddr4() {
+		return addr4;
+	}
+
+	public void setAddr4(String addr4) {
+		this.addr4 = addr4;
+	}
+	
 }
