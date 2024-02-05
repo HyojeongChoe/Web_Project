@@ -191,7 +191,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<span> <input type="text" id="email1" name="email1"
 								placeholder="이메일 입력하세요" oninput="checkEmail()"> <a
 								id="and">@ </a> <input type="text" id="email2" name="email2"
-								placeholder="naver.com" oninput="checkEmail()" /> <select
+								 oninput="checkEmail()" /> <select
 								id="domainSelect" name="email2">
 									<option>직접입력</option>
 									<option value="naver.com">naver.com</option>

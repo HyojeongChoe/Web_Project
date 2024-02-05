@@ -1,0 +1,159 @@
+@charset "UTF-8";
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+/*사이드바와 테이블을 감싸고 있는 가장바깥div*/
+.form_reserve {
+	display: flex;
+	/* 가로로 나란히 정렬하는 flex 컨테이너 */
+}
+
+/* 사이드바 */
+
+/* Rectangle 1 */
+
+.menu_bar {
+	/* 여백을 조절할 값으로 설정 */
+	margin-top:200px;
+	margin-left: 200px;
+	margin-right: 100px;
+	padding: 10px;
+	position: relative;
+	width: 290px;
+	height: 1000px;
+	align-items: left;
+	background: #F5F5F5;
+}
+
+/* 마이페이지 */
+
+.mypage h3 {
+
+	font-family: 'S-CoreDream-3Light';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 48px;
+	margin-left: 10px;
+	color: #000000;
+}
+
+.mypage_title {
+	font-family: 'S-CoreDream-3Light';
+	font-style: normal;
+	font-size: 25px;
+	line-height: 48px;
+	padding-top: 50px;
+	margin-left: 15px;
+	color: #000000;
+}
+
+.mypage_menu {
+	list-style: none;
+}
+
+/* 예약내역div*/
+
+.desktop_reserve {
+    display: flex;
+    flex-direction: column; /* 세로로 나열되도록 설정 */
+    align-items: center; /* 세로 기준 가운데 정렬 */
+	width: 1000px;
+	margin: 100px 10px;
+	padding: 10px;
+}
+
+/* free-icon-dog-3843277 */
+.image_logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#reserve_logo {
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+
+/* 회원가입폼 라인 */
+.reserve_line {
+	position: relative;
+	margin:20px;
+	width: 750px;
+	border: 1px solid #000000;
+}
+
+/*테이블 */
+.reservaiton {
+	display: inline-block;
+}
+
+table.reservation_table {
+	border-collapse: collapse;
+	/* 표의 테두리 겹침 속성: collapse(겹침), separate(간격둠) */
+	border-spacing: 0;
+	/* 셀 간의 간격을 지정: 0(간격 없음) */
+	vertical-align: top;
+	line-height: 1.5;
+	margin: 20px 10px;
+}
+
+table.reservation_table th {
+	width: 155px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	/* 수직 정렬 */
+	color: black;
+	background: lavender;
+}
+
+table.reservation_table td {
+	width: 155px;
+	padding: 10px;
+	vertical-align: top;
+	border-bottom: 2px solid #ccc;
+	/* 아래쪽 테두리를 지정하여 행 간의 경계를 만듦 */
+	border: none;
+	/* 모든 테두리를 없앰 */
+}
+
+table.reservation_table tr.even {
+	background-color: #ffffff;
+	/* 짝수 행 배경색 지정 */
+}
+
+table.reservation_table tr.odd {
+	background-color: #f2f2f2;
+	/* 홀수 행 배경색 지정 */
+}
+/* 페이징 버튼 관련 */
+.reserve_paging{
+	position: relative;
+	text-align: center;
+}
+.paging-btn {
+	display: inline-block;
+	padding: 1px 10px;
+	margin: 0 5px;
+	border: 1px solid #ccc;
+	text-decoration: none;
+	color: #333;			/* a태그 주황색이라 깜둥이로 지정 */
+	background-color: #fff;
+	border-radius: 5px;		/* 테두리 둥근 정도 */
+}
+
+.paging-btn:hover {
+	background-color: #f0f0f0;
+}
+
+.paging-btnI {
+	padding: 5px 10px;
+	color: #333;
+	font-weight: bold;
+	border-radius: 3px;
+}

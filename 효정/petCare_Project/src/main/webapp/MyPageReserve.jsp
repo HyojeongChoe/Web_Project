@@ -6,15 +6,37 @@
 
 <%@ page import="java.util.*"%>
 <%@ page import="com.kb.petcare.Session.sessionManager"%>
+<%@ page import="com.kb.petcare.Command.userServiceSelect"%>
+<%@ page import="com.kb.petcare.Command.paginationService"%>
+<%@ page import="com.kb.petcare.DTO.userDTO"%>
 
 <%
 String loggedInUserId = sessionManager.getLoggedInUserId(request);
 %>
 
+<%
+// 페이지 번호를 가져오기
+String pageStr = request.getParameter("page");
+int currentPage = (pageStr != null) ? Integer.parseInt(pageStr) : 1;
+
+// 페이지당 보여줄 항목 수 설정
+int itemsPerPage = 10;
+
+// 페이징 처리를 위한 데이터를 가져오기
+userServiceSelect userServiceSelect = new userServiceSelect();
+paginationService paginationService = userServiceSelect;
+
+int totalItems = paginationService.getTotalItems((String) session.getAttribute("loggedInUserId"));
+int totalPages = paginationService.getTotalPages(totalItems, itemsPerPage);
+int offset = (currentPage - 1) * itemsPerPage;
+
+// 예약내역 가져오기
+ArrayList<userDTO> result = paginationService.executePaging(request, response, offset, itemsPerPage);
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="css/mypageedit.css">
 <link rel="shortcut icon" href="favicon.ico">
 <link
 	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
@@ -30,51 +52,13 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/style.css">
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
 
-<style>
-.reservaiton {
-	display: inline-block;
-}
-
-table.reservation_table {
-	border-collapse: collapse;
-	/* 표의 테두리 겹침 속성: collapse(겹침), separate(간격둠) */
-	border-spacing: 0; /* 셀 간의 간격을 지정: 0(간격 없음) */
-	vertical-align: top;
-	line-height: 1.5;
-	margin: 20px 10px;
-}
-
-table.reservation_table th {
-	width: 155px;
-	padding: 10px;
-	font-weight: bold;
-	vertical-align: top; /* 수직 정렬 */
-	color: black;
-	background: lavender;
-}
-
-table.reservation_table td {
-	width: 155px;
-	padding: 10px;
-	vertical-align: top;
-	border-bottom: 2px solid #ccc; /* 아래쪽 테두리를 지정하여 행 간의 경계를 만듦 */
-	border: none; /* 모든 테두리를 없앰 */
-}
-
-table.reservation_table tr.even {
-	background-color: #ffffff; /* 짝수 행 배경색 지정 */
-}
-
-table.reservation_table tr.odd {
-	background-color: #f2f2f2; /* 홀수 행 배경색 지정 */
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/mypagereserve.css">
 
 <title>마이페이지 예약내역 확인</title>
 </head>
@@ -130,7 +114,7 @@ table.reservation_table tr.odd {
 		</div>
 	</div>
 
-	<div class="form_edit">
+	<div class="form_reserve">
 		<!-- 사이드 메뉴바 -->
 		<div class="menu_bar">
 			<div class="mypage">
@@ -138,20 +122,22 @@ table.reservation_table tr.odd {
 			</div>
 			<div class="mypage_title">마이 예약</div>
 			<ul class="my_reserve">
-				<li class="mypage_menu"><a href="#" onclick="openMyPageReserve()">예약내역확인</a></li>
+				<li class="mypage_menu"><a href="#"
+					onclick="openMyPageReserve()">예약내역확인</a></li>
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보 수정</a></li>
+				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보
+						수정</a></li>
 				<li class="mypage_menu">회원 탈퇴</li>
 			</ul>
 		</div>
 		<!-- 예약내역 페이지 상단 -->
-		<div class="desktop_edit">
-			<img src="images/free-icon-dog-3843277.png" id="edit_logo" />
-			<div class="edit_line"></div>
-			<div class="edit_div">
-
+		<div class="desktop_reserve">
+			<span class=image_logo><img
+				src="images/free-icon-dog-3843277.png" id="reserve_logo" /></span>
+			<div class="reserve_line"></div>
+			<div class="reserve_div">
 				<!-- 예약내역 출력 공간 -->
 				<div class="reservaiton">
 					<h2>예약 내역</h2>
@@ -185,11 +171,47 @@ table.reservation_table tr.odd {
 					</table>
 
 					<!-- 페이징 처리 -->
-					<div class="paging">
-						<c:forEach begin="1" end="${totalPages}" var="i">
-							<a href="${pageContext.request.contextPath}/select.do?page=${i}">${i}</a>
-						</c:forEach>
+					<div class="reserve_paging">
+						<%
+						int pageRange = 7;
+						int startPage = Math.max(1, currentPage - pageRange / 2);
+						int endPage = Math.min(totalPages, startPage + pageRange - 1);
+
+						int firstPage = 1;
+						int lastPage = totalPages;
+
+						// 처음으로 가기 버튼
+						out.println("<a href='MyPageReserve.jsp?page=" + firstPage + "' class='paging-btn'>&lt;&lt;</a>");
+
+						// 이전 페이지로 가기 버튼
+						if (currentPage > 1) {
+							out.println("<a href='MyPageReserve.jsp?page=" + (currentPage - 1) + "' class='paging-btn'>&lt;</a>");
+						}
+
+						// 페이지 번호 표시
+						for (int i = firstPage; i <= lastPage; i++) {
+							if (i == currentPage) {
+								out.println("<span class='paging-btnI'>" + i + "</span> ");
+							} else if (i >= startPage && i <= endPage) {
+								out.println("<a href='MyPageReserve.jsp?page=" + i + "' class='paging-btn'>" + i + "</a> ");
+							} else if (i == lastPage - 1) {
+								// ... 부분과 "lastPage" 사이에 공백 추가
+								out.println(" ... ");
+								// 마지막 페이지로 가기 버튼
+								out.println("<a href='MyPageReserve.jsp?page=" + lastPage + "' class='paging-btn'>" + lastPage + "</a>");
+							}
+						}
+
+						// 다음 페이지로 가기 버튼
+						if (currentPage < totalPages) {
+							out.println("<a href='MyPageReserve.jsp?page=" + (currentPage + 1) + "' class='paging-btn'>&gt;</a>");
+						}
+
+						// 마지막으로 가기 버튼
+						out.println("<a href='MyPageReserve.jsp?page=" + lastPage + "' class='paging-btn'>&gt;&gt;</a>");
+						%>
 					</div>
+
 				</div>
 			</div>
 		</div>

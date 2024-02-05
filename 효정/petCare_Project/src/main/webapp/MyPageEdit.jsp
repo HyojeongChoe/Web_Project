@@ -24,7 +24,6 @@ if (loggedInUserId != null) {
 <meta charset="UTF-8">
 <title>개인정보 수정</title>
 
-<link rel="stylesheet" href="css/mypageedit.css">
 <link rel="shortcut icon" href="favicon.ico">
 <link
 	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
@@ -40,11 +39,12 @@ if (loggedInUserId != null) {
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/style.css">
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/mypageedit.css">
 </head>
 
 <body>
@@ -105,19 +105,21 @@ if (loggedInUserId != null) {
 			</div>
 			<div class="mypage_title">마이 예약</div>
 			<ul class="my_reserve">
-				<li class="mypage_menu"><a href="#" onclick="openMyPageReserve()">예약내역확인</a></li>
+				<li class="mypage_menu"><a href="#"
+					onclick="openMyPageReserve()">예약내역확인</a></li>
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보 수정</a></li>
+				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보
+						수정</a></li>
 				<li class="mypage_menu">회원 탈퇴</li>
 			</ul>
 		</div>
-		<form action="updateuserinfo.do">
-			<div class="desktop_edit">
-				<img src="images/free-icon-dog-3843277.png" id="edit_logo" />
-				<div class="edit_line"></div>
+		<div class="desktop_edit">
+			<form action="updateuserinfo.do">
 				<div class="edit_div">
+				<span class=image_logo><img src="images/free-icon-dog-3843277.png" id="edit_logo" /></span>
+				<div class="edit_line"></div>
 					<ul>
 						<!-- listUserInfo에서 가져온 개인정보를 출력하는 부분 -->
 						<!--  아이디 -->
@@ -193,21 +195,11 @@ if (loggedInUserId != null) {
 						<li class="edit_list ">
 							<div class="edit_title" id="title_mobile">휴대전화</div>
 							<div class="edit_write">
-								<span class="edit-mobile"> <select id="mobile1"
-									name="mobile1">
-										<option value="010"
-											${userInfo.getMobile1() == '010' ? 'selected' : ''}>010</option>
-										<option value="011"
-											${userInfo.getMobile1() == '011' ? 'selected' : ''}>011</option>
-										<option value="016"
-											${userInfo.getMobile1() == '016' ? 'selected' : ''}>016</option>
-										<option value="017"
-											${userInfo.getMobile1() == '017' ? 'selected' : ''}>017</option>
-										<option value="018"
-											${userInfo.getMobile1() == '018' ? 'selected' : ''}>018</option>
-										<option value="019"
-											${userInfo.getMobile1() == '019' ? 'selected' : ''}>019</option>
-								</select> <span class="mobile-formText" id="min1"> - </span> <input
+								<span class="edit-mobile"> 
+								<input
+									id="mobile1" name="mobile1" maxlength="3" type="text"
+									value="<%=userInfo.getMobile1()%>" />
+								<span class="mobile-formText" id="min1"> - </span> <input
 									id="mobile2" name="mobile2" maxlength="4" type="text"
 									oninput="checkMobile()" value="<%=userInfo.getMobile2()%>" />
 									<span class="mobile-formText" id="min2"> - </span> <input
@@ -224,8 +216,8 @@ if (loggedInUserId != null) {
 							<div class="edit_write">
 								<span> <input type="text" id="email1" name="email1"
 									placeholder="이메일 입력하세요" oninput="checkEmail()"
-									value="<%=userInfo.getEmail1()%>"> <a id="and">@ </a> <input
-									type="text" id="email2" name="email2" placeholder="naver.com"
+									value="<%=userInfo.getEmail1()%>"> <span class="and">@ </span> <input
+									type="text" id="email2" name="email2"
 									oninput="checkEmail()" value="<%=userInfo.getEmail2()%>" /> <select
 									id="domainSelect" name="email2">
 										<option>직접입력</option>
@@ -253,8 +245,8 @@ if (loggedInUserId != null) {
 						<input type="submit" value="수정" id="editbtn" />
 					</div>
 				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
 	<%
 	}

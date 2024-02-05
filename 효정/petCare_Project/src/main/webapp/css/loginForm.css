@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
 
 /* DeskTop */
 
@@ -102,7 +108,7 @@ bottom: 18.55%;
 width : 250px;
 height : 20px;
 
-font-family: 'Inter';
+font-family: 'S-CoreDream-3Light';
 font-style: normal;
 font-weight: bold;
 font-size: 15px;
@@ -153,7 +159,7 @@ bottom: 17.15%;
 width : 250px;
 height : 20px;
 
-font-family: 'Inter';
+font-family: 'S-CoreDream-3Light';
 font-style: normal;
 font-weight: bold;
 font-size: 15px;
@@ -178,7 +184,7 @@ height: 60px;
 left: 22%;
 top: 200PX;
 
-font-family: 'Inter';
+font-family: 'S-CoreDream-3Light';
 font-style: normal;
 font-weight: 400;
 font-size: 20px;
@@ -200,7 +206,7 @@ height: 30px;
 left: 135px;
 top: 300px;
 
-font-family: 'Inter';
+font-family: 'S-CoreDream-3Light';
 font-style: normal;
 font-weight: 400;
 font-size: 13px;
@@ -223,7 +229,7 @@ height: 30px;
 left: 360px;
 top: 300px;
 
-font-family: 'Inter';
+font-family: 'S-CoreDream-3Light';
 font-style: normal;
 font-weight: 400;
 font-size: 13px;
@@ -245,7 +251,7 @@ height: 30px;
 left: 230px;
 top: 300px;
 
-font-family: 'Inter';
+font-family: 'S-CoreDream-3Light';
 font-style: normal;
 font-weight: 400;
 font-size: 13px;

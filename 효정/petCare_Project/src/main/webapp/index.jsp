@@ -67,9 +67,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel = "stylesheet" href = "css/service.css">
+<link rel="stylesheet" href="css/index.css">
 
 
 <!-- Modernizr JS -->
@@ -83,32 +84,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 
 <body>
 	<div id="fh5co-container">
-		<!-- home -->
-		<!-- <div id="fh5co-home" class="js-fullheight" data-section="home">
-			<div class="flexslider">
-				<div class="fh5co-overlay"></div>
-				<div class="fh5co-text">
-					<div class="container">
-						<div class="row">
-							<h1 class="to-animate">Pet care</h1>
-							<h2 class="to-animate">
-								premium service <span>by</span> <a href="http://freehtml5.co/"
-									target="_blank">freehtml5.co</a>
-							</h2>
-						</div>
-					</div>
-				</div>
-				<ul class="slides">
-					<li style="background-image: url(images/slide_1.jpg);"
-						data-stellar-background-ratio="0.5"></li>
-					<li style="background-image: url(images/slide_2.jpg);"
-						data-stellar-background-ratio="0.5"></li>
-					<li style="background-image: url(images/slide_3.jpg);"
-						data-stellar-background-ratio="0.5"></li>
-				</ul>
-			</div>
-		</div> -->
-
 		<div class="js-sticky">
 			<div class="fh5co-main-nav">
 				<div id="header">
@@ -157,29 +132,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</div>
 		</div>
 
-		<div id="fh5co-about" data-section="about">
-			<div class="fh5co-2col fh5co-bg to-animate-2"
-				style="background-image: url(images/res_img_1.jpg)"></div>
-			<div class="fh5co-2col fh5co-text">
-				<h2 class="heading to-animate">About Us</h2>
-				<p class="to-animate">
-					<span class="firstcharacter">F</span>ar far away, behind the word
-					mountains, far from the countries Vokalia and Consonantia, there
-					live the blind texts. Separated they live in Bookmarksgrove right
-					at the coast of the Semantics, a large language ocean. Far far
-					away, behind the word mountains, far from the countries Vokalia and
-					Consonantia, there live the blind texts. A small river named Duden
-					flows by their place and supplies it with the necessary regelialia.
-					It is a paradisematic country, in which roasted parts of sentences
-					fly into your mouth. Even the all-powerful Pointing has no control
-					about the blind texts it is an almost unorthographic life.
-				</p>
-				<p class="text-center to-animate">
-					<a href="#" class="btn btn-primary btn-outline">Get in touch</a>
-				</p>
-			</div>
-		</div>
-
 		<div id="fh5co-sayings">
 			<div class="container">
 				<div class="row to-animate">
@@ -223,116 +175,109 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</div>
 		</div>
 
-		<div id="fh5co-featured" data-section="features">
-			<div class="container">
-				<div class="row text-center fh5co-heading row-padded">
-					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate">Featured Dishes</h2>
-						<p class="sub-heading to-animate">Far far away, behind the
-							word mountains, far from the countries Vokalia and Consonantia,
-							there live the blind texts.</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="fh5co-grid">
-						<!--<div class="fh5co-v-half to-animate-2">
-							<div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url(images/res_img_1.jpg)">
-							</div>
-							<div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
-								<h2>Fresh Mushrooms</h2>
-								<span class="pricing"><a href="#fh5co-contact">$7.50</a></span>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and
-									Consonantia, there live the blind texts.</p>
-							</div>
-						</div>-->
-						<div class="fh5co-v-half">
-							<div class="fh5co-h-row-2 to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img"
-									style="background-image: url(images/res_img_2.jpg)"></div>
-								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Grilled Chiken Salad</h2>
-									<span class="pricing">$12.00</span>
-									<p>Far far away, behind the word mountains.</p>
-								</div>
-							</div>
-							<div class="fh5co-h-row-2 to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img"
-									style="background-image: url(images/res_img_8.jpg)"></div>
-								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Cheese and Garlic Toast</h2>
-									<span class="pricing">$4.50</span>
-									<p>Far far away, behind the word mountains.</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="fh5co-v-half">
-							<div class="fh5co-h-row-2 to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img"
-									style="background-image: url(images/res_img_2.jpg)"></div>
-								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Grilled Chiken Salad</h2>
-									<span class="pricing">$12.00</span>
-									<p>Far far away, behind the word mountains.</p>
-								</div>
-							</div>
-							<div class="fh5co-h-row-2 to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img"
-									style="background-image: url(images/res_img_8.jpg)"></div>
-								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Cheese and Garlic Toast</h2>
-									<span class="pricing">$4.50</span>
-									<p>Far far away, behind the word mountains.</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="fh5co-v-half">
-							<div class="fh5co-h-row-2 to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img"
-									style="background-image: url(images/res_img_7.jpg)"></div>
-								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Organic Egg</h2>
-									<span class="pricing">$4.99</span>
-									<p>Far far away, behind the word mountains.</p>
-								</div>
-							</div>
-							<div class="fh5co-h-row-2 to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img"
-									style="background-image: url(images/res_img_6.jpg)"></div>
-								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Salad with Crispy Chicken</h2>
-									<span class="pricing">$8.50</span>
-									<p>Far far away, behind the word mountains.</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="fh5co-v-half">
-							<div class="fh5co-h-row-2 to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img"
-									style="background-image: url(images/res_img_7.jpg)"></div>
-								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Organic Egg</h2>
-									<span class="pricing">$4.99</span>
-									<p>Far far away, behind the word mountains.</p>
-								</div>
-							</div>
-							<div class="fh5co-h-row-2 to-animate-2">
-								<div class="fh5co-v-col-2 fh5co-bg-img"
-									style="background-image: url(images/res_img_6.jpg)"></div>
-								<div class="fh5co-v-col-2 fh5co-text arrow-left">
-									<h2>Salad with Crispy Chicken</h2>
-									<span class="pricing">$8.50</span>
-									<p>Far far away, behind the word mountains.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+		<div id="fh5co-about" data-section="about">
+			<div class="fh5co-2col fh5co-bg to-animate-2"
+				style="background-image: url(images/res_img_1.jpg)"></div>
+			<div class="fh5co-2col fh5co-text">
+				<h2 class="heading to-animate">About Us</h2>
+				<p class="to-animate">
+					<span class="firstcharacter">F</span>ar far away, behind the word
+					mountains, far from the countries Vokalia and Consonantia, there
+					live the blind texts. Separated they live in Bookmarksgrove right
+					at the coast of the Semantics, a large language ocean. Far far
+					away, behind the word mountains, far from the countries Vokalia and
+					Consonantia, there live the blind texts. A small river named Duden
+					flows by their place and supplies it with the necessary regelialia.
+					It is a paradisematic country, in which roasted parts of sentences
+					fly into your mouth. Even the all-powerful Pointing has no control
+					about the blind texts it is an almost unorthographic life.
+				</p>
+				<p class="text-center to-animate">
+					<a href="#" class="btn btn-primary btn-outline">Get in touch</a>
+				</p>
 			</div>
 		</div>
 
+		<div id="fh5co-container">
+		<div class="section">
+			<main>
+				<div class="inside">
+					<div class="empty space"></div>
+					<div class="service_menu">
+						 <span class="plain_name"
+							data-hover="">케어서비스</span>			
+					</div>
+					<div class="empty space"></div>
+					<div class="doz_row">
+						<div class="shop_grid">
+							<div class="shop_item">	
+								<div class="item_wrap">
+									<a href="#" onclick="goToCare()" class="care_service"> <img
+										src=https://ynoblesse.com/wp-content/uploads/2022/08/297975306_1008248209844272_696700848492592655_n-1024x1024.jpg>			
+										<div class="item_overlay">
+											<div class="item_pay">
+												<div class="service_detail">
+													<h2>돌봄</h2>	
+													<div class="ns-icon clearfix">
+														<!--<span class="new bg-brand">NEW</span>-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+									<p class = "index_care">혼자 남겨진 반려동물을 생각하며, 외출을 망설인 적이 있으신가요?
+							이제는 펫시터에게 맡기고, 여러분의 소중한 일상을 
+								<br> 마음 편히 보내세요</p>
+							</div>
+							<div class="shop_item">
+								<div class="item_wrap" style="position: relative;">
+									<a href="#" onclick="goToWalk()" class="work_service"> <img
+										src="https://blog.kakaocdn.net/dn/bmvdS5/btrbGBPf53r/do65Z9eJzjKvOBsOoEvtG1/img.jpg"
+										style="display: inline;">
+										<div class="item_overlay">
+											<div class="item_pay">
+												<div class="service_detail">
+													<h2>산책</h2>
+													<div class="ns-icon clearfix">
+														<!--<span class="new bg-brand">NEW</span>-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<p class = "index_walk"> 펫시터가 직접 방문하여 반려견의 
+									스트레스 해소, 불안감 해소, 행복감 증진에 도움을 줍니다.
+								</p>
+							</div>
+							<div class="shop_item">								
+								<div class="item_wrap">
+									<a href="#" onclick="goToGrooming()"class="beauty_service"> <img
+										src="https://cdn.imweb.me/upload/S2022021670e4a25b91a09/36595cc9ee5b3.jpeg">						
+										<div class="item_overlay">
+											<div class="item_pay">
+												<div class="service_detail">
+													<h2>미용</h2>
+													<div class="ns-icon clearfix"></div>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<p class = "index_grooming">
+								우리 아이 목욕이랑 미용할 때 됐는데...<br>
+								우리 아이가 대형견이라 한번 이동하기가 쉽지 않은데..<br>
+								편하게 우리 아이 케어 받을 수 있는 방법 없을까? <br>
+								그런 분들을 위해 펫시터가 찾아가겠습니다! <br>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
 		<div id="fh5co-footer">
 			<div class="container">
 				<div class="row row-padded">
