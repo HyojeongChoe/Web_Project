@@ -9,11 +9,8 @@
 String loggedInUserId = sessionManager.getLoggedInUserId(request);
 %>
 
-
 <!DOCTYPE html>
 <html class="no-js">
-<!--<![endif]-->
-
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,20 +20,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <meta name="keywords"
 	content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 <meta name="author" content="FREEHTML5.CO" />
-
-<!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
 
 <!-- Facebook and Twitter integration -->
 <meta property="og:title" content="" />
@@ -69,16 +52,11 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Bootstrap  -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel = "stylesheet" href = "css/service.css">
-<link rel="stylesheet" href="css/index.css">
 
+<link rel="stylesheet" href="css/index.css">
 
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
-<!-- FOR IE9 below -->
-<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
 
 </head>
 

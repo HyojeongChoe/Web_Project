@@ -19,7 +19,9 @@ body.fh5co-overflow {
 }
 
 a {
-	color: #fb6e14;
+	color: #000;
+	/*밑줄*/
+	text-decoration: none;
 	-webkit-transition: 0.5s;
 	-o-transition: 0.5s;
 	transition: 0.5s;
@@ -29,6 +31,7 @@ a:hover,
 a:focus,
 a:active {
 	color: #bf4c03;
+	text-decoration: none;
 }
 
 h1,

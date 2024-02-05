@@ -42,6 +42,7 @@ if (loggedInUserId != null) {
 <link rel="stylesheet" href="css/bootstrap.css">
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
+
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/mypageedit.css">
@@ -116,7 +117,7 @@ if (loggedInUserId != null) {
 			</ul>
 		</div>
 		<div class="desktop_edit">
-			<form action="updateuserinfo.do">
+			<form action="updateuserinfo.do" onsubmit="showSuccessMessage()">
 				<div class="edit_div">
 				<span class=image_logo><img src="images/free-icon-dog-3843277.png" id="edit_logo" /></span>
 				<div class="edit_line"></div>
@@ -252,12 +253,14 @@ if (loggedInUserId != null) {
 	}
 	}
 	%>
+	
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="js/index.js"></script>
 	<script src="js/signup.js"></script>
+	<script src="js/mypage.js"></script>
 
 	<!-- jQuery -->
-	<script src="js/index.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>

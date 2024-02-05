@@ -14,7 +14,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <meta charset="UTF-8">
 <title>회원가입</title>
 
-<link rel="stylesheet" href="css/signup.css">
+
 <link rel="shortcut icon" href="favicon.ico">
 <link
 	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
@@ -30,10 +30,12 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
+
 <link rel="stylesheet" href="css/style.css">
-<!-- Modernizr JS -->
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/signup.css">
+
 <script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 
