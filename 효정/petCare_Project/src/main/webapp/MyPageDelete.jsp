@@ -29,7 +29,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/mypagedel.css">
-<title>마이페이지 비밀번호 입력창</title>
+<title>회원탈퇴</title>
 </head>
 <body>
 	<div id="fh5co-header">
@@ -127,8 +127,9 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							placeholder="비밀번호를 입력해주세요." />
 						<div class="pwbtn">
 							<!-- 탈퇴 버튼 클릭 시 checkPassword() 메서드 호출 -->
-							<input class="submit" type="button" id="submit" value="탈퇴"
-								onclick="checkPassword()" />
+							<input class="submit" type="submit" id="submit" value="탈퇴"
+								onclick="deleteUser()" />
+							<!-- onclick="checkPassword()" /> -->
 						</div>
 					</div>
 				</div>
@@ -137,6 +138,32 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	</div>
 	<script src="js/index.js"></script>
 	<script src="js/mypage.js"></script>
-	
+	<script>
+		function deleteUser() {
+			var password = document.getElementById("input_pw").value;
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === XMLHttpRequest.DONE) {
+					if (xhr.status === 200) {
+						var response = xhr.responseText;
+						if (response === "success") {
+							alert("탈퇴가 완료되었습니다.");
+/* 							window.location.href = "index.jsp"; // 페이지 이동 */
+						} else if (response === "fail") {
+							alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
+						} else {
+							alert("서버 오류가 발생했습니다.");
+						}
+					} else {
+						alert("서버 오류가 발생했습니다.");
+					}
+				}
+			};
+			xhr.open("POST", "passwordCheckServlet", true);
+			xhr.setRequestHeader("Content-type",
+					"application/x-www-form-urlencoded");
+			xhr.send("input_pw=" + password);
+		}
+	</script>
 </body>
 </html>

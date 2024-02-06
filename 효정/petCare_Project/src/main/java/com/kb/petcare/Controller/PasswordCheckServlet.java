@@ -50,12 +50,6 @@ public class PasswordCheckServlet extends HttpServlet {
 		// 입력된 비밀번호
 		String enteredPassword = request.getParameter("input_pw");
 
-		/*
-		 * if (enteredPassword == null || enteredPassword.isEmpty()) {
-		 * out.print("fail"); // 클라이언트에서 전달된 비밀번호가 없음 System.out.println("fail");
-		 * return; }
-		 */
-
 		// 로그인한 사용자의 아이디 가져오기
 		String loggedInUserId = sessionManager.getLoggedInUserId(request);
 

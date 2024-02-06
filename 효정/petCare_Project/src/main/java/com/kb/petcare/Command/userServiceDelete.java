@@ -32,9 +32,11 @@ public class userServiceDelete implements userService {
 				dao.userDelete(loggedInUserId);
 				// 세션을 무효화하여 세션에 저장된 모든 데이터를 삭제
 				sessionManager.invalidateSession(request);
-				/* response.sendRedirect("index.jsp") */; 
+
+				response.sendRedirect("index.jsp");
 			} else {
-				/* response.sendRedirect("MyPageDelete.jsp"); */
+				 response.sendRedirect("MyPageDelete.jsp"); 
+				// 비밀번호가 일치하지 않을 때, 메시지를 띄우고 MyPageDelete.jsp에 머무름
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
