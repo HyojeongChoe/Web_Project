@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!-- JSTL 사용시 필수 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -36,9 +37,10 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="css/mypageedit.css">
 <link rel="shortcut icon" href="favicon.ico">
-<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
+	rel='stylesheet' type='text/css'>
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css">
 <!-- Icomoon Icon Fonts -->
@@ -50,75 +52,13 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/style.css">
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
 
-<style>
-/* 예약내역 차트 관련 */
-.reservaiton {
-	display: inline-block;
-}
-
-table.reservation_table {
-	border-collapse: collapse;
-	/* 표의 테두리 겹침 속성: collapse(겹침), separate(간격둠) */
-	border-spacing: 0; /* 셀 간의 간격을 지정: 0(간격 없음) */
-	vertical-align: top;
-	line-height: 1.5;
-	margin: 20px 10px;
-}
-
-table.reservation_table th {
-	width: 155px;
-	padding: 10px;
-	font-weight: bold;
-	vertical-align: top; /* 수직 정렬 */
-	color: black;
-	background: lavender;
-}
-
-table.reservation_table td {
-	width: 155px;
-	padding: 10px;
-	vertical-align: top;
-	border-bottom: 2px solid #ccc; /* 아래쪽 테두리를 지정하여 행 간의 경계를 만듦 */
-	border: none; /* 모든 테두리를 없앰 */
-}
-
-table.reservation_table tr.even {
-	background-color: #ffffff; /* 짝수 행 배경색 지정 */
-}
-
-table.reservation_table tr.odd {
-	background-color: #f2f2f2; /* 홀수 행 배경색 지정 */
-}
-
-/* 페이징 버튼 관련 */
-.paging-btn {
-	display: inline-block;
-	padding: 1px 10px;
-	margin: 0 5px;
-	border: 1px solid #ccc;
-	text-decoration: none;
-	color: #333;			/* a태그 주황색이라 깜둥이로 지정 */
-	background-color: #fff;
-	border-radius: 5px;		/* 테두리 둥근 정도 */
-}
-
-.paging-btn:hover {
-	background-color: #f0f0f0;
-}
-
-.paging-btnI {
-	padding: 5px 10px;
-	color: #333;
-	font-weight: bold;
-	border-radius: 3px;
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/mypagereserve.css">
 
 <title>마이페이지 예약내역 확인</title>
 </head>
@@ -134,14 +74,22 @@ table.reservation_table tr.odd {
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="JoinButton" style="background-color: white; border: 0;" onclick="openSignUpPage()">SignUp</a></li>
-							<li class="login"><a href="#" id="loginButton" style="background-color: white; border: 0;" onclick="openLoginPage()">Login</a></li>
+							<li class="join"><a href="#" id="JoinButton"
+								style="background-color: white; border: 0;"
+								onclick="openSignUpPage()">SignUp</a></li>
+							<li class="login"><a href="#" id="loginButton"
+								style="background-color: white; border: 0;"
+								onclick="openLoginPage()">Login</a></li>
 							<%
 							} else {
 							%>
 							<!-- 로그인 상태인 경우 -->
-							<li class="logout"><a href="#" id="logoutButton" style="background-color: white; border: 0;" onclick="performLogout()">Logout</a></li>
-							<li class="mypage"><a href="#" id="mypageButton" style="background-color: white; border: 0;" onclick="openMyPageReserve()">MyPage</a></li>
+							<li class="logout"><a href="#" id="logoutButton"
+								style="background-color: white; border: 0;"
+								onclick="performLogout()">Logout</a></li>
+							<li class="mypage"><a href="#" id="mypageButton"
+								style="background-color: white; border: 0;"
+								onclick="openMyPageReserve()">MyPage</a></li>
 							<%
 							}
 							%>
@@ -150,15 +98,15 @@ table.reservation_table tr.odd {
 				</div>
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" onclick="goToIndex()">Home</a>
-						<a href="#" onclick="goToAbout()">About</a>
+						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
+							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="#" onclick="goToIndex()">foodee</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" onclick="goToService()">Service</a>
-						<a href="#" onclick="goToReservation()">Community</a>
+						<a href="#" onclick="goToService()">Service</a> <a href="#"
+							onclick="goToReservation()">Community</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -166,7 +114,7 @@ table.reservation_table tr.odd {
 		</div>
 	</div>
 
-	<div class="form_edit">
+	<div class="form_reserve">
 		<!-- 사이드 메뉴바 -->
 		<div class="menu_bar">
 			<div class="mypage">
@@ -174,20 +122,22 @@ table.reservation_table tr.odd {
 			</div>
 			<div class="mypage_title">마이 예약</div>
 			<ul class="my_reserve">
-				<li class="mypage_menu"><a href="#" onclick="openMyPageReserve()">예약내역확인</a></li>
+				<li class="mypage_menu"><a href="#"
+					onclick="openMyPageReserve()">예약내역확인</a></li>
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보 수정</a></li>
+				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보
+						수정</a></li>
 				<li class="mypage_menu">회원 탈퇴</li>
 			</ul>
 		</div>
 		<!-- 예약내역 페이지 상단 -->
-		<div class="desktop_edit">
-			<img src="images/free-icon-dog-3843277.png" id="edit_logo" />
-			<div class="edit_line"></div>
-			<div class="edit_div">
-
+		<div class="desktop_reserve">
+			<span class=image_logo><img
+				src="images/free-icon-dog-3843277.png" id="reserve_logo" /></span>
+			<div class="reserve_line"></div>
+			<div class="reserve_div">
 				<!-- 예약내역 출력 공간 -->
 				<div class="reservaiton">
 					<h2>예약 내역</h2>
@@ -221,7 +171,7 @@ table.reservation_table tr.odd {
 					</table>
 
 					<!-- 페이징 처리 -->
-					<div class="paging">
+					<div class="reserve_paging">
 						<%
 						int pageRange = 7;
 						int startPage = Math.max(1, currentPage - pageRange / 2);

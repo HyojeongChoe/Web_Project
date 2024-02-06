@@ -14,7 +14,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <meta charset="UTF-8">
 <title>회원가입</title>
 
-<link rel="stylesheet" href="css/signup.css">
+
 <link rel="shortcut icon" href="favicon.ico">
 <link
 	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
@@ -30,10 +30,12 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
+
 <link rel="stylesheet" href="css/style.css">
-<!-- Modernizr JS -->
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/signup.css">
+
 <script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 
@@ -191,7 +193,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<span> <input type="text" id="email1" name="email1"
 								placeholder="이메일 입력하세요" oninput="checkEmail()"> <a
 								id="and">@ </a> <input type="text" id="email2" name="email2"
-								placeholder="naver.com" oninput="checkEmail()" /> <select
+								 oninput="checkEmail()" /> <select
 								id="domainSelect" name="email2">
 									<option>직접입력</option>
 									<option value="naver.com">naver.com</option>

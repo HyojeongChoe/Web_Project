@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
 /* FindPw */
 
 #findPw{
@@ -17,11 +24,11 @@ position: absolute;
 width: 200px;
 height: 63px;
 left: 160px;
-margin-top: 15px;
+margin-top: 31px;
 
-font-family: 'Inter';
+font-family: 'S-CoreDream-3Light';
 font-style: normal;
-font-weight: 400;
+font-weight: 900;
 font-size: 28px;
 line-height: 36px;
 display: flex;
@@ -40,7 +47,7 @@ position: absolute;
 width: 400px;
 height: 0px;
 left: 45px;
-top: 75px;
+top: 90px;
 
 border: 1px solid #000000;
 }
@@ -53,11 +60,11 @@ position: absolute;
 width: 91px;
 height: 48px;
 left: 40px;
-top: 15px;
+top: 5px;
 
-font-family: 'Inter';
+font-family: 'S-CoreDream-3Light';
 font-style: normal;
-font-weight: 400;
+font-weight: 700;
 font-size: 24px;
 line-height: 29px;
 display: flex;
@@ -73,12 +80,12 @@ color: #000000;
 box-sizing: border-box;
 
 position: absolute;
-width: 150px;
-height: 30px;
-left: 55px;
-top: 80px;
+width: 170px;
+height: 40px;
+left: 52px;
+top: 75px;
 
-padding : 25px;
+padding : 10px;
 font-size : 15px;
 background: #F4F5F7;
 border: 2px solid #000000;
@@ -92,11 +99,11 @@ position: absolute;
 width: 91px;
 height: 48px;
 left: 40px;
-top: 120px;
+top: 100px;
 
-font-family: 'Inter';
+font-family: 'S-CoreDream-3Light';
 font-style: normal;
-font-weight: 400;
+font-weight: 700;
 font-size: 24px;
 line-height: 29px;
 display: flex;
@@ -113,12 +120,12 @@ color: #000000;
 box-sizing: border-box;
 
 position: absolute;
-width: 150px;
-height: 30px;
-left: 55px;
-top: 185px;
+width: 170px;
+height: 40px;
+left: 52px;
+top: 171px;
 
-padding : 25px;
+padding : 10px;
 font-size : 15px;
 background: #F4F5F7;
 border: 2px solid #000000;
@@ -132,11 +139,11 @@ position: absolute;
 width: 250px;
 height: 48px;
 margin-left: 40px;
-top: 220px;
+top: 200px;
 
-font-family: 'Inter';
+font-family: 'S-CoreDream-3Light';
 font-style: normal;
-font-weight: 400;
+font-weight: 700;
 font-size: 24px;
 line-height: 29px;
 display: flex;
@@ -147,10 +154,10 @@ color: #000000;
 
 #birth {
 	box-sizing: border-box;
-	width: 140px;
+	width: 175px;
 	height: 40px;
 	margin-left : 50px;
-	margin-top : 265px;
+	margin-top : 250px;
 	
 	font-family: 'Inter';
 	font-style: normal;
@@ -169,11 +176,11 @@ position: absolute;
 width: 150px;
 height: 48px;
 margin-left: 40px;
-top: 310px;
+top: 295px;
 
-font-family: 'Inter';
+font-family: 'S-CoreDream-3Light';
 font-style: normal;
-font-weight: 400;
+font-weight: 700;
 font-size: 24px;
 line-height: 29px;
 display: flex;
@@ -192,9 +199,9 @@ box-sizing: border-box;
 
 position: absolute;
 width: 65px;
-height: 50px;
+height: 40px;
 left: 50px;
-top: 380px;
+top: 370px;
 
 font-size : 15px;
 text-align : center;
@@ -211,7 +218,7 @@ position: absolute;
 width: 45px;
 height: 15px;
 left: 130px;
-top: 390px;
+top: 380px;
 
 font-family: 'Inter';
 font-style: normal;
@@ -233,9 +240,9 @@ box-sizing: border-box;
 position: absolute;
 
 width : 80px;
-height: 50px;
+height: 40px;
 left: 160px;
-top: 380px;
+top: 370px;
 
 font-size : 15px;
 text-align : center;
@@ -251,7 +258,7 @@ position: absolute;
 width: 45px;
 height: 15px;
 left: 255px;
-top: 390px;
+top: 380px;
 
 font-family: 'Inter';
 font-style: normal;
@@ -273,9 +280,9 @@ box-sizing: border-box;
 
 position: absolute;
 width: 80px;
-height: 50px;
+height: 40px;
 left: 280px;
-top: 380px;
+top: 370px;
 
 font-size : 15px;
 text-align : center;
@@ -294,8 +301,12 @@ position: absolute;
 width: 120px;
 height: 40px;
 left: 140px;
-top: 455px;
+top: 440px;
 
+font-family: 'S-CoreDream-3Light';
+font-style: normal;
+font-weight: 900;
+font-size : 18px;
 background: #D9D9D9;
 border: 3px solid #000000;
 border-radius: 5px; 

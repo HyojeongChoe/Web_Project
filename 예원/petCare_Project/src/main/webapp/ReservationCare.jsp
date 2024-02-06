@@ -52,9 +52,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
+
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/index.css">
 
 
 <!-- Modernizr JS -->
@@ -131,8 +132,13 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate"></h2>
-						<p class="sub-heading to-animate">ㅇ상세내역적음적음적음</p>
+						<h2 class="heading to-animate">
+						<img src = "images/free-icon-pet-care-8182996.png" class = "carepet"/></h2>	
+						<p class="sub-heading to-animate" id = "care">돌봄 서비스</p>
+						<span class="sub-heading to-animate" id = "carewrite">전문 펫 매니저와 즐거운 돌봄</span> <br>
+						<span class="sub-heading to-animate" id = "carewrite2">배변 및 환경 정리, 주변 정리, 약 주기, 밥 챙겨주기(반려견 맞춤 배식), 실내놀이 등 
+						</span> <br>
+											
 					</div>
 				</div>
 				<div class="row">

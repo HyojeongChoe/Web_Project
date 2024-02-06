@@ -52,9 +52,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
+
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/index.css">
 
 
 <!-- Modernizr JS -->
@@ -126,8 +127,16 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
 					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate">미용</h2>
-						<p class="sub-heading to-animate">미용ㅇ상세내역적음적음적음</p>
+						<h2 class="heading to-animate">
+						<img src = "images/free-icon-pet-grooming-8334179.png" class = "groomingpet"/></h2>
+						<p class="sub-heading to-animate" id = "gromming">미용 서비스</p>
+						<span class="sub-heading to-animate" id = "grommingwrite">신청하신 미용스타일에 맞춰 스케줄관리를 하기때문에 미용스타일변경이 필요하실경우,<br> 
+						기타 문의사항에 작성 하시길 바랍니다. <br>
+						※ 현장에서 스타일변경을 원하실경우, 다음타임 스케줄로 인해 변경이 불가할 수 있습니다. <br>
+						※ 반려동물의 성향(입질), 사회성, 분리불안, 컨디션, 스트레스 등에 따라 서비스가 중단될 수 <br>
+						있습니다.
+						 <br>
+						</span> 
 					</div>
 				</div>
 				<div class="row">

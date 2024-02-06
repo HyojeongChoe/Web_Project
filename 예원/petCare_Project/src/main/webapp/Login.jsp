@@ -14,7 +14,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/loginForm.css">
 <title>로그인</title>
 <link rel="shortcut icon" href="favicon.ico">
 <link
@@ -31,9 +30,12 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
+
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/loginForm.css">
+
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
 </head>
@@ -148,18 +150,3 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 </body>
 
 </html>
-
-
-<!-- 이거는 원본 코드 
-	<div class="inputBox_passwd" style="display: block;">
-							<div class="chk_passwd" style="display: block;"></div><input id="member_passwd"
-								name="member_passwd" value="password" type="password" class="password" placeholder="패스워드">
-						</div>
-					</div>
-					<button class="btn loginBtn" id = "login"
-						onclick="MemberAction.login('member_form_0434157565'); return false;">LOGIN</button>
-					<div class="utilMenu" style="display:block">
-						<a action="/member/join.html" class="right" id = "Signup">회원가입</a>
-						<a href="/member/id/find_id.html" id = "">아이디 찾기</a>
-						<a href="/member/passwd/find_passwd_info.html">비밀번호 찾기</a>			
-					</div> -->

@@ -52,9 +52,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
+
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/index.css">
 
 
 <!-- Modernizr JS -->
@@ -131,9 +132,14 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 		<div id="fh5co-contact" data-section="reservation">
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
-					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate">산책</h2>
-						<p class="sub-heading to-animate">산책상세내용</p>
+					<div class="col-md-8 col-md-offset-2">	
+						<h2 class="heading to-animate">
+							<img src = "images/free-icon-leash-dog-5783361.png" class = "walkpet"/></h2>
+						<p class="sub-heading to-animate" id = "walk">산책 서비스</p>
+						<span class="sub-heading to-animate" id = "walkwrite">산책 서비스는 야외에서 산책만 진행하는 서비스 입니다. <br>
+						 ※하네스 착용과 산책줄은 보호자분이 미리 준비해주시기 바랍니다. <br>
+						 ※실내 케어 서비스를 원하시면 돌봄 서비스를 이용해주시기 바랍니다.
+						</span> 
 					</div>
 				</div>
 				<div class="row">
@@ -148,7 +154,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</div>
 						</ul>
 					</div>
-
 					<form action="reserve1.do">
 						<div class="col-md-6 to-animate-2">
 							<h3>예약</h3>

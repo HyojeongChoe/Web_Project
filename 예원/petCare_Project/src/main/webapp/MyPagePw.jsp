@@ -25,10 +25,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
 <!-- Flexslider -->
 <link rel="stylesheet" href="css/flexslider.css">
-<link rel="stylesheet" href="css/mypagepw.css">
-<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/mypagepw.css">
 <title>마이페이지 비밀번호 입력창</title>
 </head>
 <body>
@@ -82,34 +82,38 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</div>
 		</div>
 	</div>
-	
-	<div class="form_edit">
+
+	<div class="form_pw">
 		<div class="menu_bar">
 			<div class="mypage">
 				<h3>마이페이지</h3>
 			</div>
 			<div class="mypage_title">마이 예약</div>
 			<ul class="my_reserve">
-				<li class="mypage_menu"><a href="#" onclick="openMyPageReserve()">예약내역확인</a></li>
+				<li class="mypage_menu"><a href="#"
+					onclick="openMyPageReserve()">예약내역확인</a></li>
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보 수정</a></li>
+				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보
+						수정</a></li>
 				<li class="mypage_menu">회원 탈퇴</li>
 			</ul>
 		</div>
 		<div class="mypage_pw_insert">
 			<form action="mypagecheckpw.do">
-				<div class="form-myupdate_pw" id="myupdate">
-					<img src="images/free-icon-dog-3843277.png" id="image" /> <a
-						id="line"></a>
+				<div class="form_myupdate_pw" id="myupdate">
+					<span class=image_logo><img src="images/free-icon-dog-3843277.png" id="pw_logo" /></span> 
+					<div class="pw_line"></div>
 					<div class="form_input_pw">
-						<img src="free-icon-lock-6421881.png" id="lock" /> <input
-							type="password" id="input_pw" name="input_pw"
+						<input type="password" id="input_pw" name="input_pw"
 							placeholder="비밀번호를 입력해주세요." />
+						<div class="pwbtn">
+							<input class="submit" type="submit" id="submit" value="확인" /> 
+							<input input class="submit" type="button" id="cancel" value="취소" /> 
+						</div>
+						
 					</div>
-					<br> <input type="submit" id="submit" value="확인" /> <input
-						type="button" id="cancel" value="취소" />
 				</div>
 			</form>
 		</div>

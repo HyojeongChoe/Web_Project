@@ -304,140 +304,139 @@ public class userDAO {
 	}
 
 	// 예약내역 출력
-	public ArrayList<userDTO> userSelect(String id) {
-		// 결과값 담을 배열
-		ArrayList<userDTO> result = new ArrayList<userDTO>();
+		public ArrayList<userDTO> userSelect(String id) {
+			// 결과값 담을 배열
+			ArrayList<userDTO> result = new ArrayList<userDTO>();
 
-		conn = null;
-		ps = null;
-		rs = null;
+			conn = null;
+			ps = null;
+			rs = null;
 
-		try {
-			conn = ds.getConnection();
-
-			String query = "SELECT * FROM reserve WHERE id = ?";
-			ps = conn.prepareStatement(query);
-			ps.setString(1, id);
-			rs = ps.executeQuery();
-
-			while (rs.next()) { // rs.next() :: 결과값 하나씩 확인하며 돈다
-				userDTO element = new userDTO();
-
-				element.setDate(rs.getString("date"));
-				element.setService(rs.getString("service"));
-				element.setTime(rs.getString("time"));
-				element.setGrooming(rs.getString("grooming"));
-				element.setPet(rs.getString("pet"));
-				element.setCost(rs.getString("cost"));
-
-				// element 객체에 데이터 한 묶음씩 저장
-				result.add(element);
-			}
-		} catch (Exception e) {
-			System.out.println("SELECT 쿼리 수행 실패");
-			e.printStackTrace();
-		} finally {
 			try {
-				conn.close();
-				ps.close();
-				rs.close();
+				conn = ds.getConnection();
+
+				String query = "SELECT * FROM reserve WHERE id = ?";
+				ps = conn.prepareStatement(query);
+				ps.setString(1, id);
+				rs = ps.executeQuery();
+
+				while (rs.next()) { // rs.next() :: 결과값 하나씩 확인하며 돈다
+					userDTO element = new userDTO();
+
+					element.setDate(rs.getString("date"));
+					element.setService(rs.getString("service"));
+					element.setTime(rs.getString("time"));
+					element.setGrooming(rs.getString("grooming"));
+					element.setPet(rs.getString("pet"));
+					element.setCost(rs.getString("cost"));
+
+					// element 객체에 데이터 한 묶음씩 저장
+					result.add(element);
+				}
 			} catch (Exception e) {
-				System.out.println("객체 닫기 실패");
+				System.out.println("SELECT 쿼리 수행 실패");
 				e.printStackTrace();
+			} finally {
+				try {
+					conn.close();
+					ps.close();
+					rs.close();
+				} catch (Exception e) {
+					System.out.println("객체 닫기 실패");
+					e.printStackTrace();
+				}
 			}
+
+			return result;
+		}
+		// 추가: 페이징을 위한 메서드
+		public ArrayList<userDTO> userSelectPaging(String id, int offset, int itemsPerPage) {
+			ArrayList<userDTO> result = new ArrayList<userDTO>();
+
+			conn = null;
+			ps = null;
+			rs = null;
+
+			try {
+				conn = ds.getConnection();
+
+				// OFFSET과 LIMIT을 사용하여 페이징 처리 및 로그인한 사용자와 관련된 정보만 조회
+				String query = "SELECT * FROM reserve WHERE id = ? ORDER BY date DESC LIMIT ?, ?";
+				ps = conn.prepareStatement(query);
+				ps.setString(1, id);
+				ps.setInt(2, offset);
+				ps.setInt(3, itemsPerPage);
+				rs = ps.executeQuery();
+
+				while (rs.next()) {
+					userDTO element = new userDTO();
+
+					element.setDate(rs.getString("date"));
+					element.setService(rs.getString("service"));
+					element.setTime(rs.getString("time"));
+					element.setGrooming(rs.getString("grooming"));
+					element.setPet(rs.getString("pet"));
+					element.setCost(rs.getString("cost"));
+
+					result.add(element);
+				}
+			} catch (Exception e) {
+				System.out.println("SELECT(페이징) 쿼리 수행 실패");
+				e.printStackTrace();
+			} finally {
+				try {
+					conn.close();
+					ps.close();
+					rs.close();
+				} catch (Exception e) {
+					System.out.println("객체 닫기 실패");
+					e.printStackTrace();
+				}
+			}
+
+			return result;
 		}
 
-		return result;
-	}
+		// 추가: 전체 항목 수를 반환하는 메서드
+		public int getTotalItems(String id) {
+		    int totalItems = 0;
 
-	// 추가: 페이징을 위한 메서드
-	public ArrayList<userDTO> userSelectPaging(String id, int offset, int itemsPerPage) {
-		ArrayList<userDTO> result = new ArrayList<userDTO>();
+		    conn = null;
+		    ps = null;
+		    rs = null;
 
-		conn = null;
-		ps = null;
-		rs = null;
+		    try {
+		    	// Connection 획득
+	            Context context = new InitialContext();
+	            DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/mysql");
+		        conn = ds.getConnection();
 
-		try {
-			conn = ds.getConnection();
+		        // COUNT를 사용하여 특정 사용자의 예약 행 수를 가져옴
+		        String query = "SELECT COUNT(*) FROM reserve WHERE id = ?";
+	            ps = conn.prepareStatement(query);
+	            ps.setString(1, id);
+	            rs = ps.executeQuery();
 
-			// OFFSET과 LIMIT을 사용하여 페이징 처리 및 로그인한 사용자와 관련된 정보만 조회
-			String query = "SELECT * FROM reserve WHERE id = ? ORDER BY date DESC LIMIT ?, ?";
-			ps = conn.prepareStatement(query);
-			ps.setString(1, id);
-			ps.setInt(2, offset);
-			ps.setInt(3, itemsPerPage);
-			rs = ps.executeQuery();
+		        if (rs.next()) {
+		            totalItems = rs.getInt(1); // 첫 번째 컬럼의 값을 가져옴
+		        }
+		    } catch (Exception e) {
+		        System.out.println("SELECT COUNT 쿼리 수행 실패");
+		        e.printStackTrace();
+		    } finally {
+		        try {
+		            conn.close();
+		            ps.close();
+		            rs.close();
+		        } catch (Exception e) {
+		            System.out.println("객체 닫기 실패");
+		            e.printStackTrace();
+		        }
+		    }
 
-			while (rs.next()) {
-				userDTO element = new userDTO();
-
-				element.setDate(rs.getString("date"));
-				element.setService(rs.getString("service"));
-				element.setTime(rs.getString("time"));
-				element.setGrooming(rs.getString("grooming"));
-				element.setPet(rs.getString("pet"));
-				element.setCost(rs.getString("cost"));
-
-				result.add(element);
-			}
-		} catch (Exception e) {
-			System.out.println("SELECT(페이징) 쿼리 수행 실패");
-			e.printStackTrace();
-		} finally {
-			try {
-				conn.close();
-				ps.close();
-				rs.close();
-			} catch (Exception e) {
-				System.out.println("객체 닫기 실패");
-				e.printStackTrace();
-			}
+		    return totalItems;
 		}
-
-		return result;
-	}
-
-	// 추가: 전체 항목 수를 반환하는 메서드
-	public int getTotalItems(String id) {
-	    int totalItems = 0;
-
-	    conn = null;
-	    ps = null;
-	    rs = null;
-
-	    try {
-	    	// Connection 획득
-            Context context = new InitialContext();
-            DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/mysql");
-	        conn = ds.getConnection();
-
-	        // COUNT를 사용하여 특정 사용자의 예약 행 수를 가져옴
-	        String query = "SELECT COUNT(*) FROM reserve WHERE id = ?";
-            ps = conn.prepareStatement(query);
-            ps.setString(1, id);
-            rs = ps.executeQuery();
-
-	        if (rs.next()) {
-	            totalItems = rs.getInt(1); // 첫 번째 컬럼의 값을 가져옴
-	        }
-	    } catch (Exception e) {
-	        System.out.println("SELECT COUNT 쿼리 수행 실패");
-	        e.printStackTrace();
-	    } finally {
-	        try {
-	            conn.close();
-	            ps.close();
-	            rs.close();
-	        } catch (Exception e) {
-	            System.out.println("객체 닫기 실패");
-	            e.printStackTrace();
-	        }
-	    }
-
-	    return totalItems;
-	}
-
+		
 	// 비밀번호 가져오기
 	public String getPasswordForUser(String id) {
 		conn = null;

@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+@font-face {
+	font-family: 'S-CoreDream-3Light';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+body{
+	font-family: 'S-CoreDream-3Light';
+}
 .service_menu {
 	margin-top: 20px; /* 적절한 위 여백 설정 */
 	margin-bottom: 20px; /* 적절한 아래 여백 설정 */
@@ -26,6 +35,9 @@
 .shop_item {
 	flex: 0 0 calc(33.33% - 30px); /* 각 이미지의 너비를 조절하고 마진을 줌 */
 	margin-bottom: 30px; /* 이미지 아래에 여백 추가 */
+	padding : 0px 15px;
+	height : auto;
+	width : 341px;
 }
 
 .shop_item img {
@@ -37,4 +49,9 @@
 .service_detail {
 	margin: 0; /* 기본 마진 제거 */
 	text-align: center; /* 텍스트를 가운데에 위치시킴 */
+}
+
+.care_service{
+	width : 400px;
+	height : 350px;
 }

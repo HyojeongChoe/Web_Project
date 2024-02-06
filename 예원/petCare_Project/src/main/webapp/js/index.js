@@ -21,6 +21,8 @@ function goToReservation() {
 //ReservationCare.jsp로
 function goToCare() {
 	window.location.href = "ReservationCare.jsp";
+	 // 기본 동작 막기
+    event.preventDefault();
 }
 //ReservationGrooming.jsp
 function goToGrooming() {
@@ -51,13 +53,20 @@ function openMyPageEdit() {
 	window.location.href = "MyPageEdit.jsp";
 }
 function performLogout() {
-	// 여기에 로그아웃 처리 로직을 추가할 수 있습니다.
-	// 예를 들어, AJAX 요청을 사용하여 서버에 로그아웃 요청을 보낼 수 있습니다.
-	// 또는 간단하게 location.href를 사용하여 로그아웃 링크로 이동할 수도 있습니다.
 
-	// 아래는 간단한 예시입니다.
 	var confirmLogout = confirm("로그아웃하시겠습니까?");
 	if (confirmLogout) {
 		location.href = "logout.do"; // 로그아웃 처리를 수행하는 서블릿 매핑 경로로 수정
 	}
 }
+
+/* 예원 추가 부분 */
+document.addEventListener("DOMContentLoaded", function() {	/* 추천 섹션 서서히 나타나기 효과 */
+    // 페이지가 로드될 때 실행되는 함수
+    var mainElement = document.querySelector('.inside');
+
+    // mainElement에 show 클래스 추가
+    mainElement.classList.add('show');
+});
+
+
