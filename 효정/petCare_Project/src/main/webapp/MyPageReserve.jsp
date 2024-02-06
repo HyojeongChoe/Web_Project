@@ -129,7 +129,7 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 			<ul class="my_inform">
 				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보
 						수정</a></li>
-				<li class="mypage_menu">회원 탈퇴</li>
+				<li class="mypage_menu"><a href="MyPageDelete.jsp">회원 탈퇴</a></li>
 			</ul>
 		</div>
 		<!-- 예약내역 페이지 상단 -->

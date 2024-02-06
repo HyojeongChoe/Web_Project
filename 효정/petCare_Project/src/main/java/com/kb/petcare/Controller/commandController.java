@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.kb.petcare.Command.paginationService;
 import com.kb.petcare.Command.userService;
 import com.kb.petcare.Command.userServiceCheckDuplicateId;
+import com.kb.petcare.Command.userServiceDelete;
 import com.kb.petcare.Command.userServiceFindId;
 import com.kb.petcare.Command.userServiceFindPw;
 import com.kb.petcare.Command.userServiceLogin;
@@ -74,7 +75,6 @@ public class commandController extends HttpServlet {
 			System.out.println("<회원가입>을 수행합니다.");
 			uService = new userServiceSignUp();
 			response.sendRedirect("Login.jsp"); // 회원가입 성공하면 로그인 페이지로 가기
-
 		} else if (command.equals("/login.do")) {
 			System.out.println("<로그인 테스트> 수행");
 			uService = new userServiceLogin();
@@ -93,7 +93,7 @@ public class commandController extends HttpServlet {
 		} else if (command.equals("/mypagecheckpw.do")) {
 			System.out.println("<마이페이지 비밀번호확인> 수행");
 			uService = new userServiceMypagePw();
-		} else if (command.equals("/selectuserinfo.do")) {
+		}else if (command.equals("/selectuserinfo.do")) {
 			System.out.println("<개인정보>를 출력합니다.");
 			uService = new userServiceSelectUserInfo();
 
@@ -107,10 +107,16 @@ public class commandController extends HttpServlet {
 		} else if (command.equals("/updateuserinfo.do")) {
 			System.out.println("<개인정보 수정> 수행");
 			uService = new userServiceUpdateUserInfo();
+			uService.execute(request, response);
+			
 			// 업데이트 후 새로운 정보를 포함하는 페이지로 이동
 			RequestDispatcher dispatcher = request.getRequestDispatcher("MyPageEdit.jsp");
 			dispatcher.forward(request, response);
-		} else if (command.equals("/reserve1.do")) {
+			return;
+		} else if(command.equals("/delete.do")) {//회원 삭제 요청할 시
+			System.out.println("<회원 삭제>를 수행합니다.");
+			uService = new userServiceDelete();
+		}else if (command.equals("/reserve1.do")) {
 			System.out.println("<예약하기> 수행");
 			uService = new userServiceReserve1();
 		} else if (command.equals("/reserve2.do")) {

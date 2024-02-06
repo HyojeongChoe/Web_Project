@@ -28,7 +28,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" href="css/mypagepw.css">
+<link rel="stylesheet" href="css/mypagedel.css">
 <title>마이페이지 비밀번호 입력창</title>
 </head>
 <body>
@@ -67,8 +67,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</div>
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" onclick="goToIndex()">Home</a> 
-						<a href="#"
+						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
@@ -102,24 +101,42 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</ul>
 		</div>
 		<div class="mypage_pw_insert">
-			<form action="mypagecheckpw.do">
+			<form action="delete.do">
 				<div class="form_myupdate_pw" id="myupdate">
 					<span class=image_logo><img
 						src="images/free-icon-dog-3843277.png" id="pw_logo" /></span>
 					<div class="pw_line"></div>
+					<div class="delete_title">
+						<h1>탈퇴하기</h1>
+						<h3>탈퇴하기 전에 아래 내용을 꼭 확인해주세요.</h3>
+					</div>
+					<div class="delete_message">
+						<ul class="del_message_ul">
+							<li class="del_message_li">탈퇴 시 회원님의 예약내역은 1년간 보관됩니다.</li>
+							<li class="del_message_li">모든 개인정보는 영구적으로 삭제되며, 다시는 복구할 수
+								없습니다.</li>
+							<li class="del_message_li">휴대폰 번호 변경은
+								[마이정보]>[개인정보수정]>[휴대폰]에서 가능합니다.</li>
+							<li class="del_message_li">이메일 변경은 [마이정보]>[개인정보수정]>[이메일]에서
+								가능합니다.</li>
+							<li>이상의 내용을 숙지하여 탈퇴를 원하실 경우, 아래의 "탈퇴" 버튼을 눌러주세요.</li>
+						</ul>
+					</div>
 					<div class="form_input_pw">
 						<input type="password" id="input_pw" name="input_pw"
 							placeholder="비밀번호를 입력해주세요." />
 						<div class="pwbtn">
-							<input class="submit" type="submit" id="submit" value="확인" /> <input
-								input class="submit" type="button" id="cancel" value="취소" />
+							<!-- 탈퇴 버튼 클릭 시 checkPassword() 메서드 호출 -->
+							<input class="submit" type="button" id="submit" value="탈퇴"
+								onclick="checkPassword()" />
 						</div>
-
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
 	<script src="js/index.js"></script>
+	<script src="js/mypage.js"></script>
+	
 </body>
 </html>

@@ -52,6 +52,10 @@ function openMyPagePw() {
 function openMyPageEdit() {
 	window.location.href = "MyPageEdit.jsp";
 }
+//마이페이 탈회
+function openMyPageEdit() {
+	window.location.href = "MyPageDelete.jsp";
+}
 function performLogout() {
 
 	var confirmLogout = confirm("로그아웃하시겠습니까?");
@@ -59,3 +63,4 @@ function performLogout() {
 		location.href = "logout.do"; // 로그아웃 처리를 수행하는 서블릿 매핑 경로로 수정
 	}
 }
+
