@@ -20,7 +20,7 @@ public class userServiceFindId implements userService {
         String mobile = String.format("%s-%s-%s", 
 				request.getParameter("mobile1"),
 				request.getParameter("mobile2"),
-				request.getParameter("mobile3"));
+				request.getParameter("mobile3"));	
 
 		// DAO에 있는 findId 메소드를 사용하여 아이디 찾기
         userDAO dao = new userDAO();

@@ -29,8 +29,7 @@ public class userServiceLogin implements userService {
 				sessionManager.setLoggedInUserId(request, id);
 				// 세션 조작 코드를 실행한 후에 리다이렉트를 수행합니다.
 				response.sendRedirect("index.jsp");
-//				RequestDispatcher dispatcher = request.getRequestDispatcher("index.html");
-//				dispatcher.forward(request, response);
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -40,8 +39,7 @@ public class userServiceLogin implements userService {
 			try {
 				// 실패 시 리다이렉트
 				response.sendRedirect("Login.jsp");
-//				RequestDispatcher dispatcher = request.getRequestDispatcher("Login.html");
-//				dispatcher.forward(request, response);
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

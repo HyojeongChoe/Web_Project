@@ -569,7 +569,7 @@ p {
 }
 
 #fh5co-sayings {
-	padding: 7em 0;
+	padding: 0px;
 }
 
 @media screen and (max-width: 768px) {
@@ -584,7 +584,7 @@ p {
 }
 
 #fh5co-sayings .flexslider .slides li blockquote {
-	padding-left: 0;
+	padding-left: 20px;
 	border-left: none;
 }
 

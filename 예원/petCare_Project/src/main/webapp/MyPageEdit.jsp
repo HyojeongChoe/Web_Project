@@ -113,7 +113,7 @@ if (loggedInUserId != null) {
 			<ul class="my_inform">
 				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보
 						수정</a></li>
-				<li class="mypage_menu">회원 탈퇴</li>
+				<li class="mypage_menu"><a href="MyPageDelete.jsp">회원 탈퇴</a></li>
 			</ul>
 		</div>
 		<div class="desktop_edit">

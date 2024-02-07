@@ -122,15 +122,37 @@ table.reservation_table td {
 	/* 모든 테두리를 없앰 */
 }
 
+/* 짝수 행 배경색 지정 */
 table.reservation_table tr.even {
 	background-color: #ffffff;
-	/* 짝수 행 배경색 지정 */
 }
 
+/* 홀수 행 배경색 지정 */
 table.reservation_table tr.odd {
 	background-color: #f2f2f2;
-	/* 홀수 행 배경색 지정 */
 }
+
+table.reservation_table tbody tr:hover {	/* 예약내역 행 호버 효과 */
+    background-color: #e6e6e6;
+}
+
+/* 임시 테스트용 */
+table.reservation_table th:nth-child(1) {
+    width: 20px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: black;
+    background: lavender;
+}
+table.reservation_table th.reservation_check input[type="checkbox"] {	/* 예약 체크박스 스타일 */
+    /* 원하는 체크박스 크기 지정 */
+    width: 40px;
+    height: 40px;
+    margin: 0; /* 기본 마진 제거 */
+}
+
+
 /* 페이징 버튼 관련 */
 .reserve_paging{
 	position: relative;
