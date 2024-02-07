@@ -65,69 +65,20 @@ function performLogout() {
 }
 
 /* 예원 추가 부분 시작 ↓↓↓ */
-document.addEventListener("DOMContentLoaded", function() {
-	// 예약 내역 테이블의 모든 행을 가져오기
-	var rows = document.querySelectorAll(".reservation_table tbody tr");
+document.addEventListener("DOMContentLoaded", function () {
+    // 예약 내역 테이블의 모든 행을 가져오기
+    var rows = document.querySelectorAll(".reservation_table tbody tr");
 
-	// 각 행에 클릭 이벤트 추가
-	rows.forEach(function(row) {
-		row.addEventListener("click", function() {
-			// 현재 행의 체크박스 요소 가져오기
-			var checkbox = row.querySelector("input[type='checkbox']");
+    // 각 행에 클릭 이벤트 추가
+    rows.forEach(function (row) {
+        row.addEventListener("click", function () {
+            // 현재 행의 체크박스 요소 가져오기
+            var checkbox = row.querySelector("input[type='checkbox']");
 
-			// 체크박스의 상태를 변경 (체크 <-> 해제)
-			checkbox.checked = !checkbox.checked;
-		});
-	});
-});
-
-$(document).ready(function() {
-	// 예약 취소하기 버튼 클릭 이벤트 처리
-	$("#cancelReservationBtn").click(function() {
-		// 선택된 예약의 체크박스 가져오기
-		var selectedReservations = $("input[name='reserve_checkbox']:checked");
-
-		if (selectedReservations.length > 0) {
-			// 선택된 예약이 있는 경우
-
-			// 선택된 예약 정보를 담을 배열
-			var selectedReservationsArray = [];
-
-			// 각 체크된 예약의 정보를 배열에 추가
-			selectedReservations.each(function() {
-				var reservationInfo = {
-					date: $(this).closest("tr").find("td:eq(1)").text(),
-					service: $(this).closest("tr").find("td:eq(2)").text(),
-					time: $(this).closest("tr").find("td:eq(3)").text(),
-					grooming: $(this).closest("tr").find("td:eq(4)").text(),
-					pet: $(this).closest("tr").find("td:eq(5)").text(),
-					cost: $(this).closest("tr").find("td:eq(6)").text()
-				};
-				selectedReservationsArray.push(reservationInfo);
-			});
-
-			// AJAX를 사용하여 서버로 선택된 예약 정보 전송
-			$.ajax({
-				type: "POST",
-				url: "/deleteReserve.do", // 수정 필요
-				data: {
-					selectedReservations: JSON.stringify(selectedReservationsArray)
-				},
-				success: function(response) {
-					// 예약 취소 결과 메시지를 표시
-					$("#cancelResultMessage").text(response);
-					// 예약 취소 후 페이지 새로고침 또는 다른 동작 수행을 원하면 추가적인 처리가 필요합니다.
-				},
-				error: function(error) {
-					console.log("Error:", error);
-				}
-			});
-
-		} else {
-			// 선택된 예약이 없는 경우 메시지 표시
-			$("#cancelResultMessage").text("취소할 예약을 선택해주세요.");
-		}
-	});
+            // 체크박스의 상태를 변경 (체크 <-> 해제)
+            checkbox.checked = !checkbox.checked;
+        });
+    });
 });
 /* 예원 추가 부분 끝 ↑↑↑ */
 

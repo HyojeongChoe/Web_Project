@@ -215,11 +215,25 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 
 
 	<script>
+		/* 현재 날짜를 구하는 함수*/
+		function getCurrentDate() {
+			var now = new Date();
+			var year = now.getFullYear();
+			/* (now.getMonth() + 1).toString() :: 현재 월을 가져와서 1을 더한 후, 이를 문자열로 변환 */
+			/* padStart(2, '0') :: 문자열이 2자리가 되도록 앞에 0을 채워주는 역할 */
+			var month = (now.getMonth() + 1).toString().padStart(2, '0');
+			var day = now.getDate().toString().padStart(2, '0');
+
+			return year + '-' + month + '-' + day; /* 현재 날짜 형식: 'yyyy-mm-dd' */
+		}
+
 		/* 여러 체크박스를 선택하고 삭제 버튼을 눌렀을 때, 선택된 예약 정보를 서버로 어떻게 전송할 것인지에 대한 로직 */
 		function deleteSelectedReservations() {
 			var checkboxes = document
 					.querySelectorAll('.reserve_checkbox:checked');
 			var selectedReservations = [];
+			var currentDate = getCurrentDate(); // 현재 날짜 가져오기
+			var containsInvalidReservation = false;
 
 			checkboxes.forEach(function(checkbox) {
 				var reservation = {
@@ -231,27 +245,52 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 					cost : checkbox.dataset.cost
 				};
 
-				selectedReservations.push(reservation);
+				// 예약 날짜와 현재 날짜를 비교하여 이틀 이상 여유가 있는지 확인
+				var reservationDate = new Date(reservation.date);
+				var twoDaysLater = new Date();
+				twoDaysLater.setDate(twoDaysLater.getDate() + 2);
+
+				if (reservationDate >= twoDaysLater) {
+					// 예약 날짜가 이틀 이상 여유가 있는 경우
+					selectedReservations.push(reservation);
+				} else {
+					// 예약 날짜와 현재 날짜를 비교하여 이미 지나간 예약인지 확인
+					if (reservationDate < currentDate) {
+						// 이미 지나간 예약에 대한 처리 (예: 경고 메시지)
+						containsInvalidReservation = true;
+						alert('이미 지난 예약입니다.');
+					} else {
+						// 이틀 이상 여유가 없는 예약에 대한 처리 (예: 경고 메시지)
+						containsInvalidReservation = true;
+						alert('이틀 이상 여유가 없는 예약이 포함되어 예약을 취소할 수 없습니다.');
+					}
+				}
 			});
 
-			// Ajax를 사용하여 서버로 선택된 예약 정보 전송
-			var xhr = new XMLHttpRequest();
-			xhr.open('POST', 'deleteReserve.do', true);
-			xhr.setRequestHeader('Content-Type', 'application/json');
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState === 4) {
-		            if (xhr.status === 200) {
-		                // 서버 응답을 처리하는 로직 (예: 페이지 새로고침)
-		                window.location.reload();
-		                // 예약 취소 성공 시 알림창 표시
-		                alert('예약을 취소하였습니다.');
-		            } else {
-		                // 예약 취소 실패 시 알림창 표시
-		                alert('예약 취소에 실패했습니다.');
+			if (!containsInvalidReservation && selectedReservations.length > 0) {
+		        // Ajax를 사용하여 서버로 선택된 예약 정보 전송
+		        var xhr = new XMLHttpRequest();
+		        xhr.open('POST', 'deleteReserve.do', true);
+		        xhr.setRequestHeader('Content-Type', 'application/json');
+		        xhr.onreadystatechange = function () {
+		            if (xhr.readyState === 4) {
+		                if (xhr.status === 200) {
+		                    // 서버 응답이 성공일 때만 알림 창을 표시
+		                    // 서버 응답을 처리하는 로직 추가 (예: 페이지 새로고침)
+		                    window.location.reload();
+		                    // 예약 취소 성공 시 알림창 표시
+		                    alert('예약을 취소하였습니다.');
+		                } else {
+		                    // 서버 응답이 실패인 경우에는 실패 메시지만 표시
+		                    alert('예약 취소에 실패했습니다.');
+		                }
 		            }
-		        }
-			};
-			xhr.send(JSON.stringify(selectedReservations));
+		        };
+		        xhr.send(JSON.stringify(selectedReservations));
+		    } else if (!containsInvalidReservation) {
+		        // 선택된 예약이 없는 경우에 대한 처리 (예: 경고 메시지)
+		        alert('취소할 예약을 선택해주세요.');
+		    }
 		}
 	</script>
 
