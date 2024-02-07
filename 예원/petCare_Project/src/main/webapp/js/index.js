@@ -65,20 +65,33 @@ function performLogout() {
 }
 
 /* 예원 추가 부분 시작 ↓↓↓ */
+/* 예약내역 테이블 체크박스 관련 */
 document.addEventListener("DOMContentLoaded", function () {
     // 예약 내역 테이블의 모든 행을 가져오기
     var rows = document.querySelectorAll(".reservation_table tbody tr");
 
     // 각 행에 클릭 이벤트 추가
     rows.forEach(function (row) {
-        row.addEventListener("click", function () {
-            // 현재 행의 체크박스 요소 가져오기
-            var checkbox = row.querySelector("input[type='checkbox']");
+        row.addEventListener("click", function (event) {
+            // 클릭된 요소가 체크박스인 경우 이벤트 전파를 막음
+            if (event.target.tagName.toLowerCase() !== 'input') {
+                // 현재 행의 체크박스 요소 가져오기
+                var checkbox = row.querySelector("input[type='checkbox']");
 
-            // 체크박스의 상태를 변경 (체크 <-> 해제)
-            checkbox.checked = !checkbox.checked;
+                // 체크박스의 상태를 변경 (체크 <-> 해제)
+                checkbox.checked = !checkbox.checked;
+            }
         });
     });
+});
+
+/* 어바웃 페이지 관련 */
+document.addEventListener("DOMContentLoaded", function() {	/* 추천 섹션 서서히 나타나기 효과 */
+    // 페이지가 로드될 때 실행되는 함수
+    var mainElement = document.querySelector('.inside');
+
+    // mainElement에 show 클래스 추가
+    mainElement.classList.add('show');
 });
 /* 예원 추가 부분 끝 ↑↑↑ */
 

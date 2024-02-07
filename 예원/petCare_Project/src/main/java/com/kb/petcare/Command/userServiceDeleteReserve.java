@@ -30,7 +30,7 @@ public class userServiceDeleteReserve implements userService {
 				String cost = reservation.getCost();
 				
 				// 디버깅
-				System.out.println(date + ", " + service + 
+				System.out.println("삭제된 내역: " + date + ", " + service + 
 						", " + time + ", " + grooming + ", " + pet + ", " + cost);
 
 				// DAO를 통해 예약 삭제
