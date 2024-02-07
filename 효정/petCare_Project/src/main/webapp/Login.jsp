@@ -111,7 +111,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</div>
 				<div class="inputBox" id="normalLogin_login">
 					<input type="submit" id="login_button" name="login_button"
-						value="LOGIN">
+						value="LOGIN" />
 				</div>
 				<a href="#" id="signup" onclick="openSignUpPage()">회원가입</a> <label
 					id="line1"></label>
@@ -122,6 +122,12 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</form>
 		</div>
 	</div>
+	<script>
+	var loginError = '<%=request.getParameter("loginError")%>';
+		if (loginError === "true") {
+			alert("아이디나 비밀번호를 확인해주세요.");
+		}
+	</script>
 	<!-- jQuery -->
 	<script src="js/login.js"></script>
 	<script src="js/index.js"></script>

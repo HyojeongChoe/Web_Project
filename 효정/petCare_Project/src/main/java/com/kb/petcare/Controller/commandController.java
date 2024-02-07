@@ -1,6 +1,7 @@
 package com.kb.petcare.Controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -15,6 +16,7 @@ import com.kb.petcare.Command.paginationService;
 import com.kb.petcare.Command.userService;
 import com.kb.petcare.Command.userServiceCheckDuplicateId;
 import com.kb.petcare.Command.userServiceDelete;
+import com.kb.petcare.Command.userServiceDeleteReserve;
 import com.kb.petcare.Command.userServiceFindId;
 import com.kb.petcare.Command.userServiceFindPw;
 import com.kb.petcare.Command.userServiceLogin;
@@ -26,7 +28,9 @@ import com.kb.petcare.Command.userServiceSelect;
 import com.kb.petcare.Command.userServiceSelectUserInfo;
 import com.kb.petcare.Command.userServiceSignUp;
 import com.kb.petcare.Command.userServiceUpdateUserInfo;
+import com.kb.petcare.DAO.userDAO;
 import com.kb.petcare.DTO.userDTO;
+import com.kb.petcare.Session.sessionManager;
 
 /**
  * Servlet implementation class commandController
@@ -161,9 +165,12 @@ public class commandController extends HttpServlet {
 			}
 			return;
 		}
+		else if (command.equals("/deleteReserve.do")) {
+		    System.out.println("<예약내역 삭제>를 수행합니다.");
+		    uService = new userServiceDeleteReserve();
+		}
 		uService.execute(request, response);
 
 		// ArrayList<userDTO> result = uService.execute(request, response);
 	}
-
 }

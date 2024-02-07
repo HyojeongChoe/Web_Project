@@ -119,8 +119,9 @@ if (loggedInUserId != null) {
 		<div class="desktop_edit">
 			<form action="updateuserinfo.do" onsubmit="showSuccessMessage()">
 				<div class="edit_div">
-				<span class=image_logo><img src="images/free-icon-dog-3843277.png" id="edit_logo" /></span>
-				<div class="edit_line"></div>
+					<span class=image_logo><img
+						src="images/free-icon-dog-3843277.png" id="edit_logo" /></span>
+					<div class="edit_line"></div>
 					<ul>
 						<!-- listUserInfo에서 가져온 개인정보를 출력하는 부분 -->
 						<!--  아이디 -->
@@ -196,11 +197,10 @@ if (loggedInUserId != null) {
 						<li class="edit_list ">
 							<div class="edit_title" id="title_mobile">휴대전화</div>
 							<div class="edit_write">
-								<span class="edit-mobile"> 
-								<input
-									id="mobile1" name="mobile1" maxlength="3" type="text"
-									value="<%=userInfo.getMobile1()%>" />
-								<span class="mobile-formText" id="min1"> - </span> <input
+								<span class="edit-mobile"> <input id="mobile1"
+									name="mobile1" maxlength="3" type="text"
+									value="<%=userInfo.getMobile1()%>" /> <span
+									class="mobile-formText" id="min1"> - </span> <input
 									id="mobile2" name="mobile2" maxlength="4" type="text"
 									oninput="checkMobile()" value="<%=userInfo.getMobile2()%>" />
 									<span class="mobile-formText" id="min2"> - </span> <input
@@ -217,8 +217,8 @@ if (loggedInUserId != null) {
 							<div class="edit_write">
 								<span> <input type="text" id="email1" name="email1"
 									placeholder="이메일 입력하세요" oninput="checkEmail()"
-									value="<%=userInfo.getEmail1()%>"> <span class="and">@ </span> <input
-									type="text" id="email2" name="email2"
+									value="<%=userInfo.getEmail1()%>"> <span class="and">@
+								</span> <input type="text" id="email2" name="email2"
 									oninput="checkEmail()" value="<%=userInfo.getEmail2()%>" /> <select
 									id="domainSelect" name="email2">
 										<option>직접입력</option>
@@ -253,7 +253,7 @@ if (loggedInUserId != null) {
 	}
 	}
 	%>
-	
+
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="js/index.js"></script>
@@ -283,8 +283,6 @@ if (loggedInUserId != null) {
 	</script>
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
-
-
 </body>
 
 </html>

@@ -350,6 +350,39 @@ public class userDAO {
 		return result;
 	}
 
+	// 예약내역 삭제
+	public void userDeleteReserve(String date, String service, String time, String grooming, String pet, String cost) {
+		conn = null;
+		ps = null;
+		rs = null;
+
+		try {
+			conn = ds.getConnection();
+
+			String query = "DELETE FROM reserve WHERE date=? AND service=? AND time=? AND grooming=? AND pet=? AND cost=?";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, date);
+			ps.setString(2, service);
+			ps.setString(3, time);
+			ps.setString(4, grooming);
+			ps.setString(5, pet);
+			ps.setString(6, cost);
+			ps.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("예약내역 삭제 실패");
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				ps.close();
+			} catch (Exception e2) {
+				System.out.println("객체 닫기 실패");
+				e2.printStackTrace();
+			}
+		}
+	}
+
 	// 추가: 페이징을 위한 메서드
 	public ArrayList<userDTO> userSelectPaging(String id, int offset, int itemsPerPage) {
 		ArrayList<userDTO> result = new ArrayList<userDTO>();
@@ -581,6 +614,7 @@ public class userDAO {
 			}
 		}
 	}
+
 	// 삭제 기능
 	public void userDelete(String id) {
 		conn = null;

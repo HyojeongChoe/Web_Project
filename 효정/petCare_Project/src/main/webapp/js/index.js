@@ -22,7 +22,7 @@ function goToReservation() {
 function goToCare() {
 	window.location.href = "ReservationCare.jsp";
 	 // 기본 동작 막기
-    event.preventDefault();
+/*    event.preventDefault();*/
 }
 //ReservationGrooming.jsp
 function goToGrooming() {
@@ -63,4 +63,3 @@ function performLogout() {
 		location.href = "logout.do"; // 로그아웃 처리를 수행하는 서블릿 매핑 경로로 수정
 	}
 }
-

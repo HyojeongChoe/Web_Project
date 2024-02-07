@@ -151,7 +151,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</div>
 						</ul>
 					</div>
-					<form action="reserve2.do">
+					<form onsubmit="return validateReserveForm();" action="reserve2.do">
 						<div class="col-md-6 to-animate-2">
 							<h3>예약</h3>
 							<div class="form-group ">
@@ -226,6 +226,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 		</div>
 	</div>
 
+
+	<script src="js/index.js"></script>
+	<script src="js/reservation.js"></script>
+	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -245,10 +249,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
-
-	<script src="js/index.js"></script>
-	<!-- reservation.js -->
-	<script src="js/reservation.js"></script>
 </body>
 
 </html>

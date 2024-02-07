@@ -115,106 +115,27 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				<div class="row to-animate">
 					<div class="flexslider">
 						<ul class="slides">
-							<li>
-							<img src ="images/dog-5671778_1920.jpg"/>
-								<blockquote>
-									<p >&ldquo;이거 쓸거면 냅두고~ 이미지 실제크기 1920*960
-									안쓰는 기존 이미지 지우고, 필요한거만 images폴더에 저장해서 가져오기 &rdquo;</p>
-									<p class="quote-author">&mdash; 최효정</p>
-								</blockquote>
-							</li>
-							<li>
-							<img src ="images/dog-5671778_1920.jpg"/>
-								<blockquote>
-									<p>&ldquo;신예원이 자꾸 괴롭혀요.&rdquo;</p>
-									<p class="quote-author">&mdash; Hyojeong. Choe</p>
-								</blockquote>
-							</li>
-							<li>
-							<img src ="images/dog-5671778_1920.jpg"/>
-								<blockquote>
-									<p>&ldquo;백정윤 집중하세요.&rdquo;</p>
-									<p class="quote-author">&mdash; tow현silver</p>
-								</blockquote>
-							</li>
-							<li>
-							<img src ="images/dog-5671778_1920.jpg"/>
-								<blockquote>
-									<p>&ldquo;홍박사가 보고싶어요 .&rdquo;</p>
-									<p class="quote-author">&mdash; 홍박사 짝꿍 jih</p>
-								</blockquote>
-							</li>
-							<li>
-							<img src ="images/dog-5671778_1920.jpg"/>
-								<blockquote>
-									<p>&ldquo;아ㅏㅏㅏㅏㅏㅏㅏㅏ하기싫다.&rdquo;</p>
-									<p class="quote-author">&mdash; hjhjhj</p>
-								</blockquote>
-							</li>
+							<li><img src="images/dog-5671778_1920.jpg" /></li>
+							<li><img src="images/dog-7216354_1920.jpg" /></li>
+							<li><img src="images/grooming-a-puppy.jpg" /></li>
+							<li><img src="images/2c37f4e039bae.jpg" /></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-
-<!-- <div id="fh5co-sayings">
-			<div class="container_1">
-				<div class="row to-animate">
-					<div class="flexslider">
-						<ul class="slides">
-							<li>
-								<blockquote>
-									<p >&ldquo;이거 쓸거면 냅두고~ &rdquo;</p>
-									<p class="quote-author">&mdash; 최효정</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Give a man food, and he can eat for a day. Give a
-										man a job, and he can only eat for 30 minutes on break.&rdquo;</p>
-									<p class="quote-author">&mdash; Lev L. Spiro</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Find something you’re passionate about and keep
-										tremendously interested in it.&rdquo;</p>
-									<p class="quote-author">&mdash; Julia Child</p>
-								</blockquote>
-							</li>
-							<li>
-								<blockquote>
-									<p>&ldquo;Never work before breakfast; if you have to work
-										before breakfast, eat your breakfast first.&rdquo;</p>
-									<p class="quote-author">&mdash; Josh Billings</p>
-								</blockquote>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
- -->
 
 		<div id="fh5co-about" data-section="about">
 			<div class="fh5co-2col fh5co-bg to-animate-2"
 				style="background-image: url(images/dog_1.jpg)"></div>
 			<div class="fh5co-2col fh5co-text">
-				<h2 class="heading to-animate">About Us</h2>
+				<h2 class="heading to-animate">고품격 프리미엄 서비스</h2>
 				<p class="to-animate">
-					<span class="firstcharacter">F</span>ar far away, behind the word
-					mountains, far from the countries Vokalia and Consonantia, there
-					live the blind texts. Separated they live in Bookmarksgrove right
-					at the coast of the Semantics, a large language ocean. Far far
-					away, behind the word mountains, far from the countries Vokalia and
-					Consonantia, there live the blind texts. A small river named Duden
-					flows by their place and supplies it with the necessary regelialia.
-					It is a paradisematic country, in which roasted parts of sentences
-					fly into your mouth. Even the all-powerful Pointing has no control
-					about the blind texts it is an almost unorthographic life.
+					<span class="firstcharacter"></span>
+
 				</p>
 				<p class="text-center to-animate">
-					<a href="#" class="btn btn-primary btn-outline">Get in touch</a>
+					<a href="About.jsp" class="btn btn-primary btn-outline">더보기</a>
 				</p>
 			</div>
 		</div>
@@ -298,7 +219,44 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</main>
 			</div>
 		</div>
-		
+		<div id="fh5co-sayings">
+			<div class="container">
+				<div class="row to-animate">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+								<blockquote>
+									<p>&ldquo;이거 쓸거면 냅두고~ &rdquo;</p>
+									<p class="quote-author">&mdash; 최효정</p>
+								</blockquote>
+							</li>
+							<li>
+								<blockquote>
+									<p>&ldquo;Give a man food, and he can eat for a day. Give a
+										man a job, and he can only eat for 30 minutes on break.&rdquo;</p>
+									<p class="quote-author">&mdash; Lev L. Spiro</p>
+								</blockquote>
+							</li>
+							<li>
+								<blockquote>
+									<p>&ldquo;Find something you’re passionate about and keep
+										tremendously interested in it.&rdquo;</p>
+									<p class="quote-author">&mdash; Julia Child</p>
+								</blockquote>
+							</li>
+							<li>
+								<blockquote>
+									<p>&ldquo;Never work before breakfast; if you have to work
+										before breakfast, eat your breakfast first.&rdquo;</p>
+									<p class="quote-author">&mdash; Josh Billings</p>
+								</blockquote>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div id="fh5co-footer">
 			<div class="container">
 				<div class="row row-padded">

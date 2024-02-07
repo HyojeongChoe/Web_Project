@@ -472,7 +472,7 @@ p {
 	.fh5co-text {
 		padding: 2em 6em;
 		text-align: left;
-		background: #130d08 url(../images/wood_1.png) repeat;
+		background: currentColor;
 		@media screen and (max-width: $screen-lg) {
 			padding: 1em;
 		}
