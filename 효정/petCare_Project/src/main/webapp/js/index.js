@@ -21,8 +21,8 @@ function goToReservation() {
 //ReservationCare.jsp로
 function goToCare() {
 	window.location.href = "ReservationCare.jsp";
-	 // 기본 동작 막기
-/*    event.preventDefault();*/
+	// 기본 동작 막기
+	/*    event.preventDefault();*/
 }
 //ReservationGrooming.jsp
 function goToGrooming() {
@@ -63,3 +63,33 @@ function performLogout() {
 		location.href = "logout.do"; // 로그아웃 처리를 수행하는 서블릿 매핑 경로로 수정
 	}
 }
+
+//slideshow
+let prev_btn = document.getElementById('prev');
+let next_btn = document.getElementById('next');
+let imgs = document.querySelectorAll('#slides img');
+let img_num = 0;
+showimg(img_num);
+
+prev_btn.onclick = function() {
+	img_num--;
+	if (img_num < 0) {
+		img_num = 3;
+	}
+	showimg(img_num)
+}
+next_btn.onclick = function() {
+	img_num++;
+	if (img_num > 3) {
+		img_num = 0;
+	}
+	showimg(img_num)
+}
+function showimg(n) {
+	for (let i = 0; i < imgs.length; i++) {
+		imgs[i].style.display = "none";
+	}
+	imgs[n].style.display = "block"
+}
+setInterval(prev_btn.onclick, 2500)
+

@@ -110,21 +110,33 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</div>
 		</div>
 
-		<div id="fh5co-sayings">
-			<div class="container_1">
-				<div class="row to-animate">
-					<div class="flexslider">
-						<ul class="slides">
-							<li><img src="images/dog-5671778_1920.jpg" /></li>
-							<li><img src="images/dog-7216354_1920.jpg" /></li>
-							<li><img src="images/grooming-a-puppy.jpg" /></li>
-							<li><img src="images/2c37f4e039bae.jpg" /></li>
-						</ul>
-					</div>
+		<div>
+			<div id="slideshow">
+				<div id="slides">
+					<img src="images/dog-5671778_1920.jpg" alt="" /> <img
+						src="images/dog-7216354_1920.jpg" alt="" /> <img
+						src="images/grooming-a-puppy.jpg" alt="" /> <img
+						src="images/2c37f4e039bae.jpg" alt="" />
+					<button id="prev">&lang;</button>
+					<button id="next">&rang;</button>
 				</div>
 			</div>
 		</div>
-
+		<div class="empty space2"></div>
+		<div class="class_word1">
+			<p>
+				<img
+					src="https://cdn.imweb.me/upload/S202107298b7e8446d0d73/e77d74a8c8ac3.png"
+					class="fr-fin fr-dib" style="width: 40px;">
+			</p>
+			<div class="word1">우리아이의 편안한 케어를 제공합니다.</div>
+			<p>
+				<img
+					src="https://cdn.imweb.me/upload/S202107298b7e8446d0d73/007779eec4912.png"
+					class="fr-fin fr-dib" style="width: 40px;">
+			</p>
+		</div>
+		<div class="empty space2"></div>
 		<div id="fh5co-about" data-section="about">
 			<div class="fh5co-2col fh5co-bg to-animate-2"
 				style="background-image: url(images/dog_1.jpg)"></div>
@@ -146,7 +158,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					<div class="inside">
 						<div class="empty space"></div>
 						<div class="service_menu">
-							<span class="plain_name" data-hover="">케어서비스</span>
+							<div class="plain_name" data-hover="">반려견 케어 서비스</div>
+							<div class="word2">
+								여기에 두줄정도<br> 세줄도 괜찮을듯<br> 대충 적어줬으면 좋겠는데...<br>
+							</div>
 						</div>
 						<div class="empty space"></div>
 						<div class="doz_row">
@@ -219,6 +234,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</main>
 			</div>
 		</div>
+
 		<div id="fh5co-sayings">
 			<div class="container">
 				<div class="row to-animate">
