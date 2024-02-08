@@ -56,6 +56,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/about.css">
 
 
 <!-- Modernizr JS -->
@@ -126,7 +127,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 		<div class="section">
 
 			<main>
-				<div class="text-image">
+				<!-- 			<div class="text-image">
 					<div class="about-image"></div>
 					<div class="about-image_color"></div>
 				</div>
@@ -147,7 +148,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<span style="font-size: 26px;">저희 펫VIP가 책임지겠습니다.</span>
 						</p>
 					</div>
-				</div>
+				</div> -->
 
 				<!-- about 섹션 디브 -->
 				<div id="fh5co-about" data-section="about">
@@ -159,19 +160,22 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					<div class="fh5co-2col fh5co-text">
 						<h2 class="heading to-animate">About Us</h2>
 						<p class="to-animate">
-							<span class="firstcharacter">덤벼!</span>최효정 홍주환 백정윤 신예원 어쩌구저쩌구
-							궁시렁궁시렁~
-						</p>
-						<!-- 버튼 -->
-						<p class="text-center to-animate">
-							<a href="#" class="btn btn-primary btn-outline">Get in touch</a>
+							<span class="firstcharacter" style="margin: 40px 0px;">여기는슬로건열자이내</span>
+						<div
+							style="padding: 0em 3em; line-height: 40px;">
+							<span style="color: #a99c92;"> 여러분들의 귀여운 반려동물을 소중히 여기고
+								가족처럼 돌보는 전문적이면서도 엄마처럼 따뜻한 펫시터입니다.<br> 엄마의 손길이 자식의 몸과 마음에 온
+								정성이 닿아 따뜻한 사랑을 받는 것 처럼,<br>신예원바보 ..저희 펫시터도 여러분들의 반려동물들을 따뜻한 마음으로 보살펴서 서비스를
+								받는 동안이 아닌 누구에게나 항상 밝고 사랑스러운 반려동물이 되게끔 정성을 다하겠습니다.<br>반려동물이 행복하고
+								건강하게 성장할 수 있도록 최선을 다할 것이며 함께하는 시간이 특별하고 소중하게 느껴질 수 있도록
+								항상 최선을 다하는 펫시터가 되겠습니다. 
+							</span>
+						</div>
 						</p>
 					</div>
 				</div>
 			</main>
-
 		</div>
-
 		<!-- 추천 디브 -->
 		<div id="fh5co-container">
 			<div class="section">
@@ -284,12 +288,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</main>
 			</div>
 		</div>
-
+		<hr sytle="width:80%;">
 
 		<!-- 팀원 소개 디브 -->
-		<div id="fh5co-type"
-			style="background-image: url(images/slide_3.jpg);"
-			data-stellar-background-ratio="9.5">
+		<div id="fh5co-type">
 			<div class="fh5co-overlay"></div>
 			<div class="container">
 				<div class="row">
@@ -323,9 +325,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	</div>
 	<!-- 전체 본문 끝 -->
 
-
+	<!-- 푸터푸터 -->
 	<div id="fh5co-footer">
 		<div class="container">
+		
 			<div class="row row-padded">
 				<div class="col-md-12 text-center">
 					Shared by <i class="fa fa-love"></i><a
@@ -365,9 +368,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 		}
 	</script>
 
+	<script src="js/index.js"></script>
+	<script src="js/about.js"></script>
 
 	<!-- jQuery -->
-	<script src="js/index.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>

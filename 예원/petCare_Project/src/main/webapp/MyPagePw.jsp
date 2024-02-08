@@ -67,8 +67,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</div>
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" onclick="goToIndex()">Home</a> 
-						<a href="#"
+						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
@@ -111,15 +110,35 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						<input type="password" id="input_pw" name="input_pw"
 							placeholder="비밀번호를 입력해주세요." />
 						<div class="pwbtn">
-							<input class="submit" type="submit" id="submit" value="확인" /> <input
-								input class="submit" type="button" id="cancel" value="취소" />
+							<input class="submit" type="submit" id="submit" value="확인"
+								onclick="EditUser()" />
 						</div>
-
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
 	<script src="js/index.js"></script>
+	<script src="js/mypage.js"></script>
+	<script>
+		function EditUser() {
+			var password = document.getElementById("input_pw").value;
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === XMLHttpRequest.DONE) {
+					if (xhr.status === 200) {
+						var response = xhr.responseText;
+						if (response === "fail") {
+							alert("비밀번호를 확인해주세요.");
+						}
+					}
+				}
+			};
+			xhr.open("POST", "passwordCheckServlet", true);
+			xhr.setRequestHeader("Content-type",
+					"application/x-www-form-urlencoded");
+			xhr.send("input_pw=" + password);
+		}
+	</script>
 </body>
 </html>

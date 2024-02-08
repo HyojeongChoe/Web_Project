@@ -147,10 +147,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					if (xhr.status === 200) {
 						var response = xhr.responseText;
 						if (response === "success") {
-							alert("탈퇴가 완료되었습니다.");
-/* 							window.location.href = "index.jsp"; // 페이지 이동 */
+							alert("탈퇴가 완료되었습니다..");
+							/* 							window.location.href = "index.jsp"; // 페이지 이동 */
 						} else if (response === "fail") {
-							alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
+							alert("비밀번호를 확인해주세요.");
 						} else {
 							alert("서버 오류가 발생했습니다.");
 						}

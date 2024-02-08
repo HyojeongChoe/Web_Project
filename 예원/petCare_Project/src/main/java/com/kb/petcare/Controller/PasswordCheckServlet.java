@@ -44,15 +44,16 @@ public class PasswordCheckServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/plain");
+		
 		PrintWriter out = response.getWriter();
 		userDAO dao = new userDAO();
-
+		
 		// 입력된 비밀번호
 		String enteredPassword = request.getParameter("input_pw");
-
+		
 		// 로그인한 사용자의 아이디 가져오기
 		String loggedInUserId = sessionManager.getLoggedInUserId(request);
-
+		
 		// 데이터베이스에서 저장된 비밀번호 가져오기
 		String storedPassword = dao.getPasswordForUser(loggedInUserId);
 

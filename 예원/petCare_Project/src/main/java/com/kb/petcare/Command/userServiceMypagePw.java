@@ -36,9 +36,7 @@ public class userServiceMypagePw implements userService {
 				System.out.println("Redirecting to selectuserinfo.do"); // 추가
 				response.sendRedirect("selectuserinfo.do");
 			} else {
-				// 비밀번호 불일치 시 현재 페이지에 남도록 forward
-				RequestDispatcher dispatcher = request.getRequestDispatcher("MyPagePw.jsp");
-				dispatcher.forward(request, response);
+				response.sendRedirect("MyPagePw.jsp");
 			}
 		} catch (Exception e) {
 			e.printStackTrace(); // 실제 서비스에서는 로그 또는 적절한 예외 처리를 수행해야 합니다.

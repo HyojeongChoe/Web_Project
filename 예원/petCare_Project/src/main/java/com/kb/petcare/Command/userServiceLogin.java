@@ -2,10 +2,8 @@ package com.kb.petcare.Command;
 
 import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.kb.petcare.DAO.userDAO;
 import com.kb.petcare.DTO.userDTO;
@@ -34,11 +32,10 @@ public class userServiceLogin implements userService {
 				e.printStackTrace();
 			}
 		} else {
-			System.out.println("실패");
 			System.out.println("로그인 세션 저장 실패");
 			try {
 				// 실패 시 리다이렉트
-				response.sendRedirect("Login.jsp");
+				response.sendRedirect("Login.jsp?loginError=true");
 
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -144,7 +144,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 											<div class="item_pay">
 												<div class="service_detail">
 													<h2>돌봄</h2>
-													<p class="pay inline-blocked" style="">26,000원</p>
 													<div class="ns-icon clearfix">
 														<!--<span class="new bg-brand">NEW</span>-->
 													</div>
@@ -164,7 +163,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 											<div class="item_pay">
 												<div class="service_detail">
 													<h2>산책</h2>
-													<p class="pay inline-blocked" style="">45,000원</p>
 													<div class="ns-icon clearfix">
 														<!--<span class="new bg-brand">NEW</span>-->
 													</div>
@@ -184,7 +182,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 											<div class="item_pay">
 												<div class="service_detail">
 													<h2>미용</h2>
-													<p class="pay inline-blocked" style="">52,000원</p>
 													<div class="ns-icon clearfix"></div>
 												</div>
 											</div>

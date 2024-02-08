@@ -22,7 +22,7 @@ function goToReservation() {
 function goToCare() {
 	window.location.href = "ReservationCare.jsp";
 	// 기본 동작 막기
-	event.preventDefault();
+	/*    event.preventDefault();*/
 }
 //ReservationGrooming.jsp
 function goToGrooming() {
@@ -52,7 +52,7 @@ function openMyPagePw() {
 function openMyPageEdit() {
 	window.location.href = "MyPageEdit.jsp";
 }
-//마이페이 탈회
+//마이페이지 탈회
 function openMyPageEdit() {
 	window.location.href = "MyPageDelete.jsp";
 }
@@ -64,35 +64,32 @@ function performLogout() {
 	}
 }
 
-/* 예원 추가 부분 시작 ↓↓↓ */
-/* 예약내역 테이블 체크박스 관련 */
-document.addEventListener("DOMContentLoaded", function () {
-    // 예약 내역 테이블의 모든 행을 가져오기
-    var rows = document.querySelectorAll(".reservation_table tbody tr");
 
-    // 각 행에 클릭 이벤트 추가
-    rows.forEach(function (row) {
-        row.addEventListener("click", function (event) {
-            // 클릭된 요소가 체크박스인 경우 이벤트 전파를 막음
-            if (event.target.tagName.toLowerCase() !== 'input') {
-                // 현재 행의 체크박스 요소 가져오기
-                var checkbox = row.querySelector("input[type='checkbox']");
+//slideshow
+let prev_btn = document.getElementById('prev');
+let next_btn = document.getElementById('next');
+let imgs = document.querySelectorAll('#slides img');
+let img_num = 0;
+showimg(img_num);
 
-                // 체크박스의 상태를 변경 (체크 <-> 해제)
-                checkbox.checked = !checkbox.checked;
-            }
-        });
-    });
-});
-
-/* 어바웃 페이지 관련 */
-document.addEventListener("DOMContentLoaded", function() {	/* 추천 섹션 서서히 나타나기 효과 */
-    // 페이지가 로드될 때 실행되는 함수
-    var mainElement = document.querySelector('.inside');
-
-    // mainElement에 show 클래스 추가
-    mainElement.classList.add('show');
-});
-/* 예원 추가 부분 끝 ↑↑↑ */
-
-
+prev_btn.onclick = function() {
+	img_num--;
+	if (img_num < 0) {
+		img_num = 3;
+	}
+	showimg(img_num)
+}
+next_btn.onclick = function() {
+	img_num++;
+	if (img_num > 3) {
+		img_num = 0;
+	}
+	showimg(img_num)
+}
+function showimg(n) {
+	for (let i = 0; i < imgs.length; i++) {
+		imgs[i].style.display = "none";
+	}
+	imgs[n].style.display = "block"
+}
+setInterval(prev_btn.onclick, 2500);

@@ -237,16 +237,17 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 		/* 현재 날짜를 구하는 함수 */
 		function getCurrentDate() {
 			var now = new Date();
-			now.setHours(0, 0, 0, 0);	// 시간은 상관 없으므로 전부 0으로 설정
+			now.setHours(0, 0, 0, 0); // 시간은 상관 없으므로 전부 0으로 설정
 			return now;
 		}
 
 		/* 체크박스를 여러 개 선택하고 삭제 버튼을 눌렀을 때, 선택된 예약 정보를 서버로 어떻게 전송할 것인지에 대한 로직 */
 		function deleteSelectedReservations() {
-			var checkboxes = document.querySelectorAll('.reserve_checkbox:checked');
-			var selectedReservations = [];	// 정보(내역) 담을 배열
+			var checkboxes = document
+					.querySelectorAll('.reserve_checkbox:checked');
+			var selectedReservations = []; // 정보(내역) 담을 배열
 			var currentDate = getCurrentDate(); // 현재 날짜 가져오기
-			var containsInvalidReservation = false;	// 예약 날짜 조건(이틀 여유)
+			var containsInvalidReservation = false; // 예약 날짜 조건(이틀 여유)
 
 			checkboxes.forEach(function(checkbox) {
 				var reservation = {
@@ -292,7 +293,7 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 					if (xhr.readyState === 4) {
 						if (xhr.status === 200) {
 							// 서버 응답이 성공인 경우
-							window.location.reload();	// 페이지 새로고침
+							window.location.reload(); // 페이지 새로고침
 							alert('예약을 취소하였습니다.');
 						} else {
 							// 서버 응답이 실패인 경우
@@ -309,5 +310,6 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 	</script>
 
 	<script src="js/index.js"></script>
+	<script src="js/mypage.js"></script>
 </body>
 </html>
