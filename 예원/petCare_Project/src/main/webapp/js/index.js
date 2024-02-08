@@ -64,6 +64,57 @@ function performLogout() {
 	}
 }
 
+/* 예원 추가 부분 시작 ↓↓↓ */
+/* 홈 화면 바로가기 버튼 기능 */
+var goToMain = function() {
+	$('.js-gotomain').on('click', function(event) {
+		event.preventDefault();
+
+		// 여기서 'index.jsp'는 이동하고자 하는 페이지의 경로로 수정하세요.
+		var destination = 'index.jsp';
+
+		// 해당 페이지로 스크롤 애니메이션 적용
+		$('html, body').animate({
+			scrollTop: $(destination).offset().top
+		}, 500);
+
+		return false;
+	});
+};
+
+/* 홈 화면 바로가기 버튼 나타나기 효과(Home, About) */
+document.addEventListener('DOMContentLoaded', function() {	// 페이지 로딩 시에 이벤트 리스너 등록
+    // 홈 화면 바로가기 버튼 요소 가져오기
+    var goToMainButton = document.querySelector('.js-gotomain');
+    console.log(goToMainButton);
+
+    // 스크롤 이벤트 리스너 등록
+    window.addEventListener('scroll', function() {
+        // 현재 스크롤 위치 가져오기
+        var scrollY = window.scrollY || window.pageYOffset;
+
+        // 스크롤 위치가 일정 이상이면 버튼 표시, 아니면 숨김
+        if (scrollY > 100) {  // 스크롤 100px 이상으로 이동했을 때
+            goToMainButton.style.opacity = 1;
+        } else {
+            goToMainButton.style.opacity = 0;
+        }
+    });
+
+    // 페이지 로딩 시 초기 상태로 숨김
+    goToMainButton.style.opacity = 0;
+});
+/* 홈 화면 바로가기 버튼 나타나기 효과(Service) */
+document.addEventListener('DOMContentLoaded', function() {
+    var goToMainButton = document.querySelector('.js-gotomain_service');
+
+    // 페이지 로딩 시 초기 상태로 표시
+    if (goToMainButton) {
+        goToMainButton.style.opacity = 1;
+    }
+});
+
+/* 예원 추가 부분 끝 ↑↑↑ */
 
 //slideshow
 let prev_btn = document.getElementById('prev');
@@ -93,3 +144,6 @@ function showimg(n) {
 	imgs[n].style.display = "block"
 }
 setInterval(prev_btn.onclick, 2500);
+
+
+

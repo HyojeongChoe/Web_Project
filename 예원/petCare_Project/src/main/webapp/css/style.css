@@ -1658,9 +1658,9 @@ p {
 	position: absolute;
 	left: 50%;
 	margin-left: -54px;
-	margin-top: -125px;
-	width: 104px;
-	height: 104px;
+	margin-top: -150px;
+	width: 130px;
+	height: 130px;
 	border: 2px solid #a99c92;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -1668,24 +1668,27 @@ p {
 	border-radius: 50%;
 }
 
+
 #fh5co-type h3.with-icon.icon-1:before,
 #fh5co-type h3.with-icon.icon-1::before {
-	background: url(../images/free-icon-dog-3843277.png) no-repeat center center;
+
+	background: url(../images/pet-care.png) no-repeat center center;
 }
+
 
 #fh5co-type h3.with-icon.icon-2:before,
 #fh5co-type h3.with-icon.icon-2::before {
-	background: url(../images/free-icon-dog-3843277.png) no-repeat center center;
+	background: url(../images/dog-walking.png) no-repeat center center;
 }
 
 #fh5co-type h3.with-icon.icon-3:before,
 #fh5co-type h3.with-icon.icon-3::before {
-	background: url(../images/free-icon-dog-3843277.png) no-repeat center center;
+	background: url(../images/pet-grooming.png) no-repeat center center;
 }
 
 #fh5co-type h3.with-icon.icon-4:before,
 #fh5co-type h3.with-icon.icon-4::before {
-	background: url(../images/free-icon-dog-3843277.png) no-repeat center center;
+	background: url(../images/pets.png) no-repeat center center;
 }
 
 #fh5co-type p {

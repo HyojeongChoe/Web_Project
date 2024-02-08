@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -16,7 +17,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+<meta name="keywords"
+	content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 <meta name="author" content="FREEHTML5.CO" />
 
 <!-- Facebook and Twitter integration -->
@@ -33,7 +35,9 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="favicon.ico">
 
-<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
+	rel='stylesheet' type='text/css'>
 
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css">
@@ -68,14 +72,22 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="JoinButton" style="background-color: white; border: 0;" onclick="openSignUpPage()">SignUp</a></li>
-							<li class="login"><a href="#" id="loginButton" style="background-color: white; border: 0;" onclick="openLoginPage()">Login</a></li>
+							<li class="join"><a href="#" id="JoinButton"
+								style="background-color: white; border: 0;"
+								onclick="openSignUpPage()">SignUp</a></li>
+							<li class="login"><a href="#" id="loginButton"
+								style="background-color: white; border: 0;"
+								onclick="openLoginPage()">Login</a></li>
 							<%
 							} else {
 							%>
 							<!-- 로그인 상태인 경우 -->
-							<li class="logout"><a href="#" id="logoutButton" style="background-color: white; border: 0;" onclick="performLogout()">Logout</a></li>
-							<li class="mypage"><a href="#" id="mypageButton" style="background-color: white; border: 0;" onclick="openMyPageReserve()">MyPage</a></li>
+							<li class="logout"><a href="#" id="logoutButton"
+								style="background-color: white; border: 0;"
+								onclick="performLogout()">Logout</a></li>
+							<li class="mypage"><a href="#" id="mypageButton"
+								style="background-color: white; border: 0;"
+								onclick="openMyPageReserve()">MyPage</a></li>
 							<%
 							}
 							%>
@@ -84,15 +96,15 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				</div>
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" onclick="goToIndex()">Home</a>
-						<a href="#" onclick="goToAbout()">About</a>
+						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
+							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" onclick="goToService()">Service</a>
-						<a href="#" onclick="goToCommunity()">Community</a>
+						<a href="#" onclick="goToService()">Service</a> <a href="#"
+							onclick="goToCommunity()">Community</a>
 					</div>
 				</div>
 			</div>
@@ -101,7 +113,10 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 		<div>
 			<div id="slideshow">
 				<div id="slides">
-					<img src="images/dog-5671778_1920.jpg" alt="" /> <img src="images/dog-7216354_1920.jpg" alt="" /> <img src="images/grooming-a-puppy.jpg" alt="" /> <img src="images/2c37f4e039bae.jpg" alt="" />
+					<img src="images/dog-5671778_1920.jpg" alt="" /> <img
+						src="images/dog-7216354_1920.jpg" alt="" /> <img
+						src="images/grooming-a-puppy.jpg" alt="" /> <img
+						src="images/2c37f4e039bae.jpg" alt="" />
 					<button id="prev">&lang;</button>
 					<button id="next">&rang;</button>
 				</div>
@@ -110,11 +125,15 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 		<div class="empty space2"></div>
 		<div class="class_word1">
 			<p>
-				<img src="https://cdn.imweb.me/upload/S202107298b7e8446d0d73/e77d74a8c8ac3.png" class="fr-fin fr-dib" style="width: 40px;">
+				<img
+					src="https://cdn.imweb.me/upload/S202107298b7e8446d0d73/e77d74a8c8ac3.png"
+					class="fr-fin fr-dib" style="width: 40px;">
 			</p>
 			<div class="word1">우리아이의 편안한 케어를 제공합니다.</div>
 			<p>
-				<img src="https://cdn.imweb.me/upload/S202107298b7e8446d0d73/007779eec4912.png" class="fr-fin fr-dib" style="width: 40px;">
+				<img
+					src="https://cdn.imweb.me/upload/S202107298b7e8446d0d73/007779eec4912.png"
+					class="fr-fin fr-dib" style="width: 40px;">
 			</p>
 		</div>
 		<div class="empty space2"></div>
@@ -142,7 +161,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						<div class="service_menu">
 							<div class="plain_name" data-hover="">반려견 케어 서비스</div>
 							<div class="word2">
-								여기에 두줄정도<br> 세줄도 괜찮을듯<br> 대충 적어줬으면 좋겠는데...<br>
+								고객님과의 원활한 소통을 통해 모든 서비스의 신뢰를 보장합니다. <br> 숙련된 펫매니저들의 최상의
+								서비스를 제공하고 있습니다.
 							</div>
 						</div>
 						<div class="empty space"></div>
@@ -150,8 +170,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<div class="shop_grid">
 								<div class="shop_item">
 									<div class="item_wrap">
-										<a href="#" onclick="goToCare()" class="care_service">
-											<img src=https://ynoblesse.com/wp-content/uploads/2022/08/297975306_1008248209844272_696700848492592655_n-1024x1024.jpg>
+										<a href="#" onclick="goToCare()" class="care_service"> <img
+											src=https://ynoblesse.com/wp-content/uploads/2022/08/297975306_1008248209844272_696700848492592655_n-1024x1024.jpg>
 											<div class="item_overlay">
 												<div class="item_pay">
 													<div class="service_detail">
@@ -165,13 +185,15 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 										</a>
 									</div>
 									<p class="index_care">
-										혼자 남겨진 반려동물을 생각하며, 외출을 망설인 적이 있으신가요? 이제는 펫시터에게 맡기고, 여러분의 소중한 일상을 <br> 마음 편히 보내세요
+										혼자 남겨진 반려동물을 생각하며, 외출을 망설인 적이 있으신가요? 이제는 펫시터에게 맡기고, 여러분의 소중한
+										일상을 <br> 마음 편히 보내세요
 									</p>
 								</div>
 								<div class="shop_item">
 									<div class="item_wrap" style="position: relative;">
-										<a href="#" onclick="goToWalk()" class="work_service">
-											<img src="https://blog.kakaocdn.net/dn/bmvdS5/btrbGBPf53r/do65Z9eJzjKvOBsOoEvtG1/img.jpg" style="display: inline;">
+										<a href="#" onclick="goToWalk()" class="work_service"> <img
+											src="https://blog.kakaocdn.net/dn/bmvdS5/btrbGBPf53r/do65Z9eJzjKvOBsOoEvtG1/img.jpg"
+											style="display: inline;">
 											<div class="item_overlay">
 												<div class="item_pay">
 													<div class="service_detail">
@@ -184,12 +206,14 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 											</div>
 										</a>
 									</div>
-									<p class="index_walk">펫시터가 직접 방문하여 반려견의 스트레스 해소, 불안감 해소, 행복감 증진에 도움을 줍니다.</p>
+									<p class="index_walk">펫시터가 직접 방문하여 반려견의 스트레스 해소, 불안감 해소,
+										행복감 증진에 도움을 줍니다.</p>
 								</div>
 								<div class="shop_item">
 									<div class="item_wrap">
 										<a href="#" onclick="goToGrooming()" class="beauty_service">
-											<img src="https://cdn.imweb.me/upload/S2022021670e4a25b91a09/36595cc9ee5b3.jpeg">
+											<img
+											src="https://cdn.imweb.me/upload/S2022021670e4a25b91a09/36595cc9ee5b3.jpeg">
 											<div class="item_overlay">
 												<div class="item_pay">
 													<div class="service_detail">
@@ -201,7 +225,9 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 										</a>
 									</div>
 									<p class="index_grooming">
-										우리 아이 목욕이랑 미용할 때 됐는데...<br> 우리 아이가 대형견이라 한번 이동하기가 쉽지 않은데..<br> 편하게 우리 아이 케어 받을 수 있는 방법 없을까? <br> 그런 분들을 위해 펫시터가 찾아가겠습니다! <br>
+										우리 아이 목욕이랑 미용할 때 됐는데...<br> 우리 아이가 대형견이라 한번 이동하기가 쉽지
+										않은데..<br> 편하게 우리 아이 케어 받을 수 있는 방법 없을까? <br> 그런 분들을
+										위해 펫시터가 찾아가겠습니다! <br>
 									</p>
 								</div>
 							</div>
@@ -218,26 +244,37 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						<ul class="slides">
 							<li>
 								<blockquote>
-									<p>&ldquo;이거 쓸거면 냅두고~ &rdquo;</p>
+									<p>&ldquo;산책 서비스를 몇번 받았더니 우리 아이가 자꾸 산책시켜달라고 졸라요 살려주세요...
+										&rdquo;</p>
 									<p class="quote-author">&mdash; 최효정</p>
 								</blockquote>
 							</li>
 							<li>
 								<blockquote>
-									<p>&ldquo;Give a man food, and he can eat for a day. Give a man a job, and he can only eat for 30 minutes on break.&rdquo;</p>
-									<p class="quote-author">&mdash; Lev L. Spiro</p>
+									<p>
+										&ldquo;처음 반려동물을 키워 보는 거라 모르는 부분이 많았는데, <br>직원분이 이것저것 친절하게
+										잘 알려주셔서 되게 고마웠어요!&rdquo;
+									</p>
+									<p class="quote-author">&mdash; 신예원</p>
 								</blockquote>
 							</li>
 							<li>
 								<blockquote>
-									<p>&ldquo;Find something you’re passionate about and keep tremendously interested in it.&rdquo;</p>
-									<p class="quote-author">&mdash; Julia Child</p>
+									<p>&ldquo;말도 잘 안듣고 사나운 애가 펫시터의 말을 잘들을까? 걱정했는데 얌전하게 말잘들어서 깜짝
+										놀랐어요.다음에도 이용할게용~&rdquo;</p>
+									<p class="quote-author">&mdash; 이현오</p>
 								</blockquote>
 							</li>
 							<li>
 								<blockquote>
-									<p>&ldquo;Never work before breakfast; if you have to work before breakfast, eat your breakfast first.&rdquo;</p>
-									<p class="quote-author">&mdash; Josh Billings</p>
+									<p>&ldquo;&rdquo;</p>
+									<p class="quote-author">&mdash; 백정윤</p>
+								</blockquote>
+							</li>
+							<li>
+								<blockquote>
+									<p>&ldquo;ㅇㅇㅇ&rdquo;</p>
+									<p class="quote-author">&mdash; 홍주환</p>
 								</blockquote>
 							</li>
 						</ul>
@@ -253,27 +290,36 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				<!-- 글자 영역 1 -->
 				<div class="row row-footer-padded">
 					<div class="col-md-12 text-center">
-						<p id="footer_p" style="font-size: 16px;">
-							(주)멍뚱냥뚱 대표이사: 최효정<strong>ㅣ</strong> 대구광역시 동구 동부로 121 (신천동), 6층 602호&nbsp;
+						<p id="footer_p" style="font-size: 14px;">
+							(주)멍뚱냥뚱 대표이사: 최효정<strong>ㅣ</strong> 대구광역시 동구 동부로 121 (신천동), 6층
+							602호&nbsp;
 						</p>
-						<p id="footer_p" style="font-size: 16px;">
-							사업자등록번호: 123-45-67890 <strong>ㅣ</strong> <strong>대표번호: 0507-1482-7755&nbsp;</strong>
+						<p id="footer_p" style="font-size: 14px;">
+							사업자등록번호: 123-45-67890 <strong>ㅣ</strong> <strong>대표번호:
+								0507-1482-7755&nbsp;</strong>
 						</p>
-						<p id="footer_p" style="line-height: 1.5;">(주)멍뚱냥뚱의 모든 콘텐츠는(영상, 사진 등) 저작권법의 보호를 받는 바 무단 전재, 복사, 배포 등을 금합니다.</p>
+						<p id="footer_p" style="line-height: 1.5;">(주)멍뚱냥뚱의 모든
+							콘텐츠는(영상, 사진 등) 저작권법의 보호를 받는 바 무단 전재, 복사, 배포 등을 금합니다.</p>
 
 						<!-- 링크 영역 -->
 						<div class="footer-link-main">
 							<!-- 멍뚱냥뚱 홈 화면 바로가기 -->
-							<p id="footer_p" class="text-center to-animate">
-								<strong> <a href="#" class="js-gotop">&nbsp;멍뚱냥뚱 홈 화면 바로가기&nbsp;</a></strong>
+							<p id="footer_p" style="display: flex; align-items: center;">
+								<strong> <a href="index.jsp" class="js-gotomain"> 홈
+										화면<br />바로가기
+								</a>
+								</strong>
 							</p>
 						</div>
-						<div class="footer-links">
-							<!-- 깃허브 아이콘 -->
-							<a href="https://github.com/HyojeongChoe/Web_Project" class="js-github-icon" target="_blank">
-								<i class="icon-github"></i>
-							</a>
-						</div>
+						<!-- 깃허브 아이콘 -->
+						<ul class="fh5co-social">
+							<li class="to-animate-2"><a
+								href="https://github.com/HyojeongChoe/Web_Project"
+								target="_blank"> <i class="icon-github"></i></a></li>
+							<li class="to-animate-2"><a
+								href="https://www.youtube.com/@xenoint" target="_blank"> <i
+									class="icon-youtube"></i></a></li>
+						</ul>
 					</div>
 				</div>
 
@@ -283,7 +329,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 
 				<!-- 글자 영역 2 -->
 				<div class="col-md-12 text-center">
-					<div class="" style="font-size: 12px;">Copyright ⓒ 2024 멍뚱냥뚱 반려동물 돌봄 산책 미용 서비스 All rights reserved.</div>
+					<div class="" style="font-size: 12px;">Copyright ⓒ 2024 멍뚱냥뚱
+						반려동물 돌봄 산책 미용 서비스 All rights reserved.</div>
 				</div>
 
 			</div>
