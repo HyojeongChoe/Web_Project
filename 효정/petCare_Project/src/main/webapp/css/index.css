@@ -159,7 +159,7 @@
 	overflow: hidden;
 	position: relative;
 	width: 100%; /* 화면 너비에 맞게 설정 */
-	margin: 20px 0px;
+	margin-bottom: 30px;
 }
 
 #slides {

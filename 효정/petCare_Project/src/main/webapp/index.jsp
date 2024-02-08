@@ -100,7 +100,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
@@ -288,12 +288,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="fh5co-social">
-							<li class="to-animate-2"><a href="#"><i
-									class="icon-facebook"></i></a></li>
-							<li class="to-animate-2"><a href="#"><i
-									class="icon-twitter"></i></a></li>
-							<li class="to-animate-2"><a href="#"><i
-									class="icon-instagram"></i></a></li>
+							<li class="to-animate-2"><a href="https://github.com/HyojeongChoe/Web_Project"><i
+									class="icon-github"></i></a></li>
 						</ul>
 					</div>
 				</div>
