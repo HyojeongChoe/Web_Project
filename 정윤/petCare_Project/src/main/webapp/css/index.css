@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'S-CoreDream-3Light';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#menu_list_header .join a, #menu_list_header .login a, #menu_list_header .logout a,
+	#menu_list_header .mypage a {
+	color: orange;
+}
+
+#menu_list_header {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	margin-right: 100px;
+	/* 오른쪽 여백 조절 */
+}
+
+#menu_list_header li {
+	font-family: 'S-CoreDream-3Light';
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+	/* 오른쪽 여백 조절 */
+	/* 필요에 따라 조절하세요 */
+}
+
+.class_word1 {
+	display: flex;
+	flex-direction: column; /* 요소를 세로로 배치 */
+	align-items: center; /* 가운데 정렬 */
+	text-align: center; /* 내부 텍스트를 가운데 정렬 */
+}
+
+.fr-fin fr-dib {
+	width: 30px;
+	max-width: 100%;
+}
+
+.word1 {
+	font-family: 'S-CoreDream-3Light';
+	font-style: normal;
+	font-weight: 800;
+	font-size: 30px;
+	margin: 10px;
+}
+
+.word2 {
+	font-family: 'S-CoreDream-3Light';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	margin: 10px;
+}
+
+.service_menu {
+	margin-top: 20px; /* 적절한 위 여백 설정 */
+	margin-bottom: 20px; /* 적절한 아래 여백 설정 */
+	text-align: center; /* 가운데 정렬 */
+}
+
+.empty.space {
+	height: 50px; /* 빈 공간의 높이 설정 */
+}
+
+.doz_row {
+	display: flex;
+	justify-content: center; /* 중앙에 배치 */
+}
+
+.shop_grid {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	max-width: 1300px; /* 예시로 최대 너비를 설정, 필요에 따라 조절 가능 */
+	width: 100%; /* 너비를 100%로 설정하여 부모의 크기에 따라 가변적으로 조절 */
+}
+
+.shop_item {
+	flex: 0 0 calc(33.33% - 30px); /* 각 이미지의 너비를 조절하고 마진을 줌 */
+	margin-bottom: 30px; /* 이미지 아래에 여백 추가 */
+	padding: 0px 15px;
+	height: auto;
+	width: 341px;
+}
+
+.shop_item img {
+	display: block; /* 이미지를 블록 요소로 변경하여 텍스트가 이미지와 겹치지 않도록 함 */
+	width: 100%;
+	height: auto;
+}
+
+.service_detail {
+	margin: 0; /* 기본 마진 제거 */
+	text-align: center; /* 텍스트를 가운데에 위치시킴 */
+}
+
+.care_service {
+	width: 400px;
+	height: 350px;
+}
+/* .shop_item {
+	padding: 0px 15px;
+	height: auto;
+	width: 341px;
+} */
+.item_wrap {
+	position: relative;
+}
+
+.plain_name {
+	font-family: 'S-CoreDream-3Light';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 40px;
+	color: rgb(228, 129, 86);
+}
+
+.service_detail h2 {
+	font-family: 'S-CoreDream-3Light';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+}
+
+.index_care {
+	text-align: center;
+	font-family: 'S-CoreDream-3Light';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.index_walk {
+	text-align: center;
+	font-family: 'S-CoreDream-3Light';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.index_grooming {
+	text-align: center;
+	font-family: 'S-CoreDream-3Light';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+/*이미지 슬라이드*/
+#slideshow {
+	overflow: hidden;
+	position: relative;
+	width: 100%; /* 화면 너비에 맞게 설정 */
+	margin-bottom: 30px;
+}
+
+#slides {
+	position: relative;
+	width: 100%; /* 슬라이드 컨테이너의 너비를 100%로 설정 */
+	height: 100%; /* 슬라이드 컨테이너의 높이를 100%로 설정 */
+}
+
+#slides img {
+	width: 100%; /* 슬라이드 이미지를 화면에 맞춰서 설정 */
+	height: auto; /* 이미지의 비율을 유지하면서 너비에 맞추기 */
+}
+
+#prev, #next {
+	position: absolute;
+	height: 100%; /* 버튼 높이도 슬라이드 컨테이너의 높이에 맞게 설정 */
+	top: 0;
+	border: none;
+	padding: 20px;
+	background-color: transparent;
+	color: #000;
+	font-weight: 800;
+	font-size: 24px;
+	opacity: 0.5;
+}
+
+#prev {
+	left: 0;
+}
+
+#next {
+	right: 0;
+}
+
+#prev:hover, #next:hover {
+	background-color: #222;
+	color: white;
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+#prev:focus, #next:focus {
+	border: none;
+}
