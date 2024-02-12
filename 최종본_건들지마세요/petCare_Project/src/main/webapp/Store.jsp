@@ -335,7 +335,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					<div class="footer-link-main">
 						<!-- 멍뚱냥뚱 홈 화면 바로가기 -->
 						<p id="footer_p" style="display: flex; align-items: center;">
-							<strong> <a href="index.jsp" class="js-gotomain_service">
+							<strong> <a href="index.jsp" class="js-gotomain">
 									홈 화면<br />바로가기
 							</a>
 							</strong>
