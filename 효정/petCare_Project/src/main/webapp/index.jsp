@@ -104,7 +104,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToCommunity()">Community</a>
+							onclick="goToStore()">Store</a>
 					</div>
 				</div>
 			</div>
@@ -137,8 +137,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</p>
 		</div>
 		<div class="empty space2"></div>
-		
-<!-- 		<div id="fh5co-about" data-section="about">
+
+		<!-- 		<div id="fh5co-about" data-section="about">
 			<div class="fh5co-2col fh5co-bg to-animate-2"
 				style="background-image: url(images/dog_1.jpg)"></div>
 			<div class="fh5co-2col fh5co-text">
@@ -161,7 +161,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						<div class="service_menu">
 							<div class="plain_name" data-hover="">반려견 케어 서비스</div>
 							<div class="word2">
-								여기에 두줄정도<br> 세줄도 괜찮을듯<br> 대충 적어줬으면 좋겠는데...<br>
+								고객님과의 원활한 소통을 통해 모든 서비스의 신뢰를 보장합니다. <br> 숙련된 펫매니저들의 최상의
+								서비스를 제공하고 있습니다.
 							</div>
 						</div>
 						<div class="empty space"></div>
@@ -239,33 +240,41 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 		<div id="fh5co-sayings">
 			<div class="container">
 				<div class="row to-animate">
-					<div class="flexslider">
+					<div class="flexslider" >
 						<ul class="slides">
 							<li>
 								<blockquote>
-									<p>&ldquo;이거 쓸거면 냅두고~ &rdquo;</p>
+									<p>&ldquo;산책 서비스를 몇번 받았더니 우리 아이가 자꾸 산책시켜달라고 졸라요 살려주세요...
+										&rdquo;</p>
 									<p class="quote-author">&mdash; 최효정</p>
 								</blockquote>
 							</li>
 							<li>
 								<blockquote>
-									<p>&ldquo;Give a man food, and he can eat for a day. Give a
-										man a job, and he can only eat for 30 minutes on break.&rdquo;</p>
-									<p class="quote-author">&mdash; Lev L. Spiro</p>
+									<p>
+										&ldquo;처음 반려동물을 키워 보는 거라 모르는 부분이 많았는데, <br>직원분이 이것저것 친절하게
+										잘 알려주셔서 되게 고마웠어요!&rdquo;
+									</p>
+									<p class="quote-author">&mdash; 신예원</p>
 								</blockquote>
 							</li>
 							<li>
 								<blockquote>
-									<p>&ldquo;Find something you’re passionate about and keep
-										tremendously interested in it.&rdquo;</p>
-									<p class="quote-author">&mdash; Julia Child</p>
+									<p>&ldquo;말도 잘 안듣고 사나운 애가 펫시터의 말을 잘들을까? 걱정했는데 얌전하게 말잘들어서 깜짝
+										놀랐어요.다음에도 이용할게용~&rdquo;</p>
+									<p class="quote-author">&mdash; 이현오</p>
 								</blockquote>
 							</li>
 							<li>
 								<blockquote>
-									<p>&ldquo;Never work before breakfast; if you have to work
-										before breakfast, eat your breakfast first.&rdquo;</p>
-									<p class="quote-author">&mdash; Josh Billings</p>
+									<p>&ldquo;&rdquo;</p>
+									<p class="quote-author">&mdash; 백정윤</p>
+								</blockquote>
+							</li>
+							<li>
+								<blockquote>
+									<p>&ldquo;ㅇㅇㅇ&rdquo;</p>
+									<p class="quote-author">&mdash; 홍주환</p>
 								</blockquote>
 							</li>
 						</ul>
@@ -274,29 +283,62 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</div>
 		</div>
 
+		<!-- 푸터푸터 영역 시작 -->
 		<div id="fh5co-footer">
 			<div class="container">
-				<div class="row row-padded">
+
+				<!-- 글자 영역 1 -->
+				<div class="row row-footer-padded">
 					<div class="col-md-12 text-center">
-						Shared by <i class="fa fa-love"></i><a
-							href="https://bootstrapthemes.co">BootstrapThemes</a>
-						<p class="text-center to-animate">
-							<a href="#" class="js-gotop">Go To Top</a>
+						<p id="footer_p" style="font-size: 14px;">
+							(주)멍뚱냥뚱 대표이사: 최효정<strong>ㅣ</strong> 대구광역시 동구 동부로 121 (신천동), 6층
+							602호&nbsp;
 						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 text-center">
+						<p id="footer_p" style="font-size: 14px;">
+							사업자등록번호: 123-45-67890 <strong>ㅣ</strong> <strong>대표번호:
+								0507-1482-7755&nbsp;</strong>
+						</p>
+						<p id="footer_p" style="line-height: 1.5;">(주)멍뚱냥뚱의 모든
+							콘텐츠는(영상, 사진 등) 저작권법의 보호를 받는 바 무단 전재, 복사, 배포 등을 금합니다.</p>
+
+						<!-- 링크 영역 -->
+						<div class="footer-link-main">
+							<!-- 멍뚱냥뚱 홈 화면 바로가기 -->
+							<p id="footer_p" style="display: flex; align-items: center;">
+								<strong> <a href="index.jsp" class="js-gotomain"> 홈
+										화면<br />바로가기
+								</a>
+								</strong>
+							</p>
+						</div>
+						<!-- 깃허브 아이콘 -->
 						<ul class="fh5co-social">
-							<li class="to-animate-2"><a href="https://github.com/HyojeongChoe/Web_Project"><i
-									class="icon-github"></i></a></li>
+							<li class="to-animate-2"><a
+								href="https://github.com/HyojeongChoe/Web_Project"
+								target="_blank"> <i class="icon-github"></i></a></li>
+							<li class="to-animate-2"><a
+								href="https://www.youtube.com/@xenoint" target="_blank"> <i
+									class="icon-youtube"></i></a></li>
 						</ul>
 					</div>
 				</div>
+
+				<div>
+					<hr>
+				</div>
+
+				<!-- 글자 영역 2 -->
+				<div class="col-md-12 text-center">
+					<div class="" style="font-size: 12px;">Copyright ⓒ 2024 멍뚱냥뚱
+						반려동물 돌봄 산책 미용 서비스 All rights reserved.</div>
+				</div>
+
 			</div>
 		</div>
+		<!-- 푸터푸터 영역 끝 -->
 
 		<!-- jQuery -->
+		<script src="js/index.js"></script>
 		<script src="js/index.js"></script>
 		<script src="js/login.js"></script>
 		<script src="js/jquery.min.js"></script>

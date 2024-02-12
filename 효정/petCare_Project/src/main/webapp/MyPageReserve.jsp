@@ -102,11 +102,11 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+							onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -127,9 +127,9 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보
+				<li class="mypage_menu"><a href="MyPagePw.jsp">개인정보
 						수정</a></li>
-				<li class="mypage_menu">회원 탈퇴</li>
+				<li class="mypage_menu"><a href="MyPageDelete.jsp">회원 탈퇴</a></li>
 			</ul>
 		</div>
 		<!-- 예약내역 페이지 상단 -->
@@ -141,7 +141,9 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 				<!-- 예약내역 출력 공간 -->
 				<form action="deleteReserve.do" method="post">
 					<div class="reservaiton">
-						<h2>예약 내역</h2>
+						<div class="reserve_title">
+						<h1>예약내역</h1>
+					</div>
 						<hr>
 						<table class="reservation_table" border="1">
 							<thead>

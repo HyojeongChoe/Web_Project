@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* 예원 추가 부분 시작 */
+/* 예원 추가 부분 시작 ↓↓↓ */
 .about-image {
 	background-image: url('images/about_img_0.jpg');
 	background-position: 50% 50%;
@@ -69,4 +69,5 @@
 .inside.show { /* 페이지 로드 후 나타나는 효과 */
 	opacity: 1;
 }
-/* 예원 추가 부분 끝 */
+/* 예원 추가 부분 끝 ↑↑↑ */
+

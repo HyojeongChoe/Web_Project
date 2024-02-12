@@ -108,11 +108,11 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+							onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -154,21 +154,21 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				<div id="fh5co-about" data-section="about">
 					<!-- 좌측 about 이미지 -->
 					<div class="fh5co-2col fh5co-bg to-animate-2"
-						style="background-image: url('images/about_img_0.jpg')"></div>
+						style="background-image: url('images/about_img_test.png')"></div>
 
 					<!-- 우측 about 내용 -->
 					<div class="fh5co-2col fh5co-text">
 						<h2 class="heading to-animate">About Us</h2>
 						<p class="to-animate">
-							<span class="firstcharacter" style="margin: 40px 0px;">여기는슬로건열자이내</span>
-						<div
-							style="padding: 0em 3em; line-height: 40px;">
+							<span class="firstcharacter" style="margin: 40px 0px;">믿고
+								기댈 수 있는 또 다른 가족</span>
+						<div style="padding: 0em 3em; line-height: 40px;">
 							<span style="color: #a99c92;"> 여러분들의 귀여운 반려동물을 소중히 여기고
 								가족처럼 돌보는 전문적이면서도 엄마처럼 따뜻한 펫시터입니다.<br> 엄마의 손길이 자식의 몸과 마음에 온
-								정성이 닿아 따뜻한 사랑을 받는 것 처럼,<br>신예원바보 ..저희 펫시터도 여러분들의 반려동물들을 따뜻한 마음으로 보살펴서 서비스를
-								받는 동안이 아닌 누구에게나 항상 밝고 사랑스러운 반려동물이 되게끔 정성을 다하겠습니다.<br>반려동물이 행복하고
-								건강하게 성장할 수 있도록 최선을 다할 것이며 함께하는 시간이 특별하고 소중하게 느껴질 수 있도록
-								항상 최선을 다하는 펫시터가 되겠습니다. 
+								정성이 닿아 따뜻한 사랑을 받는 것 처럼,<br>신예원바보 ...저희 펫시터도 여러분들의 반려동물들을
+								따뜻한 마음으로 보살펴서 서비스를 받는 동안이 아닌 누구에게나 항상 밝고 사랑스러운 반려동물이 되게끔 정성을
+								다하겠습니다.<br>반려동물이 행복하고 건강하게 성장할 수 있도록 최선을 다할 것이며 함께하는 시간이
+								특별하고 소중하게 느껴질 수 있도록 항상 최선을 다하는 펫시터가 되겠습니다.
 							</span>
 						</div>
 						</p>
@@ -298,25 +298,29 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					<div class="col-md-3 to-animate">
 						<div class="fh5co-type">
 							<h3 class="with-icon icon-1">돌봄</h3>
-							<p>돌본다.</p>
+							<p>
+								가족 같은 마음으로 여러분의 <br> 반려동물을 케어해드립니다.
+							</p>
 						</div>
 					</div>
 					<div class="col-md-3 to-animate">
 						<div class="fh5co-type">
 							<h3 class="with-icon icon-2">산책</h3>
-							<p>뚜벅초.</p>
+							<p>반려동물의 성향에 따른 다양한 바깥활동을 지원해드립니다.</p>
 						</div>
 					</div>
 					<div class="col-md-3 to-animate">
 						<div class="fh5co-type">
 							<h3 class="with-icon icon-3">미용</h3>
-							<p>패완얼.</p>
+							<p>숙련된 전문가가 전담하여 최상의 미용 서비스를 제공합니다.</p>
 						</div>
 					</div>
 					<div class="col-md-3 to-animate">
 						<div class="fh5co-type">
 							<h3 class="with-icon icon-4">상담</h3>
-							<p>혀노혀노.</p>
+							<p>
+								반려동물 케어가 힘들 때, <br> 반려인과 반려동물의 연결고리가 <br>되어드리겠습니다.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -326,46 +330,60 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	<!-- 전체 본문 끝 -->
 
 
+	<!-- 푸터푸터 영역 시작 -->
 	<div id="fh5co-footer">
 		<div class="container">
-			<div class="row row-padded">
+
+			<!-- 글자 영역 1 -->
+			<div class="row row-footer-padded">
 				<div class="col-md-12 text-center">
-					Shared by <i class="fa fa-love"></i><a
-						href="https://bootstrapthemes.co">BootstrapThemes</a>
-					<p class="text-center to-animate">
-						<a href="#" class="js-gotop">Go To Top</a>
+					<p id="footer_p" style="font-size: 14px;">
+						(주)멍뚱냥뚱 대표이사: 최효정<strong>ㅣ</strong> 대구광역시 동구 동부로 121 (신천동), 6층
+						602호&nbsp;
 					</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
+					<p id="footer_p" style="font-size: 14px;">
+						사업자등록번호: 123-45-67890 <strong>ㅣ</strong> <strong>대표번호:
+							0507-1482-7755&nbsp;</strong>
+					</p>
+					<p id="footer_p" style="line-height: 1.5;">(주)멍뚱냥뚱의 모든 콘텐츠는(영상,
+						사진 등) 저작권법의 보호를 받는 바 무단 전재, 복사, 배포 등을 금합니다.</p>
+
+					<!-- 링크 영역 -->
+					<div class="footer-link-main">
+						<!-- 멍뚱냥뚱 홈 화면 바로가기 -->
+						<p id="footer_p" style="display: flex; align-items: center;">
+							<strong> <a href="index.jsp" class="js-gotomain"> 홈
+									화면<br />바로가기
+							</a>
+							</strong>
+						</p>
+					</div>
+					<!-- 깃허브 아이콘 -->
 					<ul class="fh5co-social">
-						<li class="to-animate-2"><a href="#"><i
-								class="icon-facebook"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i
-								class="icon-twitter"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i
-								class="icon-instagram"></i></a></li>
+						<li class="to-animate-2"><a
+							href="https://github.com/HyojeongChoe/Web_Project"
+							target="_blank"> <i class="icon-github"></i></a></li>
+						<li class="to-animate-2"><a
+							href="https://www.youtube.com/@xenoint" target="_blank"> <i
+								class="icon-youtube"></i></a></li>
 					</ul>
 				</div>
 			</div>
+
+			<div>
+				<hr>
+			</div>
+
+			<!-- 글자 영역 2 -->
+			<div class="col-md-12 text-center">
+				<div class="" style="font-size: 12px;">Copyright ⓒ 2024 멍뚱냥뚱
+					반려동물 돌봄 산책 미용 서비스 All rights reserved.</div>
+			</div>
+
 		</div>
 	</div>
+	<!-- 푸터푸터 영역 끝 -->
 
-
-	<script>
-		function performLogout() {
-			// 여기에 로그아웃 처리 로직을 추가할 수 있습니다.
-			// 예를 들어, AJAX 요청을 사용하여 서버에 로그아웃 요청을 보낼 수 있습니다.
-			// 또는 간단하게 location.href를 사용하여 로그아웃 링크로 이동할 수도 있습니다.
-
-			// 아래는 간단한 예시입니다.
-			var confirmLogout = confirm("로그아웃하시겠습니까?");
-			if (confirmLogout) {
-				location.href = "logout.do"; // 로그아웃 처리를 수행하는 서블릿 매핑 경로로 수정
-			}
-		}
-	</script>
 
 	<script src="js/index.js"></script>
 	<script src="js/about.js"></script>

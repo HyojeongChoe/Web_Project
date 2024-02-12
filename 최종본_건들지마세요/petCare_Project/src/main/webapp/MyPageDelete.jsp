@@ -71,11 +71,11 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+							onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -95,7 +95,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보
+				<li class="mypage_menu"><a href="MyPagePw.jsp">개인정보
 						수정</a></li>
 				<li class="mypage_menu"><a href="MyPageDelete.jsp">회원 탈퇴</a></li>
 			</ul>

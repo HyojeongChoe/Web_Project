@@ -108,11 +108,11 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+							onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -126,9 +126,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				<div class="inside">
 					<div class="empty space"></div>
 					<div class="service_menu">
-						<a href="/Reservation.jsp"> <span class="plain_name"
-							data-hover="">케어서비스</span>
-						</a>
+						<span class="plain_name" data-hover="">케어서비스</span>
 					</div>
 					<div class="empty space"></div>
 
@@ -137,7 +135,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<div class="shop_item"
 								style="padding: 0px 15px; height: auto; width: 341px;">
 								<div class="item_wrap" style="position: relative;">
-									<a href="#" onclick="goToCare()" class="care_service"> <img
+									<a href="ReservationCare.jsp" class="care_service"> <img
 										src="https://cdn.imweb.me/thumbnail/20221027/efaefbde1f633.jpg"
 										style="display: inline;">
 										<div class="item_overlay">
@@ -156,7 +154,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<div class="shop_item"
 								style="padding: 0px 15px; height: auto; width: 341px;">
 								<div class="item_wrap" style="position: relative;">
-									<a href="#" onclick="goToWalk()" class="work_service"> <img
+									<a href="ReservationWalk.jsp" class="work_service"> <img
 										src="https://cdn.imweb.me/thumbnail/20221027/3f1e6e9249fa2.jpg"
 										style="display: inline;">
 										<div class="item_overlay">
@@ -175,7 +173,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<div class="shop_item"
 								style="padding: 0px 15px; height: auto; width: 341px;">
 								<div class="item_wrap" style="position: relative;">
-									<a href="#" onclick="goToGrooming()"class="beauty_service"> <img
+									<a href="ReservationGrooming.jsp" class="beauty_service"> <img
 										src="https://cdn.imweb.me/thumbnail/20211206/30b255561ebf9.jpg"
 										style="display: inline;">
 										<div class="item_overlay">
@@ -302,31 +300,59 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					</div>
 				</div> -->
 
+	<!-- 푸터푸터 영역 시작 -->
 	<div id="fh5co-footer">
 		<div class="container">
-			<div class="row row-padded">
+
+			<!-- 글자 영역 1 -->
+			<div class="row row-footer-padded">
 				<div class="col-md-12 text-center">
-					Shared by <i class="fa fa-love"></i><a
-						href="https://bootstrapthemes.co">BootstrapThemes</a>
-					<p class="text-center to-animate">
-						<a href="#" class="js-gotop">Go To Top</a>
+					<p id="footer_p" style="font-size: 14px;">
+						(주)멍뚱냥뚱 대표이사: 최효정<strong>ㅣ</strong> 대구광역시 동구 동부로 121 (신천동), 6층
+						602호&nbsp;
 					</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
+					<p id="footer_p" style="font-size: 14px;">
+						사업자등록번호: 123-45-67890 <strong>ㅣ</strong> <strong>대표번호:
+							0507-1482-7755&nbsp;</strong>
+					</p>
+					<p id="footer_p" style="line-height: 1.5;">(주)멍뚱냥뚱의 모든 콘텐츠는(영상,
+						사진 등) 저작권법의 보호를 받는 바 무단 전재, 복사, 배포 등을 금합니다.</p>
+
+					<!-- 링크 영역 -->
+					<div class="footer-link-main">
+						<!-- 멍뚱냥뚱 홈 화면 바로가기 -->
+						<p id="footer_p" style="display: flex; align-items: center;">
+							<strong> <a href="index.jsp" class="js-gotomain_service">
+									홈 화면<br />바로가기
+							</a>
+							</strong>
+						</p>
+					</div>
+					<!-- 깃허브 아이콘 -->
 					<ul class="fh5co-social">
-						<li class="to-animate-2"><a href="#"><i
-								class="icon-facebook"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i
-								class="icon-twitter"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i
-								class="icon-instagram"></i></a></li>
+						<li class="to-animate-2"><a
+							href="https://github.com/HyojeongChoe/Web_Project"
+							target="_blank"> <i class="icon-github"></i></a></li>
+						<li class="to-animate-2"><a
+							href="https://www.youtube.com/@xenoint" target="_blank"> <i
+								class="icon-youtube"></i></a></li>
 					</ul>
 				</div>
 			</div>
+
+			<div>
+				<hr>
+			</div>
+
+			<!-- 글자 영역 2 -->
+			<div class="col-md-12 text-center">
+				<div class="" style="font-size: 12px;">Copyright ⓒ 2024 멍뚱냥뚱
+					반려동물 돌봄 산책 미용 서비스 All rights reserved.</div>
+			</div>
+
 		</div>
 	</div>
+	<!-- 푸터푸터 영역 끝 -->
 
 	<!-- jQuery -->
 	<script src="js/index.js"></script>
