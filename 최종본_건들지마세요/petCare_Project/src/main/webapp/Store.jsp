@@ -122,191 +122,198 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 
 
 	<div class="store">
-		<div doz_type="inside" class="inside">
+		<div class="inside">
 			<div class="store_menu">
-				<h2>
-					맛과 영양을 모두 잡은 프미리엄 영양제
-				</h2>
+				<h2>맛과 영양을 모두 잡은 프미리엄 영양제</h2>
 				<p>
 					피부건강, 눈물샘 완화, 면역력증강 필요한 영양제<br>맛과 영양을 모두잡은 프리미엄 영양제를 만나보세요!
 				</p>
 			</div>
-		</div>
-		<div class="store_row">
-			<div class="store_shop-grid">
-				<div class="store_shop_item"
-					style="width: 375px; padding: 0px 15px; height: 511px;">
-					<div class="store_item-wrap" style="position: relative;">
-						<a href="https://www.petvip.co.kr/46/?idx=54" target="_blank"
-							class="_fade_link shop-item-thumb hover_img_none"> <img
-							data-prodcode="s20220513cda76e5f4845e" alt=""
-							src="https://cdn.imweb.me/thumbnail/20220513/82ce3a77a048a.jpg"
-							class="_org_img org_img _lazy_img"
-							data-original="https://cdn.imweb.me/thumbnail/20220513/82ce3a77a048a.jpg"
-							data-src="https://cdn.imweb.me/thumbnail/20220513/82ce3a77a048a.jpg"
-							style="display: inline;">
-							<div class="item-overlay">
-								<div class="item-detail">
-									<h2>[아모레미오] 사료보조제 300ml</h2>
-									<p class="pay" style="">35,000원</p>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="store_shop_item"
-					style="width: 375px; padding: 0px 15px; height: 511px;">
-					<div class="store_item-wrap" style="position: relative;">
-						<a href="https://www.petvip.co.kr/46/?idx=15" target="_blank" class="_fade_link shop-item-thumb "> <img
-							data-prodcode="s202110152887c37e6edd9" alt=""
-							src="https://cdn.imweb.me/thumbnail/20211015/dbc7d9e6369e7.png"
-							class="_org_img org_img _lazy_img"
-							data-original="https://cdn.imweb.me/thumbnail/20211015/dbc7d9e6369e7.png"
-							data-src="https://cdn.imweb.me/thumbnail/20211015/dbc7d9e6369e7.png"
-							style="display: inline;">
-							<div class="item-overlay">
-								<div class="item-detail">
-									<h2>[리브펫] 덴탈핏츄(17g*10ea)</h2>
-									<p class="pay">16,400원</p>
-								</div>
-							</div>
-						</a>
-					</div>
 
-				</div>
-				<div class="store_shop_item"
-					style="width: 375px; padding: 0px 15px; height: 511px;">
-					<div class="store_item-wrap" style="position: relative;">
-						<a href="https://www.petvip.co.kr/46/?idx=16" target="_blank" class="_fade_link shop-item-thumb "> <img
-							data-prodcode="s2021101538fbc9981b65a" alt=""
-							src="https://cdn.imweb.me/thumbnail/20211015/ac2ea2fdf1452.png"
-							class="_org_img org_img _lazy_img"
-							data-original="https://cdn.imweb.me/thumbnail/20211015/ac2ea2fdf1452.png"
-							data-src="https://cdn.imweb.me/thumbnail/20211015/ac2ea2fdf1452.png">
-							<div class="item-overlay">
-								<div class="item-detail">
-									<h2>[리브펫] 유산균(스틱포)</h2>
-									<p class="pay">29,500원</p>
+			<div class="store_row">
+				<div class="store_shop-grid">
+					<div class="store_shop_item"
+						style="width: 375px; padding: 0px 15px; height: 511px;">
+						<div class="store_item-wrap" style="position: relative;">
+							<a href="https://www.petvip.co.kr/46/?idx=54" target="_blank"
+								class="_fade_link shop-item-thumb hover_img_none"> <img
+								data-prodcode="s20220513cda76e5f4845e" alt=""
+								src="https://cdn.imweb.me/thumbnail/20220513/82ce3a77a048a.jpg"
+								class="_org_img org_img _lazy_img"
+								data-original="https://cdn.imweb.me/thumbnail/20220513/82ce3a77a048a.jpg"
+								data-src="https://cdn.imweb.me/thumbnail/20220513/82ce3a77a048a.jpg"
+								style="display: inline;">
+								<div class="item-overlay">
+									<div class="item-detail">
+										<h2>[아모레미오] 사료보조제 300ml</h2>
+										<p class="pay" style="">35,000원</p>
+									</div>
 								</div>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
-
-				</div>
-				<div class="store_shop_item"
-					style="width: 375px; padding: 0px 15px; height: 511px;">
-					<div class="store_item-wrap" style="position: relative;">
-						<a href="https://www.petvip.co.kr/46/?idx=17" target="_blank" class="_fade_link shop-item-thumb "> <img
-							data-prodcode="s202110151723445c37ae0" alt=""
-							src="https://cdn.imweb.me/thumbnail/20211015/ce9351dfdf75f.png"
-							class="_org_img org_img _lazy_img"
-							data-original="https://cdn.imweb.me/thumbnail/20211015/ce9351dfdf75f.png"
-							data-src="https://cdn.imweb.me/thumbnail/20211015/ce9351dfdf75f.png">
-							<div class="item-overlay">
-								<div class="item-detail">
-									<h2>[리브펫] 유산균(통)</h2>
-									<p class="pay" style="">27,500원</p>
+					<div class="store_shop_item"
+						style="width: 375px; padding: 0px 15px; height: 511px;">
+						<div class="store_item-wrap" style="position: relative;">
+							<a href="https://www.petvip.co.kr/46/?idx=15" target="_blank"
+								class="_fade_link shop-item-thumb "> <img
+								data-prodcode="s202110152887c37e6edd9" alt=""
+								src="https://cdn.imweb.me/thumbnail/20211015/dbc7d9e6369e7.png"
+								class="_org_img org_img _lazy_img"
+								data-original="https://cdn.imweb.me/thumbnail/20211015/dbc7d9e6369e7.png"
+								data-src="https://cdn.imweb.me/thumbnail/20211015/dbc7d9e6369e7.png"
+								style="display: inline;">
+								<div class="item-overlay">
+									<div class="item-detail">
+										<h2>[리브펫] 덴탈핏츄(17g*10ea)</h2>
+										<p class="pay">16,400원</p>
+									</div>
 								</div>
-							</div>
-						</a>
-					</div>
+							</a>
+						</div>
 
-				</div>
-				<div class="store_shop_item"
-					style="width: 375px; padding: 0px 15px; height: 511px;">
-					<div class="store_item-wrap" style="position: relative;">
-						<a href="https://www.petvip.co.kr/46/?idx=18" target="_blank" class="_fade_link shop-item-thumb "> <img
-							data-prodcode="s202110154d57619d62ad8" alt=""
-							src="https://cdn.imweb.me/thumbnail/20211015/2094689e88512.png"
-							class="_org_img org_img _lazy_img"
-							data-original="https://cdn.imweb.me/thumbnail/20211015/2094689e88512.png"
-							data-src="https://cdn.imweb.me/thumbnail/20211015/2094689e88512.png"
-							style="display: inline;">
-							<div class="item-overlay">
-								<div class="item-detail">
-									<h2>[리브펫] 조인트</h2>
-									<p class="pay" style="">27,500원</p>
+					</div>
+					<div class="store_shop_item"
+						style="width: 375px; padding: 0px 15px; height: 511px;">
+						<div class="store_item-wrap" style="position: relative;">
+							<a href="https://www.petvip.co.kr/46/?idx=16" target="_blank"
+								class="_fade_link shop-item-thumb "> <img
+								data-prodcode="s2021101538fbc9981b65a" alt=""
+								src="https://cdn.imweb.me/thumbnail/20211015/ac2ea2fdf1452.png"
+								class="_org_img org_img _lazy_img"
+								data-original="https://cdn.imweb.me/thumbnail/20211015/ac2ea2fdf1452.png"
+								data-src="https://cdn.imweb.me/thumbnail/20211015/ac2ea2fdf1452.png">
+								<div class="item-overlay">
+									<div class="item-detail">
+										<h2>[리브펫] 유산균(스틱포)</h2>
+										<p class="pay">29,500원</p>
+									</div>
 								</div>
-							</div>
-						</a>
-					</div>
+							</a>
+						</div>
 
-				</div>
-				<div class="store_shop_item"
-					style="width: 375px; padding: 0px 15px; height: 511px;">
-					<div class="store_item-wrap" style="position: relative;">
-						<a href="https://www.petvip.co.kr/46/?idx=14" target="_blank" class="_fade_link shop-item-thumb "> <img
-							data-prodcode="s20211015836278cbda6e3" alt=""
-							src="https://cdn.imweb.me/thumbnail/20211015/5d2614de61d67.png"
-							class="_org_img org_img _lazy_img"
-							data-original="https://cdn.imweb.me/thumbnail/20211015/5d2614de61d67.png"
-							data-src="https://cdn.imweb.me/thumbnail/20211015/5d2614de61d67.png"
-							style="display: inline;">
-							<div class="item-overlay">
-								<div class="item-detail">
-									<h2>[리브펫] 뉴스킨</h2>
-									<p class="pay" style="">29,500원</p>
+					</div>
+					<div class="store_shop_item"
+						style="width: 375px; padding: 0px 15px; height: 511px;">
+						<div class="store_item-wrap" style="position: relative;">
+							<a href="https://www.petvip.co.kr/46/?idx=17" target="_blank"
+								class="_fade_link shop-item-thumb "> <img
+								data-prodcode="s202110151723445c37ae0" alt=""
+								src="https://cdn.imweb.me/thumbnail/20211015/ce9351dfdf75f.png"
+								class="_org_img org_img _lazy_img"
+								data-original="https://cdn.imweb.me/thumbnail/20211015/ce9351dfdf75f.png"
+								data-src="https://cdn.imweb.me/thumbnail/20211015/ce9351dfdf75f.png">
+								<div class="item-overlay">
+									<div class="item-detail">
+										<h2>[리브펫] 유산균(통)</h2>
+										<p class="pay" style="">27,500원</p>
+									</div>
 								</div>
-							</div>
-						</a>
-					</div>
+							</a>
+						</div>
 
-				</div>
-				<div class="store_shop_item"
-					style="width: 375px; padding: 0px 15px; height: auto;">
-					<div class="store_item-wrap" style="position: relative;">
-						<a href="https://www.petvip.co.kr/46/?idx=13" target="_blank" class="_fade_link shop-item-thumb "> <img
-							data-prodcode="s20211015ee11e04a926e2" alt=""
-							src="https://cdn.imweb.me/thumbnail/20211015/551a3a25b0341.jpg"
-							class="_org_img org_img _lazy_img"
-							data-original="https://cdn.imweb.me/thumbnail/20211015/551a3a25b0341.jpg"
-							data-src="https://cdn.imweb.me/thumbnail/20211015/551a3a25b0341.jpg"
-							style="display: inline;">
-							<div class="item-overlay">
+					</div>
+					<div class="store_shop_item"
+						style="width: 375px; padding: 0px 15px; height: 511px;">
+						<div class="store_item-wrap" style="position: relative;">
+							<a href="https://www.petvip.co.kr/46/?idx=18" target="_blank"
+								class="_fade_link shop-item-thumb "> <img
+								data-prodcode="s202110154d57619d62ad8" alt=""
+								src="https://cdn.imweb.me/thumbnail/20211015/2094689e88512.png"
+								class="_org_img org_img _lazy_img"
+								data-original="https://cdn.imweb.me/thumbnail/20211015/2094689e88512.png"
+								data-src="https://cdn.imweb.me/thumbnail/20211015/2094689e88512.png"
+								style="display: inline;">
+								<div class="item-overlay">
+									<div class="item-detail">
+										<h2>[리브펫] 조인트</h2>
+										<p class="pay" style="">27,500원</p>
+									</div>
+								</div>
+							</a>
+						</div>
+
+					</div>
+					<div class="store_shop_item"
+						style="width: 375px; padding: 0px 15px; height: 511px;">
+						<div class="store_item-wrap" style="position: relative;">
+							<a href="https://www.petvip.co.kr/46/?idx=14" target="_blank"
+								class="_fade_link shop-item-thumb "> <img
+								data-prodcode="s20211015836278cbda6e3" alt=""
+								src="https://cdn.imweb.me/thumbnail/20211015/5d2614de61d67.png"
+								class="_org_img org_img _lazy_img"
+								data-original="https://cdn.imweb.me/thumbnail/20211015/5d2614de61d67.png"
+								data-src="https://cdn.imweb.me/thumbnail/20211015/5d2614de61d67.png"
+								style="display: inline;">
+								<div class="item-overlay">
+									<div class="item-detail">
+										<h2>[리브펫] 뉴스킨</h2>
+										<p class="pay" style="">29,500원</p>
+									</div>
+								</div>
+							</a>
+						</div>
+
+					</div>
+					<div class="store_shop_item"
+						style="width: 375px; padding: 0px 15px; height: auto;">
+						<div class="store_item-wrap" style="position: relative;">
+							<a href="https://www.petvip.co.kr/46/?idx=13" target="_blank"
+								class="_fade_link shop-item-thumb "> <img
+								data-prodcode="s20211015ee11e04a926e2" alt=""
+								src="https://cdn.imweb.me/thumbnail/20211015/551a3a25b0341.jpg"
+								class="_org_img org_img _lazy_img"
+								data-original="https://cdn.imweb.me/thumbnail/20211015/551a3a25b0341.jpg"
+								data-src="https://cdn.imweb.me/thumbnail/20211015/551a3a25b0341.jpg"
+								style="display: inline;">
+								<div class="item-overlay">
+									<div class="item-detail">
+										<h2>[관절탄탄] 강아지 피부 영양제 간식 (강아지 관절 영양제)</h2>
+										<p class="pay" style="">33,000원</p>
+									</div>
+								</div>
+							</a>
+						</div>
+
+					</div>
+					<div class="store_shop_item"
+						style="width: 375px; padding: 0px 15px; height: auto;">
+						<div class="store_item-wrap" style="position: relative;">
+							<a href="https://www.petvip.co.kr/46/?idx=12" target="_blank"
+								class="_fade_link shop-item-thumb "> <img
+								data-prodcode="s202110153987538a7011a" alt=""
+								src="https://cdn.imweb.me/thumbnail/20211015/1ba00bcdd1b43.jpg"
+								class="_org_img org_img _lazy_img"
+								data-original="https://cdn.imweb.me/thumbnail/20211015/1ba00bcdd1b43.jpg"
+								data-src="https://cdn.imweb.me/thumbnail/20211015/1ba00bcdd1b43.jpg"
+								style="display: inline;">
+								<div class="item-overlay">
+									<div class="item-detail">
+										<h2>[피부싹싹] 강아지 피부 영양제 간식 (피모관리/아토피/강아지영양제)</h2>
+										<p class="pay" style="">33,000원</p>
+									</div>
+								</div>
+							</a>
+						</div>
+
+					</div>
+					<div class="store_shop_item"
+						style="width: 375px; padding: 0px 15px; height: auto;">
+						<div class="store_item-wrap" style="position: relative;">
+							<a href="https://www.petvip.co.kr/46/?idx=11" target="_blank"
+								class="_fade_link shop-item-thumb "> <img
+								data-prodcode="s20211015bcd2a7e657ad9" alt=""
+								src="https://cdn.imweb.me/thumbnail/20211015/e628839ac4dc4.jpg"
+								class="_org_img org_img _lazy_img"
+								data-original="https://cdn.imweb.me/thumbnail/20211015/e628839ac4dc4.jpg"
+								data-src="https://cdn.imweb.me/thumbnail/20211015/e628839ac4dc4.jpg"
+								style="display: inline;">
 								<div class="item-detail">
-									<h2>[관절탄탄] 강아지 피부 영양제 간식 (강아지 관절 영양제)</h2>
+									<h2>[눈물싹싹] 강아지 눈물자국 제거 간식 150g, 300g (눈물제거/강아지영양제)</h2>
 									<p class="pay" style="">33,000원</p>
 								</div>
-							</div>
-						</a>
-					</div>
-
-				</div>
-				<div class="store_shop_item"
-					style="width: 375px; padding: 0px 15px; height: auto;">
-					<div class="store_item-wrap" style="position: relative;">
-						<a href="https://www.petvip.co.kr/46/?idx=12" target="_blank" class="_fade_link shop-item-thumb "> <img
-							data-prodcode="s202110153987538a7011a" alt=""
-							src="https://cdn.imweb.me/thumbnail/20211015/1ba00bcdd1b43.jpg"
-							class="_org_img org_img _lazy_img"
-							data-original="https://cdn.imweb.me/thumbnail/20211015/1ba00bcdd1b43.jpg"
-							data-src="https://cdn.imweb.me/thumbnail/20211015/1ba00bcdd1b43.jpg"
-							style="display: inline;">
-							<div class="item-overlay">
-								<div class="item-detail">
-									<h2>[피부싹싹] 강아지 피부 영양제 간식 (피모관리/아토피/강아지영양제)</h2>
-									<p class="pay" style="">33,000원</p>
-								</div>
-							</div>
-						</a>
-					</div>
-
-				</div>
-				<div class="store_shop_item"
-					style="width: 375px; padding: 0px 15px; height: auto;">
-					<div class="store_item-wrap" style="position: relative;">
-						<a href="https://www.petvip.co.kr/46/?idx=11" target="_blank" class="_fade_link shop-item-thumb "> <img
-							data-prodcode="s20211015bcd2a7e657ad9" alt=""
-							src="https://cdn.imweb.me/thumbnail/20211015/e628839ac4dc4.jpg"
-							class="_org_img org_img _lazy_img"
-							data-original="https://cdn.imweb.me/thumbnail/20211015/e628839ac4dc4.jpg"
-							data-src="https://cdn.imweb.me/thumbnail/20211015/e628839ac4dc4.jpg"
-							style="display: inline;">
-							<div class="item-detail">
-								<h2>[눈물싹싹] 강아지 눈물자국 제거 간식 150g, 300g (눈물제거/강아지영양제)</h2>
-								<p class="pay" style="">33,000원</p>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -335,8 +342,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					<div class="footer-link-main">
 						<!-- 멍뚱냥뚱 홈 화면 바로가기 -->
 						<p id="footer_p" style="display: flex; align-items: center;">
-							<strong> <a href="index.jsp" class="js-gotomain">
-									홈 화면<br />바로가기
+							<strong> <a href="index.jsp" class="js-gotomain"> 홈
+									화면<br />바로가기
 							</a>
 							</strong>
 						</p>

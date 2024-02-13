@@ -127,8 +127,7 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu"><a href="MyPagePw.jsp">개인정보
-						수정</a></li>
+				<li class="mypage_menu"><a href="MyPagePw.jsp">개인정보 수정</a></li>
 				<li class="mypage_menu"><a href="MyPageDelete.jsp">회원 탈퇴</a></li>
 			</ul>
 		</div>
@@ -142,8 +141,15 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 				<form action="deleteReserve.do" method="post">
 					<div class="reservaiton">
 						<div class="reserve_title">
-						<h1>예약내역</h1>
-					</div>
+							<h1>예약내역</h1>
+							<p>멍뚱냥뚱에서 예약한 내역들을 확인해 볼 수 있는 공간입니다.</p>
+						</div>
+						<div class="reserve_message">
+							<p>※ 예약 취소 안내사항 ※</p>
+							<p>예약 취소는 예약일을 기준으로 이틀 전까지 가능합니다.</p>
+							<p>예약 수정을 원하시는 경우 DM으로 문의하여 주시기 바랍니다.</p>
+							<p>예약 시 참고하시어 이용에 착오 없으시기 바랍니다.</p>
+						</div>
 						<hr>
 						<table class="reservation_table" border="1">
 							<thead>

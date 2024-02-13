@@ -121,7 +121,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					onclick="openFindPwPage()" target="_blank">비밀번호 찾기</a>
 			</form>
 		</div>
-	</div>
+	</div> 
 	<script>
 	var loginError = '<%=request.getParameter("loginError")%>';
 		if (loginError === "true") {
