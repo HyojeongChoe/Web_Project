@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!-- JSTL 사용시 필수 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -37,7 +38,9 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 <html lang="en">
 <head>
 <link rel="shortcut icon" href="favicon.ico">
-<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
+	rel='stylesheet' type='text/css'>
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css">
 <!-- Icomoon Icon Fonts -->
@@ -71,14 +74,22 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="JoinButton" style="background-color: white; border: 0;" onclick="openSignUpPage()">SignUp</a></li>
-							<li class="login"><a href="#" id="loginButton" style="background-color: white; border: 0;" onclick="openLoginPage()">Login</a></li>
+							<li class="join"><a href="#" id="JoinButton"
+								style="background-color: white; border: 0;"
+								onclick="openSignUpPage()">SignUp</a></li>
+							<li class="login"><a href="#" id="loginButton"
+								style="background-color: white; border: 0;"
+								onclick="openLoginPage()">Login</a></li>
 							<%
 							} else {
 							%>
 							<!-- 로그인 상태인 경우 -->
-							<li class="logout"><a href="#" id="logoutButton" style="background-color: white; border: 0;" onclick="performLogout()">Logout</a></li>
-							<li class="mypage"><a href="#" id="mypageButton" style="background-color: white; border: 0;" onclick="openMyPageReserve()">MyPage</a></li>
+							<li class="logout"><a href="#" id="logoutButton"
+								style="background-color: white; border: 0;"
+								onclick="performLogout()">Logout</a></li>
+							<li class="mypage"><a href="#" id="mypageButton"
+								style="background-color: white; border: 0;"
+								onclick="openMyPageReserve()">MyPage</a></li>
 							<%
 							}
 							%>
@@ -87,15 +98,15 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 				</div>
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" onclick="goToIndex()">Home</a>
-						<a href="#" onclick="goToAbout()">About</a>
+						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
+							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" onclick="goToService()">Service</a>
-						<a href="#" onclick="goToStore()">Store</a>
+						<a href="#" onclick="goToService()">Service</a> <a href="#"
+							onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -111,7 +122,8 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 			</div>
 			<div class="mypage_title">마이 예약</div>
 			<ul class="my_reserve">
-				<li class="mypage_menu"><a href="#" onclick="openMyPageReserve()">예약내역확인</a></li>
+				<li class="mypage_menu"><a href="#"
+					onclick="openMyPageReserve()">예약내역확인</a></li>
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
@@ -121,7 +133,8 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 		</div>
 		<!-- 예약내역 페이지 상단 -->
 		<div class="desktop_reserve">
-			<span class=image_logo><img src="images/free-icon-dog-3843277.png" id="reserve_logo" /></span>
+			<span class=image_logo><img
+				src="images/free-icon-dog-3843277.png" id="reserve_logo" /></span>
 			<div class="reserve_line"></div>
 			<div class="reserve_div">
 				<!-- 예약내역 출력 공간 -->
@@ -144,9 +157,9 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 									<th scope="col" class="reservation_check">
 										<input type="checkbox" id="selectAllCheckbox" class="reserve_checkbox" />
 									</th>
-									<th scope="col">예약날짜</th>
+									<th scope="col">예약 날짜</th>
 									<th scope="col">서비스 종류</th>
-									<th scope="col">이용시간</th>
+									<th scope="col">이용 시간</th>
 									<th scope="col">미용 종류</th>
 									<th scope="col">반려동물</th>
 									<th scope="col">비용</th>
@@ -158,7 +171,11 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 								<c:forEach items="${list}" var="value" varStatus="loop">
 									<!-- list :: DTO의 멤버 이름으로 값을 불러와야 한다-->
 									<tr class="${loop.index % 2 == 0 ? 'even' : 'odd'}">
-										<td><input type="checkbox" id="checkbox_${loop.index}" name="reserve_checkbox" class="reserve_checkbox" data-date="${value.date}" data-service="${value.service}" data-time="${value.time}" data-grooming="${value.grooming}" data-pet="${value.pet}" data-cost="${value.cost}" /></td>
+										<td><input type="checkbox" id="checkbox_${loop.index}"
+											name="reserve_checkbox" class="reserve_checkbox"
+											data-date="${value.date}" data-service="${value.service}"
+											data-time="${value.time}" data-grooming="${value.grooming}"
+											data-pet="${value.pet}" data-cost="${value.cost}" /></td>
 										<td>${value.date}</td>
 										<td>${value.service}</td>
 										<td>${value.time}</td>
@@ -214,7 +231,8 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 
 						<!-- 예약 취소하기 버튼 영역 -->
 						<div class="box_btn">
-							<button type="button" onclick="deleteSelectedReservations()" style="font-size: 16px;">예약 취소하기</button>
+							<button type="button" onclick="deleteSelectedReservations()"
+								style="font-size: 16px;">예약 취소하기</button>
 						</div>
 
 					</div>
@@ -223,108 +241,6 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 			</div>
 		</div>
 	</div>
-
-
-	<script>
-		/* 현재 날짜를 구하는 함수 */
-		function getCurrentDate() {
-			var now = new Date();
-			now.setHours(0, 0, 0, 0); // 시간은 상관 없으므로 전부 0으로 설정
-			return now;
-		}
-
-		/* 체크박스를 여러 개 선택하고 삭제 버튼을 눌렀을 때, 선택된 예약 정보를 서버로 어떻게 전송할 것인지에 대한 로직 */
-		function deleteSelectedReservations() {
-			var checkboxes = document
-					.querySelectorAll('.reserve_checkbox:checked');
-			var selectedReservations = []; // 정보(내역) 담을 배열
-			var currentDate = getCurrentDate(); // 현재 날짜 가져오기
-			var containsInvalidReservation = false; // 예약 날짜 조건(이틀 여유)
-
-			checkboxes.forEach(function(checkbox) {
-				var reservation = {
-					date : checkbox.dataset.date,
-					service : checkbox.dataset.service,
-					time : checkbox.dataset.time,
-					grooming : checkbox.dataset.grooming,
-					pet : checkbox.dataset.pet,
-					cost : checkbox.dataset.cost
-				};
-
-				// 예약 날짜와 현재 날짜를 비교하여 이미 지난 예약인지 확인
-				var reservationDate = new Date(reservation.date);
-
-				if (reservationDate < currentDate) {
-					// 이미 지난 예약일 경우
-					containsInvalidReservation = true;
-				} else {
-					// 예약 날짜와 현재 날짜를 비교하여 이틀 이상 여유가 있는지 확인
-					var twoDaysLater = new Date();
-					twoDaysLater.setDate(twoDaysLater.getDate() + 2);
-
-					if (reservationDate < twoDaysLater) {
-						// 예약 날짜가 이틀 이상 여유가 없는 경우
-						containsInvalidReservation = true;
-					} else {
-						// 예약 날짜가 이틀 이상 여유가 있는 경우(삭제 진행)
-						selectedReservations.push(reservation);
-					}
-				}
-			});
-
-			if (containsInvalidReservation) {
-				// 이미 지난 내역이거나 && 이틀 이상 여유가 없는 내역일 경우 알림창
-				alert('취소할 수 없는 내역이 포함되어 있습니다.');
-			} else if (selectedReservations.length > 0) {
-				// 배열에 정보가 담겼다면(길이가 0초과라면)
-				// Ajax를 사용하여 서버로 선택된 예약 정보 전송
-				var xhr = new XMLHttpRequest();
-				xhr.open('POST', 'deleteReserve.do', true);
-				xhr.setRequestHeader('Content-Type', 'application/json');
-				xhr.onreadystatechange = function() {
-					if (xhr.readyState === 4) {
-						if (xhr.status === 200) {
-							// 서버 응답이 성공인 경우
-							window.location.reload(); // 페이지 새로고침
-							alert('예약을 취소하였습니다.');
-						} else {
-							// 서버 응답이 실패인 경우
-							alert('예약 취소에 실패했습니다.');
-						}
-					}
-				};
-				xhr.send(JSON.stringify(selectedReservations));
-			} else {
-				// 선택된 예약이 없는 경우
-				alert('취소할 예약을 선택해주세요.');
-			}
-		}
-
-		// 전체 선택 체크박스의 클릭 이벤트 처리
-		document.getElementById('selectAllCheckbox').addEventListener('click', function() {
-    		var checkboxes = document.querySelectorAll('.reserve_checkbox');
-
-    		checkboxes.forEach(function(checkbox) {
-        		checkbox.checked = document.getElementById('selectAllCheckbox').checked;
-    		});
-		});
-
-		// 각각의 예약 항목 체크박스의 클릭 이벤트 처리
-		document.querySelectorAll('.reserve_checkbox').forEach(function(checkbox) {
-    		checkbox.addEventListener('click', function() {
-        		var checkboxes = document.querySelectorAll('.reserve_checkbox');
-        		var allChecked = true;
-
-        		checkboxes.forEach(function(checkbox) {
-            		if (!checkbox.checked) {
-                		allChecked = false;
-            		}
-        		});
-
-        		document.getElementById('selectAllCheckbox').checked = allChecked;
-    		});
-		});
-	</script>
 
 	<script src="js/index.js"></script>
 	<script src="js/mypage.js"></script>

@@ -88,10 +88,9 @@
 
 .reserve_title {
 	margin: 10px;
-	text-align: center;
+	text-align:center;
 }
-
-/* 테이블 관련 */
+/*테이블 */
 .reservaiton {
 	display: inline-block;
 }
@@ -117,9 +116,10 @@ table.reservation_table th {
 	background: lavender;
 }
 
-table.reservation_table th:first-child {
-	width: 100px; /* 원하는 너비로 지정 */
-	min-width: 30px; /* 최소 너비를 지정 */
+table.reservation_table th.reservation_check {
+	margin: 5px 10px 0px;
+    width: 7%; /* 원하는 너비로 지정 */
+    min-width: 10px; /* 최소 너비를 지정 */
 }
 
 table.reservation_table td {
@@ -145,7 +145,6 @@ table.reservation_table tr.odd {
 table.reservation_table tbody tr:hover { /* 예약내역 행 호버 효과 */
 	background-color: #e6e6e6;
 }
-
 /* 페이징 버튼 관련 */
 .reserve_paging {
 	position: relative;
@@ -177,7 +176,7 @@ table.reservation_table tbody tr:hover { /* 예약내역 행 호버 효과 */
 /* 예약취소 문구 출력 */
 .reserve_message {
 	margin: 10px 100px;
-	padding: 10px 100px;
+	padding: 10px 10px;
 }
 
 .reserve_message p {
