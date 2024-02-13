@@ -108,11 +108,11 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+							onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -126,9 +126,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 				<div class="inside">
 					<div class="empty space"></div>
 					<div class="service_menu">
-						<a href="/Reservation.jsp"> <span class="plain_name"
-							data-hover="">케어서비스</span>
-						</a>
+						<span class="plain_name" data-hover="">케어서비스</span>
 					</div>
 					<div class="empty space"></div>
 
@@ -137,7 +135,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<div class="shop_item"
 								style="padding: 0px 15px; height: auto; width: 341px;">
 								<div class="item_wrap" style="position: relative;">
-									<a href="#" onclick="goToCare()" class="care_service"> <img
+									<a href="ReservationCare.jsp" class="care_service"> <img
 										src="https://cdn.imweb.me/thumbnail/20221027/efaefbde1f633.jpg"
 										style="display: inline;">
 										<div class="item_overlay">
@@ -156,7 +154,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<div class="shop_item"
 								style="padding: 0px 15px; height: auto; width: 341px;">
 								<div class="item_wrap" style="position: relative;">
-									<a href="#" onclick="goToWalk()" class="work_service"> <img
+									<a href="ReservationWalk.jsp" class="work_service"> <img
 										src="https://cdn.imweb.me/thumbnail/20221027/3f1e6e9249fa2.jpg"
 										style="display: inline;">
 										<div class="item_overlay">
@@ -175,8 +173,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<div class="shop_item"
 								style="padding: 0px 15px; height: auto; width: 341px;">
 								<div class="item_wrap" style="position: relative;">
-									<a href="#" onclick="goToGrooming()" class="beauty_service">
-										<img
+									<a href="ReservationGrooming.jsp" class="beauty_service"> <img
 										src="https://cdn.imweb.me/thumbnail/20211206/30b255561ebf9.jpg"
 										style="display: inline;">
 										<div class="item_overlay">

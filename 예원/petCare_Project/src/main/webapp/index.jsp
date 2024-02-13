@@ -104,7 +104,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToCommunity()">Community</a>
+							onclick="goToStore()">Store</a>
 					</div>
 				</div>
 			</div>
@@ -123,6 +123,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</div>
 		</div>
 		<div class="empty space2"></div>
+
 		<div class="class_word1">
 			<p>
 				<img
@@ -137,21 +138,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</p>
 		</div>
 		<div class="empty space2"></div>
-
-		<!-- 		<div id="fh5co-about" data-section="about">
-			<div class="fh5co-2col fh5co-bg to-animate-2"
-				style="background-image: url(images/dog_1.jpg)"></div>
-			<div class="fh5co-2col fh5co-text">
-				<h2 class="heading to-animate">고품격 프리미엄 서비스</h2>
-				<p class="to-animate">
-					<span class="firstcharacter"></span>
-
-				</p>
-				<p class="text-center to-animate">
-					<a href="About.jsp" class="btn btn-primary btn-outline">더보기</a>
-				</p>
-			</div>
-		</div> -->
 
 		<div id="fh5co-container">
 			<div class="section">
@@ -267,13 +253,16 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</li>
 							<li>
 								<blockquote>
-									<p>&ldquo;&rdquo;</p>
+									<p>&ldquo; &rdquo;</p>
 									<p class="quote-author">&mdash; 백정윤</p>
 								</blockquote>
 							</li>
 							<li>
 								<blockquote>
-									<p>&ldquo;ㅇㅇㅇ&rdquo;</p>
+									<p>
+										&ldquo;출근으로 집에 혼자 남겨진 펫이 걱정되었는데,<br> 펫시터에게 펫을 맡기고 펫시터가 펫을
+										잘 돌봐주어 만족스럽습니다. &rdquo;
+									</p>
 									<p class="quote-author">&mdash; 홍주환</p>
 								</blockquote>
 							</li>
@@ -338,6 +327,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 		<!-- 푸터푸터 영역 끝 -->
 
 		<!-- jQuery -->
+		<script src="js/index.js"></script>
 		<script src="js/index.js"></script>
 		<script src="js/login.js"></script>
 		<script src="js/jquery.min.js"></script>

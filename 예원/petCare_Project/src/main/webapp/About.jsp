@@ -108,11 +108,11 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+							onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -384,20 +384,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	</div>
 	<!-- 푸터푸터 영역 끝 -->
 
-
-	<script>
-		function performLogout() {
-			// 여기에 로그아웃 처리 로직을 추가할 수 있습니다.
-			// 예를 들어, AJAX 요청을 사용하여 서버에 로그아웃 요청을 보낼 수 있습니다.
-			// 또는 간단하게 location.href를 사용하여 로그아웃 링크로 이동할 수도 있습니다.
-
-			// 아래는 간단한 예시입니다.
-			var confirmLogout = confirm("로그아웃하시겠습니까?");
-			if (confirmLogout) {
-				location.href = "logout.do"; // 로그아웃 처리를 수행하는 서블릿 매핑 경로로 수정
-			}
-		}
-	</script>
 
 	<script src="js/index.js"></script>
 	<script src="js/about.js"></script>

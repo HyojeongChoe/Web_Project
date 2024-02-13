@@ -80,11 +80,11 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+							onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -121,7 +121,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					onclick="openFindPwPage()" target="_blank">비밀번호 찾기</a>
 			</form>
 		</div>
-	</div>
+	</div> 
 	<script>
 	var loginError = '<%=request.getParameter("loginError")%>';
 		if (loginError === "true") {

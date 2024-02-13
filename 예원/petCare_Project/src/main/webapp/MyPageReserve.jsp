@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- JSTL 사용시 필수 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -38,9 +37,7 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 <html lang="en">
 <head>
 <link rel="shortcut icon" href="favicon.ico">
-<link
-	href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
-	rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css">
 <!-- Icomoon Icon Fonts -->
@@ -74,22 +71,14 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 							if (loggedInUserId == null || loggedInUserId.equals("")) {
 							%>
 							<!-- 로그인 상태가 아닌 경우 -->
-							<li class="join"><a href="#" id="JoinButton"
-								style="background-color: white; border: 0;"
-								onclick="openSignUpPage()">SignUp</a></li>
-							<li class="login"><a href="#" id="loginButton"
-								style="background-color: white; border: 0;"
-								onclick="openLoginPage()">Login</a></li>
+							<li class="join"><a href="#" id="JoinButton" style="background-color: white; border: 0;" onclick="openSignUpPage()">SignUp</a></li>
+							<li class="login"><a href="#" id="loginButton" style="background-color: white; border: 0;" onclick="openLoginPage()">Login</a></li>
 							<%
 							} else {
 							%>
 							<!-- 로그인 상태인 경우 -->
-							<li class="logout"><a href="#" id="logoutButton"
-								style="background-color: white; border: 0;"
-								onclick="performLogout()">Logout</a></li>
-							<li class="mypage"><a href="#" id="mypageButton"
-								style="background-color: white; border: 0;"
-								onclick="openMyPageReserve()">MyPage</a></li>
+							<li class="logout"><a href="#" id="logoutButton" style="background-color: white; border: 0;" onclick="performLogout()">Logout</a></li>
+							<li class="mypage"><a href="#" id="mypageButton" style="background-color: white; border: 0;" onclick="openMyPageReserve()">MyPage</a></li>
 							<%
 							}
 							%>
@@ -98,15 +87,15 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 				</div>
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
-						<a href="#" onclick="goToIndex()">Home</a> <a href="#"
-							onclick="goToAbout()">About</a>
+						<a href="#" onclick="goToIndex()">Home</a>
+						<a href="#" onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+						<a href="#" onclick="goToService()">Service</a>
+						<a href="#" onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -122,31 +111,39 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 			</div>
 			<div class="mypage_title">마이 예약</div>
 			<ul class="my_reserve">
-				<li class="mypage_menu"><a href="#"
-					onclick="openMyPageReserve()">예약내역확인</a></li>
+				<li class="mypage_menu"><a href="#" onclick="openMyPageReserve()">예약내역확인</a></li>
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보
-						수정</a></li>
-				<li class="mypage_menu">회원 탈퇴</li>
+				<li class="mypage_menu"><a href="MyPagePw.jsp">개인정보 수정</a></li>
+				<li class="mypage_menu"><a href="MyPageDelete.jsp">회원 탈퇴</a></li>
 			</ul>
 		</div>
 		<!-- 예약내역 페이지 상단 -->
 		<div class="desktop_reserve">
-			<span class=image_logo><img
-				src="images/free-icon-dog-3843277.png" id="reserve_logo" /></span>
+			<span class=image_logo><img src="images/free-icon-dog-3843277.png" id="reserve_logo" /></span>
 			<div class="reserve_line"></div>
 			<div class="reserve_div">
 				<!-- 예약내역 출력 공간 -->
 				<form action="deleteReserve.do" method="post">
 					<div class="reservaiton">
-						<h2>예약 내역</h2>
+						<div class="reserve_title">
+							<h1>예약내역</h1>
+							<p>멍뚱냥뚱에서 예약한 내역들을 확인해 볼 수 있는 공간입니다.</p>
+						</div>
+						<div class="reserve_message">
+							<p>※ 예약 취소 안내사항 ※</p>
+							<p>예약 취소는 예약일을 기준으로 이틀 전까지 가능합니다.</p>
+							<p>예약 수정을 원하시는 경우 DM으로 문의하여 주시기 바랍니다.</p>
+							<p>예약 시 참고하시어 이용에 착오 없으시기 바랍니다.</p>
+						</div>
 						<hr>
 						<table class="reservation_table" border="1">
 							<thead>
 								<tr>
-									<th scope="col" class="reservation_check"></th>
+									<th scope="col" class="reservation_check">
+										<input type="checkbox" id="selectAllCheckbox" class="reserve_checkbox" />
+									</th>
 									<th scope="col">예약날짜</th>
 									<th scope="col">서비스 종류</th>
 									<th scope="col">이용시간</th>
@@ -161,11 +158,7 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 								<c:forEach items="${list}" var="value" varStatus="loop">
 									<!-- list :: DTO의 멤버 이름으로 값을 불러와야 한다-->
 									<tr class="${loop.index % 2 == 0 ? 'even' : 'odd'}">
-										<td><input type="checkbox" id="checkbox_${loop.index}"
-											name="reserve_checkbox" class="reserve_checkbox"
-											data-date="${value.date}" data-service="${value.service}"
-											data-time="${value.time}" data-grooming="${value.grooming}"
-											data-pet="${value.pet}" data-cost="${value.cost}" /></td>
+										<td><input type="checkbox" id="checkbox_${loop.index}" name="reserve_checkbox" class="reserve_checkbox" data-date="${value.date}" data-service="${value.service}" data-time="${value.time}" data-grooming="${value.grooming}" data-pet="${value.pet}" data-cost="${value.cost}" /></td>
 										<td>${value.date}</td>
 										<td>${value.service}</td>
 										<td>${value.time}</td>
@@ -221,8 +214,7 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 
 						<!-- 예약 취소하기 버튼 영역 -->
 						<div class="box_btn">
-							<button type="button" onclick="deleteSelectedReservations()"
-								style="font-size: 16px;">예약 취소하기</button>
+							<button type="button" onclick="deleteSelectedReservations()" style="font-size: 16px;">예약 취소하기</button>
 						</div>
 
 					</div>
@@ -307,6 +299,31 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 				alert('취소할 예약을 선택해주세요.');
 			}
 		}
+
+		// 전체 선택 체크박스의 클릭 이벤트 처리
+		document.getElementById('selectAllCheckbox').addEventListener('click', function() {
+    		var checkboxes = document.querySelectorAll('.reserve_checkbox');
+
+    		checkboxes.forEach(function(checkbox) {
+        		checkbox.checked = document.getElementById('selectAllCheckbox').checked;
+    		});
+		});
+
+		// 각각의 예약 항목 체크박스의 클릭 이벤트 처리
+		document.querySelectorAll('.reserve_checkbox').forEach(function(checkbox) {
+    		checkbox.addEventListener('click', function() {
+        		var checkboxes = document.querySelectorAll('.reserve_checkbox');
+        		var allChecked = true;
+
+        		checkboxes.forEach(function(checkbox) {
+            		if (!checkbox.checked) {
+                		allChecked = false;
+            		}
+        		});
+
+        		document.getElementById('selectAllCheckbox').checked = allChecked;
+    		});
+		});
 	</script>
 
 	<script src="js/index.js"></script>

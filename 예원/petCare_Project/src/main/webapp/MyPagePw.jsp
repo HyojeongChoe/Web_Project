@@ -71,11 +71,11 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+							onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -95,7 +95,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보
+				<li class="mypage_menu"><a href="MyPagePw.jsp">개인정보
 						수정</a></li>
 				<li class="mypage_menu"><a href="MyPageDelete.jsp">회원 탈퇴</a></li>
 			</ul>
@@ -106,6 +106,11 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 					<span class=image_logo><img
 						src="images/free-icon-dog-3843277.png" id="pw_logo" /></span>
 					<div class="pw_line"></div>
+					<div class="pw_title">
+						<h1>개인정보수정</h1>
+						<h3>고객님의 안전한 정보보호를 위하여 비밀번호를 다시한번 확인합니다.<br>
+						비밀번호가 타인에게 노출되지 않도록 주의하여 주세요.</h3>
+					</div>
 					<div class="form_input_pw">
 						<input type="password" id="input_pw" name="input_pw"
 							placeholder="비밀번호를 입력해주세요." />

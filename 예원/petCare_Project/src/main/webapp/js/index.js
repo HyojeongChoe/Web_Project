@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function() {	/* 추천 섹션 서서히 나타나기 효과 */
+	// 페이지가 로드될 때 실행되는 함수
+	var mainElement = document.querySelector('.inside');
+
+	// mainElement에 show 클래스 추가
+	mainElement.classList.add('show');
+});
+
 //index.jsp / Home.jsp로
 function goToIndex() {
 	window.location.href = "index.jsp";
@@ -10,13 +18,9 @@ function goToAbout() {
 function goToService() {
 	window.location.href = "Service.jsp";
 }
-//Comunity.jsp로
-function goToCommunity() {
-	window.location.href = "Community.jsp";
-}
-//Reservation.jsp로(예약페이지 다 만들고 삭제해야함)
-function goToReservation() {
-	window.location.href = "Reservation.jsp";
+//Store.jsp로
+function goToStore() {
+	window.location.href = "Store.jsp";
 }
 //ReservationCare.jsp로
 function goToCare() {
@@ -82,36 +86,35 @@ var goToMain = function() {
 	});
 };
 
-/* 홈 화면 바로가기 버튼 나타나기 효과(Home, About) */
+/* 홈 화면 바로가기 버튼 나타나기 효과(Home, About, store) */
 document.addEventListener('DOMContentLoaded', function() {	// 페이지 로딩 시에 이벤트 리스너 등록
-    // 홈 화면 바로가기 버튼 요소 가져오기
-    var goToMainButton = document.querySelector('.js-gotomain');
-    console.log(goToMainButton);
+	// 홈 화면 바로가기 버튼 요소 가져오기
+	var goToMainButton = document.querySelector('.js-gotomain');
 
-    // 스크롤 이벤트 리스너 등록
-    window.addEventListener('scroll', function() {
-        // 현재 스크롤 위치 가져오기
-        var scrollY = window.scrollY || window.pageYOffset;
+	// 스크롤 이벤트 리스너 등록
+	window.addEventListener('scroll', function() {
+		// 현재 스크롤 위치 가져오기
+		var scrollY = window.scrollY || window.pageYOffset;
 
-        // 스크롤 위치가 일정 이상이면 버튼 표시, 아니면 숨김
-        if (scrollY > 100) {  // 스크롤 100px 이상으로 이동했을 때
-            goToMainButton.style.opacity = 1;
-        } else {
-            goToMainButton.style.opacity = 0;
-        }
-    });
+		// 스크롤 위치가 일정 이상이면 버튼 표시, 아니면 숨김
+		if (scrollY > 100) {  // 스크롤 100px 이상으로 이동했을 때
+			goToMainButton.style.opacity = 1;
+		} else {
+			goToMainButton.style.opacity = 0;
+		}
+	});
 
-    // 페이지 로딩 시 초기 상태로 숨김
-    goToMainButton.style.opacity = 0;
+	// 페이지 로딩 시 초기 상태로 숨김
+	goToMainButton.style.opacity = 0;
 });
 /* 홈 화면 바로가기 버튼 나타나기 효과(Service) */
 document.addEventListener('DOMContentLoaded', function() {
-    var goToMainButton = document.querySelector('.js-gotomain_service');
+	var goToMainButton = document.querySelector('.js-gotomain_service');
 
-    // 페이지 로딩 시 초기 상태로 표시
-    if (goToMainButton) {
-        goToMainButton.style.opacity = 1;
-    }
+	// 페이지 로딩 시 초기 상태로 표시
+	if (goToMainButton) {
+		goToMainButton.style.opacity = 1;
+	}
 });
 
 /* 예원 추가 부분 끝 ↑↑↑ */
@@ -121,29 +124,39 @@ let prev_btn = document.getElementById('prev');
 let next_btn = document.getElementById('next');
 let imgs = document.querySelectorAll('#slides img');
 let img_num = 0;
-showimg(img_num);
 
-prev_btn.onclick = function() {
-	img_num--;
-	if (img_num < 0) {
-		img_num = 3;
-	}
-	showimg(img_num)
+if (imgs.length > 0) { // 이미지가 있는 경우에만 실행
+	showimg(img_num);
+
+	prev_btn.onclick = function() {
+		img_num--;
+		if (img_num < 0) {
+			img_num = 3;
+		}
+		showimg(img_num)
+	};
+
+	next_btn.onclick = function() {
+		img_num++;
+		if (img_num > 3) {
+			img_num = 0;
+		}
+		showimg(img_num)
+	};
+
+	// 이미지를 자동으로 변경
+	setInterval(function() {
+		img_num++;
+		if (img_num > 3) {
+			img_num = 0;
+		}
+		showimg(img_num);
+	}, 2500);
 }
-next_btn.onclick = function() {
-	img_num++;
-	if (img_num > 3) {
-		img_num = 0;
-	}
-	showimg(img_num)
-}
+
 function showimg(n) {
 	for (let i = 0; i < imgs.length; i++) {
 		imgs[i].style.display = "none";
 	}
-	imgs[n].style.display = "block"
+	imgs[n].style.display = "block";
 }
-setInterval(prev_btn.onclick, 2500);
-
-
-

@@ -88,11 +88,11 @@ if (loggedInUserId != null) {
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+							onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -111,7 +111,7 @@ if (loggedInUserId != null) {
 			</ul>
 			<div class="mypage_title">마이 정보</div>
 			<ul class="my_inform">
-				<li class="mypage_menu"><a href="#" onclick="openMyPagePw()">개인정보
+				<li class="mypage_menu"><a href="MyPagePw.jsp">개인정보
 						수정</a></li>
 				<li class="mypage_menu"><a href="MyPageDelete.jsp">회원 탈퇴</a></li>
 			</ul>
@@ -122,6 +122,8 @@ if (loggedInUserId != null) {
 					<span class=image_logo><img
 						src="images/free-icon-dog-3843277.png" id="edit_logo" /></span>
 					<div class="edit_line"></div>
+					<div class="edit_detail">
+					<h4>소중한 내 정보를 최신으로 관리하세요.</h4></div>
 					<ul>
 						<!-- listUserInfo에서 가져온 개인정보를 출력하는 부분 -->
 						<!--  아이디 -->

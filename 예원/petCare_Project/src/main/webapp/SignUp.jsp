@@ -79,11 +79,11 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							onclick="goToAbout()">About</a>
 					</div>
 					<div class="fh5co-logo">
-						<a href="#" onclick="goToIndex()">foodee</a>
+						<a href="#" onclick="goToIndex()">멍뚱냥뚱</a>
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" onclick="goToService()">Service</a> <a href="#"
-							onclick="goToReservation()">Community</a>
+							onclick="goToStore()">Store</a>
 						<!-- 수정필요. -->
 					</div>
 				</div>
@@ -193,8 +193,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							<span> <input type="text" id="email1" name="email1"
 								placeholder="이메일 입력하세요" oninput="checkEmail()"> <a
 								id="and">@ </a> <input type="text" id="email2" name="email2"
-								 oninput="checkEmail()" /> <select
-								id="domainSelect" name="email2">
+								oninput="checkEmail()" /> <select id="domainSelect"
+								name="email2">
 									<option>직접입력</option>
 									<option value="naver.com">naver.com</option>
 									<option value="kakao.com">kakao.com</option>
@@ -230,9 +230,8 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="js/signup.js"></script>
-	</div>
-	<!-- jQuery -->
 	<script src="js/index.js"></script>
+	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
