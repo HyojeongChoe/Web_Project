@@ -19,7 +19,6 @@ public class userServiceDeleteReserve implements userService {
 			// Request Body에서 JSON 데이터 읽기
 			ObjectMapper objectMapper = new ObjectMapper();
 			userDTO[] reservationsArray = objectMapper.readValue(request.getReader(), userDTO[].class);
-
 			// 각 예약 삭제 처리
 			for (userDTO reservation : reservationsArray) {
 				String date = reservation.getDate();
@@ -28,16 +27,13 @@ public class userServiceDeleteReserve implements userService {
 				String grooming = reservation.getGrooming();
 				String pet = reservation.getPet();
 				String cost = reservation.getCost();
-				
 				// 디버깅
 				System.out.println("삭제된 내역: " + date + ", " + service + 
 						", " + time + ", " + grooming + ", " + pet + ", " + cost);
-
 				// DAO를 통해 예약 삭제
 				userDAO dao = new userDAO();
 				dao.userDeleteReserve(date, service, time, grooming, pet, cost);
 			}
-
 			// 예약 삭제 후 이동할 페이지
 			response.sendRedirect("MyPageReserve.jsp");
 			

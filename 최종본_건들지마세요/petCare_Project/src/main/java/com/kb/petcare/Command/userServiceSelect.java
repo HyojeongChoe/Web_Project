@@ -58,7 +58,6 @@ public class userServiceSelect implements userService, paginationService {
             return new ArrayList<userDTO>();
         }
 	}
-
 	// 추가: 전체 항목 수를 반환하는 메서드
 	@Override
 	public int getTotalItems(String id) {

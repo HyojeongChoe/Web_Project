@@ -29,16 +29,6 @@ public class userServiceUpdateUserInfo implements userService {
 				request.getParameter("mobile1"),
 				request.getParameter("mobile2"),
 				request.getParameter("mobile3"));
-
-		// 디버깅용
-				System.out.println("Name: " + upName);
-				System.out.println("ID: " + Id);
-				System.out.println("Password: " + upPw);
-				System.out.println("Email: " + upEmail);
-				System.out.println("Address: " + upAddr);
-				System.out.println("Birth: " + upBirth);
-				System.out.println("Mobile: " + upMobile);
-
 		 // 사용자 정보 업데이트
 	    dao.updateUserInfo(upName, Id, upPw, upEmail, upAddr, upBirth, upMobile);
 

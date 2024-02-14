@@ -154,10 +154,12 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 						<table class="reservation_table" border="1">
 							<thead>
 								<tr>
-									<th scope="col" class="reservation_check"></th>
-									<th scope="col">예약날짜</th>
+									<th scope="col" class="reservation_check"><input
+										type="checkbox" id="selectAllCheckbox"
+										class="reserve_checkbox" /></th>
+									<th scope="col">예약 날짜</th>
 									<th scope="col">서비스 종류</th>
-									<th scope="col">이용시간</th>
+									<th scope="col">이용 시간</th>
 									<th scope="col">미용 종류</th>
 									<th scope="col">반려동물</th>
 									<th scope="col">비용</th>
@@ -191,18 +193,15 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 							int pageRange = 7;
 							int startPage = Math.max(1, currentPage - pageRange / 2);
 							int endPage = Math.min(totalPages, startPage + pageRange - 1);
-
 							int firstPage = 1;
 							int lastPage = totalPages;
 
 							// 처음으로 가기 버튼
 							out.println("<a href='MyPageReserve.jsp?page=" + firstPage + "' class='paging-btn'>&lt;&lt;</a>");
-
 							// 이전 페이지로 가기 버튼
 							if (currentPage > 1) {
 								out.println("<a href='MyPageReserve.jsp?page=" + (currentPage - 1) + "' class='paging-btn'>&lt;</a>");
 							}
-
 							// 페이지 번호 표시
 							for (int i = firstPage; i <= lastPage; i++) {
 								if (i == currentPage) {
@@ -216,17 +215,14 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 									out.println("<a href='MyPageReserve.jsp?page=" + lastPage + "' class='paging-btn'>" + lastPage + "</a>");
 								}
 							}
-
 							// 다음 페이지로 가기 버튼
 							if (currentPage < totalPages) {
 								out.println("<a href='MyPageReserve.jsp?page=" + (currentPage + 1) + "' class='paging-btn'>&gt;</a>");
 							}
-
 							// 마지막으로 가기 버튼
 							out.println("<a href='MyPageReserve.jsp?page=" + lastPage + "' class='paging-btn'>&gt;&gt;</a>");
 							%>
 						</div>
-
 						<!-- 예약 취소하기 버튼 영역 -->
 						<div class="box_btn">
 							<button type="button" onclick="deleteSelectedReservations()"
@@ -239,83 +235,6 @@ ArrayList<userDTO> result = paginationService.executePaging(request, response, o
 			</div>
 		</div>
 	</div>
-
-
-	<script>
-		/* 현재 날짜를 구하는 함수 */
-		function getCurrentDate() {
-			var now = new Date();
-			now.setHours(0, 0, 0, 0); // 시간은 상관 없으므로 전부 0으로 설정
-			return now;
-		}
-
-		/* 체크박스를 여러 개 선택하고 삭제 버튼을 눌렀을 때, 선택된 예약 정보를 서버로 어떻게 전송할 것인지에 대한 로직 */
-		function deleteSelectedReservations() {
-			var checkboxes = document
-					.querySelectorAll('.reserve_checkbox:checked');
-			var selectedReservations = []; // 정보(내역) 담을 배열
-			var currentDate = getCurrentDate(); // 현재 날짜 가져오기
-			var containsInvalidReservation = false; // 예약 날짜 조건(이틀 여유)
-
-			checkboxes.forEach(function(checkbox) {
-				var reservation = {
-					date : checkbox.dataset.date,
-					service : checkbox.dataset.service,
-					time : checkbox.dataset.time,
-					grooming : checkbox.dataset.grooming,
-					pet : checkbox.dataset.pet,
-					cost : checkbox.dataset.cost
-				};
-
-				// 예약 날짜와 현재 날짜를 비교하여 이미 지난 예약인지 확인
-				var reservationDate = new Date(reservation.date);
-
-				if (reservationDate < currentDate) {
-					// 이미 지난 예약일 경우
-					containsInvalidReservation = true;
-				} else {
-					// 예약 날짜와 현재 날짜를 비교하여 이틀 이상 여유가 있는지 확인
-					var twoDaysLater = new Date();
-					twoDaysLater.setDate(twoDaysLater.getDate() + 2);
-
-					if (reservationDate < twoDaysLater) {
-						// 예약 날짜가 이틀 이상 여유가 없는 경우
-						containsInvalidReservation = true;
-					} else {
-						// 예약 날짜가 이틀 이상 여유가 있는 경우(삭제 진행)
-						selectedReservations.push(reservation);
-					}
-				}
-			});
-
-			if (containsInvalidReservation) {
-				// 이미 지난 내역이거나 && 이틀 이상 여유가 없는 내역일 경우 알림창
-				alert('취소할 수 없는 내역이 포함되어 있습니다.');
-			} else if (selectedReservations.length > 0) {
-				// 배열에 정보가 담겼다면(길이가 0초과라면)
-				// Ajax를 사용하여 서버로 선택된 예약 정보 전송
-				var xhr = new XMLHttpRequest();
-				xhr.open('POST', 'deleteReserve.do', true);
-				xhr.setRequestHeader('Content-Type', 'application/json');
-				xhr.onreadystatechange = function() {
-					if (xhr.readyState === 4) {
-						if (xhr.status === 200) {
-							// 서버 응답이 성공인 경우
-							window.location.reload(); // 페이지 새로고침
-							alert('예약을 취소하였습니다.');
-						} else {
-							// 서버 응답이 실패인 경우
-							alert('예약 취소에 실패했습니다.');
-						}
-					}
-				};
-				xhr.send(JSON.stringify(selectedReservations));
-			} else {
-				// 선택된 예약이 없는 경우
-				alert('취소할 예약을 선택해주세요.');
-			}
-		}
-	</script>
 
 	<script src="js/index.js"></script>
 	<script src="js/mypage.js"></script>

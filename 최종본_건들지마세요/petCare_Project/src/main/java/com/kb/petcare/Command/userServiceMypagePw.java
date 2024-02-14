@@ -23,12 +23,9 @@ public class userServiceMypagePw implements userService {
 			// 로그인한 사용자의 아이디 가져오기
 			String loggedInUserId = sessionManager.getLoggedInUserId(request);
 			System.out.println("마이페이지아이디:" + loggedInUserId);
-			// userDAO 객체 생성
 			userDAO dao = new userDAO();
-
 			// 데이터베이스에서 저장된 비밀번호 가져오기
 			String storedPassword = dao.getPasswordForUser(loggedInUserId);
-
 			// 비밀번호 비교
 			if (enteredPassword.equals(storedPassword)) {
 				// 비밀번호 일치 시 MyPageEdit.jsp로 이동
