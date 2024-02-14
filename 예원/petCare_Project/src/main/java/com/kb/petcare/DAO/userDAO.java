@@ -399,7 +399,7 @@ public class userDAO {
 			ps = conn.prepareStatement(query);
 			ps.setString(1, id);
 			ps.setInt(2, offset);
-			ps.setInt(3, itemsPerPage);
+			ps.setInt(3, itemsPerPage);			
 			rs = ps.executeQuery();
 
 			while (rs.next()) {

@@ -97,7 +97,7 @@ public class commandController extends HttpServlet {
 		} else if (command.equals("/mypagecheckpw.do")) {
 			System.out.println("<마이페이지 비밀번호확인> 수행");
 			uService = new userServiceMypagePw();
-		}else if (command.equals("/selectuserinfo.do")) {
+		} else if (command.equals("/selectuserinfo.do")) {
 			System.out.println("<개인정보>를 출력합니다.");
 			uService = new userServiceSelectUserInfo();
 
@@ -112,15 +112,15 @@ public class commandController extends HttpServlet {
 			System.out.println("<개인정보 수정> 수행");
 			uService = new userServiceUpdateUserInfo();
 			uService.execute(request, response);
-			
+
 			// 업데이트 후 새로운 정보를 포함하는 페이지로 이동
 			RequestDispatcher dispatcher = request.getRequestDispatcher("MyPageEdit.jsp");
 			dispatcher.forward(request, response);
 			return;
-		} else if(command.equals("/delete.do")) {//회원 삭제 요청할 시
+		} else if (command.equals("/delete.do")) {// 회원 삭제 요청할 시
 			System.out.println("<회원 삭제>를 수행합니다.");
 			uService = new userServiceDelete();
-		}else if (command.equals("/reserve1.do")) {
+		} else if (command.equals("/reserve1.do")) {
 			System.out.println("<예약하기> 수행");
 			uService = new userServiceReserve1();
 		} else if (command.equals("/reserve2.do")) {
@@ -129,45 +129,19 @@ public class commandController extends HttpServlet {
 		} else if (command.equals("/select.do")) {
 			System.out.println("<예약내역 출력>을 수행합니다.");
 			uService = new userServiceSelect();
-
-			// 페이지 번호를 가져오기
-			String pageStr = request.getParameter("page");
-			// 삼항 연산자 :: 페이지 번호 설정 (값이 없으면 기본으로 1페이지)
-			int page = (pageStr != null) ? Integer.parseInt(pageStr) : 1;
-
-			// 페이지당 보여줄 항목 수 설정
-			int itemsPerPage = 10;
-
-			// 페이징 처리를 위한 데이터를 가져오기
-			pService = (paginationService) uService;
-
-			// 전체 항목 수를 로그인한 사용자의 ID를 기반으로 가져옴
-			HttpSession session = request.getSession();
-			String userId = (String) session.getAttribute("loggedInUserId");
-			int totalItems = pService.getTotalItems(userId);
-
-			// 페이징 처리를 위해 필요한 데이터 설정
-			int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage);
-			int offset = (page - 1) * itemsPerPage;
-
-			// 예약내역 가져오기 :: select.do(예약내역 출력)가 실행될 때는, result로 실질적인 값이 반환될 것
-			ArrayList<userDTO> result = pService.executePaging(request, response, offset, itemsPerPage);
-
-			if (result != null) { // 결과값이 null이 아닐 경우
-				// request 객체에 결과값과 페이징 정보 등을 속성으로 추가
-				request.setAttribute("list", result);
-				request.setAttribute("currentPage", page);
-				request.setAttribute("totalPages", totalPages);
-
+			// 페이징 처리를 위한 서비스 객체(메서드)를 가져오기
+			pService = (paginationService) uService;			
+			ArrayList<userDTO> result = pService.executePaging(request, response);
+			
+			if (result != null) {				
 				// View 역할(RequestDispatcher 사용) :: MyPageReserve.jsp로 결과값과 함께 이동
 				RequestDispatcher dis = request.getRequestDispatcher("/MyPageReserve.jsp");
 				dis.forward(request, response);
 			}
 			return;
-		}
-		else if (command.equals("/deleteReserve.do")) {
-		    System.out.println("<예약내역 삭제>를 수행합니다.");
-		    uService = new userServiceDeleteReserve();
+		} else if (command.equals("/deleteReserve.do")) {
+			System.out.println("<예약내역 삭제>를 수행합니다.");
+			uService = new userServiceDeleteReserve();
 		}
 		uService.execute(request, response);
 

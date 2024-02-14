@@ -31,7 +31,7 @@ int totalPages = paginationService.getTotalPages(totalItems, itemsPerPage);
 int offset = (currentPage - 1) * itemsPerPage;
 
 // 예약내역 가져오기
-ArrayList<userDTO> result = paginationService.executePaging(request, response, offset, itemsPerPage);
+ArrayList<userDTO> result = paginationService.executePaging(request, response);
 %>
 
 <!DOCTYPE html>
