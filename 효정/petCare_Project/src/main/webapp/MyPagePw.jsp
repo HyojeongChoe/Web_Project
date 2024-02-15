@@ -125,6 +125,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 	</div>
 	<script src="js/index.js"></script>
 	<script src="js/mypage.js"></script>
+	
 	<script>
 		function EditUser() {
 			var password = document.getElementById("input_pw").value;

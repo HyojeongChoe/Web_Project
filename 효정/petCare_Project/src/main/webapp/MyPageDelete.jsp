@@ -148,7 +148,6 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 						var response = xhr.responseText;
 						if (response === "success") {
 							alert("탈퇴가 완료되었습니다..");
-							/* 							window.location.href = "index.jsp"; // 페이지 이동 */
 						} else if (response === "fail") {
 							alert("비밀번호를 확인해주세요.");
 						} else {

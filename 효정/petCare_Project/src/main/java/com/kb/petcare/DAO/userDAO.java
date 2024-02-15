@@ -307,11 +307,9 @@ public class userDAO {
 	public ArrayList<userDTO> userSelect(String id) {
 		// 결과값 담을 배열
 		ArrayList<userDTO> result = new ArrayList<userDTO>();
-
 		conn = null;
 		ps = null;
 		rs = null;
-
 		try {
 			conn = ds.getConnection();
 
@@ -319,18 +317,14 @@ public class userDAO {
 			ps = conn.prepareStatement(query);
 			ps.setString(1, id);
 			rs = ps.executeQuery();
-
-			while (rs.next()) { // rs.next() :: 결과값 하나씩 확인하며 돈다
+			while (rs.next()) { 
 				userDTO element = new userDTO();
-
 				element.setDate(rs.getString("date"));
 				element.setService(rs.getString("service"));
 				element.setTime(rs.getString("time"));
 				element.setGrooming(rs.getString("grooming"));
 				element.setPet(rs.getString("pet"));
 				element.setCost(rs.getString("cost"));
-
-				// element 객체에 데이터 한 묶음씩 저장
 				result.add(element);
 			}
 		} catch (Exception e) {
@@ -351,15 +345,16 @@ public class userDAO {
 	}
 
 	// 예약내역 삭제
-	public void userDeleteReserve(String date, String service, String time, String grooming, String pet, String cost) {
+	public void userDeleteReserve(String date, String service, String time, 
+			String grooming, String pet, String cost) {
 		conn = null;
 		ps = null;
 		rs = null;
-
 		try {
 			conn = ds.getConnection();
 
-			String query = "DELETE FROM reserve WHERE date=? AND service=? AND time=? AND grooming=? AND pet=? AND cost=?";
+			String query = "DELETE FROM reserve WHERE date=? AND service=? "
+					+ "AND time=? AND grooming=? AND pet=? AND cost=?";
 			ps = conn.prepareStatement(query);
 			ps.setString(1, date);
 			ps.setString(2, service);
@@ -386,14 +381,11 @@ public class userDAO {
 	// 추가: 페이징을 위한 메서드
 	public ArrayList<userDTO> userSelectPaging(String id, int offset, int itemsPerPage) {
 		ArrayList<userDTO> result = new ArrayList<userDTO>();
-
 		conn = null;
 		ps = null;
 		rs = null;
-
 		try {
 			conn = ds.getConnection();
-
 			// OFFSET과 LIMIT을 사용하여 페이징 처리 및 로그인한 사용자와 관련된 정보만 조회
 			String query = "SELECT * FROM reserve WHERE id = ? ORDER BY date DESC LIMIT ?, ?";
 			ps = conn.prepareStatement(query);
@@ -401,7 +393,6 @@ public class userDAO {
 			ps.setInt(2, offset);
 			ps.setInt(3, itemsPerPage);
 			rs = ps.executeQuery();
-
 			while (rs.next()) {
 				userDTO element = new userDTO();
 
@@ -440,9 +431,6 @@ public class userDAO {
 		rs = null;
 
 		try {
-			// Connection 획득
-			Context context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/mysql");
 			conn = ds.getConnection();
 
 			// COUNT를 사용하여 특정 사용자의 예약 행 수를 가져옴
@@ -509,11 +497,11 @@ public class userDAO {
 	// 회원정보 출력
 	public ArrayList<userDTO> selectUserInfo(String userId) {
 		// 결과값 담을 배열
-		ArrayList<userDTO> result = new ArrayList<userDTO>();
-		ps = null;
-		conn = null;
+		ps = null; 
+		conn = null; 
 		rs = null;
-
+		
+		ArrayList<userDTO> result = new ArrayList<userDTO>();
 		try {
 			conn = ds.getConnection();
 
@@ -521,10 +509,8 @@ public class userDAO {
 			ps = conn.prepareStatement(query);
 			ps.setString(1, userId);
 			rs = ps.executeQuery();
-
 			while (rs.next()) { // rs.next() :: 결과값 하나씩 확인하며 돈다
 				userDTO element = new userDTO();
-
 				element.setName(rs.getString("name"));
 				element.setId(rs.getString("id"));
 				element.setPw(rs.getString("pw"));
@@ -573,16 +559,14 @@ public class userDAO {
 	}
 
 	// 사용자 정보 업데이트 메서드
-	public void updateUserInfo(String name, String userid, String pw, String email, String addr, String birth,
-			String mobile) {
+	public void updateUserInfo(String name, String userid, String pw, 
+			String email, String addr, String birth, String mobile) {
 		conn = null;
 		ps = null;
-
 		try {
 			conn = ds.getConnection();
-
-			// 사용자 정보 업데이트 SQL 쿼리
-			String query = "UPDATE user SET name=?, pw=?, " + "email=?, addr=?, birth=?, mobile=? WHERE id=?";
+			String query = "UPDATE user SET name=?, pw=?, " + "email=?,"
+					+ " addr=?, birth=?, mobile=? WHERE id=?";
 
 			ps = conn.prepareStatement(query);
 			ps.setString(1, name);

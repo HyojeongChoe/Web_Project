@@ -129,37 +129,11 @@ public class commandController extends HttpServlet {
 		} else if (command.equals("/select.do")) {
 			System.out.println("<예약내역 출력>을 수행합니다.");
 			uService = new userServiceSelect();
-
-			// 페이지 번호를 가져오기
-			String pageStr = request.getParameter("page");
-			// 삼항 연산자 :: 페이지 번호 설정 (값이 없으면 기본으로 1페이지)
-			int page = (pageStr != null) ? Integer.parseInt(pageStr) : 1;
-
-			// 페이지당 보여줄 항목 수 설정
-			int itemsPerPage = 10;
-
-			// 페이징 처리를 위한 데이터를 가져오기
-			pService = (paginationService) uService;
-
-			// 전체 항목 수를 로그인한 사용자의 ID를 기반으로 가져옴
-			HttpSession session = request.getSession();
-			String userId = (String) session.getAttribute("loggedInUserId");
-			int totalItems = pService.getTotalItems(userId);
-
-			// 페이징 처리를 위해 필요한 데이터 설정
-			int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage);
-			int offset = (page - 1) * itemsPerPage;
-
-			// 예약내역 가져오기 :: select.do(예약내역 출력)가 실행될 때는, result로 실질적인 값이 반환될 것
-			ArrayList<userDTO> result = pService.executePaging(request, response, offset, itemsPerPage);
-
-			if (result != null) { // 결과값이 null이 아닐 경우
-				// request 객체에 결과값과 페이징 정보 등을 속성으로 추가
-				request.setAttribute("list", result);
-				request.setAttribute("currentPage", page);
-				request.setAttribute("totalPages", totalPages);
-
-				// View 역할(RequestDispatcher 사용) :: MyPageReserve.jsp로 결과값과 함께 이동
+			// 페이징 처리를 위한 서비스 객체(메서드)를 가져오기
+			pService = (paginationService) uService;			
+			ArrayList<userDTO> result = pService.executePaging(request, response);
+			
+			if (result != null) {				
 				RequestDispatcher dis = request.getRequestDispatcher("/MyPageReserve.jsp");
 				dis.forward(request, response);
 			}

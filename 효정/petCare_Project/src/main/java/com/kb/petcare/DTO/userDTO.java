@@ -31,7 +31,6 @@ public class userDTO {
 	private String addr3;
 	private String addr4;
 	
-	
 	// getter,setter
 	public String getName() {
 		return name;

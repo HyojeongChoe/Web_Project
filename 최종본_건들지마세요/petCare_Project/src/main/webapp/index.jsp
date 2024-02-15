@@ -253,7 +253,7 @@ String loggedInUserId = sessionManager.getLoggedInUserId(request);
 							</li>
 							<li>
 								<blockquote>
-									<p>&ldquo; &rdquo;</p>
+									<p>&ldquo;개팔자가 상팔자라 다음엔 제가 강아지로 태어나서 꼭 케어를 받고 싶어요..!!! &rdquo;</p>
 									<p class="quote-author">&mdash; 백정윤</p>
 								</blockquote>
 							</li>

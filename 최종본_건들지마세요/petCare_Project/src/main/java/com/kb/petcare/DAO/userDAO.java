@@ -381,11 +381,9 @@ public class userDAO {
 	// 추가: 페이징을 위한 메서드
 	public ArrayList<userDTO> userSelectPaging(String id, int offset, int itemsPerPage) {
 		ArrayList<userDTO> result = new ArrayList<userDTO>();
-
 		conn = null;
 		ps = null;
 		rs = null;
-
 		try {
 			conn = ds.getConnection();
 			// OFFSET과 LIMIT을 사용하여 페이징 처리 및 로그인한 사용자와 관련된 정보만 조회
@@ -395,7 +393,6 @@ public class userDAO {
 			ps.setInt(2, offset);
 			ps.setInt(3, itemsPerPage);
 			rs = ps.executeQuery();
-
 			while (rs.next()) {
 				userDTO element = new userDTO();
 
@@ -434,9 +431,6 @@ public class userDAO {
 		rs = null;
 
 		try {
-			// Connection 획득
-			Context context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/mysql");
 			conn = ds.getConnection();
 
 			// COUNT를 사용하여 특정 사용자의 예약 행 수를 가져옴

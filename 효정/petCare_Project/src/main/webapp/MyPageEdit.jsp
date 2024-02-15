@@ -239,7 +239,7 @@ if (loggedInUserId != null) {
 						<!-- 생일 -->
 						<li class="edit_list">
 							<div class="edit_title" id="title_birth">생년월일</div> <input
-							type="date" id="birth" name="birth" onblur="checkBirth()"
+							type="date" style="background-color:lightgray;"id="birth" name="birth" onblur="checkBirth()"
 							value="<%=userInfo.getBirth()%>" readonly>
 						</li>
 					</ul>

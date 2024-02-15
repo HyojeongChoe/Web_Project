@@ -13,7 +13,6 @@ public class userServiceSelectUserInfo implements userService {
 	@Override
 	public ArrayList<userDTO> execute(HttpServletRequest request, HttpServletResponse response) {
 		ArrayList<userDTO> result = new ArrayList<userDTO>();
-
 		
 			// 로그인한 사용자의 아이디 가져오기
 			String loggedInUserId = sessionManager.getLoggedInUserId(request);
